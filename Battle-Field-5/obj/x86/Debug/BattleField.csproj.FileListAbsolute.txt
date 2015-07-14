@@ -1,2 +1,0 @@
-C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\obj\x86\Debug\BattleField.exe
-C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\obj\x86\Debug\BattleField.pdb

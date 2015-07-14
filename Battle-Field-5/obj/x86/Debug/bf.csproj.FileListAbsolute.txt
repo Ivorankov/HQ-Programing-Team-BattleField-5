@@ -1,5 +1,0 @@
-C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\bin\Debug\BattleField.exe
-C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\bin\Debug\BattleField.pdb
-C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\obj\x86\Debug\bf.csprojResolveAssemblyReference.cache
-C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\obj\x86\Debug\BattleField.exe
-C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\obj\x86\Debug\BattleField.pdb
