@@ -46,3 +46,4 @@ Temporary Items
 *.suo
 bin/
 obj/
+StyleCop.Cache
