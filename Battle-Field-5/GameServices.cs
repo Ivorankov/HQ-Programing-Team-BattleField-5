@@ -5,7 +5,7 @@ namespace BattleField
 {
     public class GameServices
     {
-        // tova e klasa v koito se pravqt magiite
+        // tova e klasa v koito se pravqt magiite               
         private static readonly Random rand = new Random();
         private const double LOWERBOUNDMINES = 0.15;
         private const double UPPERBOUNTMINES = 0.3;
@@ -92,7 +92,7 @@ namespace BattleField
             return true;
         }
 
-        public static void Гърми(char[,] field, Mine mine)
+        public static void Гърми(char[,] field, Mine mine)   
         {
             char mineType = field[mine.X, mine.Y];
 
@@ -202,7 +202,7 @@ namespace BattleField
             }
         }
 
-        private static void ExplodeFour(char[,] field, Mine mine)
+        private static void ExplodeFour(char[,] field, Mine mine)  
         {
             for (int i = mine.X - 2; i <= mine.X + 2; i++)
             {
