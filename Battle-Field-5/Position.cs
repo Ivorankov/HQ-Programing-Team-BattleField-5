@@ -8,11 +8,21 @@
     public struct Position
     {
         /// <summary>
+        /// Holds the value for the x coordinate.
+        /// </summary>
+        private int x;
+
+        /// <summary>
+        /// Holds the value for the y coordinate.
+        /// </summary>
+        private int y;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Position" /> struct with specified x and y coordinates.
         /// </summary>
         /// <param name="x">Value of the X coordinate.</param>
         /// <param name="y">Value of the Y coordinate.</param>
-        public Position(int x, int y)
+        public Position(int x, int y) : this()
         {
             this.X = x;
             this.Y = y;
@@ -21,12 +31,34 @@
         /// <summary>
         /// Gets or sets the value of the X coordinate.
         /// </summary>
-        public int X { get; set; }
+        public int X 
+        {
+            get
+            {
+                return this.x;
+            }
+
+            set
+            {
+                this.x = value;
+            } 
+        }
 
         /// <summary>
         /// Gets or sets the value of the Y coordinate.
         /// </summary>
-        public int Y { get; set; }
+        public int Y
+        {
+            get
+            {
+                return this.y;
+            }
+
+            set
+            {
+                this.y = value;
+            }
+        }
 
         /// <summary>
         /// Checks if one Position equals another Position.
