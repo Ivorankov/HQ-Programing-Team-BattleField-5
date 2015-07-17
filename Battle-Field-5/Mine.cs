@@ -16,18 +16,17 @@
                 return null;
             }
 
-            string[] splited = str.Split(' ');
+            string[] splitString = str.Split(' ');
 
-            int x = 0;
-            int y = 0;
-
-            if (!int.TryParse(splited[0], out x))
+            int x;
+            if (!int.TryParse(splitString[0], out x))
             {
                 Console.WriteLine("Invalid index!");
                 return null;
             }
 
-            if (!int.TryParse(splited[1], out y))
+            int y;
+            if (!int.TryParse(splitString[1], out y))
             {
                 Console.WriteLine("Invalid index!");
                 return null;
@@ -43,34 +42,19 @@
             switch (mineType)
             {
                 case '1':
-                    {
-                        Mine.ExplodeOne(mine, field);
-                    }
-
+                    Mine.ExplodeOne(mine, field);
                     break;
                 case '2':
-                    {
-                        Mine.ExplodeTwo(mine, field);
-                    }
-
+                    Mine.ExplodeTwo(mine, field);
                     break;
                 case '3':
-                    {
-                        Mine.ExplodeThree(mine, field);
-                    }
-
+                    Mine.ExplodeThree(mine, field);
                     break;
                 case '4':
-                    {
-                        Mine.ExplodeFour(mine, field);
-                    }
-
+                    Mine.ExplodeFour(mine, field);
                     break;
                 case '5':
-                    {
-                        Mine.ExplodeFive(mine, field);
-                    }
-
+                    Mine.ExplodeFive(mine, field);
                     break;
             }
         }
@@ -125,6 +109,7 @@
         private static void ExplodeThree(Mine mine, char[,] field)
         {
             ExplodeTwo(mine, field);
+
             Mine up = new Mine() { X = mine.X - 2, Y = mine.Y };
             Mine down = new Mine() { X = mine.X + 2, Y = mine.Y };
             Mine left = new Mine() { X = mine.X, Y = mine.Y - 2 };

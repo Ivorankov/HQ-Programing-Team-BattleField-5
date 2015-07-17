@@ -8,10 +8,10 @@
     {
         private static char[,] GameField { get; set; }
 
-        public static void PrintResult()
+        public static void PrintField()
         {
-            Console.Write("   ");
             int size = Engine.GameField.GetLength(0);
+            Console.Write("   ");
             for (int i = 0; i < size; i++)
             {
                 Console.Write("{0} ", i);
@@ -25,7 +25,6 @@
             }
 
             Console.WriteLine();
-
             for (int i = 0; i < size; i++)
             {
                 Console.Write("{0} |", i);
@@ -41,17 +40,17 @@
         public static void Start()
         {
             Console.WriteLine(@"Welcome to ""Battle Field"" game. ");
-            int size = 0;
-            string readBuffer = null;
             Console.Write("Enter battle field size: n=");
-            readBuffer = Console.ReadLine();
-            while (!int.TryParse(readBuffer, out size))
+            string input = Console.ReadLine();
+
+            int size = 0;
+            while (!int.TryParse(input, out size))
             {
                 Console.WriteLine("Wrong format!");
                 Console.Write("Enter battle field size: n=");
             }
 
-            if (size > 10 || size <= 0)
+            if (size < 1 || 10 < size)
             {
                 Engine.Start();
             }
@@ -64,27 +63,25 @@
 
         private static void BeginGame()
         {
-            string readBuffer = null;
-            int explodedMinesCount = 0;
             for (int i = 0; i < 50; i++)
             {
                 Console.WriteLine();
             }
-
             Console.WriteLine();
+
+            int explodedMinesCount = 0;
             while (Field.ContainsMines(Engine.GameField))
             {
-                Engine.PrintResult();
-                Console.Write("Please enter coordinates: ");
-                readBuffer = Console.ReadLine();
-                Mine mineToBlow = Mine.Parse(readBuffer);
+                Engine.PrintField();
 
-                while (mineToBlow == null)
+                string input;
+                Mine mineToBlow;
+                do
                 {
                     Console.Write("Please enter coordinates: ");
-                    readBuffer = Console.ReadLine();
-                    mineToBlow = Mine.Parse(readBuffer);
-                }
+                    input = Console.ReadLine();
+                    mineToBlow = Mine.Parse(input);
+                } while (mineToBlow == null);
 
                 if (!Field.IsPositionMine(mineToBlow.X, mineToBlow.Y, Engine.GameField))
                 {
@@ -96,7 +93,7 @@
                 explodedMinesCount++;
             }
 
-            Engine.PrintResult();
+            Engine.PrintField();
             Console.WriteLine("Game over. Detonated mines: {0}", explodedMinesCount);
         }
     }

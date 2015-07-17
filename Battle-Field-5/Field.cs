@@ -18,18 +18,11 @@
                 }
             }
 
-            List<Mine> mines = new List<Mine>();
             for (int i = 0; i < minesCount; i++)
             {
                 int mineX = Helper.Randomizer.Next(0, size);
                 int mineY = Helper.Randomizer.Next(0, size);
                 Mine newMine = new Mine() { X = mineX, Y = mineY };
-
-                if (mines.Contains(newMine))
-                {
-                    i--;
-                    continue;
-                }
 
                 int mineType = Helper.Randomizer.Next('1', '6');
                 field[mineX, mineY] = Convert.ToChar(mineType);
@@ -44,7 +37,7 @@
             {
                 for (int j = 0; j < field.GetLength(1); j++)
                 {
-                    if (field[i, j] != '-' && field[i, j] != 'X')
+                    if ((field[i, j] != '-') && (field[i, j] != 'X'))
                     {
                         return true;
                     }
@@ -60,7 +53,7 @@
             {
                 return false;
             }
-            else if (field[x, y] == 'X' || field[x, y] == '-')
+            else if ((field[x, y] == 'X') || (field[x, y] == '-'))
             {
                 return false;
             }
