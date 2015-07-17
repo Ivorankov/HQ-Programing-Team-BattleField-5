@@ -43,10 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Battlefield.cs" />
-    <Compile Include="GameServices.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Mine.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="EntryPoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
