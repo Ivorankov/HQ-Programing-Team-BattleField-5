@@ -61,34 +61,34 @@
 
         private static void ExplodeOne(Mine mine, char[,] field)
         {
-            Mine upRightCorner = new Mine() { X = mine.X - 1, Y = mine.Y - 1 };
-            Mine upLeftCorner = new Mine() { X = mine.X - 1, Y = mine.Y + 1 };
-            Mine downRightCorner = new Mine() { X = mine.X + 1, Y = mine.Y - 1 };
-            Mine downLeftCorner = new Mine() { X = mine.X + 1, Y = mine.Y + 1 };
+            Mine rightUpCorner = new Mine() { X = mine.X - 1, Y = mine.Y - 1 };
+            Mine leftUpCorner = new Mine() { X = mine.X - 1, Y = mine.Y + 1 };
+            Mine rightDownCorner = new Mine() { X = mine.X + 1, Y = mine.Y - 1 };
+            Mine leftDownCorner = new Mine() { X = mine.X + 1, Y = mine.Y + 1 };
 
             if (Helper.CheckIfInRange(field, mine.X, mine.Y))
             {
                 field[mine.X, mine.Y] = 'X';
             }
 
-            if (Helper.CheckIfInRange(field, upRightCorner.X, upRightCorner.Y))
+            if (Helper.CheckIfInRange(field, rightUpCorner.X, rightUpCorner.Y))
             {
-                field[upRightCorner.X, upRightCorner.Y] = 'X';
+                field[rightUpCorner.X, rightUpCorner.Y] = 'X';
             }
 
-            if (Helper.CheckIfInRange(field, upLeftCorner.X, upLeftCorner.Y))
+            if (Helper.CheckIfInRange(field, leftUpCorner.X, leftUpCorner.Y))
             {
-                field[upLeftCorner.X, upLeftCorner.Y] = 'X';
+                field[leftUpCorner.X, leftUpCorner.Y] = 'X';
             }
 
-            if (Helper.CheckIfInRange(field, downRightCorner.X, downRightCorner.Y))
+            if (Helper.CheckIfInRange(field, rightDownCorner.X, rightDownCorner.Y))
             {
-                field[downRightCorner.X, downRightCorner.Y] = 'X';
+                field[rightDownCorner.X, rightDownCorner.Y] = 'X';
             }
 
-            if (Helper.CheckIfInRange(field, downLeftCorner.X, downLeftCorner.Y))
+            if (Helper.CheckIfInRange(field, leftDownCorner.X, leftDownCorner.Y))
             {
-                field[downLeftCorner.X, downLeftCorner.Y] = 'X';
+                field[leftDownCorner.X, leftDownCorner.Y] = 'X';
             }
         }
 
@@ -142,24 +142,24 @@
             {
                 for (int j = mine.Y - 2; j <= mine.Y + 2; j++)
                 {
-                    bool upRight = i == mine.X - 2 && j == mine.Y - 2;
-                    bool upLeft = i == mine.X - 2 && j == mine.Y + 2;
-                    bool downRight = i == mine.X + 2 && j == mine.Y - 2;
-                    bool downLeft = i == mine.X + 2 && j == mine.Y + 2;
+                    bool rightUp = i == mine.X - 2 && j == mine.Y - 2;
+                    bool leftUp = i == mine.X - 2 && j == mine.Y + 2;
+                    bool rightDown = i == mine.X + 2 && j == mine.Y - 2;
+                    bool leftDown = i == mine.X + 2 && j == mine.Y + 2;
 
-                    if (upRight)
+                    if (rightUp)
                     {
                         continue;
                     }
-                    else if (upLeft)
+                    else if (leftUp)
                     {
                         continue;
                     }
-                    else if (downRight)
+                    else if (rightDown)
                     {
                         continue;
                     }
-                    else if (downLeft)
+                    else if (leftDown)
                     {
                         continue;
                     }

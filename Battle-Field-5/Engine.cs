@@ -1,8 +1,8 @@
 ﻿namespace MineFieldApp
 {
     using System;
-    using System.Linq;
     using System.Collections.Generic;
+    using System.Linq;
 
     public static class Engine
     {
@@ -67,6 +67,7 @@
             {
                 Console.WriteLine();
             }
+
             Console.WriteLine();
 
             int explodedMinesCount = 0;
@@ -81,7 +82,8 @@
                     Console.Write("Please enter coordinates: ");
                     input = Console.ReadLine();
                     mineToBlow = Mine.Parse(input);
-                } while (mineToBlow == null);
+                }
+                while (mineToBlow == null);
 
                 if (!Field.IsPositionMine(mineToBlow.X, mineToBlow.Y, Engine.GameField))
                 {
