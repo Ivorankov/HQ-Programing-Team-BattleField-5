@@ -48,6 +48,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="Mine.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
