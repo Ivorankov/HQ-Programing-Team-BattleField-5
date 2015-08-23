@@ -48,6 +48,7 @@
             {
                 Console.WriteLine("Wrong format!");
                 Console.Write("Enter battle field size: n=");
+                input = Console.ReadLine();
             }
 
             if (size < 1 || 10 < size)
