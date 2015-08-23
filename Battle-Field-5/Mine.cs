@@ -18,6 +18,7 @@
         {
             List<Position> explosionAreaTilesPosition = new List<Position>();
 
+            explosionAreaTilesPosition.Add(new Position(this.Position.X, this.Position.Y));
             explosionAreaTilesPosition.Add(new Position(this.Position.X + 1, this.Position.Y + 1));
             explosionAreaTilesPosition.Add(new Position(this.Position.X - 1, this.Position.Y - 1));
             explosionAreaTilesPosition.Add(new Position(this.Position.X + 1, this.Position.Y - 1));
