@@ -1,7 +1,5 @@
 ﻿namespace BattleField
 {
-    using System;
-
     /// <summary>
     /// Represents a position in a matrix.
     /// </summary>

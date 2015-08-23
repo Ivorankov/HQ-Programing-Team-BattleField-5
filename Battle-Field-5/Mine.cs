@@ -1,16 +1,6 @@
 ﻿namespace BattleField
 {
-    using System;
     using System.Collections.Generic;
-
-    public enum MineType
-    {
-        One,
-        Two,
-        Three,
-        Four,
-        Five
-    }
 
     public class Mine
     {
@@ -26,53 +16,55 @@
 
         public List<Position> Explode()
         {
-            List<Position> result = new List<Position>();
-            result.Add(new Position(this.Position.X + 1, this.Position.Y + 1));
-            result.Add(new Position(this.Position.X - 1, this.Position.Y - 1));
-            result.Add(new Position(this.Position.X + 1, this.Position.Y - 1));
-            result.Add(new Position(this.Position.X - 1, this.Position.Y + 1));
+            List<Position> explosionAreaTilesPosition = new List<Position>();
 
-            int mineTypeNum = (int)this.Type;
-            if (mineTypeNum >= 1)
+            explosionAreaTilesPosition.Add(new Position(this.Position.X + 1, this.Position.Y + 1));
+            explosionAreaTilesPosition.Add(new Position(this.Position.X - 1, this.Position.Y - 1));
+            explosionAreaTilesPosition.Add(new Position(this.Position.X + 1, this.Position.Y - 1));
+            explosionAreaTilesPosition.Add(new Position(this.Position.X - 1, this.Position.Y + 1));
+
+            int mineType = (int)this.Type;
+
+            if (mineType >= 2)
             {
-                result.Add(new Position(this.Position.X, this.Position.Y + 1));
-                result.Add(new Position(this.Position.X, this.Position.Y - 1));
-                result.Add(new Position(this.Position.X + 1, this.Position.Y));
-                result.Add(new Position(this.Position.X - 1, this.Position.Y));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X, this.Position.Y + 1));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X, this.Position.Y - 1));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X + 1, this.Position.Y));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X - 1, this.Position.Y));
             }
 
-            if (mineTypeNum >= 2) 
+            if (mineType >= 3) 
             {
-                result.Add(new Position(this.Position.X, this.Position.Y + 2));
-                result.Add(new Position(this.Position.X, this.Position.Y - 2));
-                result.Add(new Position(this.Position.X + 2, this.Position.Y));
-                result.Add(new Position(this.Position.X - 2, this.Position.Y));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X, this.Position.Y + 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X, this.Position.Y - 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X + 2, this.Position.Y));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X - 2, this.Position.Y));
             }
 
-            if (mineTypeNum >= 3) 
+            if (mineType >= 4) 
             {
-                result.Add(new Position(this.Position.X + 2, this.Position.Y + 1));
-                result.Add(new Position(this.Position.X + 2, this.Position.Y - 1));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X + 2, this.Position.Y + 1));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X + 2, this.Position.Y - 1));
 
-                result.Add(new Position(this.Position.X - 2, this.Position.Y + 1));
-                result.Add(new Position(this.Position.X - 2, this.Position.Y - 1));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X - 2, this.Position.Y + 1));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X - 2, this.Position.Y - 1));
 
-                result.Add(new Position(this.Position.X + 1, this.Position.Y + 2));
-                result.Add(new Position(this.Position.X + 1, this.Position.Y - 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X + 1, this.Position.Y + 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X + 1, this.Position.Y - 2));
 
-                result.Add(new Position(this.Position.X - 1, this.Position.Y + 2));
-                result.Add(new Position(this.Position.X - 1, this.Position.Y - 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X - 1, this.Position.Y + 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X - 1, this.Position.Y - 2));
             }
 
-            if (mineTypeNum >= 4)
+            if (mineType >= 5)
             {
-                result.Add(new Position(this.Position.X + 2, this.Position.Y + 2));
-                result.Add(new Position(this.Position.X - 2, this.Position.Y - 2));
-                result.Add(new Position(this.Position.X + 2, this.Position.Y - 2));
-                result.Add(new Position(this.Position.X - 2, this.Position.Y + 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X + 2, this.Position.Y + 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X - 2, this.Position.Y - 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X + 2, this.Position.Y - 2));
+                explosionAreaTilesPosition.Add(new Position(this.Position.X - 2, this.Position.Y + 2));
             }
 
-            return result;
+            return explosionAreaTilesPosition;
         }
     }
 }
