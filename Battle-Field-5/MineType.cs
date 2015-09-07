@@ -3,7 +3,7 @@
 //     Telerik teamwork project.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace BattleField
+namespace MineFieldApp
 {
     /// <summary>
     /// An enumeration for the different mine types

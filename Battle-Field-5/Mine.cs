@@ -3,7 +3,7 @@
 //     Telerik teamwork project.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace BattleField
+namespace MineFieldApp
 {
     using System.Collections.Generic;
 
