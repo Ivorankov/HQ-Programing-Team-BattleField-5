@@ -94,7 +94,7 @@ namespace MineFieldApp
 
             XmlSerializer writer = new XmlSerializer(typeof(List<Score>));
 
-            StreamWriter file = new StreamWriter(Path.GetFullPath(HighscoresFileName), false);
+            StreamWriter file = new StreamWriter(Path.GetFullPath("../../Highscores/" + HighscoresFileName), false);
 
             writer.Serialize(file, this.Highscores);
 
@@ -107,16 +107,16 @@ namespace MineFieldApp
         public void ClearHighscores()
         {
             this.Highscores.Clear();
-            File.WriteAllText(Path.GetFullPath(HighscoresFileName), string.Empty);
+            File.WriteAllText(Path.GetFullPath("../../Highscores/" + HighscoresFileName), string.Empty);
         }
 
         /// <summary>
         /// Reads highscores from the file and writes them to the list with highscores
         /// </summary>
-        private void LoadHighscores()
+        public void LoadHighscores()
         {
             XmlSerializer reader = new XmlSerializer(typeof(List<Score>));
-            StreamReader file = new StreamReader(Path.GetFullPath(HighscoresFileName));
+            StreamReader file = new StreamReader(Path.GetFullPath("../../Highscores/" + HighscoresFileName));
 
             try
             {
@@ -124,6 +124,7 @@ namespace MineFieldApp
             }
             catch (InvalidOperationException)
             {
+                Console.WriteLine(12);
             }
 
             file.Close();
