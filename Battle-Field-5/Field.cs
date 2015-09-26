@@ -25,7 +25,7 @@
                 int mineY = Helper.Randomizer.Next(0, size);
                 int mineType = Helper.Randomizer.Next('1', '6');
 
-                Mine newMine = new Mine( (MineType)mineType, new Position(mineX, mineY));
+                //Mine newMine = new Mine( (MineType)mineType, new Position(mineX, mineY));
                 field[mineX, mineY] = Convert.ToChar(mineType);
             }
 

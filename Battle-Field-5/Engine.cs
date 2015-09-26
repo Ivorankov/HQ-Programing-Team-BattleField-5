@@ -93,7 +93,7 @@
                 }
 
                 //TODO Explode method be part of GameField ex: GameField.explodeMine(mineToBeExploded)
-                Mine.Explode(positionChoosenByPlayer, Engine.GameField);
+                //Mine.Explode(positionChoosenByPlayer, Engine.GameField);
                 explodedMinesCount++;
             }
 
