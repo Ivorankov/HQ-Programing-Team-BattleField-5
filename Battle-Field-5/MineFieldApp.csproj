@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MineFieldApp.EntryPoint</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine.cs" />
+    <Compile Include="Engine\GameEngine.cs" />
+    <Compile Include="Engine\IGameEngine.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Highscore.cs" />
@@ -54,7 +59,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Renderers\ConsoleGameRenderer.cs" />
+    <Compile Include="Renderers\IGameRenderer.cs" />
     <Compile Include="Score.cs" />
+    <Compile Include="UIHandlers\ConsoleUIHandler.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

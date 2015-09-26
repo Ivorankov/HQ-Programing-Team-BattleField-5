@@ -7,6 +7,8 @@ namespace MineFieldApp
 {
     public interface IGameEngine
     {
-        Score
+        Score score {get; }
+
+        void StartGame();
     }
 }
