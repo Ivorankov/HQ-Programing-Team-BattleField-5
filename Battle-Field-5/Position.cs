@@ -1,7 +1,10 @@
-﻿namespace BattleField
+﻿//-----------------------------------------------------------------------
+// <copyright file="Position.cs" company="BattleField-5 team">
+//     Telerik teamwork project.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace MineFieldApp
 {
-    using System;
-
     /// <summary>
     /// Represents a position in a matrix.
     /// </summary>
@@ -18,7 +21,7 @@
         private int y;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Position" /> struct with specified x and y coordinates.
+        /// Initializes a new instance of the <see cref="Position" /> structure with specified x and y coordinates.
         /// </summary>
         /// <param name="x">Value of the X coordinate.</param>
         /// <param name="y">Value of the Y coordinate.</param>
