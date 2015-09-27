@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BattleField.UIHandlers
+namespace MineFieldApp
 {
-    public class ConsoleUIHandler
+    public class ConsoleUIHandler : IUIHhandler
     {
         private const int USER_NAME_MIN_LENGTH = 0;
         private const int USER_NAME_MAX_LENGTH = 6;
+
         public ConsoleUIHandler()
         {
 
         }
 
-        private string TakeUserInput()
+        public string TakeUserInput()
         {
             string input = Console.ReadLine();
             return input;
         }
         //TODO: Create a validator object
-        private string TakeUserName()
+        public string TakeUserName()
         {
             string userName = string.Empty;
             do
@@ -33,15 +34,26 @@ namespace BattleField.UIHandlers
             return userName;
         }
 
-        private string TakeGameFieldSize()
+        public string TakeGameFiledSize()
         {
             string dimentions = string.Empty;
-            do
-            {
+
                 dimentions = this.TakeUserInput();
-            } while (dimentions.Length != 3);
+
 
             return dimentions;
         }
+
+        public string TakePositionCoordiantes()
+        {
+            string coordinates = string.Empty;
+            do
+            {
+                coordinates = this.TakeUserInput();
+            } while (coordinates.Length != 3);
+
+            return coordinates;
+        }
+
     }
 }

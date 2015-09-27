@@ -7,15 +7,13 @@ namespace MineFieldApp
 {
     interface IGameRenderer
     {
-         int FieldWidth { get; }
-
-         int FieldHeight { get; }
+        int FieldSize { get; set; }
 
         void ShowStartScreen();
 
         void ShowEndScreen();
 
-        void DrawGameField();
+        void DrawGameField(int size, char[,] field);
 
         void Clear();
 

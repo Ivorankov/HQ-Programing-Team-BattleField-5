@@ -4,7 +4,13 @@
     {
         internal static void Main()
         {
-            Engine.Start();
+            //Engine.Start();
+
+            var view = new ConsoleGameRenderer();
+            var handler = new ConsoleUIHandler();
+            var test = new GameEngine(view, handler);
+
+            test.StartGame();
         }
     }
 }

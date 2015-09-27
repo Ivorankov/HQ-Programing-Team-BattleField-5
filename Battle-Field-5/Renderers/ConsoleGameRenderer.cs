@@ -7,6 +7,7 @@ namespace MineFieldApp
 {
     class ConsoleGameRenderer : IGameRenderer
     {
+        private int fieldSize;
 
         public ConsoleGameRenderer()
         {
@@ -36,22 +37,50 @@ namespace MineFieldApp
             Console.WriteLine("God damn this game is boring!");
         }
 
-        public void DrawGameFiled(int height, int width)
+        public void DrawGameField(int size, char[,] field)
         {
-            this.FieldHeight = height;
-            this.FieldWidth = width;
+            Console.Write("   ");
+            for (int i = 0; i < size; i++)
+            {
+                Console.Write("{0} ", i);
+            }
 
+            Console.WriteLine();
+            Console.Write("   ");
+            for (int i = 0; i < size * 2; i++)
+            {
+                Console.Write("-");
+            }
+
+            Console.WriteLine();
+            for (int i = 0; i < size; i++)
+            {
+                Console.Write("{0} |", i);
+                for (int j = 0; j < size; j++)
+                {
+                    Console.Write("{0} ", field[i, j]);
+                }
+
+                Console.WriteLine();
+            }
+
+        }
+
+        public int FieldSize
+        {
+            get
+            {
+                return this.fieldSize;
+            }
+            set
+            {
+                this.fieldSize = value;
+            }
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            Console.Clear();
         }
-
-        public void DrawGameField()
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

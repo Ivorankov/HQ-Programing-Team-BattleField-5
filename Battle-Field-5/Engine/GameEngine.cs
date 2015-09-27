@@ -9,21 +9,39 @@ namespace MineFieldApp
     {
         private IGameRenderer renderer;
 
-        public GameEngine(IGameRenderer renderer, Score score)
+        private IUIHhandler handler;
+
+        public GameEngine(IGameRenderer renderer, IUIHhandler handler)
         {
             this.renderer = renderer;
-
+            this.handler = handler;
         }
 
 
         public void StartGame()
         {
             renderer.ShowStartScreen();
+            renderer.FieldSize = int.Parse(handler.TakeGameFiledSize());
+            renderer.Clear();
+            this.GameLoop();
         }
 
         private void GameLoop()
         {
+            var field = Field.GenerateField(renderer.FieldSize);
 
+            int explodedMinesCount = 0;
+            while (Field.ContainsMines(field))
+            {
+                renderer.DrawGameField(renderer.FieldSize, field);
+                var mineToBlow = Mine.Parse(handler.TakePositionCoordiantes());
+                Mine.Explode(mineToBlow, field);
+                explodedMinesCount++;
+                renderer.Clear();
+            }
+
+            renderer.DrawGameField(renderer.FieldSize, field);
+            renderer.ShowEndScreen();
         }
 
         public Score score
