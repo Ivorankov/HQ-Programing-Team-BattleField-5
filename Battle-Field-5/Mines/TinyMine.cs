@@ -25,7 +25,7 @@ namespace MineFieldApp.Mines
         /// The method returns the exploding area of the mine.
         /// </summary>
         /// <returns>List containing the positions of the tiles of the exploding area.</returns>
-        public sealed override List<Position> Explode()
+        public override List<Position> Explode()
         {
             List<Position> result = new List<Position>();
 
