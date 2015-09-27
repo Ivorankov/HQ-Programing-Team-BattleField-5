@@ -1,10 +1,15 @@
-﻿namespace MineFieldApp
+﻿namespace BattleField
 {
-    internal static class EntryPoint
+    using BattleField.Renderer;
+
+    public static class EntryPoint
     {
-        internal static void Main()
+        public static void Main()
         {
-            Engine.Start();
+            ConsoleInputProvider inputProvider = new ConsoleInputProvider();
+            ConsoleRender renderer = new ConsoleRender();
+            Engine engine = new Engine(inputProvider, renderer);
+            engine.Start();
         }
     }
 }
