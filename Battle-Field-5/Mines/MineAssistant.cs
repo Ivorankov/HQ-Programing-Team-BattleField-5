@@ -1,15 +1,29 @@
-﻿namespace MineFieldApp.Mines
+﻿//-----------------------------------------------------------------------
+// <copyright file="MineAssistant.cs" company="BattleField-5 team">
+//     Telerik teamwork project.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace MineFieldApp.Mines
 {
     using System.Collections.Generic;
 
+    /// <summary>
+    /// An object which holds common methods and values for Mine objects.
+    /// </summary>
     public static class MineAssistant
     {
-        public static List<Position> GetNormalExplosion(Position position, int radius)
+        /// <summary>
+        /// Generates a square explosion pattern around a center position.
+        /// </summary>
+        /// <param name="center">The center position of the pattern.</param>
+        /// <param name="radius">The radius of the pattern.</param>
+        /// <returns>List containing the positions of the tiles of the exploding area.</returns>
+        public static List<Position> GetNormalExplosion(Position center, int radius)
         {
             List<Position> result = new List<Position>();
 
-            int startX = position.X - radius;
-            int startY = position.Y - radius;
+            int startX = center.X - radius;
+            int startY = center.Y - radius;
             int explosionSize = (2 * radius) + 1;
             for (int x = startX; x < (startX + explosionSize); x++)
             {
