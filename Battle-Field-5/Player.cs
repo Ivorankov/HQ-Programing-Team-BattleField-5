@@ -5,7 +5,7 @@
     public class Player
     {
         private const byte PlayerNameMinLength = 3;
-        private const byte PlayerNameMaxLength = 20;
+        private const byte PlayerNameMaxLength = 30;
 
         private string name;
         private int points;
@@ -32,7 +32,7 @@
 
                 if (value.Length < PlayerNameMinLength || value.Length > PlayerNameMaxLength)
                 {
-                    throw new ArgumentOutOfRangeException("Player's name must be between 3 and 20 symbols long.");
+                    throw new ArgumentOutOfRangeException("Player's name must be between 3 and 30 symbols long.");
                 }
 
                 this.name = value;
