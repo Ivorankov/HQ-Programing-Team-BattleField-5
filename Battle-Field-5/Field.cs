@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
 
+    //TODO Make the class non static and make Engine.GameField an instance of that class. Use Singleton pattern
     public static class Field
     {
         public static char[,] GenerateField(int size)
@@ -22,9 +23,9 @@
             {
                 int mineX = Helper.Randomizer.Next(0, size);
                 int mineY = Helper.Randomizer.Next(0, size);
-                Mine newMine = new Mine() { X = mineX, Y = mineY };
-
                 int mineType = Helper.Randomizer.Next('1', '6');
+
+                //Mine newMine = new Mine( (MineType)mineType, new Position(mineX, mineY));
                 field[mineX, mineY] = Convert.ToChar(mineType);
             }
 
@@ -72,5 +73,7 @@
 
             return Helper.Randomizer.Next(lowBound, upperBound);
         }
+
+        //TODO Add ExplodeMine(Mine mine) method
     }
 }

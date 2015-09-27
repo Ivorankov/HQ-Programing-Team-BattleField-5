@@ -8,7 +8,7 @@
     <ProjectGuid>{493704EF-A54B-41A2-B1BF-47857B5337CB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleField</RootNamespace>
+    <RootNamespace>MineFieldApp</RootNamespace>
     <AssemblyName>BattleField</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -47,7 +47,16 @@
     <Compile Include="Field.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Highscore.cs" />
-    <Compile Include="Mine.cs" />
+    <Compile Include="Mines\BigMine.cs" />
+    <Compile Include="Mines\GiantMine.cs" />
+    <Compile Include="Mines\MediumMine.cs" />
+    <Compile Include="Mines\Mine.cs" />
+    <Compile Include="Mines\MineAssistant.cs" />
+    <Compile Include="Mines\Generators\IMineGenerator.cs" />
+    <Compile Include="Mines\Generators\RandomMineGenerator.cs" />
+    <Compile Include="Mines\SmallMine.cs" />
+    <Compile Include="Mines\TinyMine.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

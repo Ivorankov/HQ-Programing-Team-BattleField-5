@@ -77,22 +77,23 @@
                 Engine.PrintField();
 
                 string input;
-                Mine mineToBlow;
+                Position positionChoosenByPlayer;
                 do
                 {
                     Console.Write("Please enter coordinates: ");
                     input = Console.ReadLine();
-                    mineToBlow = Mine.Parse(input);
+                    positionChoosenByPlayer = Helper.ParseInputToPosition(input);
                 }
-                while (mineToBlow == null);
+                while (positionChoosenByPlayer.X == -1 && positionChoosenByPlayer.Y == -1);
 
-                if (!Field.IsPositionMine(mineToBlow.X, mineToBlow.Y, Engine.GameField))
+                if (!Field.IsPositionMine(positionChoosenByPlayer.X, positionChoosenByPlayer.Y, Engine.GameField))
                 {
                     Console.WriteLine("Invalid move!");
                     continue;
                 }
 
-                Mine.Explode(mineToBlow, Engine.GameField);
+                //TODO Explode method be part of GameField ex: GameField.explodeMine(mineToBeExploded)
+                //Mine.Explode(positionChoosenByPlayer, Engine.GameField);
                 explodedMinesCount++;
             }
 
