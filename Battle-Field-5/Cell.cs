@@ -23,9 +23,10 @@
             {
                 return new Cell(position, CellType.EMPTY, new NoneExplodeCommand());
             }
-            public Cell CreateMineCell(Position position)
+            public Cell CreateMineCell(Position position, ExplosionType explosionType)
             {
-                return new Cell(position, CellType.MINE, new GiantExplodeCommand(this.field));
+                ExplodeCommandFactory factory = new ExplodeCommandFactory();
+                return new Cell(position, CellType.MINE, factory.createExplodeCommand(this.field, explosionType));
             }
         }
 

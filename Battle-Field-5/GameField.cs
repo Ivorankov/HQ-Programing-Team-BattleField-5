@@ -1,5 +1,6 @@
 ﻿namespace BattleField
 {
+    using BattleField.Enums;
     using System;
     using System.Collections.Generic;
 
@@ -78,7 +79,7 @@
             IEnumerable<Position> positions = RandomGenerator.GetUniquePointsBetween(minesCount, this.RowsCount, this.ColumnsCount);
             foreach (Position position in positions)
             {
-                this.field[position.X, position.Y] = this.factory.CreateMineCell(position);
+                this.field[position.X, position.Y] = this.factory.CreateMineCell(position, ExplosionType.SMALL);
             }
         }
 

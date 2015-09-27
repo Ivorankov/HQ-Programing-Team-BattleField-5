@@ -2,17 +2,22 @@
 {
     using System.Collections.Generic;
 
-    public class GiantExplodeCommand : ExplodeCommand
+    public class SquareExplodeCommand : ExplodeCommand
     {
-        public GiantExplodeCommand(GameField field)
+        private int radius;
+
+        public SquareExplodeCommand(GameField field, int radius) : base(field) {
+            this.radius = radius;
+        }
+        public SquareExplodeCommand(GameField field)
             : base(field) { }
 
         public override IEnumerable<Position> GetRelativePositions()
         {
             List<Position> positions = new List<Position>();
-            for (int row = -2; row <= 2; row++)
+            for (int row = -this.radius; row <= this.radius; row++)
             {
-                for (int column = -2; column <= 2; column++)
+                for (int column = -this.radius; column <= this.radius; column++)
                 {
                     positions.Add(new Position(row, column));
                 }

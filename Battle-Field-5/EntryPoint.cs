@@ -6,8 +6,8 @@
     {
         public static void Main()
         {
-            ConsoleInputProvider inputProvider = new ConsoleInputProvider();
-            ConsoleRender renderer = new ConsoleRender();
+            IInputProvider inputProvider = new ConsoleInputProvider();
+            IRenderer renderer = new ConsoleRender();
             Engine engine = new Engine(inputProvider, renderer);
             engine.Start();
         }

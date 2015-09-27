@@ -25,15 +25,14 @@
             {
                 this.renderer.ShowGameField(field);
                 Position position = this.inputProvider.GetPosition();
+                this.renderer.Clear();
                 if (this.field.IsInRange(position) && this.field[position.X, position.Y].ExplodeCommand.IsValid())
                 {
                     this.field[position.X, position.Y].ExplodeCommand.Execute();
-                    this.renderer.Clear();
                 }
                 else
                 {
-                    this.renderer.Clear();
-                    Console.WriteLine("Invalid input!");
+                    this.renderer.ShowErrorMessage("Invalid coordinates or the selected cell is not a mine.");
                 }
             }
         }

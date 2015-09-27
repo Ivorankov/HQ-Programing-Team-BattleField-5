@@ -11,6 +11,10 @@
             Console.WriteLine(@"Welcome to ""Battle Field"" game. ");
         }
 
+        public void ShowErrorMessage(String message) {
+            Console.WriteLine(message);
+        }
+
         public void ShowGameField(GameField field)
         {
             int rowsCount = field.RowsCount;

@@ -3,7 +3,7 @@
     using BattleField.Enums;
     using System.Collections.Generic;
 
-    public abstract class ExplodeCommand
+    public abstract class ExplodeCommand : ICommand
     {
         public Cell Cell { get; set; }
         protected GameField field { get; private set; }
