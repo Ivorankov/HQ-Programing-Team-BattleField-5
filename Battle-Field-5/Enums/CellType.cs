@@ -2,6 +2,6 @@
 {
     public enum CellType
     {
-        EMPTY, MINE, BOMBED
+        EMPTY, BOMBED, GIANTMINE, HUGEMINE, BIGMINE, SMALLMINE, TINYMINE
     }
 }

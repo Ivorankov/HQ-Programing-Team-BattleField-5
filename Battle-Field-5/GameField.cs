@@ -79,7 +79,7 @@
             IEnumerable<Position> positions = RandomGenerator.GetUniquePointsBetween(minesCount, this.RowsCount, this.ColumnsCount);
             foreach (Position position in positions)
             {
-                this.field[position.X, position.Y] = this.factory.CreateMineCell(position, ExplosionType.SMALL);
+                this.field[position.X, position.Y] = this.factory.CreateMineCell(position, RandomGenerator.GetRandomMineType());
             }
         }
 

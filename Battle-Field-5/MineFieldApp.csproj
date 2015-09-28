@@ -73,7 +73,6 @@
     <Compile Include="ExplodeCommand\ExplodeCommand.cs" />
     <Compile Include="ExplodeCommand\ExplodeCommandFactory.cs" />
     <Compile Include="ExplodeCommand\NoneExplodeCommand.cs" />
-    <Compile Include="Enums\ExplosionType.cs" />
     <Compile Include="GameField.cs" />
     <Compile Include="ExplodeCommand\SquareExplodeCommand.cs" />
     <Compile Include="Highscore.cs" />
