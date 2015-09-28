@@ -48,7 +48,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MineFieldApp.csproj">
+    <ProjectReference Include="..\Battle-Field-5\MineFieldApp.csproj">
       <Project>{493704ef-a54b-41a2-b1bf-47857b5337cb}</Project>
       <Name>MineFieldApp</Name>
     </ProjectReference>

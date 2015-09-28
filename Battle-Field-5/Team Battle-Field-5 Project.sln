@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineFieldAppTests", "..\Min
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleField-WPF", "..\BattleField-WPF\BattleField-WPF.csproj", "{402072D1-4742-42FD-A24B-2304F8823DFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleField-Console", "BattleFIeld-Console\BattleField-Console.csproj", "{6F28C80B-4D5D-4F43-9813-968151E54C7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleField-Console", "..\BattleFIeld-Console\BattleField-Console.csproj", "{6F28C80B-4D5D-4F43-9813-968151E54C7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
