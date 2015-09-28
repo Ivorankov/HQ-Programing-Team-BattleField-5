@@ -54,7 +54,13 @@
         {
             if (this.IsInRange(position))
             {
-                if (this.field[position.X, position.Y].Type == CellType.MINE)
+                Cell currentCell = this.field[position.X, position.Y];
+
+                if (currentCell.Type == CellType.GIANTMINE
+                    || currentCell.Type == CellType.HUGEMINE
+                    || currentCell.Type == CellType.SMALLMINE
+                    || currentCell.Type == CellType.TINYMINE
+                    || currentCell.Type == CellType.BIGMINE)
                 {
                     --this.minesCount;
                 }

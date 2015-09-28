@@ -12,7 +12,7 @@ namespace MineFieldAppTests
     using System.IO;
     using System.Xml.Serialization;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using MineFieldApp;
+    using BattleField;
 
     /// <summary>
     /// A class for testing <see cref="Highscore"/> class
