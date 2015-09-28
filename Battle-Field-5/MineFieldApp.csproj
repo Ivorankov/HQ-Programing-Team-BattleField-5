@@ -70,6 +70,7 @@
     <Compile Include="ExplodeCommand\HugeExplodeCommand.cs" />
     <Compile Include="ExplodeCommand\ICommand.cs" />
     <Compile Include="ExplodeCommand\TinyExplodeCommand.cs" />
+    <Compile Include="ImputProviders\WpfInputProvider.cs" />
     <Compile Include="Renderer\ConsoleRender.cs" />
     <Compile Include="Enums\CellType.cs" />
     <Compile Include="Engine.cs" />
@@ -90,6 +91,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RandomGenerator.cs" />
+    <Compile Include="Renderer\WpfRenderer.cs" />
     <Compile Include="Score.cs" />
   </ItemGroup>
   <ItemGroup>

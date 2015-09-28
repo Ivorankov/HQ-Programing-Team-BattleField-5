@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleField;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,27 @@ namespace BattleField_WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartWindow : Window
     {
-        public MainWindow()
+        public StartWindow()
         {
             InitializeComponent();
+        }
+
+        private void OnNewGameButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnShowHighScoresButtonClick(object sender, RoutedEventArgs e)
+        {
+            var test = new HighscoreWindow();
+            test.Show();
+        }
+
+        private void OnExitButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
