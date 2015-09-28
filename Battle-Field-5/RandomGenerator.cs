@@ -1,11 +1,26 @@
 ﻿namespace BattleField
 {
+    using BattleField.Enums;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public static class RandomGenerator
     {
         private static Random generator = new Random();
+        private static CellType[] mineTypes;
+        private static CellType[] MineTypes
+        {
+            get
+            {
+                if (mineTypes == null)
+                {
+                    mineTypes = Enum.GetValues(typeof(CellType)).Cast<CellType>().Where(type => type.ToString().Contains("MINE")).ToArray();
+                }
+
+                return mineTypes;
+            }
+        }
 
         public static int GetRandomIndex(int size)
         {
@@ -32,6 +47,12 @@
             }
 
             return positions;
+        }
+
+        public static CellType GetRandomMineType()
+        {
+            int randomIndex = GetRandomIndex(MineTypes.Length);
+            return MineTypes[randomIndex];
         }
     }
 }

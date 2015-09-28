@@ -18,6 +18,7 @@
 
         public void Start()
         {
+            this.renderer.SayWelcome();
             int fieldSize = this.inputProvider.GetFieldSize();
             this.field = new GameField(fieldSize);
             this.MovesCount = 0;

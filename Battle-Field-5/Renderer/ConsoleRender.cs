@@ -12,7 +12,8 @@
             Console.WriteLine(@"Welcome to ""Battle Field"" game. ");
         }
 
-        public void ShowErrorMessage(String message) {
+        public void ShowErrorMessage(String message)
+        {
             Console.WriteLine(message);
         }
 
@@ -34,8 +35,11 @@
             {
                 case CellType.EMPTY: return "-";
                 case CellType.BOMBED: return "X";
-                // TODO
-                case CellType.MINE: return "5";
+                case CellType.GIANTMINE: return "5";
+                case CellType.HUGEMINE: return "4";
+                case CellType.BIGMINE: return "3";
+                case CellType.SMALLMINE: return "2";
+                case CellType.TINYMINE: return "1";
                 default: throw new NotSupportedException();
             }
         }
