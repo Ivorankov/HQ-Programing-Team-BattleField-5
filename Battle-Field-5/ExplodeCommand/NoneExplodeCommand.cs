@@ -12,7 +12,7 @@
             return false;
         }
 
-        public override IEnumerable<Position> GetRelativePositions()
+        protected override IEnumerable<Position> GetRelativePositions()
         {
             throw new NotSupportedException();
         }

@@ -66,7 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="ExplodeCommand\BigExplodeCommand.cs" />
+    <Compile Include="ExplodeCommand\HugeExplodeCommand.cs" />
     <Compile Include="ExplodeCommand\ICommand.cs" />
+    <Compile Include="ExplodeCommand\TinyExplodeCommand.cs" />
     <Compile Include="Renderer\ConsoleRender.cs" />
     <Compile Include="Enums\CellType.cs" />
     <Compile Include="Engine.cs" />

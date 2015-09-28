@@ -12,7 +12,7 @@
         public SquareExplodeCommand(GameField field)
             : base(field) { }
 
-        public override IEnumerable<Position> GetRelativePositions()
+        protected override IEnumerable<Position> GetRelativePositions()
         {
             List<Position> positions = new List<Position>();
             for (int row = -this.radius; row <= this.radius; row++)

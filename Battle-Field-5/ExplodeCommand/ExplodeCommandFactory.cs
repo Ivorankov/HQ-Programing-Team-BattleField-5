@@ -10,10 +10,10 @@
             switch (type)
             {
                 case CellType.GIANTMINE: return new SquareExplodeCommand(field, 2);
-                case CellType.HUGEMINE: return new SquareExplodeCommand(field, 1); //TODO
-                case CellType.BIGMINE: return new SquareExplodeCommand(field, 2); //TODO
+                case CellType.HUGEMINE: return new HugeExplodeCommand(field);
+                case CellType.BIGMINE: return new BigExplodeCommand(field);
                 case CellType.SMALLMINE: return new SquareExplodeCommand(field, 1);
-                case CellType.TINYMINE: return new SquareExplodeCommand(field, 2); //TODO
+                case CellType.TINYMINE: return new TinyExplodeCommand(field);
                 default:
                     {
                         throw new NotSupportedException();

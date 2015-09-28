@@ -26,6 +26,6 @@
             }
         }
 
-        public abstract IEnumerable<Position> GetRelativePositions();
+        protected abstract IEnumerable<Position> GetRelativePositions();
     }
 }
