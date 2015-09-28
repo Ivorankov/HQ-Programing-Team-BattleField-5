@@ -21,20 +21,24 @@
             this.field = new GameField(fieldSize);
             this.renderer.Clear();
 
-            while (true)
+            while (this.field.HasMinesLeft())
             {
                 this.renderer.ShowGameField(field);
                 Position position = this.inputProvider.GetPosition();
                 this.renderer.Clear();
+
+                //isnt it better to check this way(KISS):   this.field[position.X, position.Y].Type == CellType.MINE
                 if (this.field.IsInRange(position) && this.field[position.X, position.Y].ExplodeCommand.IsValid())
                 {
-                    this.field[position.X, position.Y].ExplodeCommand.Execute();
+                    this.field.ActivateMine(position);
                 }
                 else
                 {
                     this.renderer.ShowErrorMessage("Invalid coordinates or the selected cell is not a mine.");
                 }
             }
+
+            this.renderer.FinishGame();
         }
 
 

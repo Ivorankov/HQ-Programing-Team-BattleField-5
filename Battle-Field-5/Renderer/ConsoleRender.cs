@@ -43,5 +43,10 @@
         {
             Console.Clear();
         }
+
+        public void FinishGame()
+        {
+            Console.WriteLine("Concratularions you finished the game!!!");
+        }
     }
 }

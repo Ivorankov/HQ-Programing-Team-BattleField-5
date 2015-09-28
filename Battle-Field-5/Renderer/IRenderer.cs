@@ -7,6 +7,7 @@
         void SayWelcome();
         void ShowErrorMessage(String message);
         void ShowGameField(GameField field);
+        void FinishGame();
         void Clear();
     }
 }

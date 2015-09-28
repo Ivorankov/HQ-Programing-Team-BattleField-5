@@ -11,6 +11,7 @@
 
         private Cell[,] field;
         private Cell.CellFactory factory;
+        private int minesCount;
 
         public Cell this[int i, int j]
         {
@@ -75,8 +76,8 @@
 
         private void FillFieldMines()
         {
-            int minesCount = this.CalculateMinesCount();
-            IEnumerable<Position> positions = RandomGenerator.GetUniquePointsBetween(minesCount, this.RowsCount, this.ColumnsCount);
+            this.minesCount = this.CalculateMinesCount();
+            IEnumerable<Position> positions = RandomGenerator.GetUniquePointsBetween(this.minesCount, this.RowsCount, this.ColumnsCount);
             foreach (Position position in positions)
             {
                 this.field[position.X, position.Y] = this.factory.CreateMineCell(position, ExplosionType.SMALL);
@@ -87,6 +88,24 @@
         {
             int totalCellsCount = this.RowsCount * this.ColumnsCount;
             return RandomGenerator.GetRandomBetween(MINIMUM_MINES_PERCENT * totalCellsCount / 100, MAXIMUM_MINES_PERCENT * totalCellsCount / 100);
+        }
+
+        public bool HasMinesLeft()
+        {
+            if(minesCount > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void ActivateMine(Position position)
+        {
+            --this.minesCount;
+            this.field[position.X, position.Y].ExplodeCommand.Execute();
         }
     }
 }
