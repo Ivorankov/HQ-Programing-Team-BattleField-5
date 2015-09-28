@@ -6,9 +6,12 @@
     {
         private int radius;
 
-        public SquareExplodeCommand(GameField field, int radius) : base(field) {
+        public SquareExplodeCommand(GameField field, int radius)
+            : base(field)
+        {
             this.radius = radius;
         }
+
         public SquareExplodeCommand(GameField field)
             : base(field) { }
 
