@@ -7,23 +7,10 @@ namespace MineFieldApp
 {
     class ConsoleGameRenderer : IGameRenderer
     {
-        private int fieldSize;
 
         public ConsoleGameRenderer()
         {
 
-        }
-
-        public int FieldWidth
-        {
-            get { throw new NotImplementedException(); }
-            private set { }
-        }
-
-        public int FieldHeight
-        {
-            get { throw new NotImplementedException(); }
-            private set { }
         }
 
         public void ShowStartScreen()
@@ -32,12 +19,14 @@ namespace MineFieldApp
             Console.Write("Enter battle field size: n=");
         }
 
-        public void ShowEndScreen()
+        public void ShowEndScreen(int score)
         {
             Console.WriteLine("God damn this game is boring!");
+            Console.WriteLine("Your score is: " + score);
+            Console.ReadKey();
         }
 
-        public void DrawGameField(int size, char[,] field)
+        public void ShowGameScreen(int size, char[,] field)
         {
             Console.Write("   ");
             for (int i = 0; i < size; i++)
@@ -63,24 +52,12 @@ namespace MineFieldApp
 
                 Console.WriteLine();
             }
-
         }
 
-        public int FieldSize
-        {
-            get
-            {
-                return this.fieldSize;
-            }
-            set
-            {
-                this.fieldSize = value;
-            }
-        }
-
-        public void Clear()
+        public void RefreshGameField()
         {
             Console.Clear();
+
         }
     }
 }

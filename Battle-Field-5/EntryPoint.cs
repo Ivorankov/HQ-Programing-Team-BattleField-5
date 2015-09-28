@@ -8,7 +8,8 @@
 
             var view = new ConsoleGameRenderer();
             var handler = new ConsoleUIHandler();
-            var test = new GameEngine(view, handler);
+            var model = new Model();
+            var test = new GameEngine(view, handler, model);
 
             test.StartGame();
         }

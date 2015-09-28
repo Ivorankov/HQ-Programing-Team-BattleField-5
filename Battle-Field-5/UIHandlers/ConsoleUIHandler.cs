@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MineFieldApp
 {
-    public class ConsoleUIHandler : IUIHhandler
+    class ConsoleUIHandler : IUIHhandler
     {
         private const int USER_NAME_MIN_LENGTH = 0;
         private const int USER_NAME_MAX_LENGTH = 6;

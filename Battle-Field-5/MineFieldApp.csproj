@@ -69,6 +69,8 @@
     <Compile Include="Highscore.cs" />
     <Compile Include="Mine.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Data\IModel.cs" />
+    <Compile Include="Data\Model.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -111,6 +113,7 @@
   <ItemGroup>
     <None Include="Highscores\highscores.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -7,41 +7,44 @@ namespace MineFieldApp
 {
     class GameEngine : IGameEngine
     {
-        private IGameRenderer renderer;
-
-        private IUIHhandler handler;
-
-        public GameEngine(IGameRenderer renderer, IUIHhandler handler)
+        public GameEngine(IGameRenderer renderer, IUIHhandler handler, IModel model)
         {
-            this.renderer = renderer;
-            this.handler = handler;
+            this.Renderer = renderer;
+            this.UIHandler = handler;
+            this.Model = model;
         }
+
+        public IGameRenderer Renderer { get; set; }
+
+        public IUIHhandler UIHandler { get; set; }
+
+        public IModel Model { get; set; }
 
 
         public void StartGame()
         {
-            renderer.ShowStartScreen();
-            renderer.FieldSize = int.Parse(handler.TakeGameFiledSize());
-            renderer.Clear();
+            this.Renderer.ShowStartScreen();
+            this.Model.FieldSize = int.Parse(this.UIHandler.TakeGameFiledSize());
+            this.Model.ExplodedMinesCount = 0;
+            this.Renderer.RefreshGameField();
             this.GameLoop();
         }
 
         private void GameLoop()
         {
-            var field = Field.GenerateField(renderer.FieldSize);
+            this.Model.Field = Field.GenerateField(this.Model.FieldSize);
 
-            int explodedMinesCount = 0;
-            while (Field.ContainsMines(field))
+            while (Field.ContainsMines(this.Model.Field))
             {
-                renderer.DrawGameField(renderer.FieldSize, field);
-                var mineToBlow = Mine.Parse(handler.TakePositionCoordiantes());
-                Mine.Explode(mineToBlow, field);
-                explodedMinesCount++;
-                renderer.Clear();
+                this.Renderer.ShowGameScreen(this.Model.FieldSize, this.Model.Field);
+                var mineToBlow = Mine.Parse(this.UIHandler.TakePositionCoordiantes());
+                Mine.Explode(mineToBlow, this.Model.Field);
+                this.Model.ExplodedMinesCount++;
+                this.Renderer.RefreshGameField();
             }
 
-            renderer.DrawGameField(renderer.FieldSize, field);
-            renderer.ShowEndScreen();
+            this.Renderer.ShowGameScreen(this.Model.FieldSize, this.Model.Field);
+            this.Renderer.ShowEndScreen(this.Model.ExplodedMinesCount);
         }
 
         public Score score
