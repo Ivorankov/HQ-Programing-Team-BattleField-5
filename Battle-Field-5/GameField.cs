@@ -54,6 +54,11 @@
         {
             if (this.IsInRange(position))
             {
+                if (this.field[position.X, position.Y].Type == CellType.MINE)
+                {
+                    --this.minesCount;
+                }
+
                 this.field[position.X, position.Y].ReactToExplosion();
             }
         }
@@ -104,7 +109,6 @@
 
         public void ActivateMine(Position position)
         {
-            --this.minesCount;
             this.field[position.X, position.Y].ExplodeCommand.Execute();
         }
     }

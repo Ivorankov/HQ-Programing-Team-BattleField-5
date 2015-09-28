@@ -36,5 +36,14 @@
 
             return new Position(int.Parse(coordinates[0]), int.Parse(coordinates[1]));
         }
+
+        public string GetPlayerName()
+        {
+            string input = null;
+            Console.Write("Concratularions you finished the game!!! Please enter your name: ");
+            input = Console.ReadLine();
+
+            return input;
+        }
     }
 }

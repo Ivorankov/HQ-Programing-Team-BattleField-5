@@ -6,7 +6,7 @@
 // Contains Highscore class
 // </summary>
 //-----------------------------------------------------------------------
-namespace MineFieldApp
+namespace BattleField
 {
     using System;
     using System.Collections.Generic;
@@ -90,7 +90,7 @@ namespace MineFieldApp
         public void AddHighscore(string playerName, double points)
         {
             this.Highscores.Add(new Score(playerName, points));
-            this.Highscores.Sort((x, y) => y.Points.CompareTo(x.Points));
+            this.Highscores.Sort((x, y) => x.Points.CompareTo(y.Points));
 
             XmlSerializer writer = new XmlSerializer(typeof(List<Score>));
 
@@ -124,7 +124,6 @@ namespace MineFieldApp
             }
             catch (InvalidOperationException)
             {
-                Console.WriteLine(12);
             }
 
             file.Close();

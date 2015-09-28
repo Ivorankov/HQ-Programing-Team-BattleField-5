@@ -2,6 +2,7 @@
 {
     using BattleField.Enums;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     public class ConsoleRender : IRenderer
@@ -44,9 +45,19 @@
             Console.Clear();
         }
 
-        public void FinishGame()
+        public void ShowHighscores(IList<Score> highscores)
         {
-            Console.WriteLine("Concratularions you finished the game!!!");
+            Console.WriteLine("-----------------Highscores-----------------");
+            Console.WriteLine("{0,8}{1,14}{2,13}", "Name", "Points", "Date");
+
+            for (int i = 0; i < highscores.Count; i++)
+            {
+                Score currentScore = highscores[i];
+
+                Console.WriteLine("{0,3}.{1,-10}-{2, 4}    {3}", i + 1,currentScore.PlayerName, currentScore.Points, currentScore.Date);
+            }
+
+            Console.WriteLine(new String('-', 50));
         }
     }
 }

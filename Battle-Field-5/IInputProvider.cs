@@ -4,5 +4,6 @@
     {
         int GetFieldSize();
         Position GetPosition();
+        string GetPlayerName();
     }
 }

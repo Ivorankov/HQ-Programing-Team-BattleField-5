@@ -8,6 +8,7 @@
         private GameField field;
         private IInputProvider inputProvider;
         private IRenderer renderer;
+        private int MovesCount;
 
         public Engine(IInputProvider inputProvider, IRenderer renderer)
         {
@@ -19,6 +20,7 @@
         {
             int fieldSize = this.inputProvider.GetFieldSize();
             this.field = new GameField(fieldSize);
+            this.MovesCount = 0;
             this.renderer.Clear();
 
             while (this.field.HasMinesLeft())
@@ -30,6 +32,7 @@
                 //isnt it better to check this way(KISS):   this.field[position.X, position.Y].Type == CellType.MINE
                 if (this.field.IsInRange(position) && this.field[position.X, position.Y].ExplodeCommand.IsValid())
                 {
+                    ++this.MovesCount;
                     this.field.ActivateMine(position);
                 }
                 else
@@ -38,7 +41,10 @@
                 }
             }
 
-            this.renderer.FinishGame();
+            string playerName = this.inputProvider.GetPlayerName();
+            Highscore highscore = Highscore.Instance;
+            highscore.AddHighscore(playerName, this.MovesCount);
+            renderer.ShowHighscores(highscore.Highscores);
         }
 
 
