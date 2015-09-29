@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfScore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Score>
+    <PlayerName>Gosho</PlayerName>
+    <Points>4</Points>
+    <Date>2015-09-28T15:57:13.088773+03:00</Date>
+  </Score>
+  <Score>
+    <PlayerName>Niki</PlayerName>
+    <Points>4</Points>
+    <Date>2015-09-28T15:59:41.2244595+03:00</Date>
+  </Score>
+  <Score>
+    <PlayerName>Niki</PlayerName>
+    <Points>4</Points>
+    <Date>2015-09-28T16:31:25.318808+03:00</Date>
+  </Score>
+  <Score>
+    <PlayerName>Niki</PlayerName>
+    <Points>6</Points>
+    <Date>2015-09-28T15:58:08.9702746+03:00</Date>
+  </Score>
+</ArrayOfScore>
