@@ -17,9 +17,10 @@
 
         public void Start()
         {
+        
             this.renderer.SayWelcome();
-            int fieldSize = this.inputProvider.GetFieldSize();
-            this.field = new GameField(fieldSize);
+            var fieldSize = this.inputProvider.GetFieldSize();
+            this.field = new GameField(fieldSize);         
             this.MovesCount = 0;
             this.renderer.Clear();
 
@@ -34,6 +35,7 @@
                 {
                     ++this.MovesCount;
                     this.field.ActivateMine(position);
+
                 }
                 else
                 {
