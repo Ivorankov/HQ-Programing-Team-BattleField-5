@@ -66,6 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="Data\Memento\DataCollection.cs" />
+    <Compile Include="Data\GameObjData.cs" />
+    <Compile Include="Data\Memento\GameObjMemento.cs" />
+    <Compile Include="Data\Memento\Originator.cs" />
     <Compile Include="ExplodeCommand\BigExplodeCommand.cs" />
     <Compile Include="ExplodeCommand\HugeExplodeCommand.cs" />
     <Compile Include="ExplodeCommand\ICommand.cs" />

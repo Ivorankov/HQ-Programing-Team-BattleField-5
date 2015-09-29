@@ -13,15 +13,5 @@ namespace BattleField.Data
             this.GameField = gameField;
             this.MovesCount = movesCount;
         }
-
-        public GameObjMemento SaveToMemento(GameField gameField, int movesCount)
-        {
-            return new GameObjMemento(gameField, movesCount);
-        }
-
-        public void restoreFromMemento()
-        {
-
-        }
     }
 }

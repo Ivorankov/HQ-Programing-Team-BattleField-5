@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BattleField.Data
 {
-    class DataCollection
+   public class DataCollection
     {
+       //Caretaker
+        public List<GameObjMemento> GameObjectCollecton { get; private set; }
+
+        public void AddMementoObject(GameObjMemento gameObject)
+        {
+            this.GameObjectCollecton.Add(gameObject);
+        }
+
+        public GameObjMemento GetMementoObject(int index)
+        {
+            return this.GameObjectCollecton[index];
+        }
     }
 }

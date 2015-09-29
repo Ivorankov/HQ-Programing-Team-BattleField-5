@@ -16,8 +16,7 @@
         }
 
         public void Start()
-        {
-        
+        {  
             this.renderer.SayWelcome();
             var fieldSize = this.inputProvider.GetFieldSize();
             this.field = new GameField(fieldSize);         

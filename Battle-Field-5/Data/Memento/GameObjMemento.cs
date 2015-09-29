@@ -10,7 +10,7 @@ namespace BattleField.Data
             this.GameData = gameData;
         }
 
-        private GameObjData GameData { get; private set; }
+        private GameObjData GameData { get; set; }
 
         public GameObjData GetDataObject()
         {

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace BattleField_WPF
 {
     /// <summary>
-    /// Interaction logic for GameWindow.xaml
+    /// Interaction logic for HighscoreWindow.xaml
     /// </summary>
     public partial class HighscoreWindow : Window
     {
