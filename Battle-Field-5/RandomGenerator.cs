@@ -15,7 +15,7 @@
             {
                 if (mineTypes == null)
                 {
-                    mineTypes = Enum.GetValues(typeof(CellType)).Cast<CellType>().Where(type => type.ToString().Contains("MINE")).ToArray();
+                    mineTypes = Enum.GetValues(typeof(CellType)).Cast<CellType>().Where(type => type != CellType.MINE).Where(type => (type & CellType.MINE) != 0).ToArray();
                 }
 
                 return mineTypes;

@@ -1,7 +1,6 @@
 ﻿namespace BattleField
 {
     using BattleField.Renderer;
-    using System;
 
     public class Engine
     {
@@ -42,12 +41,21 @@
                 }
             }
 
-            string playerName = this.inputProvider.GetPlayerName();
-            Highscore highscore = Highscore.Instance;
-            highscore.AddHighscore(playerName, this.MovesCount);
-            renderer.ShowHighscores(highscore.Highscores);
+            this.GameOver();
+            this.PersistResult();
+            this.renderer.ShowHighscores();
         }
 
+        private void GameOver()
+        {
+            this.renderer.ShowGameOver();
+        }
+
+        private void PersistResult()
+        {
+            string playerName = this.inputProvider.GetPlayerName();
+            Highscore.Instance.AddHighscore(playerName, this.MovesCount);
+        }
 
     }
 }

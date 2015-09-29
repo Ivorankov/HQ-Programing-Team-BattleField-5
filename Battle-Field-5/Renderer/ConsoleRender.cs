@@ -49,19 +49,27 @@
             Console.Clear();
         }
 
-        public void ShowHighscores(IList<Score> highscores)
+        public void ShowHighscores()
         {
-            Console.WriteLine("-----------------Highscores-----------------");
+            IList<Score> highscores = Highscore.Instance.Highscores;
+            int totalWidth = 50;
+            string highscoreTitle = "Highscores";
+            int countOfashesOnTheLeft = (totalWidth - highscoreTitle.Length) / 2;
+            Console.WriteLine("{0}{1}{2}", new String('-', countOfashesOnTheLeft), highscores, new String('-', totalWidth - highscoreTitle.Length - countOfashesOnTheLeft));
             Console.WriteLine("{0,8}{1,14}{2,13}", "Name", "Points", "Date");
 
             for (int i = 0; i < highscores.Count; i++)
             {
                 Score currentScore = highscores[i];
-
-                Console.WriteLine("{0,3}.{1,-10}-{2, 4}    {3}", i + 1,currentScore.PlayerName, currentScore.Points, currentScore.Date);
+                Console.WriteLine("{0,3}.{1,-10}-{2,4}    {3}", i + 1, currentScore.PlayerName, currentScore.Points, currentScore.Date);
             }
 
-            Console.WriteLine(new String('-', 50));
+            Console.WriteLine(new String('-', totalWidth));
+        }
+
+        public void ShowGameOver()
+        {
+            Console.WriteLine("Concratularions you finished the game!");
         }
     }
 }

@@ -47,6 +47,7 @@
             this.field = new Cell[size, size];
             this.factory = Cell.CreateFactory(this);
             this.FillFieldWithEmptyCells();
+            this.minesCount = this.CalculateInitialMinesCount();
             this.FillFieldMines();
         }
 
@@ -55,12 +56,7 @@
             if (this.IsInRange(position))
             {
                 Cell currentCell = this.field[position.X, position.Y];
-
-                if (currentCell.Type == CellType.GIANTMINE
-                    || currentCell.Type == CellType.HUGEMINE
-                    || currentCell.Type == CellType.SMALLMINE
-                    || currentCell.Type == CellType.TINYMINE
-                    || currentCell.Type == CellType.BIGMINE)
+                if (currentCell.Type != CellType.BOMBED && (currentCell.Type & CellType.MINE) != 0)
                 {
                     --this.minesCount;
                 }
@@ -72,6 +68,16 @@
         public bool IsInRange(Position position)
         {
             return position.X >= 0 && position.Y >= 0 && position.X < this.RowsCount && position.Y < this.ColumnsCount;
+        }
+
+        public bool HasMinesLeft()
+        {
+            return minesCount > 0;
+        }
+
+        public void ActivateMine(Position position)
+        {
+            this.field[position.X, position.Y].ExplodeCommand.Execute();
         }
 
         private void FillFieldWithEmptyCells()
@@ -87,7 +93,6 @@
 
         private void FillFieldMines()
         {
-            this.minesCount = this.CalculateMinesCount();
             IEnumerable<Position> positions = RandomGenerator.GetUniquePointsBetween(this.minesCount, this.RowsCount, this.ColumnsCount);
             foreach (Position position in positions)
             {
@@ -95,27 +100,10 @@
             }
         }
 
-        private int CalculateMinesCount()
+        private int CalculateInitialMinesCount()
         {
             int totalCellsCount = this.RowsCount * this.ColumnsCount;
             return RandomGenerator.GetRandomBetween(MINIMUM_MINES_PERCENT * totalCellsCount / 100, MAXIMUM_MINES_PERCENT * totalCellsCount / 100);
-        }
-
-        public bool HasMinesLeft()
-        {
-            if(minesCount > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public void ActivateMine(Position position)
-        {
-            this.field[position.X, position.Y].ExplodeCommand.Execute();
         }
     }
 }

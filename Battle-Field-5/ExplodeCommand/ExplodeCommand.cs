@@ -15,7 +15,7 @@
 
         public virtual bool IsValid()
         {
-            return this.Cell.Type != CellType.BOMBED;
+            return (this.Cell.Type | CellType.MINE) != 0;
         }
 
         public void Execute()
