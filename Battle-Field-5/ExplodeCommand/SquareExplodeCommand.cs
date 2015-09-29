@@ -1,4 +1,4 @@
-﻿namespace BattleField.ExplodeCommand
+﻿namespace MineFieldApp.ExplodeCommand
 {
     using System.Collections.Generic;
 

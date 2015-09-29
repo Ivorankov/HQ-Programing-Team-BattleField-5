@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BattleField.Data
+namespace MineFieldApp.Data
 {
     public class GameObjMemento
     {

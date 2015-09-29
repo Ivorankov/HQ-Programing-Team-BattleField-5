@@ -1,6 +1,6 @@
-﻿namespace BattleField.Renderer
+﻿namespace MineFieldApp.Renderer
 {
-    using BattleField.Enums;
+    using MineFieldApp.Enums;
     using System;
     using System.Collections.Generic;
     using System.Linq;

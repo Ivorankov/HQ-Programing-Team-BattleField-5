@@ -6,7 +6,7 @@
 // Contains Score class
 // </summary>
 //-----------------------------------------------------------------------
-namespace BattleField
+namespace MineFieldApp
 {
     using System;
 

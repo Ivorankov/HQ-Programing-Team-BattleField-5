@@ -1,17 +1,55 @@
-﻿namespace BattleField
+﻿namespace MineFieldApp
 {
-    using BattleField.Enums;
     using System;
     using System.Collections.Generic;
+
+    using RNGs;
+    using Cells;
+    using Cells.Mines.Factories;
 
     public class GameField
     {
         private const int MINIMUM_MINES_PERCENT = 15;
+
         private const int MAXIMUM_MINES_PERCENT = 30;
 
+        //private Cell.CellFactory factory;
+
         private Cell[,] field;
-        private Cell.CellFactory factory;
+
         private int minesCount;
+
+        public GameField(IRandomGenerator random, IMineFactory mineFactory, int size)
+        {
+            this.Random = random;
+            this.MineFactory = mineFactory;
+
+            this.field = new Cell[size, size];
+            this.FillFieldWithEmptyCells();
+            this.minesCount = this.CalculateInitialMinesCount();
+            this.FillFieldMines();
+        }
+
+        public GameField(IRandomGenerator random, int size)
+            : this(random, new RandomMineFactory(), size)
+        {
+
+        }
+
+        public GameField(IMineFactory mineFactory, int size)
+            : this(RandomGenerator.Instance, mineFactory, size)
+        {
+
+        }
+
+        public GameField(int size)
+        {
+
+        }
+
+        private IRandomGenerator Random { get; set; }
+
+        private IMineFactory MineFactory { get; set; }
 
         public Cell this[int i, int j]
         {
@@ -42,29 +80,6 @@
             }
         }
 
-        public GameField(int size)
-        {
-            this.field = new Cell[size, size];
-            this.factory = Cell.CreateFactory(this);
-            this.FillFieldWithEmptyCells();
-            this.minesCount = this.CalculateInitialMinesCount();
-            this.FillFieldMines();
-        }
-
-        public void ExplodeCell(Position position)
-        {
-            if (this.IsInRange(position))
-            {
-                Cell currentCell = this.field[position.X, position.Y];
-                if (currentCell.Type != CellType.BOMBED && (currentCell.Type & CellType.MINE) != 0)
-                {
-                    --this.minesCount;
-                }
-
-                this.field[position.X, position.Y].ReactToExplosion();
-            }
-        }
-
         public bool IsInRange(Position position)
         {
             return position.X >= 0 && position.Y >= 0 && position.X < this.RowsCount && position.Y < this.ColumnsCount;
@@ -73,11 +88,6 @@
         public bool HasMinesLeft()
         {
             return minesCount > 0;
-        }
-
-        public void ActivateMine(Position position)
-        {
-            this.field[position.X, position.Y].ExplodeCommand.Execute();
         }
 
         private void FillFieldWithEmptyCells()
@@ -93,7 +103,7 @@
 
         private void FillFieldMines()
         {
-            IEnumerable<Position> positions = RandomGenerator.GetUniquePointsBetween(this.minesCount, this.RowsCount, this.ColumnsCount);
+            IEnumerable<Position> positions = RandomGenerator.Instance.GetUniquePointsBetween(this.minesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
             foreach (Position position in positions)
             {
                 this.field[position.X, position.Y] = this.factory.CreateMineCell(position, RandomGenerator.GetRandomMineType());
@@ -103,7 +113,7 @@
         private int CalculateInitialMinesCount()
         {
             int totalCellsCount = this.RowsCount * this.ColumnsCount;
-            return RandomGenerator.GetRandomBetween(MINIMUM_MINES_PERCENT * totalCellsCount / 100, MAXIMUM_MINES_PERCENT * totalCellsCount / 100);
+            return RandomGenerator.Instance.GetRandomBetween(MINIMUM_MINES_PERCENT * totalCellsCount / 100, MAXIMUM_MINES_PERCENT * totalCellsCount / 100);
         }
     }
 }

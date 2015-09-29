@@ -1,5 +1,5 @@
-﻿using BattleField;
-using BattleField.Renderer;
+﻿using MineFieldApp;
+using MineFieldApp.Renderer;
 using System;
 
 namespace BattleField_Console

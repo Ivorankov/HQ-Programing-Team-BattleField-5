@@ -8,7 +8,7 @@
 //-----------------------------------------------------------------------
 namespace MineFieldAppTests
 {
-    using BattleField;
+    using MineFieldApp;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.IO;

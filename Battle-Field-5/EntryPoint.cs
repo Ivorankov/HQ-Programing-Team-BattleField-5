@@ -1,7 +1,7 @@
-﻿namespace BattleField
+﻿namespace MineFieldApp
 {
-    using BattleField.Renderer;
-
+    using MineFieldApp.Renderer;
+    
     public static class EntryPoint
     {
         public static void Main()

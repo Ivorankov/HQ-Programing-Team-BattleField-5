@@ -1,6 +1,6 @@
-﻿namespace BattleField
+﻿namespace MineFieldApp
 {
-    using BattleField.Renderer;
+    using MineFieldApp.Renderer;
 
     public class Engine
     {

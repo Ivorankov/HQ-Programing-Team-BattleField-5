@@ -1,4 +1,4 @@
-﻿namespace BattleField
+﻿namespace MineFieldApp
 {
     public class Position
     {

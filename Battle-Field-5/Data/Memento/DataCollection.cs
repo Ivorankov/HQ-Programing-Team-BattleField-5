@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BattleField.Data
+namespace MineFieldApp.Data
 {
    public class DataCollection
     {
