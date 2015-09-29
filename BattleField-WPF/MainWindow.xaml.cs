@@ -19,9 +19,9 @@ namespace BattleField_WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class StartWindow : Window
+    public partial class MainWindow : Window
     {
-        public StartWindow()
+        public MainWindow()
         {
             InitializeComponent();
         }
@@ -30,17 +30,18 @@ namespace BattleField_WPF
         {
             var gameWindow = new GameWindow();
             gameWindow.Show();
+            this.Close();
         }
 
         private void OnShowHighScoresButtonClick(object sender, RoutedEventArgs e)
         {
-            var test = new HighscoreWindow();
-            test.Show();
+            var highScoreWindow = new HighscoreWindow();
+            highScoreWindow.Show();
         }
 
         private void OnExitButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
     }
 }

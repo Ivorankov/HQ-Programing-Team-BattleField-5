@@ -15,15 +15,25 @@ using System.Windows.Shapes;
 namespace BattleField_WPF
 {
     /// <summary>
-    /// Interaction logic for GameWindow.xaml
+    /// Interaction logic for EndScreenWindow.xaml
     /// </summary>
-    public partial class GameWindow : Window
+    public partial class EndScreenWindow : Window
     {
-        public GameWindow(){
-
+        public EndScreenWindow()
+        {
             InitializeComponent();
-            var test = new EndScreenWindow();
-            test.Show();
+        }
+
+        private void OnMenuClick(object sender, RoutedEventArgs e)
+        {
+            var menu = new MainWindow();
+            menu.Show();
+            this.Close();
+        }
+
+        private void OnQuitClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
