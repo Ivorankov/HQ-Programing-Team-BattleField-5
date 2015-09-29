@@ -31,7 +31,7 @@ namespace MineFieldApp.Cells.Mines
         /// The method returns the exploding area of the mine.
         /// </summary>
         /// <returns>List containing the positions of the tiles of the exploding area.</returns>
-        public override List<Position> Explode()
+        protected override List<Position> GetExplodingPattern()
         {
             return MineAssistant.GetNormalExplosion(this.Position, 1);
         }

@@ -32,7 +32,7 @@ namespace MineFieldApp.Cells.Mines.Factories
         /// </summary>
         /// <param name="position">The position of the mine.</param>
         /// <returns>A new Mine Object.</returns>
-        public Mine Generate(IRandomGenerator generator, Position position)
+        public Mine Create(Position position)
         {
             int randomNumber = this.Random.GetRandomBetween(0, 5);
 

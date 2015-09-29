@@ -1,13 +1,10 @@
 ﻿namespace MineFieldApp.Cells
 {
-    using CellObjects;
-    using CellObjects.Mines;
-
     public class Cell
     {
         private CellStatus status;
 
-        protected Cell(ICellDamageHandler damageHandler, Position position)
+        public Cell(ICellDamageHandler damageHandler, Position position)
         {
             this.DamageHandler = damageHandler;
 
@@ -15,7 +12,7 @@
             this.Position = position;
         }
 
-        protected Cell(Position position)
+        public Cell(Position position)
             : this(new DefaultCellDamageHandler(), position)
         {
 

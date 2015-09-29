@@ -2,11 +2,16 @@
 {
     using MineFieldApp.Renderer;
 
+    using Cells.Mines;
+
     public class Engine
     {
-        private GameField field;
         private IInputProvider inputProvider;
+
         private IRenderer renderer;
+
+        private GameField field;
+
         private int MovesCount;
 
         public Engine(IInputProvider inputProvider, IRenderer renderer)
@@ -30,11 +35,11 @@
                 this.renderer.Clear();
 
                 //isnt it better to check this way(KISS):   this.field[position.X, position.Y].Type == CellType.MINE
-                if (this.field.IsInRange(position) && this.field[position.X, position.Y].ExplodeCommand.IsValid())
+                if (this.field.IsInRange(position) && this.field[position.Y, position.X] is Mine)
                 {
-                    ++this.MovesCount;
-                    this.field.ActivateMine(position);
-
+                    this.MovesCount++;
+                    Mine mine = this.field[position.Y, position.X] as Mine;
+                    mine.Explode(this.field);
                 }
                 else
                 {

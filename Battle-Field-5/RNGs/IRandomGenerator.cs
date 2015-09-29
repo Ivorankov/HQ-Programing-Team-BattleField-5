@@ -4,7 +4,7 @@
 
     public interface IRandomGenerator
     {
-        int GetRandomIndex();
+        int GetRandomIndex(int size);
 
         int GetRandomBetween(int minValue, int maxValue);
 

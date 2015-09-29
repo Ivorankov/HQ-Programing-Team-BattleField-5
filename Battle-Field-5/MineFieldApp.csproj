@@ -72,10 +72,6 @@
     <Compile Include="Data\GameObjData.cs" />
     <Compile Include="Data\Memento\GameObjMemento.cs" />
     <Compile Include="Data\Memento\Originator.cs" />
-    <Compile Include="ExplodeCommand\BigExplodeCommand.cs" />
-    <Compile Include="ExplodeCommand\HugeExplodeCommand.cs" />
-    <Compile Include="ExplodeCommand\ICommand.cs" />
-    <Compile Include="ExplodeCommand\TinyExplodeCommand.cs" />
     <Compile Include="ImputProviders\WpfInputProvider.cs" />
     <Compile Include="Cells\Mines\BigMine.cs" />
     <Compile Include="Cells\Mines\Factories\IMineFactory.cs" />
@@ -89,11 +85,7 @@
     <Compile Include="Renderer\ConsoleRender.cs" />
     <Compile Include="Cells\CellStatus.cs" />
     <Compile Include="Engine.cs" />
-    <Compile Include="ExplodeCommand\ExplodeCommand.cs" />
-    <Compile Include="ExplodeCommand\ExplodeCommandFactory.cs" />
-    <Compile Include="ExplodeCommand\NoneExplodeCommand.cs" />
     <Compile Include="GameField.cs" />
-    <Compile Include="ExplodeCommand\SquareExplodeCommand.cs" />
     <Compile Include="Highscore.cs" />
     <Compile Include="ImputProviders\ConsoleInputProvider.cs" />
     <Compile Include="ImputProviders\IInputProvider.cs" />

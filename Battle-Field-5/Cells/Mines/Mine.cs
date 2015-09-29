@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace MineFieldApp.Cells.Mines
 {
+    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -26,6 +27,11 @@ namespace MineFieldApp.Cells.Mines
 
         public void Explode(GameField field)
         {
+            if (this.Status == CellStatus.Destoryed)
+            {
+                throw new ArgumentException("Cell is destroyed.");
+            }
+
             foreach (var positon in this.GetExplodingPattern())
             {
                 field[positon.Y, positon.X].TakeDamage();
