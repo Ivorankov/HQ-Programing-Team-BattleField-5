@@ -23,12 +23,18 @@ namespace BattleField.Renderer
             throw new NotImplementedException();
         }
 
-        public void ShowHighscores(IList<Score> highscores)
+        public void Clear()
         {
-            
+            throw new NotImplementedException();
         }
 
-        public void Clear()
+
+        public void ShowHighscores()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowGameOver()
         {
             throw new NotImplementedException();
         }
