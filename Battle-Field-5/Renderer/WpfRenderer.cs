@@ -25,7 +25,7 @@ namespace BattleField.Renderer
 
         public void ShowHighscores(IList<Score> highscores)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Clear()

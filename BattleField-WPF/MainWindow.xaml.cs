@@ -28,7 +28,8 @@ namespace BattleField_WPF
 
         private void OnNewGameButtonClick(object sender, RoutedEventArgs e)
         {
-
+            var gameWindow = new GameWindow();
+            gameWindow.Show();
         }
 
         private void OnShowHighScoresButtonClick(object sender, RoutedEventArgs e)
