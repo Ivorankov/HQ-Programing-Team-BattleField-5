@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleField;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,10 @@ namespace BattleField_WPF
         public GameWindow(){
 
             InitializeComponent();
-            var test = new EndScreenWindow();
-            test.Show();
+
+            var test = new WpfRendererr(this);
+
+            test.ShowGameField(new GameField(9));
         }
     }
 }
