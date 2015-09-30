@@ -45,6 +45,7 @@
                     }
                     catch (MineDestroyedException ex)
                     {
+                        this.renderer.ShowErrorMessage("That mine is alredy destroyed.");
                     }
                 }
                 else

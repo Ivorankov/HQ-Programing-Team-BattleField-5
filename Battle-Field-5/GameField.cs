@@ -49,13 +49,13 @@
 
         private Cell[,] Field { get; set; }
 
-        public Cell this[int i, int j]
+        public Cell this[int row, int col]
         {
             get
             {
-                if (this.IsInRange(new Position(i, j)))
+                if (this.IsInRange(new Position(row, col)))
                 {
-                    return Field[i, j];
+                    return Field[row, col];
                 }
 
                 throw new IndexOutOfRangeException();
@@ -122,7 +122,7 @@
 
                 mine.WhenDamaged += UpdateMineCount;
 
-                this.Field[position.Col, position.Row] = mine;
+                this.Field[position.Row, position.Col] = mine;
             }
         }
 
