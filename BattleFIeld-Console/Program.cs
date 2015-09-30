@@ -1,8 +1,10 @@
-﻿namespace BattleField
-{
-    using BattleField.Renderer;
+﻿using BattleField;
+using BattleField.Renderer;
+using System;
 
-    public static class EntryPoint
+namespace BattleField_Console
+{
+    class Program
     {
         public static void Main()
         {

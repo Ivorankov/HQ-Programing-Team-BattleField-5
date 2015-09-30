@@ -1,103 +1,62 @@
-﻿namespace MineFieldApp
+﻿namespace BattleField
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+    using BattleField.Renderer;
 
-    public static class Engine
+    public class Engine
     {
-        private static char[,] GameField { get; set; }
+        private GameField field;
+        private IInputProvider inputProvider;
+        private IRenderer renderer;
+        private int MovesCount;
 
-        public static void PrintField()
+        public Engine(IInputProvider inputProvider, IRenderer renderer)
         {
-            int size = Engine.GameField.GetLength(0);
-            Console.Write("   ");
-            for (int i = 0; i < size; i++)
-            {
-                Console.Write("{0} ", i);
-            }
-
-            Console.WriteLine();
-            Console.Write("   ");
-            for (int i = 0; i < size * 2; i++)
-            {
-                Console.Write("-");
-            }
-
-            Console.WriteLine();
-            for (int i = 0; i < size; i++)
-            {
-                Console.Write("{0} |", i);
-                for (int j = 0; j < size; j++)
-                {
-                    Console.Write("{0} ", Engine.GameField[i, j]);
-                }
-
-                Console.WriteLine();
-            }
+            this.inputProvider = inputProvider;
+            this.renderer = renderer;
         }
 
-        public static void Start()
-        {
-            Console.WriteLine(@"Welcome to ""Battle Field"" game. ");
-            Console.Write("Enter battle field size: n=");
-            string input = Console.ReadLine();
+        public void Start()
+        {  
+            this.renderer.SayWelcome();
+            var fieldSize = this.inputProvider.GetFieldSize();
+            this.field = new GameField(fieldSize);         
+            this.MovesCount = 0;
+            this.renderer.Clear();
 
-            int size = 0;
-            while (!int.TryParse(input, out size))
+            while (this.field.HasMinesLeft())
             {
-                Console.WriteLine("Wrong format!");
-                Console.Write("Enter battle field size: n=");
-                input = Console.ReadLine();
+                this.renderer.ShowGameField(field);
+                Position position = this.inputProvider.GetPosition();
+                this.renderer.Clear();
+
+                //isnt it better to check this way(KISS):   this.field[position.X, position.Y].Type == CellType.MINE
+                if (this.field.IsInRange(position) && this.field[position.X, position.Y].ExplodeCommand.IsValid())
+                {
+                    ++this.MovesCount;
+                    this.field.ActivateMine(position);
+
+                }
+                else
+                {
+                    this.renderer.ShowErrorMessage("Invalid coordinates or the selected cell is not a mine.");
+                }
             }
 
-            if (size < 1 || 10 < size)
-            {
-                Engine.Start();
-            }
-            else
-            {
-                Engine.GameField = Field.GenerateField(size);
-                Engine.BeginGame();
-            }
+            this.GameOver();
+            this.PersistResult();
+            this.renderer.ShowHighscores();
         }
 
-        private static void BeginGame()
+        private void GameOver()
         {
-            for (int i = 0; i < 50; i++)
-            {
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-
-            int explodedMinesCount = 0;
-            while (Field.ContainsMines(Engine.GameField))
-            {
-                Engine.PrintField();
-
-                string input;
-                Mine mineToBlow;
-                do
-                {
-                    Console.Write("Please enter coordinates: ");
-                    input = Console.ReadLine();
-                    mineToBlow = Mine.Parse(input);
-                }
-                while (mineToBlow == null);
-
-                if (!Field.IsPositionMine(mineToBlow.X, mineToBlow.Y, Engine.GameField))
-                {
-                    Console.WriteLine("Invalid move!");
-                    continue;
-                }
-
-                Mine.Explode(mineToBlow, Engine.GameField);
-                explodedMinesCount++;
-            }
-
-            Engine.PrintField();
-            Console.WriteLine("Game over. Detonated mines: {0}", explodedMinesCount);
+            this.renderer.ShowGameOver();
         }
+
+        private void PersistResult()
+        {
+            string playerName = this.inputProvider.GetPlayerName();
+            Highscore.Instance.AddHighscore(playerName, this.MovesCount);
+        }
+
     }
 }

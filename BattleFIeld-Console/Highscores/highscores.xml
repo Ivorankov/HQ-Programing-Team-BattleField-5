@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfScore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Score>
+    <PlayerName>ivo</PlayerName>
+    <Points>0</Points>
+    <Date>2015-09-29T00:58:35.1983437+03:00</Date>
+  </Score>
+  <Score>
+    <PlayerName>ivo</PlayerName>
+    <Points>3</Points>
+    <Date>2015-09-29T16:48:30.0217788+03:00</Date>
+  </Score>
+  <Score>
     <PlayerName>Gosho</PlayerName>
     <Points>4</Points>
     <Date>2015-09-28T15:57:13.088773+03:00</Date>

@@ -8,11 +8,11 @@
 //-----------------------------------------------------------------------
 namespace MineFieldAppTests
 {
+    using BattleField;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.IO;
     using System.Xml.Serialization;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using MineFieldApp;
 
     /// <summary>
     /// A class for testing <see cref="Highscore"/> class
@@ -136,7 +136,7 @@ namespace MineFieldAppTests
             scorer.AddHighscore("second", 230);
             scorer.AddHighscore("third", 100);
             scorer.AddHighscore("first", 1000);
-            
+
             Assert.AreEqual("first", scorer.Highscores[0].PlayerName, "Highscores are not sorted decreasingly");
             Assert.AreEqual("second", scorer.Highscores[1].PlayerName, "Highscores are not sorted decreasingly");
             Assert.AreEqual("third", scorer.Highscores[2].PlayerName, "Highscores are not sorted decreasingly");
