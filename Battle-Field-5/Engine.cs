@@ -55,7 +55,7 @@
         private void PersistResult()
         {
             string playerName = this.inputProvider.GetPlayerName();
-            Highscore.Instance.AddHighscore(playerName, this.MovesCount);
+            HighscoreLogger.Instance.AddHighscore(playerName, this.MovesCount);
         }
 
     }

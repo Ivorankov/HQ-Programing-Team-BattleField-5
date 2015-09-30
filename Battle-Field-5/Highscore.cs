@@ -14,17 +14,9 @@ namespace BattleField
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A class using singleton pattern, which gives access to game highscores
-    /// Example usage:
-    ///     Highscore scorer = Highscore.Instance;
-    ///     scorer.AddHighscore("John", 100);
-    ///     foreach (var score in scorer.Highscores)
-    ///     {
-    ///         System.Console.WriteLine(score.PlayerName + " " + score.Points);
-    ///     }
-    /// .
+    /// A class for logging and giving access to game highscores
     /// </summary>
-    public sealed class Highscore
+    public sealed class HighscoreLogger
     {
         /// <summary>
         /// A constant for the name of the file containing the highscores
@@ -34,7 +26,7 @@ namespace BattleField
         /// <summary>
         /// The instance of the Highscore class
         /// </summary>
-        private static readonly Lazy<Highscore> Lazy = new Lazy<Highscore>(() => new Highscore());
+        private static readonly Lazy<HighscoreLogger> Lazy = new Lazy<HighscoreLogger>(() => new HighscoreLogger());
 
         /// <summary>
         /// Holds the game highscores
@@ -44,7 +36,7 @@ namespace BattleField
         /// <summary>
         /// Initializes a new instance of the Highscore class and loads highscores
         /// </summary>
-        private Highscore()
+        private HighscoreLogger()
         {
             this.LoadHighscores();
         }
@@ -52,7 +44,7 @@ namespace BattleField
         /// <summary>
         /// Gets the Highscore class instance
         /// </summary>
-        public static Highscore Instance
+        public static HighscoreLogger Instance
         {
             get
             {
@@ -61,8 +53,7 @@ namespace BattleField
         }
 
         /// <summary>
-        /// Gets or sets the highscores. It implements lazy loading pattern: 
-        /// if the list with highscores is null it is created.
+        /// Gets or sets the highscores.
         /// </summary>
         public List<Score> Highscores
         {
