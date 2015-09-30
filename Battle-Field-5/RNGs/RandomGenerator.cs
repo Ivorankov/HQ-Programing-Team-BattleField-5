@@ -38,8 +38,8 @@
 
             for (int i = 0; i < count; i++)
             {
-                int x = this.GetRandomBetween(first.X, second.X + 1);
-                int y = this.GetRandomBetween(first.Y, second.Y + 1);
+                int x = this.GetRandomBetween(first.Row, second.Row + 1);
+                int y = this.GetRandomBetween(first.Col, second.Col + 1);
 
                 positions.Add(new Position(x, y));
             }

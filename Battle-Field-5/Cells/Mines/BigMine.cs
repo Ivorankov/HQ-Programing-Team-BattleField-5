@@ -36,19 +36,19 @@ namespace MineFieldApp.Cells.Mines
             List<Position> result = new List<Position>();
 
             const int Radius = 2;
-            int startX = this.Position.X - Radius;
-            int startY = this.Position.Y - Radius;
+            int startRow = this.Position.Row - Radius;
+            int startCol = this.Position.Col - Radius;
             int explosionSize = 2 * Radius;
-            int endX = startX + explosionSize;
-            int endY = startY + explosionSize;
-            for (int x = startX; x <= endX; x++)
+            int endRow = startRow + explosionSize;
+            int endCol = startCol + explosionSize;
+            for (int x = startRow; x <= endRow; x++)
             {
-                for (int y = startY; y <= endY; y++)
+                for (int y = startCol; y <= endCol; y++)
                 {
-                    if (((x == startX) && (y == startY)) ||
-                        ((x == endX) && (y == endY)) ||
-                        ((x == startX) && (y == endY)) ||
-                        ((x == endX) && (y == startY)))
+                    if (((x == startRow) && (y == startCol)) ||
+                        ((x == endRow) && (y == endCol)) ||
+                        ((x == startRow) && (y == endCol)) ||
+                        ((x == endRow) && (y == startCol)))
                     {
                         continue;
                     }

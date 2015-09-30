@@ -22,12 +22,12 @@ namespace MineFieldApp.Cells.Mines
         {
             List<Position> result = new List<Position>();
 
-            int startX = center.X - radius;
-            int startY = center.Y - radius;
+            int startRow = center.Row - radius;
+            int startCol = center.Col - radius;
             int explosionSize = (2 * radius) + 1;
-            for (int x = startX; x < (startX + explosionSize); x++)
+            for (int x = startRow; x < (startRow + explosionSize); x++)
             {
-                for (int y = startY; y < (startY + explosionSize); y++)
+                for (int y = startCol; y < (startCol + explosionSize); y++)
                 {
                     result.Add(new Position(x, y));
                 }

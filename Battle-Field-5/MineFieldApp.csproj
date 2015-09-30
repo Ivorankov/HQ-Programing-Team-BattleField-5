@@ -68,6 +68,7 @@
     <Compile Include="Cells\Cell.cs" />
     <Compile Include="Cells\DefaultDamageHandler.cs" />
     <Compile Include="Cells\ICellDamageHandler.cs" />
+    <Compile Include="Cells\Mines\MineDestroyedException.cs" />
     <Compile Include="Data\Memento\DataCollection.cs" />
     <Compile Include="Data\GameObjData.cs" />
     <Compile Include="Data\Memento\GameObjMemento.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Cells\Mines\MineAssistant.cs" />
     <Compile Include="Cells\Mines\SmallMine.cs" />
     <Compile Include="Cells\Mines\TinyMine.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Renderer\ConsoleRender.cs" />
     <Compile Include="Cells\CellStatus.cs" />
     <Compile Include="Engine.cs" />
@@ -91,7 +93,6 @@
     <Compile Include="ImputProviders\IInputProvider.cs" />
     <Compile Include="Renderer\IRenderer.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="Position.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

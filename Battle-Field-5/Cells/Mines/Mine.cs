@@ -29,12 +29,15 @@ namespace MineFieldApp.Cells.Mines
         {
             if (this.Status == CellStatus.Destoryed)
             {
-                throw new ArgumentException("Cell is destroyed.");
+                throw new MineDestroyedException("Mine can't explode it's alredy destroyed.");
             }
 
-            foreach (var positon in this.GetExplodingPattern())
+            foreach (var position in this.GetExplodingPattern())
             {
-                field[positon.Y, positon.X].TakeDamage();
+                if (field.IsInRange(position))
+                {
+                   field[position.Row, position.Col].TakeDamage();
+                }
             }
         }
 

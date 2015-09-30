@@ -1,5 +1,7 @@
 ﻿namespace MineFieldApp.Cells
 {
+    using System;
+
     public class Cell
     {
         private CellStatus status;
@@ -16,6 +18,16 @@
             : this(new DefaultCellDamageHandler(), position)
         {
 
+        }
+
+        public event EventHandler WhenDamaged;
+
+        protected virtual void OnDamage(EventArgs args)
+        {
+            if (this.WhenDamaged != null)
+            {
+                WhenDamaged(this, args);
+            }
         }
 
         public CellStatus Status
@@ -38,6 +50,7 @@
         public void TakeDamage()
         {
             this.Status = this.DamageHandler.Damage(this);
+            this.OnDamage(EventArgs.Empty);
         }
     }
 }

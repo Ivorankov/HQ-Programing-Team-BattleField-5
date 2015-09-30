@@ -35,10 +35,10 @@ namespace MineFieldApp.Cells.Mines
         {
             List<Position> result = MineAssistant.GetNormalExplosion(this.Position, 1);
 
-            result.Add(new Position(this.Position.X, this.Position.Y - 2));
-            result.Add(new Position(this.Position.X, this.Position.Y + 2));
-            result.Add(new Position(this.Position.X - 2, this.Position.Y));
-            result.Add(new Position(this.Position.X + 2, this.Position.Y));
+            result.Add(new Position(this.Position.Row, this.Position.Col - 2));
+            result.Add(new Position(this.Position.Row, this.Position.Col + 2));
+            result.Add(new Position(this.Position.Row - 2, this.Position.Col));
+            result.Add(new Position(this.Position.Row + 2, this.Position.Col));
 
             return result;
         }

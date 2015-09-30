@@ -36,10 +36,10 @@ namespace MineFieldApp.Cells.Mines
             List<Position> result = new List<Position>();
 
             result.Add(this.Position);
-            result.Add(new Position(this.Position.X - 1, this.Position.Y - 1));
-            result.Add(new Position(this.Position.X + 1, this.Position.Y + 1));
-            result.Add(new Position(this.Position.X + 1, this.Position.Y - 1));
-            result.Add(new Position(this.Position.X - 1, this.Position.Y + 1));
+            result.Add(new Position(this.Position.Row - 1, this.Position.Col - 1));
+            result.Add(new Position(this.Position.Row + 1, this.Position.Col + 1));
+            result.Add(new Position(this.Position.Row + 1, this.Position.Col - 1));
+            result.Add(new Position(this.Position.Row - 1, this.Position.Col + 1));
 
             return result;
         }

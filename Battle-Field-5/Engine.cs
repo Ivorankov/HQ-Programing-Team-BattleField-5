@@ -35,11 +35,17 @@
                 this.renderer.Clear();
 
                 //isnt it better to check this way(KISS):   this.field[position.X, position.Y].Type == CellType.MINE
-                if (this.field.IsInRange(position) && this.field[position.Y, position.X] is Mine)
+                if (this.field.IsInRange(position) && (this.field[position.Row, position.Col] is Mine))
                 {
                     this.MovesCount++;
-                    Mine mine = this.field[position.Y, position.X] as Mine;
-                    mine.Explode(this.field);
+                    Mine mine = this.field[position.Row, position.Col] as Mine;
+                    try
+                    {
+                        mine.Explode(this.field);
+                    }
+                    catch (MineDestroyedException ex)
+                    {
+                    }
                 }
                 else
                 {
