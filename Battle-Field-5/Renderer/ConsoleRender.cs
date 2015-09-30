@@ -70,7 +70,7 @@
 
         public void ShowHighscores()
         {
-            IList<Score> highscores = Highscore.Instance.Highscores;
+            IList<Score> highscores = HighscoreLogger.Instance.Highscores;
             int totalWidth = 50;
             string highscoreTitle = "Highscores";
             int countOfashesOnTheLeft = (totalWidth - highscoreTitle.Length) / 2;

@@ -15,7 +15,7 @@ namespace MineFieldAppTests
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A class for testing <see cref="Highscore"/> class
+    /// A class for testing <see cref="HighscoreLogger"/> class
     /// </summary>
     [TestClass]
     public class HighscoreTests
@@ -26,17 +26,17 @@ namespace MineFieldAppTests
         [TestCleanup]
         public void TestCleanup()
         {
-            Highscore.Instance.ClearHighscores();
+            HighscoreLogger.Instance.ClearHighscores();
         }
 
         /// <summary>
-        /// Checks if <see cref="Highscore"/> class is singleton by comparing two instances
+        /// Checks if <see cref="HighscoreLogger"/> class is singleton by comparing two instances
         /// </summary>
         [TestMethod]
         public void CheckIfHighscorerIsSingleton()
         {
-            Highscore firstScorer = Highscore.Instance;
-            Highscore secondScorer = Highscore.Instance;
+            HighscoreLogger firstScorer = HighscoreLogger.Instance;
+            HighscoreLogger secondScorer = HighscoreLogger.Instance;
 
             Assert.AreSame(firstScorer, secondScorer, "Highscore does not implement singleton");
         }
@@ -50,7 +50,7 @@ namespace MineFieldAppTests
             var playerName = "Ivan";
             var playerPoints = 243.98;
 
-            Highscore scorer = Highscore.Instance;
+            HighscoreLogger scorer = HighscoreLogger.Instance;
 
             scorer.AddHighscore(playerName, playerPoints);
 
@@ -70,7 +70,7 @@ namespace MineFieldAppTests
             var playerName = "John";
             var playerPoints = 105;
 
-            Highscore scorer = Highscore.Instance;
+            HighscoreLogger scorer = HighscoreLogger.Instance;
 
             scorer.AddHighscore(playerName, playerPoints);
 
@@ -91,7 +91,7 @@ namespace MineFieldAppTests
         [TestMethod]
         public void CheckIfHighscorerReadEmptyFileCorrectly()
         {
-            Highscore scorer = Highscore.Instance;
+            HighscoreLogger scorer = HighscoreLogger.Instance;
 
             scorer.LoadHighscores();
 
@@ -116,7 +116,7 @@ namespace MineFieldAppTests
 
             file.Close();
 
-            Highscore scorer = Highscore.Instance;
+            HighscoreLogger scorer = HighscoreLogger.Instance;
             scorer.LoadHighscores();
             var scoreToCheck = scorer.Highscores[1];
 
@@ -131,7 +131,7 @@ namespace MineFieldAppTests
         [TestMethod]
         public void CheckIfHighscorerSortsScoresByScore()
         {
-            Highscore scorer = Highscore.Instance;
+            HighscoreLogger scorer = HighscoreLogger.Instance;
 
             scorer.AddHighscore("second", 230);
             scorer.AddHighscore("third", 100);

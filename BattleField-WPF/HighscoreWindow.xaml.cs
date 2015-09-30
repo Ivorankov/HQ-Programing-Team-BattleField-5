@@ -29,7 +29,7 @@ namespace BattleField_WPF
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            Highscore highscore = Highscore.Instance;
+            HighscoreLogger highscore = HighscoreLogger.Instance;
             var highscores = highscore.Highscores;
 
             var grid = sender as DataGrid;
