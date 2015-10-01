@@ -102,6 +102,8 @@ namespace BattleField_WPF
 
             border.Child = grid;
             this.window.Content = border;
+
+            var test = GetCellFromGrid(grid, 5, 5);
         }
 
         public void ShowHighscores()
@@ -119,11 +121,17 @@ namespace BattleField_WPF
         public void Clear()
         {
             
+
+        }
+
+        public void TestRefresh()
+        {
+
             for (int row = 0; row < this.field.RowsCount; row++)
             {
                 for (int col = 0; col < this.field.ColumnsCount; col++)
                 {
-           
+                    
                 }
             }
         }
@@ -139,6 +147,16 @@ namespace BattleField_WPF
 
                 this.ShowGameField(this.field);
             }
+            
+        }
+
+        private Cell GetCellFromGrid(Grid grid, int row, int col)
+        {
+            var cell = grid.Children
+              .Cast<UIElement>()
+              .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col);
+
+            return cell as Cell;
         }
     }
 }
