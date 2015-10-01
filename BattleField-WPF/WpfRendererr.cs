@@ -1,4 +1,6 @@
-﻿using BattleField.Renderer;
+﻿using BattleField;
+using BattleField.Enums;
+using BattleField.Renderer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +12,20 @@ using System.Windows.Media;
 
 namespace BattleField_WPF
 {
-    //This is rought and temp so don't go crazy!
+    //This is rought and temp so don't go crazy! And don't copy/paste/rename it cuz it won't magically work
 
     class WpfRendererr : IRenderer
     {
+        // This will go in the Data object probably
         private int fieldSize;
+        // This field is garbage and will be removed
         private GameWindow window;
+        //Temp field will be removed (Its here for test purposes)
+        private GameField field;
+
         public WpfRendererr(GameWindow win)
         {
+            //TODO better way for adding the gird (currently it's with win.Content)
             this.window = win;
         }
         public void SayWelcome()
@@ -35,6 +43,9 @@ namespace BattleField_WPF
             Border border = new Border();
             border.BorderThickness = new Thickness(10);
             border.BorderBrush = Brushes.LightGreen;
+
+            this.field = field;
+
             this.fieldSize = field.RowsCount;
             var grid = new Grid();
 
@@ -56,19 +67,32 @@ namespace BattleField_WPF
                 grid.ColumnDefinitions.Add(coldef);
             }
 
-            int idCount = 0;
+
+
+            Cell cell;
             for (int r = 0; r < this.fieldSize; r++)
             {
 
                 for (int c = 0; c < this.fieldSize; c++)
                 {
+                    if (field[r, c].Type == CellType.EMPTY)
+                    {
+                        cell = new Cell(r, c, status.normal);
+                        
+                    }
+                    else
+                    {
+                        cell = new Cell(r, c, status.withMine);
+                        cell.Background = Brushes.Red;
+                        cell.Content = cell.Status;
+                    }
 
-                    Cell btn = new Cell(idCount);
-                    btn.Click += new RoutedEventHandler(Cell_Click);
-                    grid.Children.Add(btn);
-                    Grid.SetRow(btn, r);
-                    Grid.SetColumn(btn, c);
-                    idCount++;
+
+                   cell.Click += new RoutedEventHandler(Cell_Click);
+
+                    grid.Children.Add(cell);
+                    Grid.SetRow(cell, r);
+                    Grid.SetColumn(cell, c);
                 }
             }
 
@@ -78,23 +102,36 @@ namespace BattleField_WPF
 
         public void ShowHighscores()
         {
-            throw new NotImplementedException();
+            var highScoreWindow = new HighscoreWindow();
+            highScoreWindow.Show();
         }
 
         public void ShowGameOver()
         {
-            throw new NotImplementedException();
+            var gameOverWindow = new EndScreenWindow();
+            gameOverWindow.Show();
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            for (int row = 0; row < this.field.RowsCount; row++)
+            {
+                for (int col = 0; col < this.field.ColumnsCount; col++)
+                {
+                    
+                }
+            }
         }
 
         public void Cell_Click(object sender, RoutedEventArgs e)
         {
             var cell = sender as Cell;
-            MessageBox.Show("Hi, my id is: " + cell.Id.ToString());
+            MessageBox.Show("Hi, my position is: " + "Row: " + cell.Pos.X.ToString() + " Col:" + cell.Pos.Y.ToString() + " I will give these coordiates to the engine I promise :D");
+            if (cell.Status == status.withMine)
+            {
+                MessageBox.Show("BOOM");
+
+            }
         }
     }
 }

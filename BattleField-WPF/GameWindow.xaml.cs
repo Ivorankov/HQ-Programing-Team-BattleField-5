@@ -20,7 +20,8 @@ namespace BattleField_WPF
     /// </summary>
     public partial class GameWindow : Window
     {
-        public GameWindow(){
+        public GameWindow()
+        {
 
             InitializeComponent();
 
