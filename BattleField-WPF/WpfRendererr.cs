@@ -118,6 +118,7 @@ namespace BattleField_WPF
 
         public void Clear()
         {
+            
             for (int row = 0; row < this.field.RowsCount; row++)
             {
                 for (int col = 0; col < this.field.ColumnsCount; col++)
@@ -135,9 +136,9 @@ namespace BattleField_WPF
             {
                 MessageBox.Show("BOOM");
                 this.field.ActivateMine(new Position(cell.Pos.X, cell.Pos.Y));
-                
+
+                this.ShowGameField(this.field);
             }
-            this.ShowGameField(this.field);
         }
     }
 }
