@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
+using System.Windows.Resources;
 
 namespace BattleField_WPF
 {
@@ -127,6 +130,7 @@ namespace BattleField_WPF
         public void Cell_Click(object sender, RoutedEventArgs e)
         {
             var cell = sender as Cell;
+            var animation = new Storyboard();
             MessageBox.Show("Hi, my position is: " + "Row: " + cell.Pos.X.ToString() + " Col:" + cell.Pos.Y.ToString() + " I will give these coordiates to the engine I promise :D");
             if (cell.Status == status.withMine)
             {
@@ -155,18 +159,30 @@ namespace BattleField_WPF
               .Cast<UIElement>()
               .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col) as Cell;
 
-            if (type == CellType.EMPTY)
-            { 
 
+            if (type == CellType.EMPTY)
+            {
+                cell.Background = this.CreateBrush("Images/Dirt.jpg");
             }
             else if (type == CellType.BOMBED)
             {
-                cell.Background = Brushes.Black;
+                cell.Background = this.CreateBrush("Images/DestroyedGround.jpg");
             }
             else
             {
-                cell.Background = Brushes.Red;
+                cell.Background = this.CreateBrush("Images/Mine.jpeg");
             }
+        }
+
+        private Brush CreateBrush(string filePath)
+        {
+            Uri uriPathToImg = new Uri(filePath, UriKind.Relative);
+            StreamResourceInfo streamInfo = Application.GetResourceStream(uriPathToImg);
+            BitmapFrame imageData = BitmapFrame.Create(streamInfo.Stream);
+            var brush = new ImageBrush();
+            brush.ImageSource = imageData;
+
+            return brush;
         }
     }
 }
