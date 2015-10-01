@@ -9,7 +9,7 @@
 
         private static readonly Random Generator = new Random();
 
-        private RandomGenerator()
+        protected RandomGenerator()
         {
 
         }
