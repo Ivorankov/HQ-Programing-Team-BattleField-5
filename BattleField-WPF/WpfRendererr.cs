@@ -78,17 +78,21 @@ namespace BattleField_WPF
                     if (field[r, c].Type == CellType.EMPTY)
                     {
                         cell = new Cell(r, c, status.normal);
-                        
+
+                    }
+                    else if (field[r, c].Type == CellType.BOMBED)
+                    {
+                        cell = new Cell(r, c, status.exploded);
+                        cell.Background = Brushes.Black;
                     }
                     else
                     {
                         cell = new Cell(r, c, status.withMine);
                         cell.Background = Brushes.Red;
-                        cell.Content = cell.Status;
                     }
 
 
-                   cell.Click += new RoutedEventHandler(Cell_Click);
+                    cell.Click += new RoutedEventHandler(Cell_Click);
 
                     grid.Children.Add(cell);
                     Grid.SetRow(cell, r);
@@ -118,7 +122,7 @@ namespace BattleField_WPF
             {
                 for (int col = 0; col < this.field.ColumnsCount; col++)
                 {
-                    
+           
                 }
             }
         }
@@ -130,8 +134,10 @@ namespace BattleField_WPF
             if (cell.Status == status.withMine)
             {
                 MessageBox.Show("BOOM");
-
+                this.field.ActivateMine(new Position(cell.Pos.X, cell.Pos.Y));
+                
             }
+            this.ShowGameField(this.field);
         }
     }
 }
