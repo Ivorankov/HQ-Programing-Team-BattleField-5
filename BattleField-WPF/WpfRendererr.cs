@@ -23,6 +23,8 @@ namespace BattleField_WPF
         //Temp field will be removed (Its here for test purposes)
         private GameField field;
 
+        private Grid grid;
+
         public WpfRendererr(GameWindow win)
         {
             //TODO better way for adding the gird (currently it's with win.Content)
@@ -78,17 +80,14 @@ namespace BattleField_WPF
                     if (field[r, c].Type == CellType.EMPTY)
                     {
                         cell = new Cell(r, c, status.normal);
-
                     }
                     else if (field[r, c].Type == CellType.BOMBED)
                     {
                         cell = new Cell(r, c, status.exploded);
-                        cell.Background = Brushes.Black;
                     }
                     else
                     {
                         cell = new Cell(r, c, status.withMine);
-                        cell.Background = Brushes.Red;
                     }
 
 
@@ -100,10 +99,11 @@ namespace BattleField_WPF
                 }
             }
 
+            this.grid = grid;
+
             border.Child = grid;
             this.window.Content = border;
-
-            var test = GetCellFromGrid(grid, 5, 5);
+            this.SetCellRepresentation(this.grid);
         }
 
         public void ShowHighscores()
@@ -118,22 +118,10 @@ namespace BattleField_WPF
             gameOverWindow.Show();
         }
 
-        public void Clear()
+        public void Clear()//Refresh
         {
-            
+            this.SetCellRepresentation(this.grid);
 
-        }
-
-        public void TestRefresh()
-        {
-
-            for (int row = 0; row < this.field.RowsCount; row++)
-            {
-                for (int col = 0; col < this.field.ColumnsCount; col++)
-                {
-                    
-                }
-            }
         }
 
         public void Cell_Click(object sender, RoutedEventArgs e)
@@ -145,18 +133,40 @@ namespace BattleField_WPF
                 MessageBox.Show("BOOM");
                 this.field.ActivateMine(new Position(cell.Pos.X, cell.Pos.Y));
 
-                this.ShowGameField(this.field);
+                this.Clear();
             }
             
         }
+        private void SetCellRepresentation(Grid grid)
+        {
+            for (int row = 0; row < this.field.RowsCount; row++)
+            {
+                for (int col = 0; col < this.field.ColumnsCount; col++)
+                {
 
-        private Cell GetCellFromGrid(Grid grid, int row, int col)
+                    UpdateCellStatus(grid, row, col, this.field[row, col].Type);
+                }
+            }
+        }
+
+        private void UpdateCellStatus(Grid grid, int row, int col, CellType type)
         {
             var cell = grid.Children
               .Cast<UIElement>()
-              .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col);
+              .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col) as Cell;
 
-            return cell as Cell;
+            if (type == CellType.EMPTY)
+            { 
+
+            }
+            else if (type == CellType.BOMBED)
+            {
+                cell.Background = Brushes.Black;
+            }
+            else
+            {
+                cell.Background = Brushes.Red;
+            }
         }
     }
 }
