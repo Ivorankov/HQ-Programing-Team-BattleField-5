@@ -38,7 +38,9 @@ namespace BattleField_WPF
             var engine = new Engine(test);
             var eventHandler = new WpfInputProvider(engine);
             this.eventHandler = eventHandler;
-            this.eventHandler.position += this.eventHandler.GetPosition;
+
+            //Attaches subscriber to publisher
+            this.eventHandler.CellClicked += this.eventHandler.GetPosition;
             this.engine = engine;
             engine.Start(this.fieldSize);
 
@@ -49,7 +51,9 @@ namespace BattleField_WPF
             var cell = sender as Cell;
             if (cell.Status == status.withMine)
             {
-                this.eventHandler.Trigger(sender, e);
+                //Publishes event that calls the UpdateField method in the engine
+                this.eventHandler.TakeCellCoordinates(sender, e);
+
                 this.PlaySound(@"C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\BattleField-WPF\Sounds\Explosion.wav");
             }
         }

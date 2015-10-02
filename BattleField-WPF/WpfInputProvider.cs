@@ -9,16 +9,19 @@ namespace BattleField_WPF
 {
     public class WpfInputProvider 
     {
+        // Yes this is the drawback the engine has to be passed to this class for it to interact with it
         private Engine engine;
+
         public WpfInputProvider(Engine engine)
         {
             this.engine = engine;
         }
-        public int GetFieldSize()
+        public int GetFieldSize()// Obsolete will be removed
         {
             throw new NotImplementedException();
         }
 
+        //This is a subscriber method that is called when event is triggered
         public void GetPosition(object source, EventArgs args)
         {
             var cell =  source as Cell;
@@ -27,23 +30,25 @@ namespace BattleField_WPF
 
         public delegate void UserInputPositionHandler(object source, EventArgs args);
 
-        public event UserInputPositionHandler position;
+        public event UserInputPositionHandler CellClicked;
 
-        public void Trigger(object source, EventArgs args)
+        //Publisher method, when called notifyes subs
+        public void TakeCellCoordinates(object source, EventArgs args)
         {
             this.OnCellClick(source, args);
         }
 
-        public string GetPlayerName()
+        public string GetPlayerName()//Obsolete will be removed
         {
             throw new NotImplementedException();
         }
 
+        //Used to publish the event
         protected virtual void OnCellClick(object source, EventArgs args)
         {
-            if (position != null)
+            if (CellClicked != null)
             {
-                position(source, args);
+                CellClicked(source, args);
             }
         }
     }

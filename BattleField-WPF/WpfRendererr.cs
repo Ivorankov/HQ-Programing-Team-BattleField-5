@@ -18,7 +18,7 @@ using System.Windows.Resources;
 
 namespace BattleField_WPF
 {
-    //This is rought and temp so don't go crazy! And don't copy/paste/rename it cuz it won't magically work
+    //Under construction
 
     class WpfRendererr : IRenderer
     {
