@@ -28,7 +28,7 @@ namespace BattleField_WPF
 
         private void OnNewGameButtonClick(object sender, RoutedEventArgs e)
         {
-            var gameWindow = new GameWindow();
+            var gameWindow = new GameInitWindow();
             gameWindow.Show();
             this.Close();
         }

@@ -1,4 +1,5 @@
 ﻿using BattleField;
+using BattleField.Data;
 using BattleField.Enums;
 using BattleField.Renderer;
 using System;
@@ -109,9 +110,9 @@ namespace BattleField_WPF
             highScoreWindow.Show();
         }
 
-        public void ShowGameOver()
+        public void ShowGameOver(GameObjData data)
         {
-            var gameOverWindow = new EndScreenWindow();
+            var gameOverWindow = new EndScreenWindow(data);
             gameOverWindow.Show();
             this.window.Hide();
         }

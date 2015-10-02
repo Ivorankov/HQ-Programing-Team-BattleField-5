@@ -1,5 +1,6 @@
 ﻿namespace BattleField
 {
+    using BattleField.Data;
     using BattleField.Renderer;
     using System.Timers;
 
@@ -7,30 +8,30 @@
     {
         public GameField field;
         public IRenderer renderer;
-        private int MovesCount;
+        private int movesCount;
 
         public Engine(IRenderer renderer)
         {
             this.renderer = renderer;
         }
 
-        public void Start()
+        public void Start(int fieldSize)
         {
             this.renderer.SayWelcome();
-            this.field = new GameField(9);
-            this.MovesCount = 0;
+            this.field = new GameField(fieldSize);
+            this.movesCount = 0;
             this.renderer.ShowGameField(field);
         }
 
         private void GameOver()
         {
-            this.renderer.ShowGameOver();
+
         }
 
         private void PersistResult()
         {
             string playerName = "Test";
-            HighscoreLogger.Instance.AddHighscore(playerName, this.MovesCount);
+            HighscoreLogger.Instance.AddHighscore(playerName, this.movesCount);
         }
 
         public void UpdateField(Position pos)// while loops do not work with event driven tech... on event trigger from UI this method is called
@@ -41,7 +42,7 @@
             //isnt it better to check this way(KISS):   this.field[position.X, position.Y].Type == CellType.MINE
             if (this.field.IsInRange(position) && this.field[position.X, position.Y].ExplodeCommand.IsValid())
             {
-                ++this.MovesCount;
+                ++this.movesCount;
                 this.field.ActivateMine(position);
                 this.renderer.Clear();
             }
@@ -52,7 +53,8 @@
 
             if (!this.field.HasMinesLeft())
             {
-                this.renderer.ShowGameOver();
+                var dataTest = new GameObjData(this.field, this.movesCount);
+                this.renderer.ShowGameOver(dataTest);
             }
         }
     }

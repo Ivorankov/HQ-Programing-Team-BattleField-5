@@ -24,30 +24,24 @@ namespace BattleField_WPF
     {
         private Engine engine;
         private WpfInputProvider eventHandler;
-        public GameWindow()
+        private int fieldSize;
+        public GameWindow(int fieldSize)
         {
             InitializeComponent();
-
-            StartTheWindow();
-            StartTheEngine();
+            this.fieldSize = fieldSize;
+            StartTheEngine();//Vromm vromm
         }
 
         public void StartTheEngine()
         {
-            var gameField = new GameField(9);
             var test = new WpfRendererr(this);
             var engine = new Engine(test);
             var eventHandler = new WpfInputProvider(engine);
             this.eventHandler = eventHandler;
             this.eventHandler.position += this.eventHandler.GetPosition;
             this.engine = engine;
-            engine.Start();
-            
-        }
+            engine.Start(this.fieldSize);
 
-        public void StartTheWindow()
-        {
-            InitializeComponent();
         }
 
         public void Cell_Click(object sender, RoutedEventArgs e)

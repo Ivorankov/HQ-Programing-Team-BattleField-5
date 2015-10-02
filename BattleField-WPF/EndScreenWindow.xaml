@@ -49,8 +49,8 @@
 
     <Grid Style="{StaticResource grid}">
         <TextBlock Style="{StaticResource message}">Game Over!</TextBlock>
-        <TextBox Style="{StaticResource userText}" Margin="192,112,202,59"></TextBox>
-        <Button Style="{StaticResource saveScoreBtn}" Margin="297,120,137,66">Save</Button>
+        <TextBox x:Name="UserNameTextBox" Style="{StaticResource userText}" Margin="192,112,202,59"></TextBox>
+        <Button Style="{StaticResource saveScoreBtn}" Click="Button_Click" Margin="297,120,137,66">Save</Button>
         <Button Style="{StaticResource buttonStyle}" Click="OnMenuClick" Margin="97,161,297,10">Menu</Button>
         <Button Style="{StaticResource buttonStyle}" Click="OnQuitClick" Margin="297,160,97,11">Quit</Button>
     </Grid>

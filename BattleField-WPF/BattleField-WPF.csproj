@@ -53,9 +53,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GameInitWindow.xaml.cs">
+      <DependentUpon>GameInitWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WpfInputProvider.cs" />
     <Compile Include="WpfRendererr.cs" />
     <Page Include="EndScreenWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameInitWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

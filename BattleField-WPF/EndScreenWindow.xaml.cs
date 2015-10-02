@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BattleField;
+using BattleField.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,12 @@ namespace BattleField_WPF
     /// </summary>
     public partial class EndScreenWindow : Window
     {
-        public EndScreenWindow()
+        private GameObjData data;
+
+        public EndScreenWindow(GameObjData data)
         {
             InitializeComponent();
+            this.data = data;
         }
 
         private void OnMenuClick(object sender, RoutedEventArgs e)
@@ -34,6 +39,15 @@ namespace BattleField_WPF
         private void OnQuitClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HighscoreLogger.Instance.AddHighscore(UserNameTextBox.Text, this.data.MovesCount);
+            this.Hide();
+
+            var highscoreWindow = new HighscoreWindow();
+            highscoreWindow.Show();
         }
     }
 }
