@@ -3,6 +3,7 @@
     using MineFieldApp.Renderer;
 
     using Cells.Mines;
+    using Cells;
 
     public class Engine
     {
@@ -14,10 +15,13 @@
 
         private int MovesCount;
 
-        public Engine(IInputProvider inputProvider, IRenderer renderer)
+        private ICellDamageHandler damageHandler;
+
+        public Engine(IInputProvider inputProvider, IRenderer renderer, ICellDamageHandler damageHandler)
         {
             this.inputProvider = inputProvider;
             this.renderer = renderer;
+            this.damageHandler = damageHandler;
         }
 
         public void Start()
@@ -41,7 +45,7 @@
                     Mine mine = this.field[position.Row, position.Col] as Mine;
                     try
                     {
-                        mine.Explode(this.field);
+                        mine.Explode(this.field, this.damageHandler);
                     }
                     catch (MineDestroyedException ex)
                     {

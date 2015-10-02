@@ -13,19 +13,13 @@ namespace MineFieldApp.Cells.Mines
     /// </summary>
     public abstract class Mine : Cell
     {
-        protected Mine(ICellDamageHandler damageHandler, Position position)
-            : base(damageHandler, position)
-        {
-
-        }
-
         protected Mine(Position position)
             : base(position)
         {
 
         }
 
-        public void Explode(GameField field)
+        public void Explode(GameField field, ICellDamageHandler damageHandler)
         {
             if (this.Status == CellStatus.Destoryed)
             {
@@ -36,7 +30,7 @@ namespace MineFieldApp.Cells.Mines
             {
                 if (field.IsInRange(position))
                 {
-                   field[position.Row, position.Col].TakeDamage();
+                    field[position.Row, position.Col].TakeDamage(damageHandler);
                 }
             }
         }

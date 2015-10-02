@@ -6,18 +6,10 @@
     {
         private CellStatus status;
 
-        public Cell(ICellDamageHandler damageHandler, Position position)
+        public Cell(Position position)
         {
-            this.DamageHandler = damageHandler;
-
             this.Status = CellStatus.Normal;
             this.Position = position;
-        }
-
-        public Cell(Position position)
-            : this(new DefaultCellDamageHandler(), position)
-        {
-
         }
 
         public event EventHandler WhenDamaged;
@@ -37,7 +29,7 @@
                 return this.status;
             }
 
-            private set
+            set
             {
                 this.status = value;
             }
@@ -45,12 +37,10 @@
 
         public Position Position { get; private set; }
 
-        private  ICellDamageHandler DamageHandler { get; set; }
-
-        public void TakeDamage()
+        public void TakeDamage(ICellDamageHandler damageHandler)
         {
-            this.Status = this.DamageHandler.Damage(this);
-            this.OnDamage(EventArgs.Empty);
+            damageHandler.Damage(this);
+            OnDamage(EventArgs.Empty);
         }
     }
 }

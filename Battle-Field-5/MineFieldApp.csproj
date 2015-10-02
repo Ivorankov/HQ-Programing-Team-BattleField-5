@@ -92,7 +92,6 @@
     <Compile Include="ImputProviders\ConsoleInputProvider.cs" />
     <Compile Include="ImputProviders\IInputProvider.cs" />
     <Compile Include="Renderer\IRenderer.cs" />
-    <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

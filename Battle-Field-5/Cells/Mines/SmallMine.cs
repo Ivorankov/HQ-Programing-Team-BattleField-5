@@ -12,12 +12,6 @@ namespace MineFieldApp.Cells.Mines
     /// </summary>
     public class SmallMine : Mine
     {
-        public SmallMine(ICellDamageHandler damageHandler, Position position)
-            : base(damageHandler, position)
-        {
-
-        }
-
         /// <summary>
         /// Initializes a new instance of the SmallMine class.
         /// </summary>

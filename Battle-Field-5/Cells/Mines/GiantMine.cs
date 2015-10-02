@@ -12,12 +12,6 @@ namespace MineFieldApp.Cells.Mines
     /// </summary>
     public class GiantMine : Mine
     {
-        public GiantMine(ICellDamageHandler damageHandler, Position position)
-            : base(damageHandler, position)
-        {
-
-        }
-
         /// <summary>
         /// Initializes a new instance of the GiantMine class.
         /// </summary>

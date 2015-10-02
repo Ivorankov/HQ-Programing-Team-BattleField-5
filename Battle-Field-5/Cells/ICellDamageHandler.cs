@@ -1,7 +1,11 @@
 ﻿namespace MineFieldApp.Cells
 {
+    using MineFieldApp.Cells.Mines;
+
     public interface ICellDamageHandler
     {
-        CellStatus Damage(Cell cell);
+        void Damage(Cell cell);
+
+        void Damage(Mine mine);
     }
 }
