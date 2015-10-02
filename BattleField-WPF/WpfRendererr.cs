@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,14 +37,14 @@ namespace BattleField_WPF
         }
         public void SayWelcome()// I will say goodbye to this stupid method soon 
         {
-            throw new NotImplementedException();
+
         }
 
         public void ShowErrorMessage(string message)// Maybe this will be removed
         {
-            throw new NotImplementedException();
-        }
 
+        }
+        //Creates all the elements and appends them to the window
         public void ShowGameField(BattleField.GameField field)
         {
             this.field = field;
@@ -88,7 +89,7 @@ namespace BattleField_WPF
                         cell = new Cell(r, c, status.withMine);
                     }
 
-                    cell.Click += new RoutedEventHandler(Cell_Click);
+                    cell.Click += new RoutedEventHandler(this.window.Cell_Click);
 
                     grid.Children.Add(cell);
                     Grid.SetRow(cell, r);
@@ -112,27 +113,15 @@ namespace BattleField_WPF
         {
             var gameOverWindow = new EndScreenWindow();
             gameOverWindow.Show();
+            this.window.Hide();
         }
 
         public void Clear()//Refresh
         {
             this.SetCellRepresentation(this.grid);
-
         }
 
-        public void Cell_Click(object sender, RoutedEventArgs e)
-        {
-            var cell = sender as Cell;
-
-            if (cell.Status == status.withMine)
-            {
-                this.field.ActivateMine(cell.Pos);
-                this.Clear();
-                this.PlaySound(@"C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\BattleField-WPF\Sounds\Explosion.wav");
-            }
-
-        }
-
+        //Sets the background img on all the cells
         private void SetCellRepresentation(Grid grid)
         {
             for (int row = 0; row < this.field.RowsCount; row++)
@@ -143,7 +132,7 @@ namespace BattleField_WPF
                 }
             }
         }
-
+        //Sets background image on selected cell element
         private void UpdateCellStatus(Grid grid, int row, int col, CellType type)
         {
             var cell = grid.Children
@@ -163,7 +152,7 @@ namespace BattleField_WPF
                 cell.Background = GetMineRepresentaion(type);
             }
         }
-
+        //Sets mine image depending on the type (size)
         private Brush GetMineRepresentaion(CellType type)
         {
             var brush = new ImageBrush();
@@ -191,13 +180,7 @@ namespace BattleField_WPF
 
             return brush;
         }
-
-        private void PlaySound(string pathToWavFile)
-        {
-            var sound = new SoundPlayer(pathToWavFile);
-            sound.Play();
-        }
-
+        //Used to create brush object (the thing that draws the img to the cell background)
         private ImageBrush CreateBrush(string filePath)
         {
             Uri uriPathToImg = new Uri(filePath, UriKind.Relative);

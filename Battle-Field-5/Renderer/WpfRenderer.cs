@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleField.Renderer
 {
-    public class WpfRenderer : IRenderer
+    public class WpfRenderer 
     {
         public void SayWelcome()
         {

@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="WpfInputProvider.cs" />
     <Compile Include="WpfRendererr.cs" />
     <Page Include="EndScreenWindow.xaml">
       <SubType>Designer</SubType>

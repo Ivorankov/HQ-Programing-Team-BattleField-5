@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class ConsoleRender : IRenderer
+    public class ConsoleRender 
     {
         public void SayWelcome()
         {
