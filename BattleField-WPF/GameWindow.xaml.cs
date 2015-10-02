@@ -54,7 +54,7 @@ namespace BattleField_WPF
                 //Publishes event that calls the UpdateField method in the engine
                 this.eventHandler.TakeCellCoordinates(sender, e);
 
-                this.PlaySound(@"C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\BattleField-WPF\Sounds\Explosion.wav");
+                this.PlaySound("../../Sounds/Explosion.wav");
             }
         }
         public void PlaySound(string pathToWavFile)
