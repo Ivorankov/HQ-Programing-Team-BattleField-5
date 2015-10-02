@@ -26,8 +26,8 @@ namespace BattleField_WPF
             InitializeComponent();
 
             var test = new WpfRendererr(this);
-
-            test.ShowGameField(new GameField(9));
+            var eng = new Engine(test);
+            eng.Start();
         }
     }
 }

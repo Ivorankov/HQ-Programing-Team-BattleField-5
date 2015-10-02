@@ -126,10 +126,13 @@
     <Resource Include="Images\Dirt.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DestroyedGround.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Mine.jpeg" />
+    <Resource Include="Images\ExplodedDirt.png" />
+    <Resource Include="Images\Mine5.png" />
+    <Resource Include="Images\Mine4.png" />
+    <Resource Include="Images\Mine3.png" />
+    <Resource Include="Images\Mine2.png" />
+    <Resource Include="Images\Mine1.png" />
+    <Content Include="Sounds\Explosion.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

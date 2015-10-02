@@ -4,6 +4,7 @@ using BattleField.Renderer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,27 +34,26 @@ namespace BattleField_WPF
             //TODO better way for adding the gird (currently it's with win.Content)
             this.window = win;
         }
-        public void SayWelcome()
+        public void SayWelcome()// I will say goodbye to this stupid method soon 
         {
             throw new NotImplementedException();
         }
 
-        public void ShowErrorMessage(string message)
+        public void ShowErrorMessage(string message)// Maybe this will be removed
         {
             throw new NotImplementedException();
         }
 
         public void ShowGameField(BattleField.GameField field)
         {
+            this.field = field;
+            this.fieldSize = field.RowsCount;
+
             Border border = new Border();
             border.BorderThickness = new Thickness(10);
             border.BorderBrush = Brushes.LightGreen;
 
-            this.field = field;
-
-            this.fieldSize = field.RowsCount;
             var grid = new Grid();
-
             grid.MaxHeight = 900;
             grid.MaxWidth = 900;
 
@@ -61,23 +61,18 @@ namespace BattleField_WPF
             for (int i = 0; i < this.fieldSize; i++)
             {
                 RowDefinition rowdef = new RowDefinition();
-                //rowdef.Height = GridLength.Auto;
                 grid.RowDefinitions.Add(rowdef);
             }
 
             for (int i = 0; i < this.fieldSize; i++)
             {
                 ColumnDefinition coldef = new ColumnDefinition();
-                //coldef.Width = GridLength.Auto;
                 grid.ColumnDefinitions.Add(coldef);
             }
-
-
 
             Cell cell;
             for (int r = 0; r < this.fieldSize; r++)
             {
-
                 for (int c = 0; c < this.fieldSize; c++)
                 {
                     if (field[r, c].Type == CellType.EMPTY)
@@ -93,7 +88,6 @@ namespace BattleField_WPF
                         cell = new Cell(r, c, status.withMine);
                     }
 
-
                     cell.Click += new RoutedEventHandler(Cell_Click);
 
                     grid.Children.Add(cell);
@@ -103,7 +97,6 @@ namespace BattleField_WPF
             }
 
             this.grid = grid;
-
             border.Child = grid;
             this.window.Content = border;
             this.SetCellRepresentation(this.grid);
@@ -130,24 +123,22 @@ namespace BattleField_WPF
         public void Cell_Click(object sender, RoutedEventArgs e)
         {
             var cell = sender as Cell;
-            var animation = new Storyboard();
-            MessageBox.Show("Hi, my position is: " + "Row: " + cell.Pos.X.ToString() + " Col:" + cell.Pos.Y.ToString() + " I will give these coordiates to the engine I promise :D");
+
             if (cell.Status == status.withMine)
             {
-                MessageBox.Show("BOOM");
-                this.field.ActivateMine(new Position(cell.Pos.X, cell.Pos.Y));
-
+                this.field.ActivateMine(cell.Pos);
                 this.Clear();
+                this.PlaySound(@"C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\BattleField-WPF\Sounds\Explosion.wav");
             }
-            
+
         }
+
         private void SetCellRepresentation(Grid grid)
         {
             for (int row = 0; row < this.field.RowsCount; row++)
             {
                 for (int col = 0; col < this.field.ColumnsCount; col++)
                 {
-
                     UpdateCellStatus(grid, row, col, this.field[row, col].Type);
                 }
             }
@@ -159,22 +150,55 @@ namespace BattleField_WPF
               .Cast<UIElement>()
               .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col) as Cell;
 
-
             if (type == CellType.EMPTY)
             {
                 cell.Background = this.CreateBrush("Images/Dirt.jpg");
             }
             else if (type == CellType.BOMBED)
             {
-                cell.Background = this.CreateBrush("Images/DestroyedGround.jpg");
+                cell.Background = this.CreateBrush("Images/ExplodedDirt.png");
             }
             else
             {
-                cell.Background = this.CreateBrush("Images/Mine.jpeg");
+                cell.Background = GetMineRepresentaion(type);
             }
         }
 
-        private Brush CreateBrush(string filePath)
+        private Brush GetMineRepresentaion(CellType type)
+        {
+            var brush = new ImageBrush();
+
+            if (type == CellType.TINYMINE)
+            {
+                brush = this.CreateBrush("Images/Mine1.png");
+            }
+            else if (type == CellType.SMALLMINE)
+            {
+                brush = this.CreateBrush("Images/Mine2.png");
+            }
+            else if (type == CellType.BIGMINE)
+            {
+                brush = this.CreateBrush("Images/Mine3.png");
+            }
+            else if (type == CellType.HUGEMINE)
+            {
+                brush = this.CreateBrush("Images/Mine4.png");
+            }
+            else if (type == CellType.GIANTMINE)
+            {
+                brush = this.CreateBrush("Images/Mine5.png");
+            }
+
+            return brush;
+        }
+
+        private void PlaySound(string pathToWavFile)
+        {
+            var sound = new SoundPlayer(pathToWavFile);
+            sound.Play();
+        }
+
+        private ImageBrush CreateBrush(string filePath)
         {
             Uri uriPathToImg = new Uri(filePath, UriKind.Relative);
             StreamResourceInfo streamInfo = Application.GetResourceStream(uriPathToImg);
