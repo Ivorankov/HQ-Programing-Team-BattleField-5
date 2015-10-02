@@ -16,8 +16,8 @@ namespace MineFieldApp.Cells.Mines
         /// Initializes a new instance of the BigMine class.
         /// </summary>
         /// <param name="position">The position of the mine.</param>
-        public BigMine(Position position)
-            : base(position)
+        public BigMine(Position position, GameField field)
+            : base(position, field)
         {
         }
 
@@ -25,7 +25,7 @@ namespace MineFieldApp.Cells.Mines
         /// The method returns the exploding area of the mine.
         /// </summary>
         /// <returns>List containing the positions of the tiles of the exploding area.</returns>
-        protected override List<Position> GetExplodingPattern()
+        public override List<Position> GetExplodingPattern()
         {
             List<Position> result = new List<Position>();
 

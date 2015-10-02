@@ -2,7 +2,7 @@
 {
     using MineFieldApp.Cells.Mines;
 
-    public class DefaultCellDamageHandler : ICellDamageHandler
+    public class ChainDamageHandler : ICellDamageHandler
     {
         public void Damage(EmptyCell cell)
         {
@@ -12,6 +12,7 @@
         public void Damage(Mine mine)
         {
             mine.Status = CellStatus.Destoryed;
+            mine.Field.ReactToExplosion(mine.GetExplodingPattern(), this);
         }
     }
 }

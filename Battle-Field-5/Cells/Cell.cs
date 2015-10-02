@@ -37,10 +37,8 @@
 
         public Position Position { get; private set; }
 
-        public void TakeDamage(ICellDamageHandler damageHandler)
-        {
-            damageHandler.Damage(this);
-            OnDamage(EventArgs.Empty);
+        public virtual void TakeDamage(ICellDamageHandler damageHandler)
+        { 
         }
     }
 }

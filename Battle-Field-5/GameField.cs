@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-
     using RNGs;
     using Cells;
     using Cells.Mines;
@@ -98,7 +97,7 @@
                 {
                     if (this.Field[row, col] == null)
                     {
-                        this.Field[row, col] = new Cell(new Position(row, col));
+                        this.Field[row, col] = new EmptyCell(new Position(row, col));
                     }
                 }
             }
@@ -118,7 +117,7 @@
             HashSet<Position> positions = RandomGenerator.Instance.GetUniquePointsBetween(this.MinesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
             foreach (Position position in positions)
             {
-                Mine mine = this.MineFactory.Create(position);
+                Mine mine = this.MineFactory.Create(position, this);
 
                 mine.WhenDamaged += UpdateMineCount;
 
@@ -130,6 +129,17 @@
         {
             int totalCellsCount = this.RowsCount * this.ColumnsCount;
             return RandomGenerator.Instance.GetRandomBetween(MINIMUM_MINES_PERCENT * totalCellsCount / 100, MAXIMUM_MINES_PERCENT * totalCellsCount / 100);
+        }
+
+        public void ReactToExplosion(IList<Position> positions, ICellDamageHandler damageHandler)
+        {
+            foreach (var position in positions)
+            {
+                if (this.IsInRange(position) && this.Field[position.Row, position.Col].Status != CellStatus.Destoryed)
+                {
+                    this.Field[position.Row, position.Col].TakeDamage(damageHandler);
+                }
+            }
         }
     }
 }

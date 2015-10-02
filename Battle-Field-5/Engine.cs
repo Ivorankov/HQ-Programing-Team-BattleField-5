@@ -43,14 +43,7 @@
                 {
                     this.MovesCount++;
                     Mine mine = this.field[position.Row, position.Col] as Mine;
-                    try
-                    {
-                        mine.Explode(this.field, this.damageHandler);
-                    }
-                    catch (MineDestroyedException ex)
-                    {
-                        this.renderer.ShowErrorMessage("That mine is alredy destroyed.");
-                    }
+                    this.field.ReactToExplosion(mine.GetExplodingPattern(), damageHandler);
                 }
                 else
                 {

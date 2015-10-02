@@ -16,16 +16,16 @@ namespace MineFieldApp.Cells.Mines
         /// Initializes a new instance of the TinyMine class.
         /// </summary>
         /// <param name="position">The position of the mine.</param>
-        public TinyMine(Position position)
-            : base(position)
-        { 
+        public TinyMine(Position position, GameField field)
+            : base(position, field)
+        {
         }
 
         /// <summary>
         /// The method returns the exploding area of the mine.
         /// </summary>
         /// <returns>List containing the positions of the tiles of the exploding area.</returns>
-        protected override List<Position> GetExplodingPattern()
+        public override List<Position> GetExplodingPattern()
         {
             List<Position> result = new List<Position>();
 

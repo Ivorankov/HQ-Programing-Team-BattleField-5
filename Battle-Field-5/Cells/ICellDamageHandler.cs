@@ -4,7 +4,7 @@
 
     public interface ICellDamageHandler
     {
-        void Damage(Cell cell);
+        void Damage(EmptyCell cell);
 
         void Damage(Mine mine);
     }

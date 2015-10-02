@@ -66,7 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cells\Cell.cs" />
+    <Compile Include="Cells\ChainDamageHandler.cs" />
     <Compile Include="Cells\DefaultDamageHandler.cs" />
+    <Compile Include="Cells\EmptyCell.cs" />
     <Compile Include="Cells\ICellDamageHandler.cs" />
     <Compile Include="Cells\Mines\MineDestroyedException.cs" />
     <Compile Include="Data\Memento\DataCollection.cs" />

@@ -13,28 +13,22 @@ namespace MineFieldApp.Cells.Mines
     /// </summary>
     public abstract class Mine : Cell
     {
-        protected Mine(Position position)
+        private GameField field;
+
+        protected Mine(Position position, GameField field)
             : base(position)
         {
-
+            this.Field = field;
         }
 
-        public void Explode(GameField field, ICellDamageHandler damageHandler)
+        public GameField Field { get; private set;}
+
+        public abstract List<Position> GetExplodingPattern();
+
+        public override void TakeDamage(ICellDamageHandler damageHandler)
         {
-            if (this.Status == CellStatus.Destoryed)
-            {
-                throw new MineDestroyedException("Mine can't explode it's alredy destroyed.");
-            }
-
-            foreach (var position in this.GetExplodingPattern())
-            {
-                if (field.IsInRange(position))
-                {
-                    field[position.Row, position.Col].TakeDamage(damageHandler);
-                }
-            }
+            damageHandler.Damage(this);
+            OnDamage(EventArgs.Empty);
         }
-
-        protected abstract List<Position> GetExplodingPattern();
     }
 }
