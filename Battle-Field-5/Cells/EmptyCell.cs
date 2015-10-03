@@ -12,7 +12,6 @@
         public override void TakeDamage(ICellDamageHandler damageHandler)
         {
             damageHandler.Damage(this);
-            OnDamage(EventArgs.Empty);
         }
     }
 }

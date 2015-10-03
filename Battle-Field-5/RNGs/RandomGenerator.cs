@@ -14,7 +14,7 @@
 
         }
 
-        public static RandomGenerator Instance 
+        public static RandomGenerator Instance
         {
             get
             {
@@ -36,12 +36,28 @@
         {
             HashSet<Position> positions = new HashSet<Position>();
 
-            for (int i = 0; i < count; i++)
+            while (positions.Count < count)
             {
                 int x = this.GetRandomBetween(first.Row, second.Row + 1);
                 int y = this.GetRandomBetween(first.Col, second.Col + 1);
 
-                positions.Add(new Position(x, y));
+                if (positions.Count > 0)
+                {
+                    foreach (Position position in positions)
+                    {
+                        if (position.Row == x && position.Col == y)
+                        {
+                            break;
+                        }
+
+                        positions.Add(new Position(x, y));
+                        break;
+                    }
+                }
+                else
+                {
+                    positions.Add(new Position(x, y));
+                }
             }
 
             return positions;

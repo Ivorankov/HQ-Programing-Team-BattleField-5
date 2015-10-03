@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class Cell
+    public abstract class Cell
     {
         private CellStatus status;
 
@@ -10,16 +10,6 @@
         {
             this.Status = CellStatus.Normal;
             this.Position = position;
-        }
-
-        public event EventHandler WhenDamaged;
-
-        protected virtual void OnDamage(EventArgs args)
-        {
-            if (this.WhenDamaged != null)
-            {
-                WhenDamaged(this, args);
-            }
         }
 
         public CellStatus Status
@@ -37,8 +27,6 @@
 
         public Position Position { get; private set; }
 
-        public virtual void TakeDamage(ICellDamageHandler damageHandler)
-        { 
-        }
+        public abstract void TakeDamage(ICellDamageHandler damageHandler);
     }
 }

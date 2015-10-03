@@ -11,9 +11,9 @@ namespace BattleField_Console
         {
             IInputProvider inputProvider = new ConsoleInputProvider();
             IRenderer renderer = new ConsoleRender();
+            //ICellDamageHandler damageHandler = new DefaultCellDamageHandler();
             ICellDamageHandler damageHandler = new ChainDamageHandler();
             Engine engine = new Engine(inputProvider, renderer, damageHandler);
-            Console.WriteLine(12);
             engine.Start();
         }
     }

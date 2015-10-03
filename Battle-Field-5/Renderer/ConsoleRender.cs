@@ -65,7 +65,7 @@
 
         public void Clear()
         {
-            Console.Clear();
+           Console.Clear();
         }
 
         public void ShowHighscores()

@@ -17,7 +17,6 @@
         {
             this.Random = random;
             this.MineFactory = mineFactory;
-
             this.Field = new Cell[size, size];
             this.MinesCount = this.CalculateInitialMineCount();
             this.FillFieldMines();
@@ -61,7 +60,7 @@
             }
         }
 
-        private int MinesCount { get; set; }
+        public int MinesCount { get; set; }
 
         public int RowsCount
         {
@@ -105,22 +104,10 @@
 
         private void FillFieldMines()
         {
-            EventHandler UpdateMineCount = (invoker, args) =>
-            {
-                Cell cell = invoker as Cell;
-                if (cell.Status == CellStatus.Destoryed)
-                {
-                    this.MinesCount--;
-                }
-            };
-
             HashSet<Position> positions = RandomGenerator.Instance.GetUniquePointsBetween(this.MinesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
             foreach (Position position in positions)
             {
                 Mine mine = this.MineFactory.Create(position, this);
-
-                mine.WhenDamaged += UpdateMineCount;
-
                 this.Field[position.Row, position.Col] = mine;
             }
         }

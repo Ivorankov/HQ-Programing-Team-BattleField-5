@@ -32,13 +32,14 @@
             this.MovesCount = 0;
             this.renderer.Clear();
 
+            System.Console.WriteLine(this.field.MinesCount);
+
             while (this.field.HasMinesLeft())
             {
                 this.renderer.ShowGameField(field);
                 Position position = this.inputProvider.GetPosition();
                 this.renderer.Clear();
-
-                //isnt it better to check this way(KISS):   this.field[position.X, position.Y].Type == CellType.MINE
+                
                 if (this.field.IsInRange(position) && (this.field[position.Row, position.Col] is Mine))
                 {
                     this.MovesCount++;

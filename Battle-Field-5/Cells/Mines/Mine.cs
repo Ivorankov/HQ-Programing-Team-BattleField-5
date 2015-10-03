@@ -27,8 +27,8 @@ namespace MineFieldApp.Cells.Mines
 
         public override void TakeDamage(ICellDamageHandler damageHandler)
         {
+            --this.Field.MinesCount;
             damageHandler.Damage(this);
-            OnDamage(EventArgs.Empty);
         }
     }
 }
