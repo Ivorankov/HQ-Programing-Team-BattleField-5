@@ -1,36 +1,72 @@
-﻿namespace BattleField
+﻿namespace MineFieldApp
 {
-    using BattleField.Enums;
     using System;
     using System.Collections.Generic;
+    using RNGs;
+    using Cells;
+    using Cells.Mines;
+    using Cells.Mines.Factories;
 
     public class GameField
     {
         private const int MINIMUM_MINES_PERCENT = 15;
+
         private const int MAXIMUM_MINES_PERCENT = 30;
 
-        private Cell[,] field;
-        private Cell.CellFactory factory;
-        private int minesCount;
+        public GameField(IRandomGenerator random, IMineFactory mineFactory, int size)
+        {
+            this.Random = random;
+            this.MineFactory = mineFactory;
+            this.Field = new Cell[size, size];
+            this.MinesCount = this.CalculateInitialMineCount();
+            this.FillFieldMines();
+            this.FillFieldWithEmptyCells();
+        }
 
-        public Cell this[int i, int j]
+        public GameField(IRandomGenerator random, int size)
+            : this(random, new RandomMineFactory(), size)
+        {
+
+        }
+
+        public GameField(IMineFactory mineFactory, int size)
+            : this(RandomGenerator.Instance, mineFactory, size)
+        {
+
+        }
+
+        public GameField(int size)
+            : this(RandomGenerator.Instance, new RandomMineFactory(), size)
+        {
+
+        }
+
+        private IRandomGenerator Random { get; set; }
+
+        private IMineFactory MineFactory { get; set; }
+
+        private Cell[,] Field { get; set; }
+
+        public Cell this[int row, int col]
         {
             get
             {
-                if (this.IsInRange(new Position(i, j)))
+                if (this.IsInRange(new Position(row, col)))
                 {
-                    return field[i, j];
+                    return Field[row, col];
                 }
 
                 throw new IndexOutOfRangeException();
             }
         }
 
+        public int MinesCount { get; set; }
+
         public int RowsCount
         {
             get
             {
-                return this.field.GetLength(0);
+                return this.Field.GetLength(0);
             }
         }
 
@@ -38,72 +74,59 @@
         {
             get
             {
-                return this.field.GetLength(1);
-            }
-        }
-
-        public GameField(int size)
-        {
-            this.field = new Cell[size, size];
-            this.factory = Cell.CreateFactory(this);
-            this.FillFieldWithEmptyCells();
-            this.minesCount = this.CalculateInitialMinesCount();
-            this.FillFieldMines();
-        }
-
-        public void ExplodeCell(Position position)
-        {
-            if (this.IsInRange(position))
-            {
-                Cell currentCell = this.field[position.X, position.Y];
-                if (currentCell.Type != CellType.BOMBED && (currentCell.Type & CellType.MINE) != 0)
-                {
-                    --this.minesCount;
-                }
-
-                this.field[position.X, position.Y].ReactToExplosion();
+                return this.Field.GetLength(1);
             }
         }
 
         public bool IsInRange(Position position)
         {
-            return position.X >= 0 && position.Y >= 0 && position.X < this.RowsCount && position.Y < this.ColumnsCount;
+            return position.Row >= 0 && position.Col >= 0 && position.Row < this.RowsCount && position.Col < this.ColumnsCount;
         }
 
         public bool HasMinesLeft()
         {
-            return minesCount > 0;
-        }
-
-        public void ActivateMine(Position position)
-        {
-            this.field[position.X, position.Y].ExplodeCommand.Execute();
+            return MinesCount > 0;
         }
 
         private void FillFieldWithEmptyCells()
         {
-            for (int i = 0; i < this.RowsCount; i++)
+            for (int row = 0; row < this.RowsCount; row++)
             {
-                for (int j = 0; j < this.ColumnsCount; j++)
+                for (int col = 0; col < this.ColumnsCount; col++)
                 {
-                    this.field[i, j] = this.factory.CreateEmptyCell(new Position(i, j));
+                    if (this.Field[row, col] == null)
+                    {
+                        this.Field[row, col] = new EmptyCell(new Position(row, col));
+                    }
                 }
             }
         }
 
         private void FillFieldMines()
         {
-            IEnumerable<Position> positions = RandomGenerator.GetUniquePointsBetween(this.minesCount, this.RowsCount, this.ColumnsCount);
+            HashSet<Position> positions = RandomGenerator.Instance.GetUniquePointsBetween(this.MinesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
             foreach (Position position in positions)
             {
-                this.field[position.X, position.Y] = this.factory.CreateMineCell(position, RandomGenerator.GetRandomMineType());
+                Mine mine = this.MineFactory.Create(position, this);
+                this.Field[position.Row, position.Col] = mine;
             }
         }
 
-        private int CalculateInitialMinesCount()
+        private int CalculateInitialMineCount()
         {
             int totalCellsCount = this.RowsCount * this.ColumnsCount;
-            return RandomGenerator.GetRandomBetween(MINIMUM_MINES_PERCENT * totalCellsCount / 100, MAXIMUM_MINES_PERCENT * totalCellsCount / 100);
+            return RandomGenerator.Instance.GetRandomBetween(MINIMUM_MINES_PERCENT * totalCellsCount / 100, MAXIMUM_MINES_PERCENT * totalCellsCount / 100);
+        }
+
+        public void ReactToExplosion(IList<Position> positions, ICellDamageHandler damageHandler)
+        {
+            foreach (var position in positions)
+            {
+                if (this.IsInRange(position) && this.Field[position.Row, position.Col].Status != CellStatus.Destoryed)
+                {
+                    this.Field[position.Row, position.Col].TakeDamage(damageHandler);
+                }
+            }
         }
     }
 }

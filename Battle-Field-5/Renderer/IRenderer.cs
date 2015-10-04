@@ -1,4 +1,4 @@
-﻿namespace BattleField.Renderer
+﻿namespace MineFieldApp.Renderer
 {
     using System;
 

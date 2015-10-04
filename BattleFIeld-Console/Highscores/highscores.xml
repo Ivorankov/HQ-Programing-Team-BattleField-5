@@ -1,43 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfScore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Score>
-    <PlayerName>ivo</PlayerName>
-    <Points>0</Points>
-    <Date>2015-09-29T00:58:35.1983437+03:00</Date>
+    <PlayerName>das</PlayerName>
+    <Points>2</Points>
+    <Date>2015-10-02T13:13:41.851864+03:00</Date>
   </Score>
   <Score>
-    <PlayerName>Niki</PlayerName>
-    <Points>1</Points>
-    <Date>2015-09-30T10:33:46.3331627+03:00</Date>
+    <PlayerName>niki</PlayerName>
+    <Points>2</Points>
+    <Date>2015-10-02T13:13:56.7578659+03:00</Date>
   </Score>
   <Score>
-    <PlayerName>ivo</PlayerName>
+    <PlayerName>niki</PlayerName>
     <Points>3</Points>
-    <Date>2015-09-29T16:48:30.0217788+03:00</Date>
+    <Date>2015-10-02T15:04:40.3848806+03:00</Date>
   </Score>
   <Score>
-    <PlayerName>Gosho</PlayerName>
+    <PlayerName>Yasi</PlayerName>
     <Points>4</Points>
-    <Date>2015-09-28T15:57:13.088773+03:00</Date>
-  </Score>
-  <Score>
-    <PlayerName>Niki</PlayerName>
-    <Points>4</Points>
-    <Date>2015-09-28T15:59:41.2244595+03:00</Date>
-  </Score>
-  <Score>
-    <PlayerName>Niki</PlayerName>
-    <Points>4</Points>
-    <Date>2015-09-28T16:31:25.318808+03:00</Date>
-  </Score>
-  <Score>
-    <PlayerName>Goshko</PlayerName>
-    <Points>5</Points>
-    <Date>2015-09-30T10:37:01.8492269+03:00</Date>
-  </Score>
-  <Score>
-    <PlayerName>Niki</PlayerName>
-    <Points>6</Points>
-    <Date>2015-09-28T15:58:08.9702746+03:00</Date>
+    <Date>2015-10-03T18:56:07.6282408+03:00</Date>
   </Score>
 </ArrayOfScore>

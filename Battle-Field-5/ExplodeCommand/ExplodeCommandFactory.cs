@@ -1,6 +1,6 @@
-﻿namespace BattleField.ExplodeCommand
+﻿namespace MineFieldApp.ExplodeCommand
 {
-    using BattleField.Enums;
+    using MineFieldApp.Enums;
     using System;
 
     public class ExplodeCommandFactory

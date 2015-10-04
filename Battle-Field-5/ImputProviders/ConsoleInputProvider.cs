@@ -1,4 +1,4 @@
-﻿namespace BattleField
+﻿namespace MineFieldApp
 {
     using System;
     using System.Text.RegularExpressions;

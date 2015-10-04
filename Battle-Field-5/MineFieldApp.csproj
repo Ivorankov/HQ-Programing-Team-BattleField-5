@@ -8,7 +8,7 @@
     <ProjectGuid>{493704EF-A54B-41A2-B1BF-47857B5337CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleField</RootNamespace>
+    <RootNamespace>MineFieldApp</RootNamespace>
     <AssemblyName>BattleField</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
@@ -65,36 +65,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cell.cs" />
+    <Compile Include="Cells\Cell.cs" />
+    <Compile Include="Cells\ChainDamageHandler.cs" />
+    <Compile Include="Cells\DefaultDamageHandler.cs" />
+    <Compile Include="Cells\EmptyCell.cs" />
+    <Compile Include="Cells\ICellDamageHandler.cs" />
+    <Compile Include="Cells\Mines\MineDestroyedException.cs" />
     <Compile Include="Data\Memento\DataCollection.cs" />
     <Compile Include="Data\GameObjData.cs" />
     <Compile Include="Data\Memento\GameObjMemento.cs" />
     <Compile Include="Data\Memento\Originator.cs" />
-    <Compile Include="ExplodeCommand\BigExplodeCommand.cs" />
-    <Compile Include="ExplodeCommand\HugeExplodeCommand.cs" />
-    <Compile Include="ExplodeCommand\ICommand.cs" />
-    <Compile Include="ExplodeCommand\TinyExplodeCommand.cs" />
     <Compile Include="ImputProviders\WpfInputProvider.cs" />
+    <Compile Include="Cells\Mines\BigMine.cs" />
+    <Compile Include="Cells\Mines\Factories\IMineFactory.cs" />
+    <Compile Include="Cells\Mines\Factories\RandomMineFactory.cs" />
+    <Compile Include="Cells\Mines\GiantMine.cs" />
+    <Compile Include="Cells\Mines\MediumMine.cs" />
+    <Compile Include="Cells\Mines\Mine.cs" />
+    <Compile Include="Cells\Mines\MineAssistant.cs" />
+    <Compile Include="Cells\Mines\SmallMine.cs" />
+    <Compile Include="Cells\Mines\TinyMine.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Renderer\ConsoleRender.cs" />
-    <Compile Include="Enums\CellType.cs" />
+    <Compile Include="Cells\CellStatus.cs" />
     <Compile Include="Engine.cs" />
-    <Compile Include="ExplodeCommand\ExplodeCommand.cs" />
-    <Compile Include="ExplodeCommand\ExplodeCommandFactory.cs" />
-    <Compile Include="ExplodeCommand\NoneExplodeCommand.cs" />
     <Compile Include="GameField.cs" />
-    <Compile Include="ExplodeCommand\SquareExplodeCommand.cs" />
     <Compile Include="Highscore.cs" />
     <Compile Include="ImputProviders\ConsoleInputProvider.cs" />
     <Compile Include="ImputProviders\IInputProvider.cs" />
     <Compile Include="Renderer\IRenderer.cs" />
-    <Compile Include="EntryPoint.cs" />
-    <Compile Include="Position.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RandomGenerator.cs" />
+    <Compile Include="RNGs\IRandomGenerator.cs" />
+    <Compile Include="RNGs\RandomGenerator.cs" />
     <Compile Include="Renderer\WpfRenderer.cs" />
     <Compile Include="Score.cs" />
   </ItemGroup>

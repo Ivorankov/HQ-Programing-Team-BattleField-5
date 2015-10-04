@@ -1,9 +1,11 @@
-﻿namespace BattleField.Renderer
+﻿namespace MineFieldApp.Renderer
 {
-    using BattleField.Enums;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
+    using System.Collections.Generic;
+
+    using MineFieldApp.Cells;
+    using MineFieldApp.Cells.Mines;
 
     public class ConsoleRender : IRenderer
     {
@@ -31,22 +33,39 @@
 
         private String GetCellRepresentation(Cell cell)
         {
-            switch (cell.Type)
+            if (cell.Status == CellStatus.Destoryed)
             {
-                case CellType.EMPTY: return "-";
-                case CellType.BOMBED: return "X";
-                case CellType.GIANTMINE: return "5";
-                case CellType.HUGEMINE: return "4";
-                case CellType.BIGMINE: return "3";
-                case CellType.SMALLMINE: return "2";
-                case CellType.TINYMINE: return "1";
-                default: throw new NotSupportedException();
+                return "X";
+            }
+            else if (cell is TinyMine)
+            {
+                return "1";
+            }
+            else if (cell is SmallMine)
+            {
+                return "2";
+            }
+            else if (cell is MediumMine)
+            {
+                return "3";
+            }
+            else if (cell is BigMine)
+            {
+                return "4";
+            }
+            else if (cell is GiantMine)
+            {
+                return "5";
+            }
+            else
+            {
+                return "-";
             }
         }
 
         public void Clear()
         {
-            Console.Clear();
+           Console.Clear();
         }
 
         public void ShowHighscores()

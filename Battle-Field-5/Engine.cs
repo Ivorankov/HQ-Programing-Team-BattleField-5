@@ -1,18 +1,27 @@
-﻿namespace BattleField
+﻿namespace MineFieldApp
 {
-    using BattleField.Renderer;
+    using MineFieldApp.Renderer;
+
+    using Cells.Mines;
+    using Cells;
 
     public class Engine
     {
-        private GameField field;
         private IInputProvider inputProvider;
+
         private IRenderer renderer;
+
+        private GameField field;
+
         private int MovesCount;
 
-        public Engine(IInputProvider inputProvider, IRenderer renderer)
+        private ICellDamageHandler damageHandler;
+
+        public Engine(IInputProvider inputProvider, IRenderer renderer, ICellDamageHandler damageHandler)
         {
             this.inputProvider = inputProvider;
             this.renderer = renderer;
+            this.damageHandler = damageHandler;
         }
 
         public void Start()
@@ -23,18 +32,19 @@
             this.MovesCount = 0;
             this.renderer.Clear();
 
+            System.Console.WriteLine(this.field.MinesCount);
+
             while (this.field.HasMinesLeft())
             {
                 this.renderer.ShowGameField(field);
                 Position position = this.inputProvider.GetPosition();
                 this.renderer.Clear();
-
-                //isnt it better to check this way(KISS):   this.field[position.X, position.Y].Type == CellType.MINE
-                if (this.field.IsInRange(position) && this.field[position.X, position.Y].ExplodeCommand.IsValid())
+                
+                if (this.field.IsInRange(position) && (this.field[position.Row, position.Col] is Mine))
                 {
-                    ++this.MovesCount;
-                    this.field.ActivateMine(position);
-
+                    this.MovesCount++;
+                    Mine mine = this.field[position.Row, position.Col] as Mine;
+                    this.field.ReactToExplosion(mine.GetExplodingPattern(), damageHandler);
                 }
                 else
                 {

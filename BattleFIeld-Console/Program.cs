@@ -1,5 +1,6 @@
-﻿using BattleField;
-using BattleField.Renderer;
+﻿using MineFieldApp;
+using MineFieldApp.Cells;
+using MineFieldApp.Renderer;
 using System;
 
 namespace BattleField_Console
@@ -10,7 +11,9 @@ namespace BattleField_Console
         {
             IInputProvider inputProvider = new ConsoleInputProvider();
             IRenderer renderer = new ConsoleRender();
-            Engine engine = new Engine(inputProvider, renderer);
+            //ICellDamageHandler damageHandler = new DefaultCellDamageHandler();
+            ICellDamageHandler damageHandler = new ChainDamageHandler();
+            Engine engine = new Engine(inputProvider, renderer, damageHandler);
             engine.Start();
         }
     }
