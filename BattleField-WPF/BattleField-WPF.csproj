@@ -53,7 +53,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GameInitWindow.xaml.cs">
+      <DependentUpon>GameInitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfRenderer.cs" />
     <Page Include="EndScreenWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameInitWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -73,6 +81,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Cell.cs" />
     <Compile Include="EndScreenWindow.xaml.cs">
       <DependentUpon>EndScreenWindow.xaml</DependentUpon>
     </Compile>
@@ -119,6 +128,18 @@
       <Project>{493704ef-a54b-41a2-b1bf-47857b5337cb}</Project>
       <Name>MineFieldApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dirt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ExplodedDirt.png" />
+    <Resource Include="Images\Mine5.png" />
+    <Resource Include="Images\Mine4.png" />
+    <Resource Include="Images\Mine3.png" />
+    <Resource Include="Images\Mine2.png" />
+    <Resource Include="Images\Mine1.png" />
+    <Content Include="Sounds\Explosion.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

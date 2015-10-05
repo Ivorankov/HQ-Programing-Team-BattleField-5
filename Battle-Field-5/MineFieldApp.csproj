@@ -86,7 +86,6 @@
     <Compile Include="Cells\Mines\SmallMine.cs" />
     <Compile Include="Cells\Mines\TinyMine.cs" />
     <Compile Include="Position.cs" />
-    <Compile Include="Renderer\ConsoleRender.cs" />
     <Compile Include="Cells\CellStatus.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="GameField.cs" />
@@ -101,7 +100,6 @@
     </Compile>
     <Compile Include="RNGs\IRandomGenerator.cs" />
     <Compile Include="RNGs\RandomGenerator.cs" />
-    <Compile Include="Renderer\WpfRenderer.cs" />
     <Compile Include="Score.cs" />
   </ItemGroup>
   <ItemGroup>

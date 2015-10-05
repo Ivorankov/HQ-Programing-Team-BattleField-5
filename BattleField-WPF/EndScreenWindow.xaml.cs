@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MineFieldApp;
+using MineFieldApp.Data;
 
 namespace BattleField_WPF
 {
@@ -19,9 +21,12 @@ namespace BattleField_WPF
     /// </summary>
     public partial class EndScreenWindow : Window
     {
-        public EndScreenWindow()
+        private GameObjData data;
+
+        public EndScreenWindow(GameObjData data)
         {
             InitializeComponent();
+            this.data = data;
         }
 
         private void OnMenuClick(object sender, RoutedEventArgs e)
@@ -34,6 +39,15 @@ namespace BattleField_WPF
         private void OnQuitClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HighscoreLogger.Instance.AddHighscore(UserNameTextBox.Text, this.data.MovesCount);
+            this.Hide();
+
+            var highscoreWindow = new HighscoreWindow();
+            highscoreWindow.Show();
         }
     }
 }

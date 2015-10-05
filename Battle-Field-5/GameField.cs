@@ -122,7 +122,7 @@
         {
             foreach (var position in positions)
             {
-                if (this.IsInRange(position) && this.Field[position.Row, position.Col].Status != CellStatus.Destoryed)
+                if (this.IsInRange(position) && this.Field[position.Row, position.Col].Status != CellStatus.Destroyed)
                 {
                     this.Field[position.Row, position.Col].TakeDamage(damageHandler);
                 }

@@ -6,12 +6,12 @@
     {
         public void Damage(EmptyCell cell)
         {
-            cell.Status = CellStatus.Destoryed;
+            cell.Status = CellStatus.Destroyed;
         }
 
         public void Damage(Mine mine)
         {
-            mine.Status = CellStatus.Destoryed;
+            mine.Status = CellStatus.Destroyed;
             mine.Field.ReactToExplosion(mine.GetExplodingPattern(), this);
         }
     }
