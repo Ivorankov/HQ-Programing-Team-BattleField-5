@@ -24,8 +24,10 @@ namespace BattleField_WPF
     /// </summary>
     public partial class GameWindow : Window
     {
-        private Engine engine;
+        private IEngine engine;
+
         private int fieldSize;
+
         public GameWindow(int fieldSize)
         {
             InitializeComponent();
@@ -37,10 +39,10 @@ namespace BattleField_WPF
         {
             var renderer = new WpfRenderer(this);
             ICellDamageHandler damageHandler = new ChainDamageHandler();
-            var engine = new Engine(renderer, damageHandler);
-
+            var engine = new ProxyEngine(renderer, damageHandler);
             this.engine = engine;
-            this.engine.Init(this.fieldSize);
+            var field = new GameField(this.fieldSize);
+            this.engine.Init(field);
 
         }
 

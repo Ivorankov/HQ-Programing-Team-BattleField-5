@@ -23,6 +23,7 @@ namespace BattleField_WPF
 
     class WpfRenderer : IRenderer
     {
+        private const string FILEPATH = "../Images/";
         // This will go in the Data object probably
         private int fieldSize;
         // This field is garbage and will be removed
@@ -102,12 +103,12 @@ namespace BattleField_WPF
                 }
                 else
                 {
-                    cell.Background = this.CreateBrush("Images/Dirt.jpg");
+                    cell.Background = this.CreateBrush(FILEPATH + "Dirt.jpg");
                 }
             }
             else if (status == CellStatus.Destroyed)
             {
-                cell.Background = this.CreateBrush("Images/ExplodedDirt.png");
+                cell.Background = this.CreateBrush(FILEPATH + "ExplodedDirt.png");
             }
 
         }
@@ -118,23 +119,23 @@ namespace BattleField_WPF
 
             if (cell is TinyMine)
             {
-                brush = this.CreateBrush("Images/Mine1.png");
+                brush = this.CreateBrush(FILEPATH + "Mine1.png");
             }
             else if (cell is SmallMine)
             {
-                brush = this.CreateBrush("Images/Mine2.png");
+                brush = this.CreateBrush(FILEPATH + "Mine2.png");
             }
             else if (cell is MediumMine)
             {
-                brush = this.CreateBrush("Images/Mine3.png");
+                brush = this.CreateBrush(FILEPATH + "Mine3.png");
             }
             else if (cell is BigMine)
             {
-                brush = this.CreateBrush("Images/Mine4.png");
+                brush = this.CreateBrush(FILEPATH + "Mine4.png");
             }
             else if (cell is GiantMine)
             {
-                brush = this.CreateBrush("Images/Mine5.png");
+                brush = this.CreateBrush(FILEPATH + "Mine5.png");
             }
 
             return brush;

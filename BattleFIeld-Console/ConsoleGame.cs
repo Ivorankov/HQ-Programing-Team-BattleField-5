@@ -11,15 +11,15 @@ namespace BattleField_Console
 {
     class ConsoleGame
     {
-        public Engine engine;
+        public IEngine engine;
 
-        public void InitGame(int fieldSize)
+        public void InitGame(GameField field)
         {
             IRenderer renderer = new ConsoleRender();
             //ICellDamageHandler damageHandler = new DefaultCellDamageHandler();
             ICellDamageHandler damageHandler = new ChainDamageHandler();
-            this.engine = new Engine(renderer, damageHandler);
-            this.engine.Init(fieldSize);
+            this.engine = new ProxyEngine(renderer, damageHandler);
+            this.engine.Init(field);
         }
     }
 }

@@ -6,7 +6,7 @@
     using Cells;
     using MineFieldApp.Data;
 
-    public class Engine
+    public class Engine : IEngine
     {
         private IRenderer renderer;
 
@@ -22,19 +22,12 @@
             this.damageHandler = damageHandler;
         }
 
-        public void Init(int fieldSize)
+        public void Init(GameField field)
         {
-            this.field = new GameField(fieldSize);
+            this.field = field;
             this.movesCount = 0;
             this.renderer.ShowGameField(field);
 
-        }
-
-        private void GameOver()
-        {
-            var data = new GameObjData(this.field, this.movesCount);
-            this.renderer.ShowGameOver(data);
-            this.renderer.ShowHighscores(data);
         }
 
         public void UpdateField(Position pos)
@@ -57,6 +50,13 @@
             {
                 this.GameOver();
             }
+        }
+
+        public void GameOver()
+        {
+            var data = new GameObjData(this.field, this.movesCount);
+            this.renderer.ShowGameOver(data);
+            this.renderer.ShowHighscores(data);
         }
     }
 }
