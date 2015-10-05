@@ -1,0 +1,10 @@
+﻿<Window x:Class="BattleField_WPF.GameInitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GameInitWindow" Height="300" Width="300">
+    <StackPanel>
+        <TextBlock Text="Enter size of game field(2-10)" />
+        <TextBox x:Name="ResponseTextBox" />
+        <Button Content="OK" Click="Button_Click" />
+    </StackPanel>
+</Window>

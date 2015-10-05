@@ -6,13 +6,11 @@
 
     using MineFieldApp.Cells;
     using MineFieldApp.Cells.Mines;
+    using MineFieldApp.Data;
 
     public class ConsoleRender : IRenderer
     {
-        public void SayWelcome()
-        {
-            Console.WriteLine(@"Welcome to ""Battle Field"" game. ");
-        }
+        private GameField field;
 
         public void ShowErrorMessage(String message)
         {
@@ -21,6 +19,8 @@
 
         public void ShowGameField(GameField field)
         {
+            this.field = field;// Todo: find a better solution for this
+
             int rowsCount = field.RowsCount;
             int columnsCount = field.ColumnsCount;
             Console.WriteLine("   {0}", String.Join(" ", Enumerable.Range(0, columnsCount)));
@@ -33,7 +33,7 @@
 
         private String GetCellRepresentation(Cell cell)
         {
-            if (cell.Status == CellStatus.Destoryed)
+            if (cell.Status == CellStatus.Destroyed)
             {
                 return "X";
             }
@@ -63,12 +63,13 @@
             }
         }
 
-        public void Clear()
+        public void RefreshGameField()
         {
            Console.Clear();
+           this.ShowGameField(this.field);
         }
 
-        public void ShowHighscores()
+        public void ShowHighscores(GameObjData data)
         {
             IList<Score> highscores = HighscoreLogger.Instance.Highscores;
             int totalWidth = 50;
@@ -84,11 +85,14 @@
             }
 
             Console.WriteLine(new String('-', totalWidth));
+            Console.ReadKey();
+            Environment.Exit(0);
         }
 
-        public void ShowGameOver()
+        public void ShowGameOver(GameObjData data)
         {
             Console.WriteLine("Concratularions you finished the game!");
         }
+
     }
 }

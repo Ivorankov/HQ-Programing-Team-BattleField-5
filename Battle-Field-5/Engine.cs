@@ -4,69 +4,59 @@
 
     using Cells.Mines;
     using Cells;
+    using MineFieldApp.Data;
 
     public class Engine
     {
-        private IInputProvider inputProvider;
-
         private IRenderer renderer;
 
         private GameField field;
 
-        private int MovesCount;
+        private int movesCount;
 
         private ICellDamageHandler damageHandler;
 
-        public Engine(IInputProvider inputProvider, IRenderer renderer, ICellDamageHandler damageHandler)
+        public Engine(IRenderer renderer, ICellDamageHandler damageHandler)
         {
-            this.inputProvider = inputProvider;
             this.renderer = renderer;
             this.damageHandler = damageHandler;
         }
 
-        public void Start()
-        {  
-            this.renderer.SayWelcome();
-            var fieldSize = this.inputProvider.GetFieldSize();
-            this.field = new GameField(fieldSize);         
-            this.MovesCount = 0;
-            this.renderer.Clear();
+        public void Init(int fieldSize)
+        {
+            this.field = new GameField(fieldSize);
+            this.movesCount = 0;
+            this.renderer.ShowGameField(field);
 
-            System.Console.WriteLine(this.field.MinesCount);
-
-            while (this.field.HasMinesLeft())
-            {
-                this.renderer.ShowGameField(field);
-                Position position = this.inputProvider.GetPosition();
-                this.renderer.Clear();
-                
-                if (this.field.IsInRange(position) && (this.field[position.Row, position.Col] is Mine))
-                {
-                    this.MovesCount++;
-                    Mine mine = this.field[position.Row, position.Col] as Mine;
-                    this.field.ReactToExplosion(mine.GetExplodingPattern(), damageHandler);
-                }
-                else
-                {
-                    this.renderer.ShowErrorMessage("Invalid coordinates or the selected cell is not a mine.");
-                }
-            }
-
-            this.GameOver();
-            this.PersistResult();
-            this.renderer.ShowHighscores();
         }
 
         private void GameOver()
         {
-            this.renderer.ShowGameOver();
+            var data = new GameObjData(this.field, this.movesCount);
+            this.renderer.ShowGameOver(data);
+            this.renderer.ShowHighscores(data);
         }
 
-        private void PersistResult()
+        public void UpdateField(Position pos)
         {
-            string playerName = this.inputProvider.GetPlayerName();
-            HighscoreLogger.Instance.AddHighscore(playerName, this.MovesCount);
-        }
+            Position position = pos;
 
+            if (this.field.IsInRange(position) && (this.field[position.Row, position.Col] is Mine))
+            {
+                this.movesCount++;
+                Mine mine = this.field[position.Row, position.Col] as Mine;
+                this.field.ReactToExplosion(mine.GetExplodingPattern(), this.damageHandler);
+                this.renderer.RefreshGameField();
+            }
+            else
+            {
+                this.renderer.ShowErrorMessage("Invalid coordinates or the selected cell is not a mine.");
+            }
+
+            if (!this.field.HasMinesLeft())
+            {
+                this.GameOver();
+            }
+        }
     }
 }

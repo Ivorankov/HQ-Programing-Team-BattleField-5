@@ -13,7 +13,7 @@ namespace MineFieldApp.Cells.Mines
     /// </summary>
     public abstract class Mine : Cell
     {
-        private GameField field;
+        private GameField field; //Mismatch you are using an auto prop!
 
         protected Mine(Position position, GameField field)
             : base(position)
