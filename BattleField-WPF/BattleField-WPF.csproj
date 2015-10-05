@@ -53,27 +53,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="GameInitWindow.xaml.cs">
+    <Compile Include="Windows\GameInitWindow.xaml.cs">
       <DependentUpon>GameInitWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WpfRenderer.cs" />
-    <Page Include="EndScreenWindow.xaml">
+    <Page Include="Windows\EndScreenWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameInitWindow.xaml">
+    <Page Include="Windows\GameInitWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameWindow.xaml">
+    <Page Include="Windows\GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HighscoreWindow.xaml">
+    <Page Include="Windows\HighscoreWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -82,16 +82,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Cell.cs" />
-    <Compile Include="EndScreenWindow.xaml.cs">
+    <Compile Include="Windows\EndScreenWindow.xaml.cs">
       <DependentUpon>EndScreenWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameWindow.xaml.cs">
+    <Compile Include="Windows\GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HighscoreWindow.xaml.cs">
+    <Compile Include="Windows\HighscoreWindow.xaml.cs">
       <DependentUpon>HighscoreWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
