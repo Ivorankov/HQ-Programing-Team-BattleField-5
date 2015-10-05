@@ -75,6 +75,8 @@
     <Compile Include="Data\GameObjData.cs" />
     <Compile Include="Data\Memento\GameObjMemento.cs" />
     <Compile Include="Data\Memento\Originator.cs" />
+    <Compile Include="Engines\IEngine.cs" />
+    <Compile Include="Engines\ProxyEngine.cs" />
     <Compile Include="ImputProviders\WpfInputProvider.cs" />
     <Compile Include="Cells\Mines\BigMine.cs" />
     <Compile Include="Cells\Mines\Factories\IMineFactory.cs" />
@@ -87,7 +89,7 @@
     <Compile Include="Cells\Mines\TinyMine.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Cells\CellStatus.cs" />
-    <Compile Include="Engine.cs" />
+    <Compile Include="Engines\Engine.cs" />
     <Compile Include="GameField.cs" />
     <Compile Include="Highscore.cs" />
     <Compile Include="ImputProviders\ConsoleInputProvider.cs" />

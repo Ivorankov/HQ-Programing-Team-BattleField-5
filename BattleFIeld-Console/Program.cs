@@ -5,17 +5,16 @@ using System;
 
 namespace BattleField_Console
 {
-    class Program
+   internal class Program
     {
-        private Engine engine;
-
         public static void Main()
         {
             Console.WriteLine(@"Welcome to ""Battle Field"" game. ");
             Console.WriteLine("Please enter field size"); // Todo Valdation
             var fieldSize = int.Parse(Console.ReadLine());
             var consoleGame = new ConsoleGame();
-            consoleGame.InitGame(fieldSize);
+            var field = new GameField(fieldSize);
+            consoleGame.InitGame(field);
 
             while(true)
             {
