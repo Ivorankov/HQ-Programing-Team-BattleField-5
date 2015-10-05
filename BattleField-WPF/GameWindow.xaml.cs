@@ -23,27 +23,13 @@ namespace BattleField_WPF
     public partial class GameWindow : Window
     {
         private Engine engine;
-        private WpfInputProvider eventHandler;
-        private int fieldSize;
+
         public GameWindow(int fieldSize)
         {
             InitializeComponent();
-            this.fieldSize = fieldSize;
-            StartTheEngine();//Vromm vromm
-        }
-
-        public void StartTheEngine()
-        {
-            var test = new WpfRendererr(this);
-            var engine = new Engine(test);
-            var eventHandler = new WpfInputProvider(engine);
-            this.eventHandler = eventHandler;
-
-            //Attaches subscriber to publisher
-            this.eventHandler.CellClicked += this.eventHandler.GetPosition;
-            this.engine = engine;
-            engine.Start(this.fieldSize);
-
+            var renderer = new WpfRenderer(this);
+            this.engine = new Engine(renderer);
+            this.engine.Start(fieldSize);
         }
 
         public void Cell_Click(object sender, RoutedEventArgs e)
@@ -51,12 +37,11 @@ namespace BattleField_WPF
             var cell = sender as Cell;
             if (cell.Status == status.withMine)
             {
-                //Publishes event that calls the UpdateField method in the engine
-                this.eventHandler.TakeCellCoordinates(sender, e);
-
+                this.engine.UpdateField(cell.Pos);
                 this.PlaySound("../../Sounds/Explosion.wav");
             }
         }
+
         public void PlaySound(string pathToWavFile)
         {
             var sound = new SoundPlayer(pathToWavFile);

@@ -20,7 +20,7 @@ namespace BattleField_WPF
 {
     //Under construction
 
-    class WpfRendererr : IRenderer
+    class WpfRenderer : IRenderer
     {
         // This will go in the Data object probably
         private int fieldSize;
@@ -31,7 +31,7 @@ namespace BattleField_WPF
 
         private Grid grid;
 
-        public WpfRendererr(GameWindow win)
+        public WpfRenderer(GameWindow win)
         {
             //TODO better way for adding the gird (currently it's with win.Content)
             this.window = win;
