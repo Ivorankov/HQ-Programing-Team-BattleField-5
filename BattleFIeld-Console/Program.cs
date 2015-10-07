@@ -10,8 +10,17 @@ namespace BattleField_Console
         public static void Main()
         {
             Console.WriteLine(@"Welcome to ""Battle Field"" game. ");
-            Console.WriteLine("Please enter field size"); // Todo Valdation
-            var fieldSize = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter field size");
+            string playerInput = Console.ReadLine();
+            
+            int fieldSize = 0;
+            while (!int.TryParse(playerInput, out fieldSize))
+            {
+                Console.WriteLine("Wrong format. Field size must be number!");
+                Console.WriteLine("Please enter field size");
+                playerInput = Console.ReadLine();
+            }
+
             var consoleGame = new ConsoleGame();
             var field = new GameField(fieldSize);
             consoleGame.InitGame(field);
