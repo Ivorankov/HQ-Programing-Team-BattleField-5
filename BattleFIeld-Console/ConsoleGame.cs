@@ -10,11 +10,17 @@
 
         public void InitGame(GameField field)
         {
-            IRenderer renderer = new ConsoleRender();
+            ConsoleRenderer renderer = new ConsoleRenderer();
             //ICellDamageHandler damageHandler = new DefaultCellDamageHandler();
             ICellDamageHandler damageHandler = new ChainDamageHandler();
             this.engine = new ProxyEngine(renderer, damageHandler);
             this.engine.Init(field);
+
+            while (true)
+            {
+                Position pos = renderer.SelectPosition();
+                this.engine.UpdateField(pos);
+            }
         }
     }
 }
