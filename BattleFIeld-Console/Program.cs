@@ -15,9 +15,7 @@ namespace BattleField_Console
             var field = new GameField(10);
             consoleGame.InitGame(field);
 
-            //while(true)
-            //{
-            //}
+
         }
     }
 }
