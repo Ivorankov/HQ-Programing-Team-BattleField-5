@@ -1,18 +1,16 @@
-﻿using MineFieldApp;
-using MineFieldApp.Cells;
-using MineFieldApp.Renderer;
-using System;
-
-namespace BattleField_Console
+﻿namespace BattleField_Console
 {
-   internal class Program
+    using MineFieldApp;
+    using System;
+
+    internal class Program
     {
         public static void Main()
         {
             Console.WriteLine(@"Welcome to ""Battle Field"" game. ");
             Console.WriteLine("Please enter field size");
             string playerInput = Console.ReadLine();
-            
+
             int fieldSize = 0;
             while (!int.TryParse(playerInput, out fieldSize))
             {
@@ -25,7 +23,7 @@ namespace BattleField_Console
             var field = new GameField(fieldSize);
             consoleGame.InitGame(field);
 
-            while(true)
+            while (true)
             {
                 Console.WriteLine("Enter position");// Todo validation
                 var input = Console.ReadLine().Split(' ');

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MineFieldApp.Data
+﻿namespace MineFieldApp.Data
 {
     public class GameObjMemento
     {

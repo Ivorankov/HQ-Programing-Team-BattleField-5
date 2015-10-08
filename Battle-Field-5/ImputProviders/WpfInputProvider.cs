@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MineFieldApp.ImputProviders
+﻿namespace MineFieldApp.ImputProviders
 {
+    using System;
+
     public class WpfInputProvider : IInputProvider
     {
         public int GetFieldSize()
