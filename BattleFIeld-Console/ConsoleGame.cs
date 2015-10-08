@@ -1,14 +1,9 @@
-﻿using MineFieldApp;
-using MineFieldApp.Cells;
-using MineFieldApp.Renderer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleField_Console
+﻿namespace BattleField_Console
 {
+    using MineFieldApp;
+    using MineFieldApp.Cells;
+    using MineFieldApp.Renderer;
+
     class ConsoleGame
     {
         public IEngine engine;

@@ -1,12 +1,11 @@
 ﻿namespace MineFieldApp.Renderer
 {
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
-
     using MineFieldApp.Cells;
     using MineFieldApp.Cells.Mines;
     using MineFieldApp.Data;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class ConsoleRender : IRenderer
     {

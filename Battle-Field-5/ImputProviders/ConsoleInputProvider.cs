@@ -7,7 +7,8 @@
     {
         public int GetFieldSize()
         {
-            return GetValidUserInput(input => (1 <= int.Parse(input) && int.Parse(input) <= 10), "Enter battle field size (between 1 and 10): ", int.Parse);
+            int result = 0;
+            return GetValidUserInput(input => (int.TryParse(input, out result) && 1 <= result && result <= 10), "Enter battle field size (between 1 and 10): ", int.Parse);
         }
 
         public Position GetPosition()
@@ -36,11 +37,16 @@
             do
             {
                 Console.WriteLine(prompt);
-                input = Console.ReadLine();
+                input = GetUserInput();
             }
             while (!validator.Invoke(input));
 
             return parser.Invoke(input);
+        }
+
+        protected virtual string GetUserInput()
+        {
+            return Console.ReadLine();
         }
     }
 }
