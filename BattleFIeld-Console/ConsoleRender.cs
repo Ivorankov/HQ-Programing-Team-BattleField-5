@@ -69,7 +69,7 @@
            this.ShowGameField(this.field);
         }
 
-        public void ShowHighscores(GameObjData data)
+        public void ShowHighscores(GameData data)
         {
             IList<Score> highscores = HighscoreLogger.Instance.Highscores;
             int totalWidth = 50;
@@ -89,7 +89,7 @@
             Environment.Exit(0);
         }
 
-        public void ShowGameOver(GameObjData data)
+        public void ShowGameOver(GameData data)
         {
             Console.WriteLine("Concratularions you finished the game!");
         }

@@ -59,13 +59,13 @@ namespace BattleField_WPF
             this.SetCellRepresentation(this.grid);
         }
 
-        public void ShowHighscores(GameObjData data)
+        public void ShowHighscores(GameData data)
         {
             var highScoreWindow = new HighscoreWindow();
             highScoreWindow.Show();
         }
 
-        public void ShowGameOver(GameObjData data)
+        public void ShowGameOver(GameData data)
         {
             var gameOverWindow = new EndScreenWindow(data);
             gameOverWindow.Show();

@@ -71,10 +71,8 @@
     <Compile Include="Cells\EmptyCell.cs" />
     <Compile Include="Cells\ICellDamageHandler.cs" />
     <Compile Include="Cells\Mines\MineDestroyedException.cs" />
-    <Compile Include="Data\Memento\DataCollection.cs" />
-    <Compile Include="Data\GameObjData.cs" />
-    <Compile Include="Data\Memento\GameObjMemento.cs" />
-    <Compile Include="Data\Memento\Originator.cs" />
+    <Compile Include="Data\Memento\GameDataCaretaker.cs" />
+    <Compile Include="Data\GameData.cs" />
     <Compile Include="Engines\IEngine.cs" />
     <Compile Include="Engines\ProxyEngine.cs" />
     <Compile Include="ImputProviders\WpfInputProvider.cs" />

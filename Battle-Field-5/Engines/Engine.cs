@@ -5,6 +5,7 @@
     using Cells.Mines;
     using Cells;
     using MineFieldApp.Data;
+    using System;
 
     public class Engine : IEngine
     {
@@ -54,9 +55,21 @@
 
         public void GameOver()
         {
-            var data = new GameObjData(this.field, this.movesCount);
-            this.renderer.ShowGameOver(data);
-            this.renderer.ShowHighscores(data);
+            var gameData = new GameData(this.field, this.movesCount, this.damageHandler);
+            this.renderer.ShowGameOver(gameData);
+            this.renderer.ShowHighscores(gameData);
+        }
+
+        public GameData CreateMemento()
+        {
+            return new GameData(this.field, this.movesCount, this.damageHandler);
+        }
+
+        public void SetMemento(GameData memento)
+        {
+            this.field = memento.GameField;
+            this.movesCount = memento.MovesCount;
+            this.damageHandler = memento.DamageHandler;
         }
     }
 }

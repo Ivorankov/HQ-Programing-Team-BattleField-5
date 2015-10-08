@@ -7,8 +7,8 @@
     {
         void ShowErrorMessage(String message);
         void ShowGameField(GameField field);
-        void ShowHighscores(GameObjData data);
-        void ShowGameOver(GameObjData data);
+        void ShowHighscores(GameData data);
+        void ShowGameOver(GameData data);
         void RefreshGameField();
     }
 }

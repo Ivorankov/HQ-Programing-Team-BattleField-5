@@ -21,9 +21,9 @@ namespace BattleField_WPF
     /// </summary>
     public partial class EndScreenWindow : Window
     {
-        private GameObjData data;
+        private GameData data;
 
-        public EndScreenWindow(GameObjData data)
+        public EndScreenWindow(GameData data)
         {
             InitializeComponent();
             this.data = data;

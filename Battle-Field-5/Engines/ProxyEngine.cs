@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MineFieldApp.Data;
 
 namespace MineFieldApp
 {
@@ -38,6 +39,16 @@ namespace MineFieldApp
         public void GameOver()
         {
 
+        }
+
+        public GameData CreateMemento()
+        {
+            return this.engine.CreateMemento();
+        }
+
+        public void SetMemento(GameData memento)
+        {
+            this.engine.SetMemento(memento);
         }
     }
 }
