@@ -19,6 +19,8 @@ namespace BattleField_WPF
     /// </summary>
     public partial class GameInitWindow : Window
     {
+        private bool isPressed = false;
+
         public GameInitWindow()
         {
             InitializeComponent();
@@ -26,10 +28,30 @@ namespace BattleField_WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // I know it rly needs some validation xD
-            var gameWindow = new GameWindow(int.Parse(this.ResponseTextBox.Text));
-            this.Close();
-            gameWindow.Show();
+            var fieldSizeInput = int.Parse(this.ResponseTextBox.Text);
+
+            if (5 <= fieldSizeInput && fieldSizeInput <= 15)
+            {
+                var gameWindow = new GameWindow(fieldSizeInput, this.isPressed);
+                this.Close();
+                gameWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Field size has to be (5-15)");
+            }
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (this.isPressed)
+            {
+                this.isPressed = false;
+            }
+            else
+            {
+                this.isPressed = true;
+            }
         }
     }
 }
