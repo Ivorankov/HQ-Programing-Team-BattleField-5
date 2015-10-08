@@ -74,7 +74,7 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Adds a highscore to the file and a the list with highscores
+        /// Adds a highscore to the file and the list with highscores
         /// </summary>
         /// <param name="playerName">Name of the player setting high score</param>
         /// <param name="points">His result</param>
