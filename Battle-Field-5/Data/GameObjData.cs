@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace MineFieldApp.Data
+﻿namespace MineFieldApp.Data
 {
-   public class GameObjData
+    public class GameObjData
     {
         public int MovesCount { get; private set; }
 

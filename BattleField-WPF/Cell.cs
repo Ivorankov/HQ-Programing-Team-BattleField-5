@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using MineFieldApp;
-using MineFieldApp.Cells;
-
-namespace BattleField_WPF
+﻿namespace BattleField_WPF
 {
+    using MineFieldApp;
+    using MineFieldApp.Cells;
+    using System.Windows.Controls;
+
     class CellButton : Button
     {
 

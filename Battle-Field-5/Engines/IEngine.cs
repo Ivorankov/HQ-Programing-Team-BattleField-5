@@ -1,7 +1,4 @@
-﻿using MineFieldApp.Renderer;
-using System;
-
-namespace MineFieldApp
+﻿namespace MineFieldApp
 {
    public interface IEngine
     {

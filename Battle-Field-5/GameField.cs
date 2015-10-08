@@ -1,11 +1,11 @@
 ﻿namespace MineFieldApp
 {
-    using System;
-    using System.Collections.Generic;
-    using RNGs;
     using Cells;
     using Cells.Mines;
     using Cells.Mines.Factories;
+    using RNGs;
+    using System;
+    using System.Collections.Generic;
 
     public class GameField
     {

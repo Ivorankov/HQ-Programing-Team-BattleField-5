@@ -28,17 +28,30 @@ namespace BattleField_WPF
 
         private int fieldSize;
 
-        public GameWindow(int fieldSize)
+        private bool isExplosionChained;
+
+        public GameWindow(int fieldSize, bool isExplosionChained)
         {
             InitializeComponent();
             this.fieldSize = fieldSize;
+            this.isExplosionChained = isExplosionChained;
             StartTheEngine();//Vromm vromm
         }
 
         public void StartTheEngine()
         {
+            ICellDamageHandler damageHandler;
+
+            if (this.isExplosionChained)
+            {
+                damageHandler = new ChainDamageHandler();
+            }
+            else
+            {
+                damageHandler = new DefaultCellDamageHandler();
+            }
+
             var renderer = new WpfRenderer(this);
-            ICellDamageHandler damageHandler = new ChainDamageHandler();
             var engine = new ProxyEngine(renderer, damageHandler);
             this.engine = engine;
             var field = new GameField(this.fieldSize);

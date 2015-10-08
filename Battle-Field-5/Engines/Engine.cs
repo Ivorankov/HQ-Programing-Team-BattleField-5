@@ -1,10 +1,9 @@
 ﻿namespace MineFieldApp
 {
-    using MineFieldApp.Renderer;
-
-    using Cells.Mines;
     using Cells;
+    using Cells.Mines;
     using MineFieldApp.Data;
+    using MineFieldApp.Renderer;
 
     public class Engine : IEngine
     {
@@ -27,7 +26,6 @@
             this.field = field;
             this.movesCount = 0;
             this.renderer.ShowGameField(field);
-
         }
 
         public void UpdateField(Position pos)

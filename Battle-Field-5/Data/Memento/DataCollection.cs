@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MineFieldApp.Data
+﻿namespace MineFieldApp.Data
 {
-   public class DataCollection
+    using System.Collections.Generic;
+
+    public class DataCollection
     {
-       //Caretaker
+        //Caretaker
         public List<GameObjMemento> GameObjectCollecton { get; private set; }
 
         public void AddMementoObject(GameObjMemento gameObject)

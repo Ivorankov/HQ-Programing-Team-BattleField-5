@@ -2,6 +2,7 @@
 {
     using System;
     using System.Text.RegularExpressions;
+
     public class ConsoleInputProvider : IInputProvider
     {
         public int GetFieldSize()

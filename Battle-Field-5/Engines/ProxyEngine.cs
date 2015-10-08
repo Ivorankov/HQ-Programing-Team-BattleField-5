@@ -1,23 +1,18 @@
-﻿using MineFieldApp.Cells;
-using MineFieldApp.Renderer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MineFieldApp
+﻿namespace MineFieldApp
 {
-   public class ProxyEngine : IEngine
+    using MineFieldApp.Cells;
+    using MineFieldApp.Renderer;
+
+    public class ProxyEngine : IEngine
     {
-       private IEngine engine;
+        private IEngine engine;
 
-       private IRenderer renderer;
+        private IRenderer renderer;
 
-       private ICellDamageHandler damageHandler;
+        private ICellDamageHandler damageHandler;
 
 
-       public ProxyEngine(IRenderer renderer, ICellDamageHandler damageHandler)
+        public ProxyEngine(IRenderer renderer, ICellDamageHandler damageHandler)
         {
             this.renderer = renderer;
             this.damageHandler = damageHandler;

@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Resources;
-using MineFieldApp;
-using MineFieldApp.Renderer;
-using MineFieldApp.Cells;
-using MineFieldApp.Data;
-using MineFieldApp.Cells.Mines;
-
-namespace BattleField_WPF
+﻿namespace BattleField_WPF
 {
+    using MineFieldApp;
+    using MineFieldApp.Cells;
+    using MineFieldApp.Cells.Mines;
+    using MineFieldApp.Data;
+    using MineFieldApp.Renderer;
+    using System;
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Resources;
     //Under construction
 
     class WpfRenderer : IRenderer
