@@ -15,15 +15,21 @@ using System.Windows.Shapes;
 namespace BattleField_WPF
 {
     /// <summary>
-    /// Interaction logic for GameWindow.xaml
+    /// Interaction logic for GameInitWindow.xaml
     /// </summary>
-    public partial class GameWindow : Window
+    public partial class GameInitWindow : Window
     {
-        public GameWindow(){
-
+        public GameInitWindow()
+        {
             InitializeComponent();
-            var test = new EndScreenWindow();
-            test.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // I know it rly needs some validation xD
+            var gameWindow = new GameWindow(int.Parse(this.ResponseTextBox.Text));
+            this.Close();
+            gameWindow.Show();
         }
     }
 }

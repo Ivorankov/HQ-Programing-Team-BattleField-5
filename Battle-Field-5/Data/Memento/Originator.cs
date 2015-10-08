@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleField.Data.Memento
+namespace MineFieldApp.Data.Memento
 {
    public class Originator
     {

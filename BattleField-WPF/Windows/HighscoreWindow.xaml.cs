@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MineFieldApp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,25 +16,25 @@ using System.Windows.Shapes;
 namespace BattleField_WPF
 {
     /// <summary>
-    /// Interaction logic for EndScreenWindow.xaml
+    /// Interaction logic for HighscoreWindow.xaml
     /// </summary>
-    public partial class EndScreenWindow : Window
+    public partial class HighscoreWindow : Window
     {
-        public EndScreenWindow()
+        public HighscoreWindow()
         {
+
             InitializeComponent();
+
         }
 
-        private void OnMenuClick(object sender, RoutedEventArgs e)
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            var menu = new MainWindow();
-            menu.Show();
-            this.Close();
-        }
+            HighscoreLogger highscore = HighscoreLogger.Instance;
+            var highscores = highscore.Highscores;
 
-        private void OnQuitClick(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
+            var grid = sender as DataGrid;
+            grid.ItemsSource = highscores;
+
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using BattleField;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MineFieldApp;
 
 namespace BattleField_WPF
 {
@@ -28,7 +28,7 @@ namespace BattleField_WPF
 
         private void OnNewGameButtonClick(object sender, RoutedEventArgs e)
         {
-            var gameWindow = new GameWindow();
+            var gameWindow = new GameInitWindow();
             gameWindow.Show();
             this.Close();
         }

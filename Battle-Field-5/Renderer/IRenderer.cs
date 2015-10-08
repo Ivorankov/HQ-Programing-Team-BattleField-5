@@ -1,14 +1,14 @@
-﻿namespace BattleField.Renderer
+﻿namespace MineFieldApp.Renderer
 {
+    using MineFieldApp.Data;
     using System;
 
     public interface IRenderer
     {
-        void SayWelcome();
         void ShowErrorMessage(String message);
         void ShowGameField(GameField field);
-        void ShowHighscores();
-        void ShowGameOver();
-        void Clear();
+        void ShowHighscores(GameObjData data);
+        void ShowGameOver(GameObjData data);
+        void RefreshGameField();
     }
 }
