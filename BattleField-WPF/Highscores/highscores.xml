@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfScore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Score>
+    <PlayerName>ddfadasdas</PlayerName>
+    <Points>2</Points>
+    <Date>2015-10-07T23:33:45.5812325+03:00</Date>
+  </Score>
+  <Score>
     <PlayerName>Done.</PlayerName>
     <Points>3</Points>
     <Date>2015-10-02T20:55:35.4757555+03:00</Date>
