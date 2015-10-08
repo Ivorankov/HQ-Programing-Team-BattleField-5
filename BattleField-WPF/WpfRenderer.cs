@@ -72,7 +72,7 @@ namespace BattleField_WPF
             this.window.Hide();
         }
 
-        public void RefreshGameField()
+        public void RefreshGameField(GameField field)
         {
             this.SetCellRepresentation(this.grid);
         }

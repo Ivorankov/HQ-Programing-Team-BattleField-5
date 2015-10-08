@@ -43,7 +43,6 @@
 
         private Position GetFieldPosition()
         {
-            //return new Position(windowPosition.Row - 1, (windowPosition.Col - 1) / 2);
             return new Position(Console.CursorTop - 1, (Console.CursorLeft - 1) / 2);
         }
 
