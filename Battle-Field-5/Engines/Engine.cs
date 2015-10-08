@@ -39,7 +39,7 @@
                 this.movesCount++;
                 Mine mine = this.field[position.Row, position.Col] as Mine;
                 this.field.ReactToExplosion(mine.GetExplodingPattern(), this.damageHandler);
-                this.renderer.RefreshGameField();
+                this.renderer.RefreshGameField(field);
             }
             else
             {

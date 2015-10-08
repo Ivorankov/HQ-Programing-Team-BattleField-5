@@ -1,6 +1,7 @@
 ﻿namespace MineFieldApp.Renderer
 {
     using System;
+    using System.Text;
     using System.Linq;
     using System.Collections.Generic;
 
@@ -8,91 +9,71 @@
     using MineFieldApp.Cells.Mines;
     using MineFieldApp.Data;
 
-    public class ConsoleRender : IRenderer
+    public class ConsoleRenderer : IRenderer
     {
-        private GameField field;
+        private const int WallsCount = 2;
 
-        public void ShowErrorMessage(String message)
+        private const char HorizontalWallSymbol = '-';
+
+        private void SetUpWindow(GameField field)
         {
-            Console.WriteLine(message);
+            Console.Title = "MineField";
+
+            int whiteSpaceCount = field.ColumnsCount - 1;
+
+            int consoleRowsCount = field.RowsCount + ConsoleRenderer.WallsCount;
+            int consoleColumnsCount = field.ColumnsCount + whiteSpaceCount + ConsoleRenderer.WallsCount;
+
+            Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
+            Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
+        }
+
+        private Position GetWindowPosition(Position fieldPosition)
+        {
+            return new Position(fieldPosition.Row + 1, fieldPosition.Col * 2);
         }
 
         public void ShowGameField(GameField field)
         {
-            this.field = field;// Todo: find a better solution for this
+            this.SetUpWindow(field);
 
-            int rowsCount = field.RowsCount;
-            int columnsCount = field.ColumnsCount;
-            Console.WriteLine("   {0}", String.Join(" ", Enumerable.Range(0, columnsCount)));
-            Console.WriteLine("   {0}", new String('-', rowsCount * 2));
-            for (int i = 0; i < rowsCount; i++)
+            int horizontalWallSize = Console.WindowWidth - ConsoleRenderer.WallsCount;
+            string horizontalWall = new string(ConsoleRenderer.HorizontalWallSymbol, horizontalWallSize);
+
+            string upperWall = string.Format(" {0} ", horizontalWall);
+            string verticalWall = string.Format("|{0}|", new String(' ' , horizontalWallSize));
+            string lowerWall = ' ' + horizontalWall; 
+
+            StringBuilder builder = new StringBuilder(upperWall);
+            for (int i = 0; i < Console.WindowHeight - 2; i++)
             {
-                Console.WriteLine("{0} |{1}", i, String.Join(" ", Enumerable.Range(0, columnsCount).Select(column => this.GetCellRepresentation(field[i, column]))));
+                builder.Append(verticalWall);
             }
+            builder.Append(lowerWall);
+
+            Console.Write(builder);
+            Console.ReadLine();
+            //this.RefreshGameField(field);
         }
 
-        private String GetCellRepresentation(Cell cell)
+        public void RefreshGameField(GameField field)
         {
-            if (cell.Status == CellStatus.Destroyed)
-            {
-                return "X";
-            }
-            else if (cell is TinyMine)
-            {
-                return "1";
-            }
-            else if (cell is SmallMine)
-            {
-                return "2";
-            }
-            else if (cell is MediumMine)
-            {
-                return "3";
-            }
-            else if (cell is BigMine)
-            {
-                return "4";
-            }
-            else if (cell is GiantMine)
-            {
-                return "5";
-            }
-            else
-            {
-                return "-";
-            }
-        }
-
-        public void RefreshGameField()
-        {
-           Console.Clear();
-           this.ShowGameField(this.field);
+            throw new NotImplementedException();
         }
 
         public void ShowHighscores(GameObjData data)
         {
-            IList<Score> highscores = HighscoreLogger.Instance.Highscores;
-            int totalWidth = 50;
-            string highscoreTitle = "Highscores";
-            int countOfashesOnTheLeft = (totalWidth - highscoreTitle.Length) / 2;
-            Console.WriteLine("{0}{1}{2}", new String('-', countOfashesOnTheLeft), highscores, new String('-', totalWidth - highscoreTitle.Length - countOfashesOnTheLeft));
-            Console.WriteLine("{0,8}{1,14}{2,13}", "Name", "Points", "Date");
-
-            for (int i = 0; i < highscores.Count; i++)
-            {
-                Score currentScore = highscores[i];
-                Console.WriteLine("{0,3}.{1,-10}-{2,4}    {3}", i + 1, currentScore.PlayerName, currentScore.Points, currentScore.Date);
-            }
-
-            Console.WriteLine(new String('-', totalWidth));
-            Console.ReadKey();
-            Environment.Exit(0);
+            throw new NotImplementedException();
         }
 
         public void ShowGameOver(GameObjData data)
         {
-            Console.WriteLine("Concratularions you finished the game!");
+            throw new NotImplementedException();
         }
 
+        public void ShowErrorMessage(string message)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

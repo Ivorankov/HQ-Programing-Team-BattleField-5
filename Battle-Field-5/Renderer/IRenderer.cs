@@ -5,10 +5,14 @@
 
     public interface IRenderer
     {
-        void ShowErrorMessage(String message);
         void ShowGameField(GameField field);
+
+        void RefreshGameField(GameField field);
+
         void ShowHighscores(GameObjData data);
+
         void ShowGameOver(GameObjData data);
-        void RefreshGameField();
+
+        void ShowErrorMessage(string message);
     }
 }
