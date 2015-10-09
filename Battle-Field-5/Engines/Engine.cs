@@ -25,6 +25,11 @@
         {
             this.field = field;
             this.movesCount = 0;
+            this.renderer.InputPosition += (rendererObj, positionArg) =>
+            {
+                this.UpdateField(positionArg.Position);
+            };
+
             this.renderer.ShowGameField(field);
         }
 
@@ -37,14 +42,17 @@
                 this.movesCount++;
                 Mine mine = this.field[position.Row, position.Col] as Mine;
                 this.field.ReactToExplosion(mine.GetExplodingPattern(), this.damageHandler);
-                this.renderer.RefreshGameField(field);
             }
             else
             {
                 this.renderer.ShowErrorMessage("Invalid coordinates or the selected cell is not a mine.");
             }
 
-            if (!this.field.HasMinesLeft())
+            if (this.field.HasMinesLeft())
+            {
+                this.renderer.RefreshGameField(field);
+            }
+            else
             {
                 this.GameOver();
             }

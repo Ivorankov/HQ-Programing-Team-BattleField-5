@@ -95,6 +95,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Renderer\PositionEventArgs.cs" />
     <Compile Include="RNGs\IRandomGenerator.cs" />
     <Compile Include="RNGs\RandomGenerator.cs" />
     <Compile Include="Score.cs" />
