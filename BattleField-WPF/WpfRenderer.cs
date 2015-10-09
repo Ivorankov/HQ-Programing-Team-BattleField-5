@@ -13,6 +13,7 @@
     using MineFieldApp.Data;
     using MineFieldApp.Renderer;
     using System.Media;
+    using BattleField_WPF.FlyWeight;
     //Under construction
 
     class WpfRenderer : IRenderer
@@ -28,6 +29,8 @@
         private GameWindow window;
 
         private Grid grid;
+
+        private FlyFactory factory; // Temp or maybe not depends on how it ends up looking when its complete
 
         public event EventHandler<PositionEventArg> InputPosition;
 
@@ -53,7 +56,13 @@
             this.grid = CreateGridElement(field, GridWidth, GridHeigth);
             border.Child = grid;
             this.window.Content = border;
-            this.SetCellRepresentation(this.grid, field);
+
+            FlyFactory factory = new FlyFactory();
+            factory.Save(0, new Brush());
+            this.factory = factory;
+
+            this.SetCellRepresentation(this.grid, field, this.factory);
+  
         }
 
         public void ShowHighscores(GameData data)
@@ -70,7 +79,7 @@
 
         public void RefreshGameField(GameField field)
         {
-            this.SetCellRepresentation(this.grid, field);
+            this.SetCellRepresentation(this.grid, field, this.factory);
         }
 
         protected virtual void OnInputPosition(PositionEventArg args)
@@ -96,18 +105,18 @@
         }
 
         //Sets the background img on all the cells
-        private void SetCellRepresentation(Grid grid, GameField field)
+        private void SetCellRepresentation(Grid grid, GameField field, FlyFactory factory)
         {
             for (int row = 0; row < field.RowsCount; row++)
             {
                 for (int col = 0; col < field.ColumnsCount; col++)
                 {
-                    UpdateCellStatus(grid, row, col, field[row, col].Status, field);
+                    UpdateCellStatus(grid, row, col, field[row, col].Status, field, factory);
                 }
             }
         }
         //Sets background image on selected cell element
-        private void UpdateCellStatus(Grid grid, int row, int col, CellStatus status, GameField field)
+        private void UpdateCellStatus(Grid grid, int row, int col, CellStatus status, GameField field, FlyFactory factory)
         {
             var cell = grid.Children
               .Cast<UIElement>()
@@ -117,50 +126,50 @@
             {
                 if (field[row, col] is Mine)
                 {
-                    cell.Background = GetMineRepresentaion(field[row, col]);
+                    cell.Background = GetMineRepresentaion(field[row, col], factory);
                 }
                 else
                 {
-                    cell.Background = this.CreateBrush(FilePathToImages + "Dirt.jpg");
+                    cell.Background = factory.Get(0).GetBrush(0);
                 }
             }
             else if (status == CellStatus.Destroyed)
             {
-                cell.Background = this.CreateBrush(FilePathToImages + "ExplodedDirt.png");
+                cell.Background = factory.Get(0).GetBrush(1);
             }
 
         }
         //Sets mine image depending on the type (size)
-        private Brush GetMineRepresentaion(Cell cell)
+        private ImageBrush GetMineRepresentaion(Cell cell, FlyFactory factory)
         {
             var brush = new ImageBrush();
 
             if (cell is TinyMine)
             {
-                brush = this.CreateBrush(FilePathToImages + "Mine1.png");
+                brush = factory.Get(0).GetBrush(2);
             }
             else if (cell is SmallMine)
             {
-                brush = this.CreateBrush(FilePathToImages + "Mine2.png");
+                brush = factory.Get(0).GetBrush(3);
             }
             else if (cell is MediumMine)
             {
-                brush = this.CreateBrush(FilePathToImages + "Mine3.png");
+                brush = factory.Get(0).GetBrush(4);
             }
             else if (cell is BigMine)
             {
-                brush = this.CreateBrush(FilePathToImages + "Mine4.png");
+                brush = factory.Get(0).GetBrush(5);
             }
             else if (cell is GiantMine)
             {
-                brush = this.CreateBrush(FilePathToImages + "Mine5.png");
+                brush = factory.Get(0).GetBrush(6);
             }
 
             return brush;
         }
         //Used to create brush object (the thing that draws the img to the background)
         private ImageBrush CreateBrush(string filePath)
-        {
+        { 
             Uri uriPathToImg = new Uri(filePath, UriKind.Relative);
             StreamResourceInfo streamInfo = Application.GetResourceStream(uriPathToImg);
             BitmapFrame imageData = BitmapFrame.Create(streamInfo.Stream);
@@ -191,6 +200,8 @@
                 grid.ColumnDefinitions.Add(coldef);
             }
 
+            FlyFactory factory = new FlyFactory();
+            factory.Save(0, new Brush());
             CellButton cell;
             for (int r = 0; r < fieldRowCount; r++)
             {
@@ -213,7 +224,7 @@
                     }
 
                     cell.Click += new RoutedEventHandler(this.HandleMouseDown);
-
+                    cell.Background = factory.Get(0).GetBrush(0); // WORKEDDDDD
                     grid.Children.Add(cell);
                     Grid.SetRow(cell, r);
                     Grid.SetColumn(cell, c);
