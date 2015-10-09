@@ -1,6 +1,6 @@
 ﻿namespace MineFieldApp.Cells
 {
-    using MineFieldApp.Cells.Mines;
+    using Mines;
 
     public class DefaultCellDamageHandler : ICellDamageHandler
     {

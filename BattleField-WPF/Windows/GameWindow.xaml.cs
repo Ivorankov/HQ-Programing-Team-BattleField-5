@@ -5,6 +5,7 @@
     using System.Windows;
     using System.Media;
     using MineFieldApp;
+    using MineFieldApp.Engines;
     using MineFieldApp.Cells;
 
     /// <summary>
