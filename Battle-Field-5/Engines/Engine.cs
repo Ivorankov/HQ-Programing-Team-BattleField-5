@@ -26,6 +26,11 @@
             this.field = field;
             this.movesCount = 0;
             this.renderer.ShowGameField(field);
+
+            this.renderer.InputPosition += (rendererObj, positionArg) =>
+            {
+                this.UpdateField(positionArg.Position);
+            };
         }
 
         public void UpdateField(Position pos)

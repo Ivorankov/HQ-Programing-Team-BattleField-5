@@ -5,6 +5,8 @@
 
     public interface IRenderer
     {
+        event EventHandler<PositionEventArg> InputPosition;
+
         void ShowGameField(GameField field);
 
         void RefreshGameField(GameField field);

@@ -14,10 +14,21 @@
 
         private const char VerticalWallSymbol = '|';
 
+
         public ConsoleRenderer()
         {
             this.LastCursorLeft = 1;
             this.LastCursorTop = 1;
+        }
+
+        public event EventHandler<PositionEventArg> InputPosition;
+
+        protected virtual void OnInputPosition(PositionEventArg args) 
+        {
+            if (this.InputPosition != null)
+            {
+                this.InputPosition(this, args);
+            }
         }
 
         private void SetUpWindow(GameField field)
@@ -115,6 +126,8 @@
             }
 
             Console.SetCursorPosition(this.LastCursorLeft, this.LastCursorTop);
+
+            Position pos = this.SelectPosition();
         }
 
         public Position SelectPosition()
@@ -163,7 +176,9 @@
                     this.LastCursorLeft = Console.CursorLeft;
                     this.LastCursorTop = Console.CursorTop;
 
-                    return this.GetFieldPosition();
+                    Position pos = this.GetFieldPosition();
+                    //this.OnInputPosition(new PositionEventArg(pos));
+                    return pos;
                 }
             }
         }
@@ -204,5 +219,6 @@
         private int LastCursorLeft { get; set; }
 
         private int LastCursorTop { get; set; }
+
     }
 }
