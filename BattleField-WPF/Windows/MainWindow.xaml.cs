@@ -1,21 +1,9 @@
-﻿using MineFieldApp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace BattleField_WPF
+﻿namespace BattleField_WPF
 {
+    using System;
+    using System.Linq;
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -28,7 +16,7 @@ namespace BattleField_WPF
 
         private void OnNewGameButtonClick(object sender, RoutedEventArgs e)
         {
-            var gameWindow = new GameWindow();
+            var gameWindow = new GameInitWindow();
             gameWindow.Show();
             this.Close();
         }
@@ -37,6 +25,7 @@ namespace BattleField_WPF
         {
             var highScoreWindow = new HighscoreWindow();
             highScoreWindow.Show();
+            this.Hide();
         }
 
         private void OnExitButtonClick(object sender, RoutedEventArgs e)

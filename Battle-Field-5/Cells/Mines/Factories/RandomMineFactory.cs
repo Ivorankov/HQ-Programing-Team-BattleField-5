@@ -5,9 +5,8 @@
 //-----------------------------------------------------------------------
 namespace MineFieldApp.Cells.Mines.Factories
 {
-    using System;
-
     using RNGs;
+    using System;
 
     /// <summary>
     /// A MineGenerator which generates a random type of Mine.

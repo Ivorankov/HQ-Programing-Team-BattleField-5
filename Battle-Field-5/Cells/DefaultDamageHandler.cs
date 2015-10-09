@@ -1,17 +1,17 @@
 ﻿namespace MineFieldApp.Cells
 {
-    using MineFieldApp.Cells.Mines;
+    using Mines;
 
     public class DefaultCellDamageHandler : ICellDamageHandler
     {
         public void Damage(EmptyCell cell)
         {
-            cell.Status = CellStatus.Destoryed;
+            cell.Status = CellStatus.Destroyed;
         }
 
         public void Damage(Mine mine)
         {
-            mine.Status = CellStatus.Destoryed;
+            mine.Status = CellStatus.Destroyed;
         }
     }
 }

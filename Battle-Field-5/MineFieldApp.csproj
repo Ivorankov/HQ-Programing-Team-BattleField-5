@@ -31,7 +31,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -71,11 +71,10 @@
     <Compile Include="Cells\EmptyCell.cs" />
     <Compile Include="Cells\ICellDamageHandler.cs" />
     <Compile Include="Cells\Mines\MineDestroyedException.cs" />
-    <Compile Include="Data\Memento\DataCollection.cs" />
-    <Compile Include="Data\GameObjData.cs" />
-    <Compile Include="Data\Memento\GameObjMemento.cs" />
-    <Compile Include="Data\Memento\Originator.cs" />
-    <Compile Include="ImputProviders\WpfInputProvider.cs" />
+    <Compile Include="Data\Memento\GameDataCaretaker.cs" />
+    <Compile Include="Data\GameData.cs" />
+    <Compile Include="Engines\IEngine.cs" />
+    <Compile Include="Engines\ProxyEngine.cs" />
     <Compile Include="Cells\Mines\BigMine.cs" />
     <Compile Include="Cells\Mines\Factories\IMineFactory.cs" />
     <Compile Include="Cells\Mines\Factories\RandomMineFactory.cs" />
@@ -86,22 +85,19 @@
     <Compile Include="Cells\Mines\SmallMine.cs" />
     <Compile Include="Cells\Mines\TinyMine.cs" />
     <Compile Include="Position.cs" />
-    <Compile Include="Renderer\ConsoleRender.cs" />
     <Compile Include="Cells\CellStatus.cs" />
-    <Compile Include="Engine.cs" />
+    <Compile Include="Engines\Engine.cs" />
     <Compile Include="GameField.cs" />
     <Compile Include="Highscore.cs" />
-    <Compile Include="ImputProviders\ConsoleInputProvider.cs" />
-    <Compile Include="ImputProviders\IInputProvider.cs" />
     <Compile Include="Renderer\IRenderer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Renderer\PositionEventArgs.cs" />
     <Compile Include="RNGs\IRandomGenerator.cs" />
     <Compile Include="RNGs\RandomGenerator.cs" />
-    <Compile Include="Renderer\WpfRenderer.cs" />
     <Compile Include="Score.cs" />
   </ItemGroup>
   <ItemGroup>

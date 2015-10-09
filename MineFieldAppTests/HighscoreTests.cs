@@ -137,9 +137,9 @@ namespace MineFieldAppTests
             scorer.AddHighscore("third", 100);
             scorer.AddHighscore("first", 1000);
 
-            Assert.AreEqual("first", scorer.Highscores[0].PlayerName, "Highscores are not sorted decreasingly");
+            Assert.AreEqual("third", scorer.Highscores[0].PlayerName, "Highscores are not sorted decreasingly");
             Assert.AreEqual("second", scorer.Highscores[1].PlayerName, "Highscores are not sorted decreasingly");
-            Assert.AreEqual("third", scorer.Highscores[2].PlayerName, "Highscores are not sorted decreasingly");
+            Assert.AreEqual("first", scorer.Highscores[2].PlayerName, "Highscores are not sorted decreasingly");
         }
     }
 }

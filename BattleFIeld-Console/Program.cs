@@ -1,20 +1,16 @@
-﻿using MineFieldApp;
-using MineFieldApp.Cells;
-using MineFieldApp.Renderer;
-using System;
-
-namespace BattleField_Console
+﻿namespace BattleField_Console
 {
-    class Program
+    using MineFieldApp;
+    using System;
+
+    internal class Program
     {
         public static void Main()
         {
-            IInputProvider inputProvider = new ConsoleInputProvider();
-            IRenderer renderer = new ConsoleRender();
-            //ICellDamageHandler damageHandler = new DefaultCellDamageHandler();
-            ICellDamageHandler damageHandler = new ChainDamageHandler();
-            Engine engine = new Engine(inputProvider, renderer, damageHandler);
-            engine.Start();
+            var consoleGame = new ConsoleGame();
+            // Min 4 max 10
+            var field = new GameField(10);
+            consoleGame.InitGame(field);
         }
     }
 }
