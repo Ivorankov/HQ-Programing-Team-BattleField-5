@@ -143,6 +143,7 @@
     <Resource Include="Images\MainWindowBackground.jpg" />
     <Resource Include="Images\InitGameWindowBackground.jpg" />
     <Resource Include="Images\EndGameWindowBackground.jpg" />
+    <Resource Include="Images\HighscoreWindowBackground.jpg" />
     <Content Include="Sounds\Explosion.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

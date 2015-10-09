@@ -42,21 +42,5 @@
             var field = new GameField(fieldSize);
             this.engine.Init(field);
         }
-
-        public void Cell_Click(object sender, RoutedEventArgs e)
-        {
-            var cell = sender as CellButton;
-            if (cell.Status == CellStatus.WithMine)
-            {
-                this.engine.UpdateField(cell.Position);
-
-                this.PlaySound(PathToSoundFile);
-            }
-        }
-        private void PlaySound(string pathToWavFile)
-        {
-            var sound = new SoundPlayer(pathToWavFile);
-            sound.Play();
-        }
     }
 }

@@ -25,6 +25,7 @@
         {
             var highScoreWindow = new HighscoreWindow();
             highScoreWindow.Show();
+            this.Hide();
         }
 
         private void OnExitButtonClick(object sender, RoutedEventArgs e)

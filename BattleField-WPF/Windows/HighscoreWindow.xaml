@@ -22,13 +22,18 @@
             <Setter Property="Height" Value="50" />
         </Style>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="../Images/HighscoreWindowBackground.jpg" />
+    </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition />
             <RowDefinition Height="80"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource menuHeader}" Text="High Scores" />
         <Button Style="{StaticResource buttonStyle}" Click="BackToMenu_Click">Back to Menu</Button>
-        <DataGrid Loaded="DataGrid_Loaded" IsReadOnly="True" Grid.Row="2"/>
+        <DataGrid Loaded="DataGrid_Loaded" IsReadOnly="True" Grid.Row="1"/>
     </Grid>
 </Window>

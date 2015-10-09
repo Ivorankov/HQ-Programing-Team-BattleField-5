@@ -12,11 +12,14 @@
     using MineFieldApp.Cells.Mines;
     using MineFieldApp.Data;
     using MineFieldApp.Renderer;
+    using System.Media;
     //Under construction
 
     class WpfRenderer : IRenderer
     {
         private const string FilePathToImages = "../Images/";
+
+         private const string PathToSoundFile = "../../Sounds/";
 
         private const int GridWidth = 900;
 
@@ -26,9 +29,12 @@
 
         private Grid grid;
 
+        public event EventHandler<PositionEventArg> InputPosition;
+
         public WpfRenderer(GameWindow win)
         {
             this.window = win;
+            this.window.MouseDown += this.HandleMouseDown;
             var brush = CreateBrush(FilePathToImages + "Background.gif");
             this.window.Background = brush;
         }
@@ -65,6 +71,28 @@
         public void RefreshGameField(GameField field)
         {
             this.SetCellRepresentation(this.grid, field);
+        }
+
+        protected virtual void OnInputPosition(PositionEventArg args)
+        {
+            if (this.InputPosition != null)
+            {
+                this.InputPosition(this, args);
+            }
+        }
+
+        private void HandleMouseDown(object sender, EventArgs args)
+        {
+            var cell = sender as CellButton;
+            if (cell != null)
+            {
+                if (cell.Status == CellStatus.WithMine)
+                {
+                    this.OnInputPosition(new PositionEventArg(cell.Position));
+                    this.PlaySound(PathToSoundFile + "Explosion.wav");
+                }
+            }
+            //Else play some other sound ? 
         }
 
         //Sets the background img on all the cells
@@ -147,8 +175,8 @@
             var fieldRowCount = field.RowsCount;
             var fieldColCount = field.ColumnsCount;
             var grid = new Grid();
-            grid.Width = gridWidth;
-            grid.Height = gridHeigth;
+            grid.MaxWidth = gridWidth;
+            grid.MaxHeight = gridHeigth;
 
 
             for (int i = 0; i < fieldRowCount; i++)
@@ -184,7 +212,7 @@
                         }
                     }
 
-                    cell.Click += new RoutedEventHandler(this.window.Cell_Click);
+                    cell.Click += new RoutedEventHandler(this.HandleMouseDown);
 
                     grid.Children.Add(cell);
                     Grid.SetRow(cell, r);
@@ -193,6 +221,12 @@
             }
 
             return grid;
+        }
+
+        private void PlaySound(string pathToWavFile)
+        {
+            var sound = new SoundPlayer(pathToWavFile);
+            sound.Play();
         }
     }
 }
