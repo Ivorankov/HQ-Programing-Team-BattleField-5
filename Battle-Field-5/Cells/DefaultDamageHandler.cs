@@ -2,7 +2,7 @@
 {
     using Mines;
 
-    public class DefaultCellDamageHandler : ICellDamageHandler
+    public class DefaultDamageHandler : ICellDamageHandler
     {
         public void Damage(EmptyCell cell)
         {

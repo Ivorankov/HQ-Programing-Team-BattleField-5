@@ -38,15 +38,15 @@ namespace MineFieldApp.Cells.Mines.Factories
             switch (randomNumber)
             {
                 case 0:
-                    return new TinyMine(position, field);
+                    return new TinyMine(position);
                 case 1:
-                    return new SmallMine(position, field);
+                    return new SmallMine(position);
                 case 2:
-                    return new MediumMine(position, field);
+                    return new MediumMine(position);
                 case 3:
-                    return new BigMine(position, field);
+                    return new BigMine(position);
                 case 4:
-                    return new GiantMine(position, field);
+                    return new GiantMine(position);
                 default:
                     throw new NotImplementedException();
             }

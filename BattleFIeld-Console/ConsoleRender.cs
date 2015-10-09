@@ -40,8 +40,8 @@
             int consoleRowsCount = field.RowsCount + ConsoleRenderer.WallsCount;
             int consoleColumnsCount = field.ColumnsCount + whiteSpaceCount + ConsoleRenderer.WallsCount;
 
-            Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
-            Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
+            //Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
+            //Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
         }
 
         private void SetWindowPosition(Position fieldPosition)

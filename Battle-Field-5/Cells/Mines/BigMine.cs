@@ -16,8 +16,8 @@ namespace MineFieldApp.Cells.Mines
         /// Initializes a new instance of the BigMine class.
         /// </summary>
         /// <param name="position">The position of the mine.</param>
-        public BigMine(Position position, GameField field)
-            : base(position, field)
+        public BigMine(Position position)
+            : base(position)
         {
         }
 

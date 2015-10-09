@@ -5,7 +5,6 @@
 //-----------------------------------------------------------------------
 namespace MineFieldApp.Cells.Mines
 {
-    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -13,21 +12,15 @@ namespace MineFieldApp.Cells.Mines
     /// </summary>
     public abstract class Mine : Cell
     {
-        private GameField field; //Mismatch you are using an auto prop!
-
-        protected Mine(Position position, GameField field)
+        protected Mine(Position position)
             : base(position)
         {
-            this.Field = field;
         }
-
-        public GameField Field { get; private set;}
 
         public abstract List<Position> GetExplodingPattern();
 
         public override void TakeDamage(ICellDamageHandler damageHandler)
         {
-            --this.Field.MinesCount;
             damageHandler.Damage(this);
         }
     }
