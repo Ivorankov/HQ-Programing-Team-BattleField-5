@@ -1,7 +1,8 @@
-﻿namespace MineFieldApp
+namespace MineFieldApp.Engines
 {
     using MineFieldApp.Cells;
     using MineFieldApp.Renderer;
+    using Data;
 
     public class ProxyEngine : IEngine
     {
@@ -33,6 +34,16 @@
         public void GameOver()
         {
 
+        }
+
+        public GameData CreateMemento()
+        {
+            return this.engine.CreateMemento();
+        }
+
+        public void SetMemento(GameData memento)
+        {
+            this.engine.SetMemento(memento);
         }
     }
 }

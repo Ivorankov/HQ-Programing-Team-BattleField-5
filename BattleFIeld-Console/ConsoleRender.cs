@@ -1,8 +1,8 @@
 ﻿namespace MineFieldApp.Renderer
 {
-    using MineFieldApp.Cells;
-    using MineFieldApp.Cells.Mines;
-    using MineFieldApp.Data;
+    using Cells;
+    using Cells.Mines;
+    using Data;
     using System;
     using System.Text;
 
@@ -183,13 +183,13 @@
             }
         }
 
-        public void ShowHighscores(GameObjData data)
+        public void ShowHighscores(GameData data)
         {
             Console.Clear();
             Console.WriteLine("How does one get scores from GameObjData?");
         }
 
-        public void ShowGameOver(GameObjData data)
+        public void ShowGameOver(GameData data)
         {
             Console.CursorVisible = false;
             Console.Clear();

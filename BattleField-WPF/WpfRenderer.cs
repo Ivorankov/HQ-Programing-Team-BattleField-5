@@ -50,12 +50,12 @@
             this.SetCellRepresentation(this.grid, field);
         }
 
-        public void ShowHighscores(GameObjData data)
+        public void ShowHighscores(GameData data)
         {
 
         }
 
-        public void ShowGameOver(GameObjData data)
+        public void ShowGameOver(GameData data)
         {
             var gameOverWindow = new EndScreenWindow(data);
             gameOverWindow.Show();

@@ -11,10 +11,11 @@
 
         void RefreshGameField(GameField field);
 
-        void ShowHighscores(GameObjData data);
-
-        void ShowGameOver(GameObjData data);
 
         void ShowErrorMessage(string message);
+
+        void ShowHighscores(GameData data);
+
+        void ShowGameOver(GameData data);
     }
 }
