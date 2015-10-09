@@ -2,26 +2,15 @@
 {
     public abstract class Cell
     {
-        private CellStatus status;
+        private bool isDestroyed;
 
         public Cell(Position position)
         {
-            this.Status = CellStatus.Normal;
+            this.IsDestroyed = false;
             this.Position = position;
         }
 
-        public CellStatus Status
-        {
-            get
-            {
-                return this.status;
-            }
-
-            set
-            {
-                this.status = value;
-            }
-        }
+        public bool IsDestroyed { get; set; } 
 
         public Position Position { get; private set; }
 

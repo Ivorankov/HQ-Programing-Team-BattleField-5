@@ -124,7 +124,7 @@
                 {
                     var currentCell = this.Field[position.Row, position.Col];
 
-                    if (currentCell.Status != CellStatus.Destroyed)
+                    if (!currentCell.IsDestroyed)
                     {
                         if (currentCell is Mine)
                         {
