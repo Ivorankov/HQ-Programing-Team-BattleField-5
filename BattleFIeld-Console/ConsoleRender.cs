@@ -127,10 +127,10 @@
 
             Console.SetCursorPosition(this.LastCursorLeft, this.LastCursorTop);
 
-            Position pos = this.SelectPosition();
+            this.SelectPosition();
         }
 
-        public Position SelectPosition()
+        private void SelectPosition()
         {
             while (true)
             {
@@ -177,8 +177,7 @@
                     this.LastCursorTop = Console.CursorTop;
 
                     Position pos = this.GetFieldPosition();
-                    //this.OnInputPosition(new PositionEventArg(pos));
-                    return pos;
+                    this.OnInputPosition(new PositionEventArg(pos));
                 }
             }
         }
