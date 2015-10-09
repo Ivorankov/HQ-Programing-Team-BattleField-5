@@ -139,6 +139,10 @@
     <Resource Include="Images\Mine3.png" />
     <Resource Include="Images\Mine2.png" />
     <Resource Include="Images\Mine1.png" />
+    <Resource Include="Images\Background.gif" />
+    <Resource Include="Images\MainWindowBackground.jpg" />
+    <Resource Include="Images\InitGameWindowBackground.jpg" />
+    <Resource Include="Images\EndGameWindowBackground.jpg" />
     <Content Include="Sounds\Explosion.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

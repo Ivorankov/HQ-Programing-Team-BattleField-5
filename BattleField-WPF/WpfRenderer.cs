@@ -1,10 +1,5 @@
 ﻿namespace BattleField_WPF
 {
-    using MineFieldApp;
-    using MineFieldApp.Cells;
-    using MineFieldApp.Cells.Mines;
-    using MineFieldApp.Data;
-    using MineFieldApp.Renderer;
     using System;
     using System.Linq;
     using System.Windows;
@@ -12,24 +7,30 @@
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using System.Windows.Resources;
+    using MineFieldApp;
+    using MineFieldApp.Cells;
+    using MineFieldApp.Cells.Mines;
+    using MineFieldApp.Data;
+    using MineFieldApp.Renderer;
     //Under construction
 
     class WpfRenderer : IRenderer
     {
-        private const string FILEPATH = "../Images/";
-        // This will go in the Data object probably
-        private int fieldSize;
-        // This field is garbage and will be removed
+        private const string FilePathToImages = "../Images/";
+
+        private const int GridWidth = 900;
+
+        private const int GridHeigth = 900;
+
         private GameWindow window;
-        //Temp field will be removed (Its here for test purposes)
-        private GameField field;
 
         private Grid grid;
 
         public WpfRenderer(GameWindow win)
         {
-            //TODO better way for adding the gird (currently it's with win.Content)
             this.window = win;
+            var brush = CreateBrush(FilePathToImages + "Background.gif");
+            this.window.Background = brush;
         }
 
         public void ShowErrorMessage(string message)// Maybe this will be removed
@@ -39,23 +40,19 @@
         //Creates all the elements and appends them to the window
         public void ShowGameField(GameField field)
         {
-            this.field = field;
-            this.fieldSize = field.RowsCount;
-
             Border border = new Border();
             border.BorderThickness = new Thickness(10);
-            border.BorderBrush = Brushes.LightGreen;
+            border.BorderBrush = Brushes.White;
 
-            this.grid = CreateGridElement();
+            this.grid = CreateGridElement(field, GridWidth, GridHeigth);
             border.Child = grid;
             this.window.Content = border;
-            this.SetCellRepresentation(this.grid);
+            this.SetCellRepresentation(this.grid, field);
         }
 
         public void ShowHighscores(GameObjData data)
         {
-            var highScoreWindow = new HighscoreWindow();
-            highScoreWindow.Show();
+
         }
 
         public void ShowGameOver(GameObjData data)
@@ -67,22 +64,22 @@
 
         public void RefreshGameField(GameField field)
         {
-            this.SetCellRepresentation(this.grid);
+            this.SetCellRepresentation(this.grid, field);
         }
 
         //Sets the background img on all the cells
-        private void SetCellRepresentation(Grid grid)
+        private void SetCellRepresentation(Grid grid, GameField field)
         {
-            for (int row = 0; row < this.field.RowsCount; row++)
+            for (int row = 0; row < field.RowsCount; row++)
             {
-                for (int col = 0; col < this.field.ColumnsCount; col++)
+                for (int col = 0; col < field.ColumnsCount; col++)
                 {
-                    UpdateCellStatus(grid, row, col, this.field[row, col].Status);
+                    UpdateCellStatus(grid, row, col, field[row, col].Status, field);
                 }
             }
         }
         //Sets background image on selected cell element
-        private void UpdateCellStatus(Grid grid, int row, int col, CellStatus status)
+        private void UpdateCellStatus(Grid grid, int row, int col, CellStatus status, GameField field)
         {
             var cell = grid.Children
               .Cast<UIElement>()
@@ -90,18 +87,18 @@
 
             if (status == CellStatus.Normal)
             {
-                if (this.field[row, col] is Mine)
+                if (field[row, col] is Mine)
                 {
-                    cell.Background = GetMineRepresentaion(this.field[row, col]);
+                    cell.Background = GetMineRepresentaion(field[row, col]);
                 }
                 else
                 {
-                    cell.Background = this.CreateBrush(FILEPATH + "Dirt.jpg");
+                    cell.Background = this.CreateBrush(FilePathToImages + "Dirt.jpg");
                 }
             }
             else if (status == CellStatus.Destroyed)
             {
-                cell.Background = this.CreateBrush(FILEPATH + "ExplodedDirt.png");
+                cell.Background = this.CreateBrush(FilePathToImages + "ExplodedDirt.png");
             }
 
         }
@@ -112,28 +109,28 @@
 
             if (cell is TinyMine)
             {
-                brush = this.CreateBrush(FILEPATH + "Mine1.png");
+                brush = this.CreateBrush(FilePathToImages + "Mine1.png");
             }
             else if (cell is SmallMine)
             {
-                brush = this.CreateBrush(FILEPATH + "Mine2.png");
+                brush = this.CreateBrush(FilePathToImages + "Mine2.png");
             }
             else if (cell is MediumMine)
             {
-                brush = this.CreateBrush(FILEPATH + "Mine3.png");
+                brush = this.CreateBrush(FilePathToImages + "Mine3.png");
             }
             else if (cell is BigMine)
             {
-                brush = this.CreateBrush(FILEPATH + "Mine4.png");
+                brush = this.CreateBrush(FilePathToImages + "Mine4.png");
             }
             else if (cell is GiantMine)
             {
-                brush = this.CreateBrush(FILEPATH + "Mine5.png");
+                brush = this.CreateBrush(FilePathToImages + "Mine5.png");
             }
 
             return brush;
         }
-        //Used to create brush object (the thing that draws the img to the cell background)
+        //Used to create brush object (the thing that draws the img to the background)
         private ImageBrush CreateBrush(string filePath)
         {
             Uri uriPathToImg = new Uri(filePath, UriKind.Relative);
@@ -145,34 +142,39 @@
             return brush;
         }
 
-        private Grid CreateGridElement()
+        private Grid CreateGridElement(GameField field, int gridWidth, int gridHeigth)
         {
-
+            var fieldRowCount = field.RowsCount;
+            var fieldColCount = field.ColumnsCount;
             var grid = new Grid();
-            grid.MaxHeight = 900;
-            grid.MaxWidth = 900;
+            grid.Width = gridWidth;
+            grid.Height = gridHeigth;
 
 
-            for (int i = 0; i < this.fieldSize; i++)
+            for (int i = 0; i < fieldRowCount; i++)
             {
                 RowDefinition rowdef = new RowDefinition();
                 grid.RowDefinitions.Add(rowdef);
             }
 
-            for (int i = 0; i < this.fieldSize; i++)
+            for (int i = 0; i < fieldColCount; i++)
             {
                 ColumnDefinition coldef = new ColumnDefinition();
                 grid.ColumnDefinitions.Add(coldef);
             }
 
             CellButton cell;
-            for (int r = 0; r < this.fieldSize; r++)
+            for (int r = 0; r < fieldRowCount; r++)
             {
-                for (int c = 0; c < this.fieldSize; c++)
+                for (int c = 0; c < fieldColCount; c++)
                 {
-                    if (this.field[r, c].Status == CellStatus.Normal)
+                    if (field[r, c].Status == CellStatus.Destroyed)
                     {
-                        if (this.field[r, c] is Mine)
+                        cell = new CellButton(r, c, CellStatus.Destroyed);
+                    }
+                    else
+                    {
+                        if (field[r, c] is Mine)
                         {
                             cell = new CellButton(r, c, CellStatus.WithMine);
                         }
@@ -180,14 +182,6 @@
                         {
                             cell = new CellButton(r, c, CellStatus.Normal);
                         }
-                    }
-                    else if (this.field[r, c].Status == CellStatus.Destroyed)
-                    {
-                        cell = new CellButton(r, c, CellStatus.Destroyed);
-                    }
-                    else
-                    {
-                        cell = new CellButton(r, c, CellStatus.Normal); // Temp way to make it work
                     }
 
                     cell.Click += new RoutedEventHandler(this.window.Cell_Click);
