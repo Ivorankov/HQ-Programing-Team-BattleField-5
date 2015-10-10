@@ -12,6 +12,13 @@ namespace MineFieldApp.Engines
 
         private ICellDamageHandler damageHandler;
 
+        public int MovesCount
+        {
+            get
+            {
+                return this.engine.MovesCount;
+            }
+        }
 
         public ProxyEngine(IRenderer renderer, ICellDamageHandler damageHandler)
         {

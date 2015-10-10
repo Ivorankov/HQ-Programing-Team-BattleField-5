@@ -57,7 +57,7 @@
             this.window.Content = border;
         }
 
-        public void ShowHighscores(GameData data)
+        public void ShowHighscores()
         {
             //Do not throw not implimented exeptions principle? xD TODO Refactor the engine to not use this, it will be shown by gameover in console?
         }
@@ -204,6 +204,12 @@
         {
             var sound = new SoundPlayer(pathToWavFile);
             sound.Play();
+        }
+
+
+        public void ShowWelcome()
+        {
+            throw new NotImplementedException();
         }
     }
 }

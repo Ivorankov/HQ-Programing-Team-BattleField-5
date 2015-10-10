@@ -4,6 +4,7 @@
     using Cells.Mines;
     using Data;
     using System;
+    using System.Collections.Generic;
     using System.Text;
 
     public class ConsoleRenderer : IRenderer
@@ -23,7 +24,7 @@
 
         public event EventHandler<PositionEventArg> InputPosition;
 
-        protected virtual void OnInputPosition(PositionEventArg args) 
+        protected virtual void OnInputPosition(PositionEventArg args)
         {
             if (this.InputPosition != null)
             {
@@ -54,35 +55,35 @@
             return new Position(Console.CursorTop - 1, (Console.CursorLeft - 1) / 2);
         }
 
-        private char GetCellSymbol(Cell cell)
+        private String GetCellSymbol(Cell cell)
         {
             if (cell.IsDestroyed)
             {
-                return 'X';
-            }          
+                return "X";
+            }
             else if (cell is TinyMine)
             {
-                return '1';
+                return "1";
             }
             else if (cell is SmallMine)
             {
-                return '2';
+                return "2";
             }
             else if (cell is MediumMine)
             {
-                return '3';
+                return "3";
             }
             else if (cell is BigMine)
             {
-                return '4';
+                return "4";
             }
             else if (cell is GiantMine)
             {
-                return '5';
+                return "5";
             }
             else if (cell is EmptyCell)
             {
-                return '-';
+                return "-";
             }
 
             throw new NotImplementedException("Unknown Cell Type.");
@@ -96,8 +97,8 @@
             string horizontalWall = new string(ConsoleRenderer.HorizontalWallSymbol, horizontalWallSize);
 
             string upperWall = string.Format(" {0} ", horizontalWall);
-            string verticalWall = string.Format("{0}{1}{0}", ConsoleRenderer.VerticalWallSymbol, new String(' ' , horizontalWallSize));
-            string lowerWall = ' ' + horizontalWall; 
+            string verticalWall = string.Format("{0}{1}{0}", ConsoleRenderer.VerticalWallSymbol, new String(' ', horizontalWallSize));
+            string lowerWall = ' ' + horizontalWall;
 
             StringBuilder builder = new StringBuilder(upperWall);
             for (int i = 0; i < Console.WindowHeight - 2; i++)
@@ -113,11 +114,12 @@
 
         public void RefreshGameField(GameField field)
         {
+            Console.Clear();
             for (int row = 0; row < field.RowsCount; row++)
             {
                 for (int col = 0; col < field.ColumnsCount; col++)
                 {
-                    char cellSymbol = this.GetCellSymbol(field[row, col]);
+                    string cellSymbol = this.GetCellSymbol(field[row, col]);
 
                     this.SetWindowPosition(new Position(row, col));
 
@@ -134,11 +136,6 @@
         {
             while (true)
             {
-                if (!Console.KeyAvailable)
-                {
-                    continue;
-                }
-
                 ConsoleKeyInfo key = Console.ReadKey(true);
 
                 if ((key.Key == ConsoleKey.UpArrow) || (key.Key == ConsoleKey.DownArrow))
@@ -182,10 +179,23 @@
             }
         }
 
-        public void ShowHighscores(GameData data)
+        public void ShowHighscores()
         {
-            Console.Clear();
-            Console.WriteLine("How does one get scores from GameObjData?");
+            Console.WriteLine("-----------------Highscores-----------------");
+            IList<Score> highscores = HighscoreLogger.Instance.Highscores;
+            int totalWidth = 50;
+            string highscoreTitle = "Highscores";
+            int countOfashesOnTheLeft = (totalWidth - highscoreTitle.Length) / 2;
+            Console.WriteLine("{0,8}{1,14}{2,13}", "Name", "Points", "Date");
+
+            for (int i = 0; i < highscores.Count; i++)
+            {
+                Score currentScore = highscores[i];
+
+                Console.WriteLine("{0,3}.{1,-10}-{2,4}    {3}", i + 1, currentScore.PlayerName, currentScore.Points, currentScore.Date);
+            }
+
+            Console.WriteLine(new String('-', totalWidth));
         }
 
         public void ShowGameOver(GameData data)
@@ -197,7 +207,7 @@
             Console.SetCursorPosition(0, (Console.WindowHeight / 2) - MessageCount);
 
             const string GameOverMessage = "Game Over.";
-            string paddedGameOver = GameOverMessage.PadLeft((Console.WindowWidth / 2) +  (GameOverMessage.Length / 2), ' ');
+            string paddedGameOver = GameOverMessage.PadLeft((Console.WindowWidth / 2) + (GameOverMessage.Length / 2), ' ');
             Console.WriteLine(paddedGameOver);
 
             string movesMessage = string.Format("Moves: {0}", data.MovesCount);
@@ -213,11 +223,18 @@
 
         public void ShowErrorMessage(string message)
         {
+            Console.WriteLine(message);
         }
 
         private int LastCursorLeft { get; set; }
 
         private int LastCursorTop { get; set; }
 
+
+
+        public void ShowWelcome()
+        {
+            Console.WriteLine(@"Welcome to 'Battle filed' game!");
+        }
     }
 }

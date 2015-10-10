@@ -6,6 +6,7 @@
     public interface IRenderer
     {
         event EventHandler<PositionEventArg> InputPosition;
+        void ShowWelcome();
 
         void ShowGameField(GameField field);
 
@@ -14,7 +15,7 @@
 
         void ShowErrorMessage(string message);
 
-        void ShowHighscores(GameData data);
+        void ShowHighscores();
 
         void ShowGameOver(GameData data);
     }

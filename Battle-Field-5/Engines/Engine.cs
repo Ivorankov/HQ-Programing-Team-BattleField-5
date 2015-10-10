@@ -11,7 +11,7 @@
 
         private GameField field;
 
-        private int movesCount;
+        public int MovesCount {get; private set;}
 
         private ICellDamageHandler damageHandler;
 
@@ -24,7 +24,7 @@
         public void Init(GameField field)
         {
             this.field = field;
-            this.movesCount = 0;
+            this.MovesCount = 0;
             this.renderer.InputPosition += (rendererObj, positionArg) =>
             {
                 this.UpdateField(positionArg.Position);
@@ -39,7 +39,7 @@
 
             if (this.field.IsInRange(position) && (this.field[position.Row, position.Col] is Mine))
             {
-                this.movesCount++;
+                this.MovesCount++;
                 Mine mine = this.field[position.Row, position.Col] as Mine;
                 this.field.ReactToExplosion(mine.GetExplodingPattern(), this.damageHandler);
             }
@@ -60,20 +60,19 @@
 
         public void GameOver()
         {
-            var gameData = new GameData(this.field, this.movesCount, this.damageHandler);
+            var gameData = new GameData(this.field, this.MovesCount, this.damageHandler);
             this.renderer.ShowGameOver(gameData);
-            this.renderer.ShowHighscores(gameData);
         }
 
         public GameData CreateMemento()
         {
-            return new GameData(this.field, this.movesCount, this.damageHandler);
+            return new GameData(this.field, this.MovesCount, this.damageHandler);
         }
 
         public void SetMemento(GameData memento)
         {
             this.field = memento.GameField;
-            this.movesCount = memento.MovesCount;
+            this.MovesCount = memento.MovesCount;
             this.damageHandler = memento.DamageHandler;
         }
     }
