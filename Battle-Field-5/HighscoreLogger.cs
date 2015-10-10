@@ -1,9 +1,9 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Highscore.cs" company="BattleField-5 team">
+// <copyright file="HighscoreLogger.cs" company="BattleField-5 team">
 //     Telerik teamwork project.
 // </copyright>
 // <summary>
-// Contains Highscore class
+// Contains HighscoreLogger class
 // </summary>
 //-----------------------------------------------------------------------
 namespace MineFieldApp
@@ -14,27 +14,27 @@ namespace MineFieldApp
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A class for logging and giving access to game highscores
+    /// A class for logging and giving access to game high scores.
     /// </summary>
     public sealed class HighscoreLogger
     {
         /// <summary>
-        /// A constant for the name of the file containing the highscores
+        /// A constant for the name of the file containing the high scores.
         /// </summary>
         private const string HighscoresFileName = "highscores.xml";
 
         /// <summary>
-        /// The instance of the Highscore class
+        /// The instance of the <see cref="HighscoreLogger" /> class.
         /// </summary>
         private static readonly Lazy<HighscoreLogger> Lazy = new Lazy<HighscoreLogger>(() => new HighscoreLogger());
 
         /// <summary>
-        /// Holds the game highscores
+        /// Holds the game high scores.
         /// </summary>
         private List<Score> highscores;
 
         /// <summary>
-        /// Initializes a new instance of the Highscore class and loads highscores
+        /// Prevents a default instance of the <see cref="HighscoreLogger" /> class from being created and loads high scores.
         /// </summary>
         private HighscoreLogger()
         {
@@ -42,8 +42,9 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Gets the Highscore class instance
+        /// Gets the <see cref="HighscoreLogger" /> class instance.
         /// </summary>
+        /// <value><see cref="HighscoreLogger" /> instance.</value>
         public static HighscoreLogger Instance
         {
             get
@@ -53,8 +54,9 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Gets or sets the highscores.
+        /// Gets the high scores.
         /// </summary>
+        /// <value>High scores.</value>
         public List<Score> Highscores
         {
             get
@@ -74,10 +76,10 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Adds a highscore to the file and the list with highscores
+        /// Adds a high score to the file and the list with high scores.
         /// </summary>
-        /// <param name="playerName">Name of the player setting high score</param>
-        /// <param name="points">His result</param>
+        /// <param name="playerName">Name of the player setting high score.</param>
+        /// <param name="points">Result of the player setting the high score.</param>
         public void AddHighscore(string playerName, double points)
         {
             this.Highscores.Add(new Score(playerName, points));
@@ -93,7 +95,7 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Clears all highscores
+        /// Clears all high scores.
         /// </summary>
         public void ClearHighscores()
         {
@@ -102,7 +104,7 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Reads highscores from the file and writes them to the list with highscores
+        /// Reads high scores from the file and writes them to the list with high scores.
         /// </summary>
         public void LoadHighscores()
         {

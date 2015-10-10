@@ -1,4 +1,12 @@
-﻿namespace MineFieldApp.Renderer
+﻿//-----------------------------------------------------------------------
+// <copyright file="ConsoleRenderer.cs" company="BattleField-5 team">
+//     Telerik teamwork project.
+// </copyright>
+// <summary>
+// Contains ConsoleRenderer class
+// </summary>
+//-----------------------------------------------------------------------
+namespace MineFieldApp.Renderer
 {
     using System;
     using System.Collections.Generic;
@@ -7,6 +15,9 @@
     using Cells.Mines;
     using Data;
 
+    /// <summary>
+    /// A class representing a console renderer for showing data on the console.
+    /// </summary>
     public class ConsoleRenderer : IRenderer
     {
         private const int WallsCount = 2;
@@ -15,18 +26,28 @@
 
         private const char VerticalWallSymbol = '|';
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConsoleRenderer" /> class.
+        /// </summary>
         public ConsoleRenderer()
         {
             this.LastCursorLeft = 1;
             this.LastCursorTop = 1;
         }
 
-        public event EventHandler<PositionEventArg> InputPosition;
+        /// <summary>
+        /// An event for getting a position.
+        /// </summary>
+        public event EventHandler<PositionEventArgs> InputPosition;
 
         private int LastCursorLeft { get; set; }
 
         private int LastCursorTop { get; set; }
 
+        /// <summary>
+        /// Show game field.
+        /// </summary>
+        /// <param name="field">The game field.</param>
         public void ShowGameField(GameField field)
         {
             this.SetUpWindow(field);
@@ -47,10 +68,13 @@
             builder.Append(lowerWall);
 
             Console.Write(builder);
-            // Console.ReadLine();
             this.RefreshGameField(field);
         }
 
+        /// <summary>
+        /// Refreshes game field.
+        /// </summary>
+        /// <param name="field">The game field.</param>
         public void RefreshGameField(GameField field)
         {
             Console.Clear();
@@ -71,6 +95,9 @@
             this.SelectPosition();
         }
 
+        /// <summary>
+        /// Shows high scores.
+        /// </summary>
         public void ShowHighscores()
         {
             Console.WriteLine("-----------------Highscores-----------------");
@@ -90,6 +117,10 @@
             Console.WriteLine(new string('-', totalWidth));
         }
 
+        /// <summary>
+        /// Shows game over screen.
+        /// </summary>
+        /// <param name="data">Current game data.</param>
         public void ShowGameOver(GameData data)
         {
             Console.CursorVisible = false;
@@ -114,17 +145,28 @@
             while (key.Key != ConsoleKey.Enter);
         }
 
+        /// <summary>
+        /// Shows an error message.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void ShowErrorMessage(string message)
         {
             Console.WriteLine(message);
         }
 
+        /// <summary>
+        /// Shows welcome screen.
+        /// </summary>
         public void ShowWelcome()
         {
             Console.WriteLine(@"Welcome to 'Battle filed' game!");
         }
 
-        protected virtual void OnInputPosition(PositionEventArg args)
+        /// <summary>
+        /// Fires input position event.
+        /// </summary>
+        /// <param name="args">Arguments of the position event.</param>
+        protected virtual void OnInputPosition(PositionEventArgs args)
         {
             if (this.InputPosition != null)
             {
@@ -230,7 +272,7 @@
                     this.LastCursorTop = Console.CursorTop;
 
                     Position pos = this.GetFieldPosition();
-                    this.OnInputPosition(new PositionEventArg(pos));
+                    this.OnInputPosition(new PositionEventArgs(pos));
                 }
             }
         }

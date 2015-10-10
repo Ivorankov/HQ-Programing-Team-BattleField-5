@@ -39,7 +39,7 @@
             this.brush = factory.Get(0);
         }
 
-        public event EventHandler<PositionEventArg> InputPosition;
+        public event EventHandler<PositionEventArgs> InputPosition;
 
         public void ShowErrorMessage(string message)
         //// Maybe this will be removed
@@ -80,7 +80,7 @@
             throw new NotImplementedException();
         }
 
-        protected virtual void OnInputPosition(PositionEventArg args)
+        protected virtual void OnInputPosition(PositionEventArgs args)
         {
             if (this.InputPosition != null)
             {
@@ -95,7 +95,7 @@
             {
                 if (cell.Status == CellStatus.WithMine)
                 {
-                    this.OnInputPosition(new PositionEventArg(cell.Position));
+                    this.OnInputPosition(new PositionEventArgs(cell.Position));
                     this.PlaySound(PathToSoundFile + "Explosion.wav");
                 }
             }

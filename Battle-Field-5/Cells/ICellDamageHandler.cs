@@ -11,7 +11,7 @@ namespace MineFieldApp.Cells
     using Mines;
 
     /// <summary>
-    /// An interface for the cell damage handler
+    /// An interface for the cell damage handler.
     /// </summary>
     public interface ICellDamageHandler
     {

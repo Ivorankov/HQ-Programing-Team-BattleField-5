@@ -89,7 +89,7 @@
     <Compile Include="Position.cs" />
     <Compile Include="Engines\Engine.cs" />
     <Compile Include="GameField.cs" />
-    <Compile Include="Highscore.cs" />
+    <Compile Include="HighscoreLogger.cs" />
     <Compile Include="Renderer\IRenderer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

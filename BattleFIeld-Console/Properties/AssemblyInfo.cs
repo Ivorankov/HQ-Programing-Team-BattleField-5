@@ -1,4 +1,12 @@
-﻿using System.Reflection;
+﻿//-----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="BattleField-5 team">
+//     Telerik teamwork project.
+// </copyright>
+// <summary>
+// Contains information for the assembly
+// </summary>
+//-----------------------------------------------------------------------
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
