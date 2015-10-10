@@ -5,8 +5,6 @@
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using System.Windows.Resources;
     using MineFieldApp;
     using MineFieldApp.Cells;
     using MineFieldApp.Cells.Mines;
@@ -19,7 +17,7 @@
     {
         private const string FilePathToImages = "../Images/";
 
-         private const string PathToSoundFile = "../../Sounds/";
+        private const string PathToSoundFile = "../../Sounds/";
 
         private const int GridWidth = 900;
 
@@ -29,14 +27,18 @@
 
         private Grid grid;
 
+        private IItem brush; // Temp or maybe not depends on how it ends up looking when its complete
+
         public event EventHandler<PositionEventArg> InputPosition;
 
         public WpfRenderer(GameWindow win)
         {
             this.window = win;
             this.window.MouseDown += this.HandleMouseDown;
-            var brush = CreateBrush(FilePathToImages + "Background.gif");
-            this.window.Background = brush;
+
+            BrushFactory factory = new BrushFactory();// Temp probably find a better place for it soon
+            factory.Save(0, new CellBrush());
+            this.brush = factory.Get(0);
         }
 
         public void ShowErrorMessage(string message)// Maybe this will be removed
@@ -53,12 +55,11 @@
             this.grid = CreateGridElement(field, GridWidth, GridHeigth);
             border.Child = grid;
             this.window.Content = border;
-            this.SetCellRepresentation(this.grid, field);
         }
 
         public void ShowHighscores(GameData data)
         {
-
+            //Do not throw not implimented exeptions principle? xD TODO Refactor the engine to not use this, it will be shown by gameover in console?
         }
 
         public void ShowGameOver(GameData data)
@@ -70,7 +71,7 @@
 
         public void RefreshGameField(GameField field)
         {
-            this.SetCellRepresentation(this.grid, field);
+            this.UpdateField(this.grid, field);
         }
 
         protected virtual void OnInputPosition(PositionEventArg args)
@@ -96,18 +97,18 @@
         }
 
         //Sets the background img on all the cells
-        private void SetCellRepresentation(Grid grid, GameField field)
+        private void UpdateField(Grid grid, GameField field)
         {
             for (int row = 0; row < field.RowsCount; row++)
             {
                 for (int col = 0; col < field.ColumnsCount; col++)
                 {
-                    UpdateCellStatus(grid, row, col, field[row, col].IsDestroyed, field);
+                    UpdateCellStatus(grid, row, col, field[row, col].IsDestroyed);
                 }
             }
         }
         //Sets background image on selected cell element
-        private void UpdateCellStatus(Grid grid, int row, int col, bool isCellDestroyed, GameField field)
+        private void UpdateCellStatus(Grid grid, int row, int col, bool isCellDestroyed)
         {
             var cell = grid.Children
               .Cast<UIElement>()
@@ -115,58 +116,9 @@
 
             if (isCellDestroyed)
             {
-                cell.Background = this.CreateBrush(FilePathToImages + "ExplodedDirt.png");
-            }
-            else 
-            {
-                if (field[row, col] is Mine)
-                {
-                    cell.Background = GetMineRepresentaion(field[row, col]);
-                }
-                else
-                {
-                    cell.Background = this.CreateBrush(FilePathToImages + "Dirt.jpg");
-                }
-            }
-        }
-        //Sets mine image depending on the type (size)
-        private Brush GetMineRepresentaion(Cell cell)
-        {
-            var brush = new ImageBrush();
-
-            if (cell is TinyMine)
-            {
-                brush = this.CreateBrush(FilePathToImages + "Mine1.png");
-            }
-            else if (cell is SmallMine)
-            {
-                brush = this.CreateBrush(FilePathToImages + "Mine2.png");
-            }
-            else if (cell is MediumMine)
-            {
-                brush = this.CreateBrush(FilePathToImages + "Mine3.png");
-            }
-            else if (cell is BigMine)
-            {
-                brush = this.CreateBrush(FilePathToImages + "Mine4.png");
-            }
-            else if (cell is GiantMine)
-            {
-                brush = this.CreateBrush(FilePathToImages + "Mine5.png");
+                cell.Background = this.brush.GetBrush(1);
             }
 
-            return brush;
-        }
-        //Used to create brush object (the thing that draws the img to the background)
-        private ImageBrush CreateBrush(string filePath)
-        {
-            Uri uriPathToImg = new Uri(filePath, UriKind.Relative);
-            StreamResourceInfo streamInfo = Application.GetResourceStream(uriPathToImg);
-            BitmapFrame imageData = BitmapFrame.Create(streamInfo.Stream);
-            var brush = new ImageBrush();
-            brush.ImageSource = imageData;
-
-            return brush;
         }
 
         private Grid CreateGridElement(GameField field, int gridWidth, int gridHeigth)
@@ -195,24 +147,21 @@
             {
                 for (int c = 0; c < fieldColCount; c++)
                 {
-                    if (field[r, c].IsDestroyed)
+
+                    if (field[r, c] is Mine)
                     {
-                        cell = new CellButton(r, c, CellStatus.Destroyed);
+                        cell = new CellButton(r, c, CellStatus.WithMine);
+                        var mineType = GetMineRepresentaion(field[r, c]);
+                        cell.Background = this.brush.GetBrush(mineType);
                     }
                     else
                     {
-                        if (field[r, c] is Mine)
-                        {
-                            cell = new CellButton(r, c, CellStatus.WithMine);
-                        }
-                        else
-                        {
-                            cell = new CellButton(r, c, CellStatus.Normal);
-                        }
+                        cell = new CellButton(r, c, CellStatus.Normal);
+                        cell.Background = this.brush.GetBrush(0);
                     }
 
-                    cell.Click += new RoutedEventHandler(this.HandleMouseDown);
 
+                    cell.Click += new RoutedEventHandler(this.HandleMouseDown);
                     grid.Children.Add(cell);
                     Grid.SetRow(cell, r);
                     Grid.SetColumn(cell, c);
@@ -220,6 +169,35 @@
             }
 
             return grid;
+        }
+
+        //Sets mine image depending on the type (size)
+        private int GetMineRepresentaion(Cell cell)
+        {
+            var brushType = 0;
+
+            if (cell is TinyMine)
+            {
+                brushType = 2;
+            }
+            else if (cell is SmallMine)
+            {
+                brushType = 3;
+            }
+            else if (cell is MediumMine)
+            {
+                brushType = 4;
+            }
+            else if (cell is BigMine)
+            {
+                brushType = 5;
+            }
+            else if (cell is GiantMine)
+            {
+                brushType = 6;
+            }
+
+            return brushType;
         }
 
         private void PlaySound(string pathToWavFile)
