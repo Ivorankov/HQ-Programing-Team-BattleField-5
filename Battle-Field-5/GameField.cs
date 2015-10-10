@@ -20,9 +20,15 @@ namespace MineFieldApp
     /// </summary>
     public class GameField
     {
-        private const int MINIMUM_MINES_PERCENT = 15;
+        private const int MinimumMinesPercent = 15;
 
-        private const int MAXIMUM_MINES_PERCENT = 30;
+        private const int MaximumMinesPercent = 30;
+
+        private IRandomGenerator random;
+
+        private IMineFactory mineFactory;
+
+        private Cell[,] field;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameField" /> class.
@@ -32,9 +38,9 @@ namespace MineFieldApp
         /// <param name="size">Size of the game field.</param>
         public GameField(IRandomGenerator random, IMineFactory mineFactory, int size)
         {
-            this.Random = random;
-            this.MineFactory = mineFactory;
-            this.Field = new Cell[size, size];
+            this.random = random;
+            this.mineFactory = mineFactory;
+            this.field = new Cell[size, size];
             this.MinesCount = this.CalculateInitialMineCount();
             this.FillFieldWithEmptyCells();
             this.FillFieldMines();
@@ -69,11 +75,35 @@ namespace MineFieldApp
         {
         }
 
-        private IRandomGenerator Random { get; set; }
+        /// <summary>
+        /// Gets count of the rows.
+        /// </summary>
+        /// <value>Rows count.</value>
+        public int RowsCount
+        {
+            get
+            {
+                return this.field.GetLength(0);
+            }
+        }
 
-        private IMineFactory MineFactory { get; set; }
+        /// <summary>
+        /// Gets count of the columns.
+        /// </summary>
+        /// <value>Columns count.</value>
+        public int ColumnsCount
+        {
+            get
+            {
+                return this.field.GetLength(1);
+            }
+        }
 
-        private Cell[,] Field { get; set; }
+        /// <summary>
+        /// Gets or sets count of the mines on the field.
+        /// </summary>
+        /// <value>Mines count.</value>
+        public int MinesCount { get; set; }
 
         /// <summary>
         /// Gets the cell on the selected position.
@@ -87,40 +117,10 @@ namespace MineFieldApp
             {
                 if (this.IsInRange(new Position(row, col)))
                 {
-                    return this.Field[row, col];
+                    return this.field[row, col];
                 }
 
                 throw new IndexOutOfRangeException();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets count of the mines on the field.
-        /// </summary>
-        /// <value>Mines count.</value>
-        public int MinesCount { get; set; }
-
-        /// <summary>
-        /// Gets count of the rows.
-        /// </summary>
-        /// <value>Rows count.</value>
-        public int RowsCount
-        {
-            get
-            {
-                return this.Field.GetLength(0);
-            }
-        }
-
-        /// <summary>
-        /// Gets count of the columns.
-        /// </summary>
-        /// <value>Columns count.</value>
-        public int ColumnsCount
-        {
-            get
-            {
-                return this.Field.GetLength(1);
             }
         }
 
@@ -140,41 +140,7 @@ namespace MineFieldApp
         /// <returns>True if there are mines left, false otherwise.</returns>
         public bool HasMinesLeft()
         {
-            return MinesCount > 0;
-        }
-
-        /// <summary>
-        /// Fills whole field with empty cells.
-        /// </summary>
-        private void FillFieldWithEmptyCells()
-        {
-            for (int row = 0; row < this.RowsCount; row++)
-            {
-                for (int col = 0; col < this.ColumnsCount; col++)
-                {
-                    this.Field[row, col] = new EmptyCell(new Position(row, col));
-                }
-            }
-        }
-
-        /// <summary>
-        /// Fills field with mines.
-        /// </summary>
-        private void FillFieldMines()
-        {
-            HashSet<Position> positions = RandomGenerator.Instance.GetUniquePointsBetween(this.MinesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
-            foreach (Position position in positions)
-            {
-                var cell = this.Field[position.Row, position.Col];
-                Mine mine = this.MineFactory.Create(cell);
-                this.Field[position.Row, position.Col] = mine;
-            }
-        }
-
-        private int CalculateInitialMineCount()
-        {
-            int totalCellsCount = this.RowsCount * this.ColumnsCount;
-            return RandomGenerator.Instance.GetRandomBetween(MINIMUM_MINES_PERCENT * totalCellsCount / 100, MAXIMUM_MINES_PERCENT * totalCellsCount / 100);
+            return this.MinesCount > 0;
         }
 
         /// <summary>
@@ -188,7 +154,7 @@ namespace MineFieldApp
             {
                 if (this.IsInRange(position))
                 {
-                    var currentCell = this.Field[position.Row, position.Col];
+                    var currentCell = this.field[position.Row, position.Col];
 
                     if (!currentCell.IsDestroyed)
                     {
@@ -197,10 +163,44 @@ namespace MineFieldApp
                             --this.MinesCount;
                         }
 
-                        this.Field[position.Row, position.Col].TakeDamage(damageHandler);
+                        this.field[position.Row, position.Col].TakeDamage(damageHandler);
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Fills whole field with empty cells.
+        /// </summary>
+        private void FillFieldWithEmptyCells()
+        {
+            for (int row = 0; row < this.RowsCount; row++)
+            {
+                for (int col = 0; col < this.ColumnsCount; col++)
+                {
+                    this.field[row, col] = new EmptyCell(new Position(row, col));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fills field with mines.
+        /// </summary>
+        private void FillFieldMines()
+        {
+            HashSet<Position> positions = RandomGenerator.Instance.GetUniquePointsBetween(this.MinesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
+            foreach (Position position in positions)
+            {
+                var cell = this.field[position.Row, position.Col];
+                Mine mine = this.mineFactory.Create(cell);
+                this.field[position.Row, position.Col] = mine;
+            }
+        }
+
+        private int CalculateInitialMineCount()
+        {
+            int totalCellsCount = this.RowsCount * this.ColumnsCount;
+            return RandomGenerator.Instance.GetRandomBetween(MinimumMinesPercent * totalCellsCount / 100, MaximumMinesPercent * totalCellsCount / 100);
         }
     }
 }

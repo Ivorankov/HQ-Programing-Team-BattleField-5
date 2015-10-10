@@ -13,9 +13,7 @@
     {
         public HighscoreWindow()
         {
-
-            InitializeComponent();
-
+            this.InitializeComponent();
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -25,7 +23,6 @@
 
             var grid = sender as DataGrid;
             grid.ItemsSource = highscores;
-
         }
 
         private void BackToMenu_Click(object sender, RoutedEventArgs e)

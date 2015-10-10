@@ -6,8 +6,8 @@
 //  Contains Cell class
 // </summary>
 //-----------------------------------------------------------------------
-namespace MineFieldApp.Cells
-{
+    namespace MineFieldApp.Cells
+    {
     /// <summary>
     /// Class representing a cell object.
     /// </summary>

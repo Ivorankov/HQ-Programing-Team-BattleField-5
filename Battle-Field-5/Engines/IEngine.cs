@@ -16,6 +16,12 @@ namespace MineFieldApp.Engines
     public interface IEngine
     {
         /// <summary>
+        /// Gets count of moves made by the player.
+        /// </summary>
+        /// <value>Moves count.</value>
+        int MovesCount { get; }
+
+        /// <summary>
         /// Initializes a game.
         /// </summary>
         /// <param name="field">The game field.</param>

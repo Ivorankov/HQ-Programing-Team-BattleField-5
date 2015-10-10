@@ -1,10 +1,11 @@
 ﻿namespace MineFieldApp.Renderer
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
     using Cells;
     using Cells.Mines;
     using Data;
-    using System;
-    using System.Text;
 
     public class ConsoleRenderer : IRenderer
     {
@@ -14,7 +15,6 @@
 
         private const char VerticalWallSymbol = '|';
 
-
         public ConsoleRenderer()
         {
             this.LastCursorLeft = 1;
@@ -23,7 +23,108 @@
 
         public event EventHandler<PositionEventArg> InputPosition;
 
-        protected virtual void OnInputPosition(PositionEventArg args) 
+        private int LastCursorLeft { get; set; }
+
+        private int LastCursorTop { get; set; }
+
+        public void ShowGameField(GameField field)
+        {
+            this.SetUpWindow(field);
+
+            int horizontalWallSize = Console.WindowWidth - ConsoleRenderer.WallsCount;
+            string horizontalWall = new string(ConsoleRenderer.HorizontalWallSymbol, horizontalWallSize);
+
+            string upperWall = string.Format(" {0} ", horizontalWall);
+            string verticalWall = string.Format("{0}{1}{0}", ConsoleRenderer.VerticalWallSymbol, new string(' ', horizontalWallSize));
+            string lowerWall = ' ' + horizontalWall;
+
+            StringBuilder builder = new StringBuilder(upperWall);
+            for (int i = 0; i < Console.WindowHeight - 2; i++)
+            {
+                builder.Append(verticalWall);
+            }
+
+            builder.Append(lowerWall);
+
+            Console.Write(builder);
+            // Console.ReadLine();
+            this.RefreshGameField(field);
+        }
+
+        public void RefreshGameField(GameField field)
+        {
+            Console.Clear();
+            for (int row = 0; row < field.RowsCount; row++)
+            {
+                for (int col = 0; col < field.ColumnsCount; col++)
+                {
+                    string cellSymbol = this.GetCellSymbol(field[row, col]);
+
+                    this.SetWindowPosition(new Position(row, col));
+
+                    Console.Write(cellSymbol);
+                }
+            }
+
+            Console.SetCursorPosition(this.LastCursorLeft, this.LastCursorTop);
+
+            this.SelectPosition();
+        }
+
+        public void ShowHighscores()
+        {
+            Console.WriteLine("-----------------Highscores-----------------");
+            IList<Score> highscores = HighscoreLogger.Instance.Highscores;
+            int totalWidth = 50;
+            string highscoreTitle = "Highscores";
+            int countOfashesOnTheLeft = (totalWidth - highscoreTitle.Length) / 2;
+            Console.WriteLine("{0,8}{1,14}{2,13}", "Name", "Points", "Date");
+
+            for (int i = 0; i < highscores.Count; i++)
+            {
+                Score currentScore = highscores[i];
+
+                Console.WriteLine("{0,3}.{1,-10}-{2,4}    {3}", i + 1, currentScore.PlayerName, currentScore.Points, currentScore.Date);
+            }
+
+            Console.WriteLine(new string('-', totalWidth));
+        }
+
+        public void ShowGameOver(GameData data)
+        {
+            Console.CursorVisible = false;
+            Console.Clear();
+
+            const int MessageCount = 2;
+            Console.SetCursorPosition(0, (Console.WindowHeight / 2) - MessageCount);
+
+            const string GameOverMessage = "Game Over.";
+            string paddedGameOver = GameOverMessage.PadLeft((Console.WindowWidth / 2) + (GameOverMessage.Length / 2), ' ');
+            Console.WriteLine(paddedGameOver);
+
+            string movesMessage = string.Format("Moves: {0}", data.MovesCount);
+            string paddedMovesMessage = movesMessage.PadLeft((Console.WindowWidth / 2) + (movesMessage.Length / 2), ' ');
+            Console.WriteLine(paddedMovesMessage);
+
+            ConsoleKeyInfo key;
+            do
+            {
+                key = Console.ReadKey(true);
+            }
+            while (key.Key != ConsoleKey.Enter);
+        }
+
+        public void ShowErrorMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
+
+        public void ShowWelcome()
+        {
+            Console.WriteLine(@"Welcome to 'Battle filed' game!");
+        }
+
+        protected virtual void OnInputPosition(PositionEventArg args)
         {
             if (this.InputPosition != null)
             {
@@ -40,13 +141,13 @@
             int consoleRowsCount = field.RowsCount + ConsoleRenderer.WallsCount;
             int consoleColumnsCount = field.ColumnsCount + whiteSpaceCount + ConsoleRenderer.WallsCount;
 
-            //Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
-            //Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
+            // Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
+            // Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
         }
 
         private void SetWindowPosition(Position fieldPosition)
         {
-            Console.SetCursorPosition(((fieldPosition.Col * 2) + 1), fieldPosition.Row + 1);
+            Console.SetCursorPosition((fieldPosition.Col * 2) + 1, fieldPosition.Row + 1);
         }
 
         private Position GetFieldPosition()
@@ -54,91 +155,44 @@
             return new Position(Console.CursorTop - 1, (Console.CursorLeft - 1) / 2);
         }
 
-        private char GetCellSymbol(Cell cell)
+        private string GetCellSymbol(Cell cell)
         {
             if (cell.IsDestroyed)
             {
-                return 'X';
-            }          
+                return "X";
+            }
             else if (cell is TinyMine)
             {
-                return '1';
+                return "1";
             }
             else if (cell is SmallMine)
             {
-                return '2';
+                return "2";
             }
             else if (cell is MediumMine)
             {
-                return '3';
+                return "3";
             }
             else if (cell is BigMine)
             {
-                return '4';
+                return "4";
             }
             else if (cell is GiantMine)
             {
-                return '5';
+                return "5";
             }
             else if (cell is EmptyCell)
             {
-                return '-';
+                return "-";
             }
 
             throw new NotImplementedException("Unknown Cell Type.");
-        }
-
-        public void ShowGameField(GameField field)
-        {
-            this.SetUpWindow(field);
-
-            int horizontalWallSize = Console.WindowWidth - ConsoleRenderer.WallsCount;
-            string horizontalWall = new string(ConsoleRenderer.HorizontalWallSymbol, horizontalWallSize);
-
-            string upperWall = string.Format(" {0} ", horizontalWall);
-            string verticalWall = string.Format("{0}{1}{0}", ConsoleRenderer.VerticalWallSymbol, new String(' ' , horizontalWallSize));
-            string lowerWall = ' ' + horizontalWall; 
-
-            StringBuilder builder = new StringBuilder(upperWall);
-            for (int i = 0; i < Console.WindowHeight - 2; i++)
-            {
-                builder.Append(verticalWall);
-            }
-            builder.Append(lowerWall);
-
-            Console.Write(builder);
-            //Console.ReadLine();
-            this.RefreshGameField(field);
-        }
-
-        public void RefreshGameField(GameField field)
-        {
-            for (int row = 0; row < field.RowsCount; row++)
-            {
-                for (int col = 0; col < field.ColumnsCount; col++)
-                {
-                    char cellSymbol = this.GetCellSymbol(field[row, col]);
-
-                    this.SetWindowPosition(new Position(row, col));
-
-                    Console.Write(cellSymbol);
-                }
-            }
-
-            Console.SetCursorPosition(this.LastCursorLeft, this.LastCursorTop);
-
-            this.SelectPosition();
         }
 
         private void SelectPosition()
         {
             while (true)
             {
-                if (!Console.KeyAvailable)
-                {
-                    continue;
-                }
-
                 ConsoleKeyInfo key = Console.ReadKey(true);
 
                 if ((key.Key == ConsoleKey.UpArrow) || (key.Key == ConsoleKey.DownArrow))
@@ -155,7 +209,6 @@
                     {
                         Console.CursorTop = newTop;
                     }
-
                 }
                 else if ((key.Key == ConsoleKey.LeftArrow) || (key.Key == ConsoleKey.RightArrow))
                 {
@@ -181,43 +234,5 @@
                 }
             }
         }
-
-        public void ShowHighscores(GameData data)
-        {
-            Console.Clear();
-            Console.WriteLine("How does one get scores from GameObjData?");
-        }
-
-        public void ShowGameOver(GameData data)
-        {
-            Console.CursorVisible = false;
-            Console.Clear();
-
-            const int MessageCount = 2;
-            Console.SetCursorPosition(0, (Console.WindowHeight / 2) - MessageCount);
-
-            const string GameOverMessage = "Game Over.";
-            string paddedGameOver = GameOverMessage.PadLeft((Console.WindowWidth / 2) +  (GameOverMessage.Length / 2), ' ');
-            Console.WriteLine(paddedGameOver);
-
-            string movesMessage = string.Format("Moves: {0}", data.MovesCount);
-            string paddedMovesMessage = movesMessage.PadLeft((Console.WindowWidth / 2) + (movesMessage.Length / 2), ' ');
-            Console.WriteLine(paddedMovesMessage);
-
-            ConsoleKeyInfo key;
-            do
-            {
-                key = Console.ReadKey(true);
-            } while (key.Key != ConsoleKey.Enter);
-        }
-
-        public void ShowErrorMessage(string message)
-        {
-        }
-
-        private int LastCursorLeft { get; set; }
-
-        private int LastCursorTop { get; set; }
-
     }
 }

@@ -19,7 +19,7 @@ namespace MineFieldApp.RNGs
         private static readonly Random Generator = new Random();
 
         private static Lazy<RandomGenerator> instance = new Lazy<RandomGenerator>(() => new RandomGenerator());
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="RandomGenerator" /> class.
         /// </summary>

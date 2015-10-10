@@ -2,32 +2,32 @@
 {
     using System;
     using System.Linq;
-    using System.Windows;
     using System.Media;
+    using System.Windows;
     using MineFieldApp;
-    using MineFieldApp.Engines;
     using MineFieldApp.Cells;
+    using MineFieldApp.Engines;
 
     /// <summary>
     /// Interaction logic for GameWindow.xaml
     /// </summary>
     public partial class GameWindow : Window
     {
-        private IEngine engine;
-
         private const string PathToSoundFile = "../../Sounds/Explosion.wav";
+
+        private IEngine engine;
 
         public GameWindow(int fieldSize, bool isExplosionChained)
         {
-            InitializeComponent();
-            StartTheEngine(fieldSize, isExplosionChained);//Vromm vromm
+            this.InitializeComponent();
+            this.StartTheEngine(fieldSize, isExplosionChained);
         }
 
         public void StartTheEngine(int fieldSize, bool isExplosionChained)
         {
             ICellDamageHandler damageHandler;
 
-            //TODO
+            // TODO
             if (isExplosionChained)
             {
                 damageHandler = new DefaultDamageHandler();

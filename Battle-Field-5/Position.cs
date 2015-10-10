@@ -17,7 +17,7 @@ namespace MineFieldApp
         /// Holds the value for the x coordinate.
         /// </summary>
         private int row;
-        
+
         /// <summary>
         /// Holds the value for the y coordinate.
         /// </summary>
@@ -48,7 +48,7 @@ namespace MineFieldApp
             private set
             {
                 this.row = value;
-            } 
+            }
         }
 
         /// <summary>
@@ -66,6 +66,28 @@ namespace MineFieldApp
             {
                 this.col = value;
             }
+        }
+
+        /// <summary>
+        /// Checks if one Position equals another Position.
+        /// </summary>
+        /// <param name="first">A Position to compare to second Position.</param>
+        /// <param name="second">A Position to compare to first Position.</param>
+        /// <returns>true if they have equal value, otherwise false.</returns>
+        public static bool operator ==(Position first, Position second)
+        {
+            return first.Equals(second);
+        }
+
+        /// <summary>
+        /// Checks if one Position does not equal another.
+        /// </summary>
+        /// <param name="first">A Position to compare to second Position.</param>
+        /// <param name="second">A Position to compare to first Position.</param>
+        /// <returns>true if they have different values, false if they have the same values.</returns>
+        public static bool operator !=(Position first, Position second)
+        {
+            return !(first == second);
         }
 
         /// <summary>
@@ -101,28 +123,6 @@ namespace MineFieldApp
         public override int GetHashCode()
         {
             return this.Row ^ this.Col;
-        }
-
-        /// <summary>
-        /// Checks if one Position equals another Position.
-        /// </summary>
-        /// <param name="first">A Position to compare to second Position.</param>
-        /// <param name="second">A Position to compare to first Position.</param>
-        /// <returns>true if they have equal value, otherwise false.</returns>
-        public static bool operator ==(Position first, Position second)
-        {
-            return first.Equals(second);
-        }
-
-        /// <summary>
-        /// Checks if one Position does not equal another.
-        /// </summary>
-        /// <param name="first">A Position to compare to second Position.</param>
-        /// <param name="second">A Position to compare to first Position.</param>
-        /// <returns>true if they have different values, false if they have the same values.</returns>
-        public static bool operator !=(Position first, Position second)
-        {
-            return !(first == second);
         }
 
         /// <summary>

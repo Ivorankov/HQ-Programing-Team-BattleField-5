@@ -11,7 +11,7 @@
     {
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void OnNewGameButtonClick(object sender, RoutedEventArgs e)

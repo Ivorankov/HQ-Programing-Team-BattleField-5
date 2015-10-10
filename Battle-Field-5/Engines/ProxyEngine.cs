@@ -35,11 +35,24 @@ namespace MineFieldApp.Engines
         }
 
         /// <summary>
+        /// Gets count of moves made by the player.
+        /// </summary>
+        /// <value>Moves count.</value>
+        public int MovesCount
+        {
+            get
+            {
+                return this.engine.MovesCount;
+            }
+        }
+
+        /// <summary>
         /// Initializes a game.
         /// </summary>
         /// <param name="field">The game field.</param>
         public void Init(GameField field)
         {
+            // proxy will add restriction for init - once initialised cannot be overriden
             this.engine = new Engine(this.renderer, this.damageHandler);
             this.engine.Init(field);
         }
