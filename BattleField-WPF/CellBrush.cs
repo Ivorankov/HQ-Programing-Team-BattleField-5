@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Resources;
-
-namespace BattleField_WPF
+﻿namespace BattleField_WPF
 {
+    using System;
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Resources;
+
     class CellBrush : IItem
     {
         private const string FilePathToImages = "../Images/";

@@ -15,6 +15,6 @@ namespace MineFieldApp.Cells.Mines.Factories
         /// </summary>
         /// <param name="position">The position of the mine.</param>
         /// <returns>A new Mine Object.</returns>
-        Mine Create(Position position, GameField field);
+        Mine Create(Cell cell);
     }
 }

@@ -2,16 +2,16 @@
 {
     using Mines;
 
-    public class DefaultCellDamageHandler : ICellDamageHandler
+    public class DefaultDamageHandler : ICellDamageHandler
     {
         public void Damage(EmptyCell cell)
         {
-            cell.Status = CellStatus.Destroyed;
+            cell.IsDestroyed = true;
         }
 
         public void Damage(Mine mine)
         {
-            mine.Status = CellStatus.Destroyed;
+            mine.IsDestroyed = true;
         }
     }
 }

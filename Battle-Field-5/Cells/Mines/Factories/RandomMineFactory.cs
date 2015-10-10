@@ -31,22 +31,22 @@ namespace MineFieldApp.Cells.Mines.Factories
         /// </summary>
         /// <param name="position">The position of the mine.</param>
         /// <returns>A new Mine Object.</returns>
-        public Mine Create(Position position, GameField field)
+        public Mine Create(Cell cell)
         {
             int randomNumber = this.Random.GetRandomBetween(0, 5);
 
             switch (randomNumber)
             {
                 case 0:
-                    return new TinyMine(position, field);
+                    return new TinyMine(cell);
                 case 1:
-                    return new SmallMine(position, field);
+                    return new SmallMine(cell);
                 case 2:
-                    return new MediumMine(position, field);
+                    return new MediumMine(cell);
                 case 3:
-                    return new BigMine(position, field);
+                    return new BigMine(cell);
                 case 4:
-                    return new GiantMine(position, field);
+                    return new GiantMine(cell);
                 default:
                     throw new NotImplementedException();
             }

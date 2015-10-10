@@ -54,7 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Brush.cs" />
+    <Compile Include="CellBrush.cs" />
     <Compile Include="BrushFactory.cs" />
     <Compile Include="IItem.cs" />
     <Compile Include="Windows\GameInitWindow.xaml.cs">

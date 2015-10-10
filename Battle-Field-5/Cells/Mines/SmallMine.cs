@@ -16,8 +16,8 @@ namespace MineFieldApp.Cells.Mines
         /// Initializes a new instance of the SmallMine class.
         /// </summary>
         /// <param name="position">The position of the mine.</param>
-        public SmallMine(Position position, GameField field)
-            : base(position, field)
+        public SmallMine(Cell cell)
+            : base(cell)
         {
         }
 
