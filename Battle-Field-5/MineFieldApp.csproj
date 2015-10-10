@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cells\Cell.cs" />
+    <Compile Include="Cells\CellDecorator.cs" />
     <Compile Include="Cells\DefaultDamageHandler.cs" />
     <Compile Include="Cells\EmptyCell.cs" />
     <Compile Include="Cells\ICellDamageHandler.cs" />

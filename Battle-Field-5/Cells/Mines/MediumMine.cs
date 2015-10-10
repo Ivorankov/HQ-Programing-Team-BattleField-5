@@ -16,8 +16,8 @@ namespace MineFieldApp.Cells.Mines
         /// Initializes a new instance of the MediumMine class.
         /// </summary>
         /// <param name="position">The position of the mine.</param>
-        public MediumMine(Position position)
-            : base(position)
+        public MediumMine(Cell cell)
+            : base(cell)
         {
         }
 

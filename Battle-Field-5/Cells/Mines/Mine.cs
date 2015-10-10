@@ -10,10 +10,10 @@ namespace MineFieldApp.Cells.Mines
     /// <summary>
     /// Class representing a Mine object.
     /// </summary>
-    public abstract class Mine : Cell
+    public abstract class Mine : CellDecorator
     {
-        protected Mine(Position position)
-            : base(position)
+        protected Mine(Cell cell)
+            : base(cell)
         {
         }
 
