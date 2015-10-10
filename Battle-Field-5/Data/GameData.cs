@@ -11,16 +11,16 @@ namespace MineFieldApp.Data
     using Cells;
 
     /// <summary>
-    /// A class for storing main parameters for a game
+    /// A class for storing main parameters for a game.
     /// </summary>
     public class GameData
     {
         /// <summary>
-        /// Initializes a new instance of the GameData class
+        /// Initializes a new instance of the GameData class.
         /// </summary>
-        /// <param name="gameField">The game field</param>
-        /// <param name="movesCount">Moves made by the player</param>
-        /// <param name="damageHandler">The damage handler</param>
+        /// <param name="gameField">The game field.</param>
+        /// <param name="movesCount">Moves made by the player.</param>
+        /// <param name="damageHandler">The damage handler.</param>
         public GameData(GameField gameField, int movesCount, ICellDamageHandler damageHandler)
         {
             this.GameField = gameField;
@@ -29,18 +29,21 @@ namespace MineFieldApp.Data
         }
 
         /// <summary>
-        /// Gets or sets count of moves made by the player
+        /// Gets count of moves made by the player.
         /// </summary>
+        /// <value>The moves count.</value>
         public int MovesCount { get; private set; }
 
         /// <summary>
-        /// Gets or sets the game field
+        /// Gets the game field.
         /// </summary>
+        /// <value>The game field.</value>
         public GameField GameField { get; private set; }
 
         /// <summary>
-        /// Gets or sets the damage handler
+        /// Gets the damage handler.
         /// </summary>
+        /// <value>The damage handler.</value>
         public ICellDamageHandler DamageHandler { get; private set; }
     }
 }

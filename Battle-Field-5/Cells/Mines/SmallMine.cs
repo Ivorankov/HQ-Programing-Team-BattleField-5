@@ -15,16 +15,16 @@ namespace MineFieldApp.Cells.Mines
         /// <summary>
         /// Initializes a new instance of the SmallMine class.
         /// </summary>
-        /// <param name="position">The position of the mine.</param>
+        /// <param name="cell">The cell which will be wrapped in mine.</param>
         public SmallMine(Cell cell)
             : base(cell)
         {
         }
 
         /// <summary>
-        /// The method returns the exploding area of the mine.
+        /// Gets the exploding area of the mine.
         /// </summary>
-        /// <returns>List containing the positions of the tiles of the exploding area.</returns>
+        /// <returns>Positions of the tiles of the exploding area.</returns>
         public override List<Position> GetExplodingPattern()
         {
             return MineAssistant.GetNormalExplosion(this.Position, 1);

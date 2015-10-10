@@ -2,6 +2,9 @@
 // <copyright file="Position.cs" company="BattleField-5 team">
 //     Telerik teamwork project.
 // </copyright>
+// <summary>
+// Contains Position class
+// </summary>
 //-----------------------------------------------------------------------
 namespace MineFieldApp
 {
@@ -21,7 +24,7 @@ namespace MineFieldApp
         private int col;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Position" /> structure with specified x and y coordinates.
+        /// Initializes a new instance of the <see cref="Position" /> class with specified x and y coordinates.
         /// </summary>
         /// <param name="row">Value of the X coordinate.</param>
         /// <param name="col">Value of the Y coordinate.</param>
@@ -32,8 +35,9 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Gets or sets the value of the X coordinate.
+        /// Gets the value of the X coordinate.
         /// </summary>
+        /// <value>X coordinate.</value>
         public int Row
         {
             get
@@ -48,8 +52,9 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Gets or sets the value of the Y coordinate.
+        /// Gets the value of the Y coordinate.
         /// </summary>
+        /// <value>Y coordinate.</value>
         public int Col
         {
             get
@@ -62,7 +67,6 @@ namespace MineFieldApp
                 this.col = value;
             }
         }
-
 
         /// <summary>
         /// Checks if this Position is equal to another Position.
@@ -115,7 +119,7 @@ namespace MineFieldApp
         /// </summary>
         /// <param name="first">A Position to compare to second Position.</param>
         /// <param name="second">A Position to compare to first Position.</param>
-        /// <returns>true if they have different values, false if they have the same values</returns>
+        /// <returns>true if they have different values, false if they have the same values.</returns>
         public static bool operator !=(Position first, Position second)
         {
             return !(first == second);
@@ -124,7 +128,7 @@ namespace MineFieldApp
         /// <summary>
         /// Returns a string representation of this Position.
         /// </summary>
-        /// <returns>A string in the format: "X = {0}, Y = {1}"</returns>
+        /// <returns>A string in the format: "X = {0}, Y = {1}".</returns>
         public override string ToString()
         {
             return string.Format("X = {0}, Y = {1}", this.Row, this.Col);

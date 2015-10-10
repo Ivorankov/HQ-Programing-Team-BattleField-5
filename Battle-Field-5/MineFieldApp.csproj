@@ -71,7 +71,6 @@
     <Compile Include="Cells\DefaultDamageHandler.cs" />
     <Compile Include="Cells\EmptyCell.cs" />
     <Compile Include="Cells\ICellDamageHandler.cs" />
-    <Compile Include="Cells\Mines\MineDestroyedException.cs" />
     <Compile Include="Data\Memento\GameDataCaretaker.cs" />
     <Compile Include="Data\GameData.cs" />
     <Compile Include="Engines\IEngine.cs" />

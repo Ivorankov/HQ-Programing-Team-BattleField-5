@@ -1,15 +1,15 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="RandomMineGenerator.cs" company="BattleField-5 team">
+// <copyright file="RandomMineFactory.cs" company="BattleField-5 team">
 //     Telerik teamwork project.
 // </copyright>
 //-----------------------------------------------------------------------
 namespace MineFieldApp.Cells.Mines.Factories
 {
-    using RNGs;
     using System;
+    using RNGs;
 
     /// <summary>
-    /// A MineGenerator which generates a random type of Mine.
+    /// A mine factory which generates a random type of Mine.
     /// </summary>
     public class RandomMineFactory : IMineFactory
     {
@@ -21,7 +21,6 @@ namespace MineFieldApp.Cells.Mines.Factories
         public RandomMineFactory()
             : this(RandomGenerator.Instance)
         {
-
         }
 
         private IRandomGenerator Random { get; set; }
@@ -29,7 +28,7 @@ namespace MineFieldApp.Cells.Mines.Factories
         /// <summary>
         /// Generates a random Mine object.
         /// </summary>
-        /// <param name="position">The position of the mine.</param>
+        /// <param name="cell">The cell which will be wrapped in mine</param>
         /// <returns>A new Mine Object.</returns>
         public Mine Create(Cell cell)
         {

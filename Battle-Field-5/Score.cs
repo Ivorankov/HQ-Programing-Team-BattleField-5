@@ -11,30 +11,30 @@ namespace MineFieldApp
     using System;
 
     /// <summary>
-    /// Class representing a players score
+    /// Class representing a players score.
     /// </summary>
     public class Score
     {
         /// <summary>
-        /// Holds the value of players name
+        /// Holds the value of players name.
         /// </summary>
         private string playerName;
 
         /// <summary>
-        /// Holds the value of players points 
+        /// Holds the value of players points.
         /// </summary>
         private double points;
 
         /// <summary>
-        /// Holds the date of creation of the score
+        /// Holds the date of creation of the score.
         /// </summary>
         private DateTime date;
 
         /// <summary>
-        /// Initializes a new instance of the Score class
+        /// Initializes a new instance of the Score class.
         /// </summary>
-        /// <param name="playerName">The name of the player</param>
-        /// <param name="points">The points of the player</param>
+        /// <param name="playerName">The name of the player.</param>
+        /// <param name="points">The points of the player.</param>
         public Score(string playerName, double points)
         {
             this.PlayerName = playerName;
@@ -43,7 +43,7 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Initializes a new instance of the Score class. This emplty constructor
+        /// Initializes a new instance of the Score class. This empty constructor
         /// is obligatory because of the serialization.
         /// </summary>
         public Score()
@@ -51,8 +51,9 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Gets or sets players name
+        /// Gets or sets players name.
         /// </summary>
+        /// <value>Players name.</value>
         public string PlayerName
         {
             get
@@ -67,8 +68,9 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Gets or sets points
+        /// Gets or sets points.
         /// </summary>
+        /// <value>Player points.</value>
         public double Points
         {
             get
@@ -83,8 +85,9 @@ namespace MineFieldApp
         }
 
         /// <summary>
-        /// Gets or sets scores data
+        /// Gets or sets scores data.
         /// </summary>
+        /// <value>Date of the score creation.</value>
         public DateTime Date
         {
             get

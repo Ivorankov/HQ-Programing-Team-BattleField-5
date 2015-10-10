@@ -9,15 +9,16 @@
 namespace MineFieldApp.Data
 {
     /// <summary>
-    /// A class that stores GameData object in order to be restored later
+    /// A class that stores GameData object in order to be restored later.
     /// </summary>
     public class GameDataCaretaker
     {
         private GameData memento;
 
         /// <summary>
-        /// Gets or sets the GameData object
+        /// Gets or sets the GameData object.
         /// </summary>
+        /// <value>The game data.</value>
         public GameData GameData
         {
             get { return this.memento; }

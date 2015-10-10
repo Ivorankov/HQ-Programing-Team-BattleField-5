@@ -2,6 +2,9 @@
 // <copyright file="MineAssistant.cs" company="BattleField-5 team">
 //     Telerik teamwork project.
 // </copyright>
+// <summary>
+//  Contains MineAssistant class
+// </summary>
 //-----------------------------------------------------------------------
 namespace MineFieldApp.Cells.Mines
 {
