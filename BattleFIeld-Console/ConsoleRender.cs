@@ -47,7 +47,7 @@
             builder.Append(lowerWall);
 
             Console.Write(builder);
-            // Console.ReadLine();
+            //// Console.ReadLine();
             this.RefreshGameField(field);
         }
 
@@ -231,6 +231,7 @@
 
                     Position pos = this.GetFieldPosition();
                     this.OnInputPosition(new PositionEventArg(pos));
+                    return;
                 }
             }
         }
