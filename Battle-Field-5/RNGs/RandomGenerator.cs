@@ -5,13 +5,12 @@
 
     public class RandomGenerator : IRandomGenerator
     {
-        private static Lazy<RandomGenerator> instance = new Lazy<RandomGenerator>(() => new RandomGenerator());
-
         private static readonly Random Generator = new Random();
+
+        private static Lazy<RandomGenerator> instance = new Lazy<RandomGenerator>(() => new RandomGenerator());
 
         protected RandomGenerator()
         {
-
         }
 
         public static RandomGenerator Instance

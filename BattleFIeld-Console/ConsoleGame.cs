@@ -1,8 +1,8 @@
 ﻿namespace BattleField_Console
 {
     using MineFieldApp;
-    using MineFieldApp.Engines;
     using MineFieldApp.Cells;
+    using MineFieldApp.Engines;
     using MineFieldApp.Renderer;
 
     public class ConsoleGame

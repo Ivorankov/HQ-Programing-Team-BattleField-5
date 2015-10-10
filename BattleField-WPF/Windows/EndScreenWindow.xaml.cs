@@ -3,9 +3,9 @@
     using System;
     using System.Linq;
     using System.Windows;
+    using System.Windows.Controls;
     using MineFieldApp;
     using MineFieldApp.Data;
-    using System.Windows.Controls;
 
     /// <summary>
     /// Interaction logic for EndScreenWindow.xaml
@@ -16,7 +16,7 @@
 
         public EndScreenWindow(GameData data)
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.data = data;
         }
 

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleField_WPF
+﻿namespace BattleField_WPF
 {
-    class BrushFactory
+    using System.Collections.Generic;
+
+    public class BrushFactory
     {
         private Dictionary<int, IItem> collection = new Dictionary<int, IItem>();
 

@@ -7,20 +7,9 @@
     using System.Windows.Media.Imaging;
     using System.Windows.Resources;
 
-    class CellBrush : IItem
+    public class CellBrush : IItem
     {
         private const string FilePathToImages = "../Images/";
-
-        public CellBrush()
-        {
-            this.brushDirt = CreateBrush(FilePathToImages + "Dirt.jpg"); 
-            this.brushExplodedDirt = CreateBrush(FilePathToImages + "ExplodedDirt.png");
-            this.brushTiny = CreateBrush(FilePathToImages + "Mine1.png");
-            this.brushSmall = CreateBrush(FilePathToImages + "Mine2.png");
-            this.brushMedium = CreateBrush(FilePathToImages + "Mine3.png");
-            this.brushBig = CreateBrush(FilePathToImages + "Mine4.png");
-            this.brushHuge = CreateBrush(FilePathToImages + "Mine5.png");
-        }
 
         private ImageBrush brushDirt;
 
@@ -36,21 +25,32 @@
 
         private ImageBrush brushHuge;
 
+        public CellBrush()
+        {
+            this.brushDirt = this.CreateBrush(FilePathToImages + "Dirt.jpg");
+            this.brushExplodedDirt = this.CreateBrush(FilePathToImages + "ExplodedDirt.png");
+            this.brushTiny = this.CreateBrush(FilePathToImages + "Mine1.png");
+            this.brushSmall = this.CreateBrush(FilePathToImages + "Mine2.png");
+            this.brushMedium = this.CreateBrush(FilePathToImages + "Mine3.png");
+            this.brushBig = this.CreateBrush(FilePathToImages + "Mine4.png");
+            this.brushHuge = this.CreateBrush(FilePathToImages + "Mine5.png");
+        }
+
         public ImageBrush GetBrush(int index)
         {
             if (index == 0)
             {
                 return this.brushDirt;
             }
-            else if(index == 1)
+            else if (index == 1)
             {
                 return this.brushExplodedDirt;
             }
             else if (index == 2)
             {
                 return this.brushTiny;
-            } 
-            else if(index == 3)
+            }
+            else if (index == 3)
             {
                 return this.brushSmall;
             }

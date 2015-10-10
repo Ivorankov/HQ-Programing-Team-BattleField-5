@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-
-namespace BattleField_WPF
+﻿namespace BattleField_WPF
 {
-    interface IItem
+    using System.Windows.Media;
+
+    public interface IItem
     {
         ImageBrush GetBrush(int index);
     }

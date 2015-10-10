@@ -1,20 +1,21 @@
 ﻿namespace MineFieldAppTests
 {
-    using MineFieldApp;
     using System.Collections.Generic;
+    using MineFieldApp;
 
     public class ConsoleInputProviderMock : ConsoleInputProvider
     {
         private IEnumerator<string> iterator;
 
-        public ConsoleInputProviderMock(IEnumerable<string> input) {
+        public ConsoleInputProviderMock(IEnumerable<string> input)
+        {
             this.iterator = input.GetEnumerator();
         }
 
         protected override string GetUserInput()
         {
-            iterator.MoveNext();
-            return iterator.Current;
+            this.iterator.MoveNext();
+            return this.iterator.Current;
         }
     }
 }

@@ -2,8 +2,6 @@
 {
     public abstract class Cell
     {
-        private bool isDestroyed;
-
         public Cell(Position position)
         {
             this.IsDestroyed = false;

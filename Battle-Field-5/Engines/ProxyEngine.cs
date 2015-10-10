@@ -1,8 +1,8 @@
 namespace MineFieldApp.Engines
 {
+    using Data;
     using MineFieldApp.Cells;
     using MineFieldApp.Renderer;
-    using Data;
 
     public class ProxyEngine : IEngine
     {
@@ -12,6 +12,12 @@ namespace MineFieldApp.Engines
 
         private ICellDamageHandler damageHandler;
 
+        public ProxyEngine(IRenderer renderer, ICellDamageHandler damageHandler)
+        {
+            this.renderer = renderer;
+            this.damageHandler = damageHandler;
+        }
+
         public int MovesCount
         {
             get
@@ -20,18 +26,12 @@ namespace MineFieldApp.Engines
             }
         }
 
-        public ProxyEngine(IRenderer renderer, ICellDamageHandler damageHandler)
-        {
-            this.renderer = renderer;
-            this.damageHandler = damageHandler;
-        }
-
         public void Init(GameField field)
         {
-            this.engine = new Engine(this.renderer, this.damageHandler);// proxy will add restriction for init - once initialised cannot be overriden
+            // proxy will add restriction for init - once initialised cannot be overriden
+            this.engine = new Engine(this.renderer, this.damageHandler);
             this.engine.Init(field);
         }
-
 
         public void UpdateField(Position position)
         {
@@ -40,7 +40,6 @@ namespace MineFieldApp.Engines
 
         public void GameOver()
         {
-
         }
 
         public GameData CreateMemento()

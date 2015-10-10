@@ -3,7 +3,7 @@
     public abstract class CellDecorator : Cell
     {
         protected CellDecorator(Cell cell)
-            :base(cell.Position)
+            : base(cell.Position)
         {
             this.Cell = cell;
         }

@@ -1,9 +1,9 @@
 ﻿namespace BattleField_Console
 {
+    using System;
     using MineFieldApp;
     using MineFieldApp.Cells;
     using MineFieldApp.Renderer;
-    using System;
 
     internal class Program
     {

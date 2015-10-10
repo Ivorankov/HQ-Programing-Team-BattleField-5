@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using System.Media;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
@@ -10,10 +11,9 @@
     using MineFieldApp.Cells.Mines;
     using MineFieldApp.Data;
     using MineFieldApp.Renderer;
-    using System.Media;
-    //Under construction
 
-    class WpfRenderer : IRenderer
+    // Under construction
+    public class WpfRenderer : IRenderer
     {
         private const string FilePathToImages = "../Images/";
 
@@ -29,37 +29,38 @@
 
         private IItem brush; // Temp or maybe not depends on how it ends up looking when its complete
 
-        public event EventHandler<PositionEventArg> InputPosition;
-
         public WpfRenderer(GameWindow win)
         {
             this.window = win;
             this.window.MouseDown += this.HandleMouseDown;
 
-            BrushFactory factory = new BrushFactory();// Temp probably find a better place for it soon
+            BrushFactory factory = new BrushFactory();
             factory.Save(0, new CellBrush());
             this.brush = factory.Get(0);
         }
 
-        public void ShowErrorMessage(string message)// Maybe this will be removed
-        {
+        public event EventHandler<PositionEventArg> InputPosition;
 
+        public void ShowErrorMessage(string message)
+        //// Maybe this will be removed
+        {
         }
-        //Creates all the elements and appends them to the window
+
+        // Creates all the elements and appends them to the window
         public void ShowGameField(GameField field)
         {
             Border border = new Border();
             border.BorderThickness = new Thickness(10);
             border.BorderBrush = Brushes.White;
 
-            this.grid = CreateGridElement(field, GridWidth, GridHeigth);
-            border.Child = grid;
+            this.grid = this.CreateGridElement(field, GridWidth, GridHeigth);
+            border.Child = this.grid;
             this.window.Content = border;
         }
 
         public void ShowHighscores()
         {
-            //Do not throw not implimented exeptions principle? xD TODO Refactor the engine to not use this, it will be shown by gameover in console?
+            // Do not throw not implimented exeptions principle? xD TODO Refactor the engine to not use this, it will be shown by gameover in console?
         }
 
         public void ShowGameOver(GameData data)
@@ -72,6 +73,11 @@
         public void RefreshGameField(GameField field)
         {
             this.UpdateField(this.grid, field);
+        }
+
+        public void ShowWelcome()
+        {
+            throw new NotImplementedException();
         }
 
         protected virtual void OnInputPosition(PositionEventArg args)
@@ -93,21 +99,22 @@
                     this.PlaySound(PathToSoundFile + "Explosion.wav");
                 }
             }
-            //Else play some other sound ? 
+            //// Else play some other sound ? 
         }
 
-        //Sets the background img on all the cells
+        // Sets the background img on all the cells
         private void UpdateField(Grid grid, GameField field)
         {
             for (int row = 0; row < field.RowsCount; row++)
             {
                 for (int col = 0; col < field.ColumnsCount; col++)
                 {
-                    UpdateCellStatus(grid, row, col, field[row, col].IsDestroyed);
+                    this.UpdateCellStatus(grid, row, col, field[row, col].IsDestroyed);
                 }
             }
         }
-        //Sets background image on selected cell element
+
+        // Sets background image on selected cell element
         private void UpdateCellStatus(Grid grid, int row, int col, bool isCellDestroyed)
         {
             var cell = grid.Children
@@ -118,7 +125,6 @@
             {
                 cell.Background = this.brush.GetBrush(1);
             }
-
         }
 
         private Grid CreateGridElement(GameField field, int gridWidth, int gridHeigth)
@@ -128,7 +134,6 @@
             var grid = new Grid();
             grid.MaxWidth = gridWidth;
             grid.MaxHeight = gridHeigth;
-
 
             for (int i = 0; i < fieldRowCount; i++)
             {
@@ -147,11 +152,10 @@
             {
                 for (int c = 0; c < fieldColCount; c++)
                 {
-
                     if (field[r, c] is Mine)
                     {
                         cell = new CellButton(r, c, CellStatus.WithMine);
-                        var mineType = GetMineRepresentaion(field[r, c]);
+                        var mineType = this.GetMineRepresentaion(field[r, c]);
                         cell.Background = this.brush.GetBrush(mineType);
                     }
                     else
@@ -159,7 +163,6 @@
                         cell = new CellButton(r, c, CellStatus.Normal);
                         cell.Background = this.brush.GetBrush(0);
                     }
-
 
                     cell.Click += new RoutedEventHandler(this.HandleMouseDown);
                     grid.Children.Add(cell);
@@ -171,7 +174,7 @@
             return grid;
         }
 
-        //Sets mine image depending on the type (size)
+        // Sets mine image depending on the type (size)
         private int GetMineRepresentaion(Cell cell)
         {
             var brushType = 0;
@@ -204,12 +207,6 @@
         {
             var sound = new SoundPlayer(pathToWavFile);
             sound.Play();
-        }
-
-
-        public void ShowWelcome()
-        {
-            throw new NotImplementedException();
         }
     }
 }

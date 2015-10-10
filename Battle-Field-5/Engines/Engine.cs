@@ -1,17 +1,15 @@
 ﻿namespace MineFieldApp.Engines
 {
-    using Renderer;
     using Cells;
     using Cells.Mines;
     using Data;
+    using Renderer;
 
     public class Engine : IEngine
     {
         private IRenderer renderer;
 
         private GameField field;
-
-        public int MovesCount {get; private set;}
 
         private ICellDamageHandler damageHandler;
 
@@ -20,6 +18,8 @@
             this.renderer = renderer;
             this.damageHandler = damageHandler;
         }
+
+        public int MovesCount { get; private set; }
 
         public void Init(GameField field)
         {
@@ -50,7 +50,7 @@
 
             if (this.field.HasMinesLeft())
             {
-                this.renderer.RefreshGameField(field);
+                this.renderer.RefreshGameField(this.field);
             }
             else
             {

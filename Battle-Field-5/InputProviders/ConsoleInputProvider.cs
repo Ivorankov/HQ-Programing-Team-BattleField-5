@@ -1,30 +1,25 @@
 ﻿namespace MineFieldApp
 {
-    using MineFieldApp;
     using System;
     using System.Text.RegularExpressions;
+    using MineFieldApp;
 
     public class ConsoleInputProvider : IInputProvider
     {
         public int GetFieldSize()
         {
             int result = 0;
-            return GetValidUserInput(input => (int.TryParse(input, out result) && 1 <= result && result <= 10), "Enter battle field size (between 1 and 10): ", int.Parse);
-        }
-
-        public Position GetPosition()
-        {
-            string numberRegex = @"(0|[1-9]\d*)";
-            return GetValidUserInput(new Regex(String.Format(@"{0}\s+{0}", numberRegex)), "Enter mine coordinates: ", i =>
-            {
-                string[] input = i.Split(' ');
-                return new Position(int.Parse(input[0]), int.Parse(input[1]));
-            });
+            return this.GetValidUserInput(input => (int.TryParse(input, out result) && 1 <= result && result <= 10), "Enter battle field size (between 1 and 10): ", int.Parse);
         }
 
         public string GetPlayerName()
         {
-            return GetValidUserInput(new Regex(@"\w+"), "Please enter your name: ", input => input);
+            return this.GetValidUserInput(new Regex(@"\w+"), "Please enter your name: ", input => input);
+        }
+
+        protected virtual string GetUserInput()
+        {
+            return Console.ReadLine();
         }
 
         private T GetValidUserInput<T>(Regex regex, string prompt, Func<string, T> parser)
@@ -38,16 +33,11 @@
             do
             {
                 Console.WriteLine(prompt);
-                input = GetUserInput();
+                input = this.GetUserInput();
             }
             while (!validator.Invoke(input));
 
             return parser.Invoke(input);
-        }
-
-        protected virtual string GetUserInput()
-        {
-            return Console.ReadLine();
         }
     }
 }

@@ -8,11 +8,11 @@
 //-----------------------------------------------------------------------
 namespace MineFieldAppTests
 {
-    using MineFieldApp;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.IO;
     using System.Xml.Serialization;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using MineFieldApp;
 
     /// <summary>
     /// A class for testing <see cref="HighscoreLogger"/> class

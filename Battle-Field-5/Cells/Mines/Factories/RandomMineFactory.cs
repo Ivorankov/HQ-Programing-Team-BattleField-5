@@ -5,8 +5,8 @@
 //-----------------------------------------------------------------------
 namespace MineFieldApp.Cells.Mines.Factories
 {
-    using RNGs;
     using System;
+    using RNGs;
 
     /// <summary>
     /// A MineGenerator which generates a random type of Mine.
@@ -21,7 +21,6 @@ namespace MineFieldApp.Cells.Mines.Factories
         public RandomMineFactory()
             : this(RandomGenerator.Instance)
         {
-
         }
 
         private IRandomGenerator Random { get; set; }
