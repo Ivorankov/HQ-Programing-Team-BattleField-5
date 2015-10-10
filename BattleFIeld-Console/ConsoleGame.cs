@@ -11,8 +11,7 @@
         public void InitGame(GameField field)
         {
             ConsoleRenderer renderer = new ConsoleRenderer();
-            //ICellDamageHandler damageHandler = new DefaultCellDamageHandler();
-            ICellDamageHandler damageHandler = new ChainDamageHandler();
+            ICellDamageHandler damageHandler = new DefaultDamageHandler();
             this.engine = new ProxyEngine(renderer, damageHandler);
             this.engine.Init(field);
 

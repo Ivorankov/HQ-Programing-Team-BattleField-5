@@ -122,9 +122,19 @@
         {
             foreach (var position in positions)
             {
-                if (this.IsInRange(position) && this.Field[position.Row, position.Col].Status != CellStatus.Destroyed)
+                if (this.IsInRange(position))
                 {
-                    this.Field[position.Row, position.Col].TakeDamage(damageHandler);
+                    var currentCell = this.Field[position.Row, position.Col];
+
+                    if (currentCell.Status != CellStatus.Destroyed)
+                    {
+                        if (currentCell is Mine)
+                        {
+                            --this.MinesCount;
+                        }
+
+                        this.Field[position.Row, position.Col].TakeDamage(damageHandler);
+                    }
                 }
             }
         }

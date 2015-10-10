@@ -1,7 +1,5 @@
 ﻿namespace MineFieldApp.Cells
 {
-    using System;
-
     public abstract class Cell
     {
         private CellStatus status;

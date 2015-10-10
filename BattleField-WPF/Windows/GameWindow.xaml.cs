@@ -26,13 +26,14 @@
         {
             ICellDamageHandler damageHandler;
 
+            //TODO
             if (isExplosionChained)
             {
-                damageHandler = new ChainDamageHandler();
+                damageHandler = new DefaultDamageHandler();
             }
             else
             {
-                damageHandler = new DefaultCellDamageHandler();
+                damageHandler = new DefaultDamageHandler();
             }
 
             var renderer = new WpfRenderer(this);
