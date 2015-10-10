@@ -10,34 +10,34 @@ using System.Windows.Resources;
 
 namespace BattleField_WPF
 {
-    class Brush : IItem
+    class CellBrush : IItem
     {
         private const string FilePathToImages = "../Images/";
 
-        public Brush()
+        public CellBrush()
         {
-            this.brushDirt = CreateBrush(FilePathToImages + "Dirt.jpg");// This was the first way it actually worked.. from 75 on load to 24mb ram 
-            this.brushExplodedDirt = CreateBrush(FilePathToImages + "ExplodedDirt.png");// Dheam went from over 120mb ram when exploded dirt shows to 40 ish(put smaller imgs also)
-            this.brushMine1 = CreateBrush(FilePathToImages + "Mine1.png");
-            this.brushMine2 = CreateBrush(FilePathToImages + "Mine2.png");
-            this.brushMine3 = CreateBrush(FilePathToImages + "Mine3.png");
-            this.brushMine4 = CreateBrush(FilePathToImages + "Mine4.png");
-            this.brushMine5 = CreateBrush(FilePathToImages + "Mine5.png");// Stays at 30-something mbs sweeeeettttt 
+            this.brushDirt = CreateBrush(FilePathToImages + "Dirt.jpg"); 
+            this.brushExplodedDirt = CreateBrush(FilePathToImages + "ExplodedDirt.png");
+            this.brushTiny = CreateBrush(FilePathToImages + "Mine1.png");
+            this.brushSmall = CreateBrush(FilePathToImages + "Mine2.png");
+            this.brushMedium = CreateBrush(FilePathToImages + "Mine3.png");
+            this.brushBig = CreateBrush(FilePathToImages + "Mine4.png");
+            this.brushHuge = CreateBrush(FilePathToImages + "Mine5.png");
         }
 
         private ImageBrush brushDirt;
 
         private ImageBrush brushExplodedDirt;
 
-        private ImageBrush brushMine1;
+        private ImageBrush brushTiny;
 
-        private ImageBrush brushMine2;
+        private ImageBrush brushSmall;
 
-        private ImageBrush brushMine3;
+        private ImageBrush brushMedium;
 
-        private ImageBrush brushMine4;
+        private ImageBrush brushBig;
 
-        private ImageBrush brushMine5;
+        private ImageBrush brushHuge;
 
         public ImageBrush GetBrush(int index)
         {
@@ -51,23 +51,23 @@ namespace BattleField_WPF
             }
             else if (index == 2)
             {
-                return this.brushMine1;
+                return this.brushTiny;
             } 
             else if(index == 3)
             {
-                return this.brushMine2;
+                return this.brushSmall;
             }
             else if (index == 4)
             {
-                return this.brushMine3;
+                return this.brushMedium;
             }
             else if (index == 5)
             {
-                return this.brushMine4;
+                return this.brushBig;
             }
             else
             {
-                return this.brushMine5;
+                return this.brushHuge;
             }
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleField_WPF
 {
-    class FlyFactory
+    class BrushFactory
     {
         private Dictionary<int, IItem> collection = new Dictionary<int, IItem>();
 

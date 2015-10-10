@@ -55,9 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Brush.cs" />
-    <Compile Include="FlyFactory.cs" />
-    <Compile Include="FlyWeight\CellType.cs" />
-    <Compile Include="FlyWeight\Helper.cs" />
+    <Compile Include="BrushFactory.cs" />
     <Compile Include="IItem.cs" />
     <Compile Include="Windows\GameInitWindow.xaml.cs">
       <DependentUpon>GameInitWindow.xaml</DependentUpon>

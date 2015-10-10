@@ -13,7 +13,6 @@
     using MineFieldApp.Data;
     using MineFieldApp.Renderer;
     using System.Media;
-    using BattleField_WPF.FlyWeight;
     //Under construction
 
     class WpfRenderer : IRenderer
@@ -30,7 +29,7 @@
 
         private Grid grid;
 
-        private FlyFactory factory; // Temp or maybe not depends on how it ends up looking when its complete
+        private IItem brush; // Temp or maybe not depends on how it ends up looking when its complete
 
         public event EventHandler<PositionEventArg> InputPosition;
 
@@ -38,8 +37,6 @@
         {
             this.window = win;
             this.window.MouseDown += this.HandleMouseDown;
-            var brush = CreateBrush(FilePathToImages + "Background.gif");
-            this.window.Background = brush;
         }
 
         public void ShowErrorMessage(string message)// Maybe this will be removed
@@ -57,17 +54,19 @@
             border.Child = grid;
             this.window.Content = border;
 
-            FlyFactory factory = new FlyFactory();
-            factory.Save(0, new Brush());
-            this.factory = factory;
+            BrushFactory factory = new BrushFactory();
+            factory.Save(0, new CellBrush());
 
-            this.SetCellRepresentation(this.grid, field, this.factory);
+   
+            this.brush = factory.Get(0);
+
+            this.SetCellRepresentation(this.grid, field, this.brush);
   
         }
 
         public void ShowHighscores(GameData data)
         {
-
+            //Do not throw not implimented exeptions principle? xD TODO Refactor the engine to not use this, it will be shown by gameover in console?
         }
 
         public void ShowGameOver(GameData data)
@@ -79,7 +78,7 @@
 
         public void RefreshGameField(GameField field)
         {
-            this.SetCellRepresentation(this.grid, field, this.factory);
+            this.SetCellRepresentation(this.grid, field);
         }
 
         protected virtual void OnInputPosition(PositionEventArg args)
@@ -105,18 +104,18 @@
         }
 
         //Sets the background img on all the cells
-        private void SetCellRepresentation(Grid grid, GameField field, FlyFactory factory)
+        private void SetCellRepresentation(Grid grid, GameField field)
         {
             for (int row = 0; row < field.RowsCount; row++)
             {
                 for (int col = 0; col < field.ColumnsCount; col++)
                 {
-                    UpdateCellStatus(grid, row, col, field[row, col].Status, field, factory);
+                    UpdateCellStatus(grid, row, col, field[row, col].Status, field);
                 }
             }
         }
         //Sets background image on selected cell element
-        private void UpdateCellStatus(Grid grid, int row, int col, CellStatus status, GameField field, FlyFactory factory)
+        private void UpdateCellStatus(Grid grid, int row, int col, CellStatus status, GameField field)
         {
             var cell = grid.Children
               .Cast<UIElement>()
@@ -126,57 +125,47 @@
             {
                 if (field[row, col] is Mine)
                 {
-                    cell.Background = GetMineRepresentaion(field[row, col], factory);
+                    var mineType = GetMineRepresentaion(field[row, col]
+                    cell.Background = this.brush.GetBrush(mineType));
                 }
                 else
                 {
-                    cell.Background = factory.Get(0).GetBrush(0);
+                    cell.Background = this.brush.GetBrush(0);
                 }
             }
             else if (status == CellStatus.Destroyed)
             {
-                cell.Background = factory.Get(0).GetBrush(1);
+                cell.Background = this.brush.GetBrush(1);
             }
 
         }
         //Sets mine image depending on the type (size)
-        private ImageBrush GetMineRepresentaion(Cell cell, FlyFactory factory)
+        private int GetMineRepresentaion(Cell cell)
         {
-            var brush = new ImageBrush();
+            var brushType = 0;
 
             if (cell is TinyMine)
             {
-                brush = factory.Get(0).GetBrush(2);
+                brushType = 2;
             }
             else if (cell is SmallMine)
             {
-                brush = factory.Get(0).GetBrush(3);
+                brushType = 3;
             }
             else if (cell is MediumMine)
             {
-                brush = factory.Get(0).GetBrush(4);
+                brushType = 4;
             }
             else if (cell is BigMine)
             {
-                brush = factory.Get(0).GetBrush(5);
+                brushType = 5;
             }
             else if (cell is GiantMine)
             {
-                brush = factory.Get(0).GetBrush(6);
+                brushType = 6;
             }
 
-            return brush;
-        }
-        //Used to create brush object (the thing that draws the img to the background)
-        private ImageBrush CreateBrush(string filePath)
-        { 
-            Uri uriPathToImg = new Uri(filePath, UriKind.Relative);
-            StreamResourceInfo streamInfo = Application.GetResourceStream(uriPathToImg);
-            BitmapFrame imageData = BitmapFrame.Create(streamInfo.Stream);
-            var brush = new ImageBrush();
-            brush.ImageSource = imageData;
-
-            return brush;
+            return brushType;
         }
 
         private Grid CreateGridElement(GameField field, int gridWidth, int gridHeigth)
@@ -200,8 +189,6 @@
                 grid.ColumnDefinitions.Add(coldef);
             }
 
-            FlyFactory factory = new FlyFactory();
-            factory.Save(0, new Brush());
             CellButton cell;
             for (int r = 0; r < fieldRowCount; r++)
             {
@@ -224,7 +211,6 @@
                     }
 
                     cell.Click += new RoutedEventHandler(this.HandleMouseDown);
-                    cell.Background = factory.Get(0).GetBrush(0); // WORKEDDDDD
                     grid.Children.Add(cell);
                     Grid.SetRow(cell, r);
                     Grid.SetColumn(cell, c);
