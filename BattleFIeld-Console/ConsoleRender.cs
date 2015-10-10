@@ -40,8 +40,8 @@
             int consoleRowsCount = field.RowsCount + ConsoleRenderer.WallsCount;
             int consoleColumnsCount = field.ColumnsCount + whiteSpaceCount + ConsoleRenderer.WallsCount;
 
-            Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
-            Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
+            //Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
+            //Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
         }
 
         private void SetWindowPosition(Position fieldPosition)
@@ -56,7 +56,7 @@
 
         private char GetCellSymbol(Cell cell)
         {
-            if (cell.Status == CellStatus.Destroyed)
+            if (cell.IsDestroyed)
             {
                 return 'X';
             }          
@@ -80,7 +80,7 @@
             {
                 return '5';
             }
-            else if (cell is EmptyCell || cell is Cell)
+            else if (cell is EmptyCell)
             {
                 return '-';
             }

@@ -19,8 +19,8 @@
             this.MineFactory = mineFactory;
             this.Field = new Cell[size, size];
             this.MinesCount = this.CalculateInitialMineCount();
-            this.FillFieldMines();
             this.FillFieldWithEmptyCells();
+            this.FillFieldMines();
         }
 
         public GameField(IRandomGenerator random, int size)
@@ -94,10 +94,7 @@
             {
                 for (int col = 0; col < this.ColumnsCount; col++)
                 {
-                    if (this.Field[row, col] == null)
-                    {
-                        this.Field[row, col] = new EmptyCell(new Position(row, col));
-                    }
+                    this.Field[row, col] = new EmptyCell(new Position(row, col));
                 }
             }
         }
@@ -107,7 +104,8 @@
             HashSet<Position> positions = RandomGenerator.Instance.GetUniquePointsBetween(this.MinesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
             foreach (Position position in positions)
             {
-                Mine mine = this.MineFactory.Create(position, this);
+                var cell = this.Field[position.Row, position.Col];
+                Mine mine = this.MineFactory.Create(cell);
                 this.Field[position.Row, position.Col] = mine;
             }
         }
@@ -122,9 +120,19 @@
         {
             foreach (var position in positions)
             {
-                if (this.IsInRange(position) && this.Field[position.Row, position.Col].Status != CellStatus.Destroyed)
+                if (this.IsInRange(position))
                 {
-                    this.Field[position.Row, position.Col].TakeDamage(damageHandler);
+                    var currentCell = this.Field[position.Row, position.Col];
+
+                    if (!currentCell.IsDestroyed)
+                    {
+                        if (currentCell is Mine)
+                        {
+                            --this.MinesCount;
+                        }
+
+                        this.Field[position.Row, position.Col].TakeDamage(damageHandler);
+                    }
                 }
             }
         }

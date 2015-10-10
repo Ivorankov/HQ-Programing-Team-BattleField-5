@@ -65,8 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellStatus.cs" />
     <Compile Include="Cells\Cell.cs" />
-    <Compile Include="Cells\ChainDamageHandler.cs" />
+    <Compile Include="Cells\CellDecorator.cs" />
     <Compile Include="Cells\DefaultDamageHandler.cs" />
     <Compile Include="Cells\EmptyCell.cs" />
     <Compile Include="Cells\ICellDamageHandler.cs" />
@@ -85,7 +86,6 @@
     <Compile Include="Cells\Mines\SmallMine.cs" />
     <Compile Include="Cells\Mines\TinyMine.cs" />
     <Compile Include="Position.cs" />
-    <Compile Include="Cells\CellStatus.cs" />
     <Compile Include="Engines\Engine.cs" />
     <Compile Include="GameField.cs" />
     <Compile Include="Highscore.cs" />
