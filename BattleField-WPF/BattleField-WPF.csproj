@@ -7,7 +7,7 @@
     <ProjectGuid>{402072D1-4742-42FD-A24B-2304F8823DFE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleField_WPF</RootNamespace>
+    <RootNamespace>BattleFieldWpf</RootNamespace>
     <AssemblyName>BattleField-WPF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -55,12 +55,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CellBrush.cs" />
-    <Compile Include="BrushFactory.cs" />
-    <Compile Include="IItem.cs" />
     <Compile Include="Windows\GameInitWindow.xaml.cs">
       <DependentUpon>GameInitWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WpfRenderer.cs" />
+    <Compile Include="WpfRenderer.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
     <Page Include="Windows\EndScreenWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,7 +85,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Cell.cs" />
+    <Compile Include="CellButton.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="Windows\EndScreenWindow.xaml.cs">
       <DependentUpon>EndScreenWindow.xaml</DependentUpon>
     </Compile>
@@ -137,17 +139,17 @@
     <Resource Include="Images\Dirt.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\ExplodedDirt.png" />
-    <Resource Include="Images\Mine5.png" />
-    <Resource Include="Images\Mine4.png" />
-    <Resource Include="Images\Mine3.png" />
-    <Resource Include="Images\Mine2.png" />
-    <Resource Include="Images\Mine1.png" />
     <Resource Include="Images\Background.gif" />
     <Resource Include="Images\MainWindowBackground.jpg" />
     <Resource Include="Images\InitGameWindowBackground.jpg" />
     <Resource Include="Images\EndGameWindowBackground.jpg" />
     <Resource Include="Images\HighscoreWindowBackground.jpg" />
+    <Resource Include="Images\ExplodedDirt.jpg" />
+    <Resource Include="Images\Mine1.jpg" />
+    <Resource Include="Images\Mine2.jpg" />
+    <Resource Include="Images\Mine3.jpg" />
+    <Resource Include="Images\Mine4.jpg" />
+    <Resource Include="Images\Mine5.jpg" />
     <Content Include="Sounds\Explosion.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

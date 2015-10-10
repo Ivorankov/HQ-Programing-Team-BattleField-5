@@ -1,4 +1,9 @@
-﻿namespace BattleField_WPF
+﻿//-----------------------------------------------------------------------
+// <copyright file="GameInitWindow.xaml.cs" company="BattleField-5 team">
+//     Telerik teamwork project.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace BattleFieldWpf
 {
     using System;
     using System.Linq;
@@ -9,14 +14,26 @@
     /// </summary>
     public partial class GameInitWindow : Window
     {
+        /// <summary>
+        /// Stores value that indicates if the radio button is pressed
+        /// </summary>
         private bool isPressed = false;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameInitWindow"/> class
+        /// </summary>
         public GameInitWindow()
         {
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Takes the value from the TextBox object, initializes <see cref="GameWindow"/> and opens it.
+        /// Closes <see cref="GameInitWindow"/>
+        /// </summary>
+        /// <param name="sender">Object containing information about sender object</param>
+        /// <param name="args">Object containing arguments</param>
+        private void OnStartGameClick(object sender, RoutedEventArgs args)
         {
             var fieldSizeInput = int.Parse(this.ResponseTextBox.Text);
 
@@ -32,7 +49,12 @@
             }
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Sets the value for isPressed variable
+        /// </summary>
+        /// <param name="sender">Object containing information about sender object</param>
+        /// <param name="args">Object containing arguments</param>
+        private void RadioButton_Checked(object sender, RoutedEventArgs args)
         {
             if (this.isPressed)
             {

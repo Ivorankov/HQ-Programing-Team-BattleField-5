@@ -1,4 +1,4 @@
-﻿<Window x:Class="BattleField_WPF.GameWindow"
+﻿<Window x:Class="BattleFieldWpf.GameWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="GameWindow" Height="300" Width="300" WindowState="Maximized">
