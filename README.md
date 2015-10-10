@@ -32,8 +32,16 @@ In order to ensure the high quality of the assigned project you need to fulfill 
     -   **Correct behavior** – the project should fulfill correctly the requirements and to behave correctly in all possible use cases. This means that all bugs or other problems in the project (e.g. performance or usability issues) should be fixed and any unfinished or missing functionality should be completed. The code should be very well tested with properly designed unit tests.
 2.  **Implement design patterns** – redesign the project to fulfil 9 of the [Software Design patterns](http://en.wikipedia.org/wiki/Software_design_pattern)
     -   **Structural patterns** – implement **at least 3** of the structural design patterns (adapter, aggregate, bridge, composite, decorator, extensibility, façade, etc…)
+    	-	Decorator - (cells & mines)
+    	-	Flywight - (WPF images)
+    	-	Facade - (RandomGenerator)
     -   **Behavior patterns** – implement **at least 3** of the behavioral design patterns (chain of responsibility, command, interpreter, iterator, mediator, observer, etc…)
+    	-	Visitor (DamageHandler & Cells)
+    	-	Memento (GameObject & Engine)
     -   **Creational patterns** – implement **at least 3** of the creational design patterns (abstract factory, builder, factory method, singleton, prototype, etc…)
+    	-	Singleton x2 (Highscore & RandomGenerator)
+    	-	Factory (MineFactory)
+    	-	Lazy x2 (Highscore & RandomGenerator)
 3.  **Follow the SOLID and DRY principles** – Single responsibility, Open/close, Liskov substitution, Interface segregation, Dependency inversion, Don't repeat yourself
     -   Redesign the project to fulfil the [SOLID](http://en.wikipedia.org/wiki/Solid) and [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) principles – each principle should be implemented at least once
 4.  **Design and implement unit tests** covering the entire project functionality. To ensure the project works correctly according to the requirements and behaves correctly in all possible use cases, design and implement unit tests that cover all use cases and the entire program logic. If needed, first redesign the program logic to **make the code testable**. Test the normal expected behavior (correct data) and possible expected failures (incorrect data). Put special attention to the border cases.
