@@ -38,6 +38,7 @@ In order to ensure the high quality of the assigned project you need to fulfill 
     -   **Behavior patterns** – implement **at least 3** of the behavioral design patterns (chain of responsibility, command, interpreter, iterator, mediator, observer, etc…)
     	-	Visitor (DamageHandler & Cells)
     	-	Memento (GameObject & Engine)
+    	-	Observer(event subscriptions)
     -   **Creational patterns** – implement **at least 3** of the creational design patterns (abstract factory, builder, factory method, singleton, prototype, etc…)
     	-	Singleton x2 (Highscore & RandomGenerator)
     	-	Factory (MineFactory)
