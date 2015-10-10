@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="ConsoleInputProviderMock.cs" />
     <Compile Include="ConsoleInputProviderTests.cs" />
+    <Compile Include="GameFieldTests.cs" />
     <Compile Include="HighscoreTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
