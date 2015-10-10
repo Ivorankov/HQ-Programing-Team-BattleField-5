@@ -33,7 +33,7 @@ namespace BattleFieldWpf
         /// </summary>
         /// <param name="sender">Object containing information about sender object</param>
         /// <param name="args">Object containing arguments</param>
-        private void Button_Click(object sender, RoutedEventArgs args)
+        private void OnStartGameClick(object sender, RoutedEventArgs args)
         {
             var fieldSizeInput = int.Parse(this.ResponseTextBox.Text);
 

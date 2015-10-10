@@ -50,6 +50,6 @@
         <TextBlock Style="{StaticResource menuHeader}" Text="Enter size of game field(2-10)" />
         <TextBox Style="{StaticResource userText}" x:Name="ResponseTextBox" />
         <RadioButton x:Name="RadioButton" Checked="RadioButton_Checked"  Style="{StaticResource radioButton}">Enable Explosion Chaining</RadioButton>
-        <Button Style="{StaticResource buttonStyle}" Content="OK" Click="Button_Click" />
+        <Button Style="{StaticResource buttonStyle}" Content="OK" Click="OnStartGameClick" />
     </StackPanel>
 </Window>

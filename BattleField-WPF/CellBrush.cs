@@ -6,71 +6,32 @@
 namespace BattleFieldWpf
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using System.Windows.Resources;
 
-    public class CellBrush : IItem
+    public class CellBrush 
     {
         private const string FilePathToImages = "../Images/";
 
-        private ImageBrush brushDirt;
-
-        private ImageBrush brushExplodedDirt;
-
-        private ImageBrush brushTiny;
-
-        private ImageBrush brushSmall;
-
-        private ImageBrush brushMedium;
-
-        private ImageBrush brushBig;
-
-        private ImageBrush brushHuge;
+        private Dictionary<string, ImageBrush> brushes = new Dictionary<string, ImageBrush>();
 
         public CellBrush()
         {
-            this.brushDirt = this.CreateBrush(FilePathToImages + "Dirt.jpg");
-            this.brushExplodedDirt = this.CreateBrush(FilePathToImages + "ExplodedDirt.png");
-            this.brushTiny = this.CreateBrush(FilePathToImages + "Mine1.png");
-            this.brushSmall = this.CreateBrush(FilePathToImages + "Mine2.png");
-            this.brushMedium = this.CreateBrush(FilePathToImages + "Mine3.png");
-            this.brushBig = this.CreateBrush(FilePathToImages + "Mine4.png");
-            this.brushHuge = this.CreateBrush(FilePathToImages + "Mine5.png");
+            this.brushes = new Dictionary<string, ImageBrush>();
         }
 
-        public ImageBrush GetBrush(int index)
+        public ImageBrush GetBrush(string fileName)
         {
-            if (index == 0)
+            if (!this.brushes.ContainsKey(fileName))
             {
-                return this.brushDirt;
+                this.brushes[fileName] = this.CreateBrush(CellBrush.FilePathToImages + fileName + ".jpg");
             }
-            else if (index == 1)
-            {
-                return this.brushExplodedDirt;
-            }
-            else if (index == 2)
-            {
-                return this.brushTiny;
-            }
-            else if (index == 3)
-            {
-                return this.brushSmall;
-            }
-            else if (index == 4)
-            {
-                return this.brushMedium;
-            }
-            else if (index == 5)
-            {
-                return this.brushBig;
-            }
-            else
-            {
-                return this.brushHuge;
-            }
+
+            return this.brushes[fileName];
         }
 
         private ImageBrush CreateBrush(string filePath)

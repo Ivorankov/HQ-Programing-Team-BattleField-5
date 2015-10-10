@@ -55,7 +55,7 @@ namespace BattleFieldWpf
         /// <summary>
         /// Stores the brush object
         /// </summary>
-        private IItem brush; // Temp or maybe not depends on how it ends up looking when its complete
+        private CellBrush brush; // Temp or maybe not depends on how it ends up looking when its complete
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WpfRenderer" /> class
@@ -66,9 +66,7 @@ namespace BattleFieldWpf
             this.window = win;
             this.window.MouseDown += this.HandleMouseDown;
 
-            BrushFactory factory = new BrushFactory();
-            factory.Save(0, new CellBrush());
-            this.brush = factory.Get(0);
+            this.brush = new CellBrush();
         }
 
         /// <summary>
@@ -197,7 +195,7 @@ namespace BattleFieldWpf
 
             if (isCellDestroyed)
             {
-                cell.Background = this.brush.GetBrush(1);
+                cell.Background = this.brush.GetBrush("ExplodedDirt");
             }
         }
 
@@ -242,7 +240,7 @@ namespace BattleFieldWpf
                     else
                     {
                         cell = new CellButton(row, col, CellStatus.Normal);
-                        cell.Background = this.brush.GetBrush(0);
+                        cell.Background = this.brush.GetBrush("Dirt");
                     }
 
                     cell.Click += new RoutedEventHandler(this.HandleMouseDown);
@@ -260,29 +258,29 @@ namespace BattleFieldWpf
         /// </summary>
         /// <param name="cell">Cell element containing information about the type</param>
         /// <returns>Returns value used to indicate the mine type </returns>
-        private int GetMineRepresentaion(Cell cell)
+        private string GetMineRepresentaion(Cell cell)
         {
-            var brushType = 0;
+            var brushType = string.Empty;
 
             if (cell is TinyMine)
             {
-                brushType = 2;
+                brushType = "Mine1";
             }
             else if (cell is SmallMine)
             {
-                brushType = 3;
+                brushType = "Mine2";
             }
             else if (cell is MediumMine)
             {
-                brushType = 4;
+                brushType = "Mine3";
             }
             else if (cell is BigMine)
             {
-                brushType = 5;
+                brushType = "Mine4";
             }
             else if (cell is GiantMine)
             {
-                brushType = 6;
+                brushType = "Mine5";
             }
 
             return brushType;
