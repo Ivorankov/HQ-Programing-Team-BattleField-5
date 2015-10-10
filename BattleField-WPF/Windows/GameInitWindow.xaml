@@ -47,7 +47,7 @@
         <ImageBrush ImageSource="../Images/InitGameWindowBackground.jpg" />
     </Window.Background>
     <StackPanel>
-        <TextBlock Style="{StaticResource menuHeader}" Text="Enter size of game field(2-10)" />
+        <TextBlock Style="{StaticResource menuHeader}" Text="Enter size of game field(5-15)" />
         <TextBox Style="{StaticResource userText}" x:Name="ResponseTextBox" />
         <RadioButton x:Name="RadioButton" Checked="RadioButton_Checked"  Style="{StaticResource radioButton}">Enable Explosion Chaining</RadioButton>
         <Button Style="{StaticResource buttonStyle}" Content="OK" Click="OnStartGameClick" />

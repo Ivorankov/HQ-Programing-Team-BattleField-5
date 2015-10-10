@@ -68,6 +68,7 @@ namespace MineFieldApp.Renderer
             builder.Append(lowerWall);
 
             Console.Write(builder);
+            //// Console.ReadLine();
             this.RefreshGameField(field);
         }
 
@@ -273,6 +274,7 @@ namespace MineFieldApp.Renderer
 
                     Position pos = this.GetFieldPosition();
                     this.OnInputPosition(new PositionEventArgs(pos));
+                    return;
                 }
             }
         }

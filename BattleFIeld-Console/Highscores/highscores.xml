@@ -20,4 +20,9 @@
     <Points>4</Points>
     <Date>2015-10-03T18:56:07.6282408+03:00</Date>
   </Score>
+  <Score>
+    <PlayerName>John</PlayerName>
+    <Points>6</Points>
+    <Date>2015-10-11T00:26:13.4448087+03:00</Date>
+  </Score>
 </ArrayOfScore>

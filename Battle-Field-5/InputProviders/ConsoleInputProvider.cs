@@ -33,7 +33,7 @@ namespace MineFieldApp
         /// <returns>Name of the player.</returns>
         public string GetPlayerName()
         {
-            return this.GetValidUserInput(new Regex(@"\w+"), "Please enter your name: ", input => input);
+            return this.GetValidUserInput(new Regex(@"^\w+$"), "Please enter your name: ", input => input);
         }
 
         /// <summary>
