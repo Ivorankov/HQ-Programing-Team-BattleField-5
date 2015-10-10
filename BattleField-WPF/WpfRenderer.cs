@@ -74,18 +74,22 @@
             {
                 for (int col = 0; col < field.ColumnsCount; col++)
                 {
-                    UpdateCellStatus(grid, row, col, field[row, col].Status, field);
+                    UpdateCellStatus(grid, row, col, field[row, col].IsDestroyed, field);
                 }
             }
         }
         //Sets background image on selected cell element
-        private void UpdateCellStatus(Grid grid, int row, int col, CellStatus status, GameField field)
+        private void UpdateCellStatus(Grid grid, int row, int col, bool isCellDestroyed, GameField field)
         {
             var cell = grid.Children
               .Cast<UIElement>()
               .First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col) as CellButton;
 
-            if (status == CellStatus.Normal)
+            if (isCellDestroyed)
+            {
+                cell.Background = this.CreateBrush(FilePathToImages + "ExplodedDirt.png");
+            }
+            else
             {
                 if (field[row, col] is Mine)
                 {
@@ -95,10 +99,6 @@
                 {
                     cell.Background = this.CreateBrush(FilePathToImages + "Dirt.jpg");
                 }
-            }
-            else if (status == CellStatus.Destroyed)
-            {
-                cell.Background = this.CreateBrush(FilePathToImages + "ExplodedDirt.png");
             }
 
         }
@@ -168,7 +168,7 @@
             {
                 for (int c = 0; c < fieldColCount; c++)
                 {
-                    if (field[r, c].Status == CellStatus.Destroyed)
+                    if (field[r, c].IsDestroyed)
                     {
                         cell = new CellButton(r, c, CellStatus.Destroyed);
                     }
