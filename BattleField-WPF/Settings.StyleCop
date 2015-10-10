@@ -1,0 +1,12 @@
+<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>GameWindow</Value>
+      <Value>Highscore</Value>
+      <Value>Init</Value>
+      <Value>Wpf</Value>
+      <Value>WpfRenderer</Value>
+      <Value>xaml</Value>
+    </CollectionProperty>
+  </GlobalSettings>
+</StyleCopSettings>

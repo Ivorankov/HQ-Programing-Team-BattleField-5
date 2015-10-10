@@ -7,7 +7,7 @@
     <ProjectGuid>{402072D1-4742-42FD-A24B-2304F8823DFE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleField_WPF</RootNamespace>
+    <RootNamespace>BattleFieldWpf</RootNamespace>
     <AssemblyName>BattleField-WPF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -60,7 +60,9 @@
     <Compile Include="Windows\GameInitWindow.xaml.cs">
       <DependentUpon>GameInitWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WpfRenderer.cs" />
+    <Compile Include="WpfRenderer.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
     <Page Include="Windows\EndScreenWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,7 +87,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Cell.cs" />
+    <Compile Include="CellButton.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="Windows\EndScreenWindow.xaml.cs">
       <DependentUpon>EndScreenWindow.xaml</DependentUpon>
     </Compile>

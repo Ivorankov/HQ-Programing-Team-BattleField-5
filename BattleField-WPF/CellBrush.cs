@@ -1,4 +1,9 @@
-﻿namespace BattleField_WPF
+﻿//-----------------------------------------------------------------------
+// <copyright file="CellBrush.cs" company="BattleField-5 team">
+//     Telerik teamwork project.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace BattleFieldWpf
 {
     using System;
     using System.Linq;

@@ -1,8 +1,7 @@
-﻿namespace BattleField_WPF
+﻿namespace BattleFieldWpf
 {
     using System;
     using System.Linq;
-    using System.Media;
     using System.Windows;
     using MineFieldApp;
     using MineFieldApp.Cells;

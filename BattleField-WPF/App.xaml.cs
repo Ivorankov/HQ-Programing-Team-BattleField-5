@@ -1,4 +1,4 @@
-﻿namespace BattleField_WPF
+﻿namespace BattleFieldWpf
 {
     using System.Windows;
 
