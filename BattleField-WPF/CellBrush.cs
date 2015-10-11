@@ -13,17 +13,34 @@ namespace BattleFieldWpf
     using System.Windows.Media.Imaging;
     using System.Windows.Resources;
 
+    /// <summary>
+    /// Creates and stores ImageBrush objects and passed reference to them
+    /// </summary>
     public class CellBrush 
     {
+        /// <summary>
+        /// Stores the path to the Images folder
+        /// </summary>
         private const string FilePathToImages = "../Images/";
 
+        /// <summary>
+        /// Stores the <see cref="ImageBrush"/>  objects
+        /// </summary>
         private Dictionary<string, ImageBrush> brushes = new Dictionary<string, ImageBrush>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CellBrush" /> class
+        /// </summary>
         public CellBrush()
         {
             this.brushes = new Dictionary<string, ImageBrush>();
         }
 
+        /// <summary>
+        /// Get a reference to <see cref="ImageBrush"/> object
+        /// </summary>
+        /// <param name="fileName">Used to identify the specific object</param>
+        /// <returns>Reference to <see cref="ImageBrush"/> object </returns>
         public ImageBrush GetBrush(string fileName)
         {
             if (!this.brushes.ContainsKey(fileName))
@@ -34,6 +51,11 @@ namespace BattleFieldWpf
             return this.brushes[fileName];
         }
 
+        /// <summary>
+        /// Creates <see cref="ImageBrush"/>  objects
+        /// </summary>
+        /// <param name="filePath">File path to image</param>
+        /// <returns><see cref="ImageBrush"/> object</returns>
         private ImageBrush CreateBrush(string filePath)
         {
             Uri uriPathToImg = new Uri(filePath, UriKind.Relative);

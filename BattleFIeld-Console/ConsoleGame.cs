@@ -31,7 +31,7 @@ namespace BattleField_Console
         /// <param name="damageHandler">The damage handler.</param>
         public ConsoleGame(IInputProvider inputProvider, IRenderer renderer, ICellDamageHandler damageHandler)
         {
-            this.engine = new ProxyEngine(renderer, damageHandler);
+            this.engine = new Engine(renderer, damageHandler);
             this.inputProvider = inputProvider;
             this.renderer = renderer;
             this.damageHandler = damageHandler;

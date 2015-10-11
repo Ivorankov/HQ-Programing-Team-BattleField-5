@@ -55,7 +55,7 @@ namespace BattleFieldWpf
         /// <summary>
         /// Stores the brush object
         /// </summary>
-        private CellBrush brush; // Temp or maybe not depends on how it ends up looking when its complete
+        private CellBrush brush;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WpfRenderer" /> class
