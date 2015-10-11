@@ -9,6 +9,7 @@
 namespace MineFieldApp.Renderer
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
     using System.Text;
     using Cells;
@@ -26,6 +27,8 @@ namespace MineFieldApp.Renderer
 
         private const char VerticalWallSymbol = '|';
 
+        private const string GameName = "MineField";
+
         private const string AnyKeyMessage = "Press any key to continuue...";
 
         /// <summary>
@@ -38,7 +41,7 @@ namespace MineFieldApp.Renderer
 
             this.IsGameOver = false;
 
-            Console.Title = "MineField";
+            Console.Title = ConsoleRenderer.GameName;
             Console.CursorSize = 100;
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             this.SetUpDefaultWindow();
@@ -53,8 +56,6 @@ namespace MineFieldApp.Renderer
 
         private int LastCursorTop { get; set; }
 
-        private ConsoleWindowStatus WindowStatus { get; set; }
-
         private bool IsGameOver { get; set; }
 
         /// <summary>
@@ -63,10 +64,7 @@ namespace MineFieldApp.Renderer
         /// <param name="field">The game field.</param>
         public void ShowGameField(GameField field)
         {
-            if (this.WindowStatus != ConsoleWindowStatus.InGame)
-            {
-                this.SetUpInGameWindow(field);
-            }
+            this.SetUpInGameWindow(field);
 
             int horizontalWallSize = Console.WindowWidth - ConsoleRenderer.WallsCount;
             string horizontalWall = new string(ConsoleRenderer.HorizontalWallSymbol, horizontalWallSize);
@@ -119,21 +117,33 @@ namespace MineFieldApp.Renderer
         /// </summary>
         public void ShowHighscores()
         {
-            Console.WriteLine("-----------------Highscores-----------------");
-            IList<Score> highscores = HighscoreLogger.Instance.Highscores;
-            int totalWidth = 50;
-            string highscoreTitle = "Highscores";
-            int countOfashesOnTheLeft = (totalWidth - highscoreTitle.Length) / 2;
-            Console.WriteLine("{0,8}{1,14}{2,13}", "Name", "Points", "Date");
+            this.SetUpDefaultWindow();
+            List<Score> highscores = HighscoreLogger.Instance.Highscores;
 
-            for (int i = 0; i < highscores.Count; i++)
+            if (highscores.Count > Console.BufferHeight)
             {
-                Score currentScore = highscores[i];
+                Console.BufferHeight = highscores.Count + 3;
+            }
+            const string ScoreFormat = "{0}-{1}";
 
-                Console.WriteLine("{0,3}.{1,-10}-{2,4}    {3}", i + 1, currentScore.PlayerName, currentScore.Points, currentScore.Date);
+            const int PaddingCount = 10;
+
+            var lines = highscores.Select(score => string.Format(ScoreFormat, score.PlayerName.PadRight(PaddingCount, ' '), score.Points.ToString().PadLeft(PaddingCount, ' '))).ToList();
+
+            lines.Insert(0, "High Scores");
+            lines.Insert(1, string.Format("{0} {1}", "Name".PadRight(PaddingCount, ' '),  "Points".PadLeft(PaddingCount, ' ')));
+            lines.Add(ConsoleRenderer.AnyKeyMessage);
+
+            StringBuilder builder = new StringBuilder();
+            foreach (var line in lines)
+            {
+                string paddedLine = line.PadLeft((Console.WindowWidth / 2) + (line.Length / 2), ' ');
+
+                builder.AppendLine(paddedLine);
             }
 
-            Console.WriteLine(new string('-', totalWidth));
+            Console.Write(builder);
+            Console.ReadKey(true);
         }
 
         /// <summary>
@@ -142,28 +152,19 @@ namespace MineFieldApp.Renderer
         /// <param name="data">Current game data.</param>
         public void ShowGameOver(GameData data)
         {
+            this.SetUpDefaultWindow();
+
+            bool holdCV = Console.CursorVisible;
             Console.CursorVisible = false;
-            Console.Clear();
-
-            const int MessageCount = 2;
-            Console.SetCursorPosition(0, (Console.WindowHeight / 2) - MessageCount);
-
-            const string GameOverMessage = "Game Over.";
-            string paddedGameOver = GameOverMessage.PadLeft((Console.WindowWidth / 2) + (GameOverMessage.Length / 2), ' ');
-            Console.WriteLine(paddedGameOver);
 
             string movesMessage = string.Format("Moves: {0}", data.MovesCount);
-            string paddedMovesMessage = movesMessage.PadLeft((Console.WindowWidth / 2) + (movesMessage.Length / 2), ' ');
-            Console.WriteLine(paddedMovesMessage);
 
-            ConsoleKeyInfo key;
-            do
-            {
-                key = Console.ReadKey(true);
-            }
-            while (key.Key != ConsoleKey.Enter);
+            this.PrintCenteredMessages(true, "Game Over", movesMessage, ConsoleRenderer.AnyKeyMessage);
+
+            Console.ReadKey(true);
 
             this.IsGameOver = true;
+            Console.CursorVisible = holdCV;
         }
 
         /// <summary>
@@ -181,8 +182,32 @@ namespace MineFieldApp.Renderer
         /// </summary>
         public void ShowWelcome()
         {
-            const string title = "MineField";
-            Console.WriteLine(@"Welcome to 'Battle filed' game!");
+            this.SetUpDefaultWindow();
+
+            bool holdCV = Console.CursorVisible;
+            Console.CursorVisible = false;
+
+            this.PrintCenteredMessages(true, ConsoleRenderer.GameName, ConsoleRenderer.AnyKeyMessage);
+
+            Console.ReadKey(true);
+
+            Console.CursorVisible = holdCV;
+        }
+
+        public void ShowFieldSizePrompt()
+        {
+            this.SetUpDefaultWindow();
+            Console.CursorVisible = true;
+
+            this.PrintCenteredMessages(false, "Enter field size: ");
+        }
+
+        public void ShowNamePrompt()
+        {
+            this.SetUpDefaultWindow();
+            Console.CursorVisible = true;
+
+            this.PrintCenteredMessages(false, "Enter Name: ");
         }
 
         /// <summary>
@@ -197,6 +222,27 @@ namespace MineFieldApp.Renderer
             }
         }
 
+        private void PrintCenteredMessages(bool onNewLines, params string[] messages)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach (var message in messages)
+            {
+                string paddedMessage = message.PadLeft((Console.WindowWidth / 2) + (message.Length / 2), ' ');
+
+                if (onNewLines)
+                {
+                    builder.AppendLine(paddedMessage);
+                }
+                else
+                {
+                    builder.Append(paddedMessage);
+                }
+            }
+
+            Console.SetCursorPosition(0, ((Console.WindowHeight / 2) - 1) - messages.Length);
+            Console.Write(builder);
+        }
+
         private void SetUpInGameWindow(GameField field)
         {
             Console.Clear();
@@ -207,17 +253,13 @@ namespace MineFieldApp.Renderer
 
             Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
             Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
-
-            this.WindowStatus = ConsoleWindowStatus.InGame;
         }
 
         private void SetUpDefaultWindow()
         {
             Console.Clear();
-            Console.SetWindowSize(35, 10);
-            Console.SetBufferSize(35, 10);
-
-            this.WindowStatus = ConsoleWindowStatus.Default;
+            Console.SetWindowSize(34, 10);
+            Console.SetBufferSize(34, 10);
         }
 
         private void SetWindowPosition(Position fieldPosition)

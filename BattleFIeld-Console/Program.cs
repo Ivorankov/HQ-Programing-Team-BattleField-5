@@ -24,7 +24,7 @@ namespace BattleField_Console
         public static void Main()
         {
             IInputProvider inputProvider = new ConsoleInputProvider();
-            IRenderer renderer = new ConsoleRenderer();
+            ConsoleRenderer renderer = new ConsoleRenderer();
             ICellDamageHandler damageHandler = new DefaultDamageHandler();
             ConsoleGame consoleGame = new ConsoleGame(inputProvider, renderer, damageHandler);
 
