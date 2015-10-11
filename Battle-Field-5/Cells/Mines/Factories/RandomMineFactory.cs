@@ -57,7 +57,7 @@ namespace MineFieldApp.Cells.Mines.Factories
                 case 4:
                     return new GiantMine(cell);
                 default:
-                    throw new NotImplementedException();
+                    throw new IndexOutOfRangeException();
             }
         }
     }
