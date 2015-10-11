@@ -208,7 +208,7 @@ namespace MineFieldApp
         /// </summary>
         private void FillFieldMines()
         {
-            HashSet<Position> positions = RandomGenerator.Instance.GetUniquePointsBetween(this.MinesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
+            HashSet<Position> positions = this.random.GetUniquePointsBetween(this.MinesCount, new Position(0, 0), new Position(this.ColumnsCount - 1, this.RowsCount - 1));
             foreach (Position position in positions)
             {
                 var cell = this.field[position.Row, position.Col];
@@ -220,7 +220,7 @@ namespace MineFieldApp
         private int CalculateInitialMineCount()
         {
             int totalCellsCount = this.RowsCount * this.ColumnsCount;
-            return RandomGenerator.Instance.GetRandomBetween(MinimumMinesPercent * totalCellsCount / 100, MaximumMinesPercent * totalCellsCount / 100);
+            return this.random.GetRandomBetween(MinimumMinesPercent * totalCellsCount / 100, MaximumMinesPercent * totalCellsCount / 100);
         }
     }
 }
