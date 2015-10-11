@@ -23,11 +23,6 @@ namespace BattleFieldWpf
     public class WpfRenderer : IRenderer
     {
         /// <summary>
-        /// Stores the file path to the image
-        /// </summary>
-        private const string FilePathToImages = "../Images/";
-
-        /// <summary>
         /// Stores the file path to the sound
         /// </summary>
         private const string PathToSoundFile = "../../Sounds/";
@@ -45,7 +40,7 @@ namespace BattleFieldWpf
         /// <summary>
         /// Stores the window object
         /// </summary>
-        private GameWindow window;
+        private Window window;
 
         /// <summary>
         /// Stores the gird element
@@ -61,7 +56,7 @@ namespace BattleFieldWpf
         /// Initializes a new instance of the <see cref="WpfRenderer" /> class
         /// </summary>
         /// <param name="win">GameWindow object that will be populated</param>
-        public WpfRenderer(GameWindow win)
+        public WpfRenderer(Window win)
         {
             this.window = win;
             this.window.MouseDown += this.HandleMouseDown;
@@ -80,6 +75,7 @@ namespace BattleFieldWpf
         /// <param name="message">Contains error message</param>
         public void ShowErrorMessage(string message)
         {
+            MessageBox.Show(message);
         }
 
         /// <summary>
@@ -126,11 +122,11 @@ namespace BattleFieldWpf
         }
 
         /// <summary>
-        /// Does jack shit
+        /// Shows a message to the user
         /// </summary>
         public void ShowWelcome()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Welcome to BattleField 5");
         }
 
         /// <summary>

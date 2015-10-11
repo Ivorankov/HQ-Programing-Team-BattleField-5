@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BattleFieldWpf.WpfRenderer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAAAgIAAACAAAgQAAgAAQAgCgAIQIIIACAAAJA=</HashCode>
+      <FileName>WpfRenderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BattleFieldWpf.CellButton" Collapsed="true">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CellButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleFieldWpf.CellBrush" Collapsed="true">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAIAgQAAAAAA=</HashCode>
+      <FileName>CellBrush.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleFieldWpf.EndScreenWindow" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQgAAAAAAAAAAAAAAAAAAAAAIAQAAAAAQAAAAAAA=</HashCode>
+      <FileName>Windows\EndScreenWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleFieldWpf.GameInitWindow" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAACAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Windows\GameInitWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleFieldWpf.GameWindow" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Windows\GameWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleFieldWpf.HighscoreWindow" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Windows\HighscoreWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleFieldWpf.MainWindow" Collapsed="true">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAACAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

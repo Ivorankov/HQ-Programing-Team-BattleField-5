@@ -35,17 +35,26 @@ namespace BattleFieldWpf
         /// <param name="args">Object containing arguments</param>
         private void OnStartGameClick(object sender, RoutedEventArgs args)
         {
-            var fieldSizeInput = int.Parse(this.ResponseTextBox.Text);
+            var fieldSizeInput = 0;
+            var textBoxTest = this.ResponseTextBox.Text;
+            var isValidInt = int.TryParse(textBoxTest, out fieldSizeInput);
 
-            if (5 <= fieldSizeInput && fieldSizeInput <= 15)
+            if (isValidInt)
             {
-                var gameWindow = new GameWindow(fieldSizeInput, this.isPressed);
-                this.Close();
-                gameWindow.Show();
+                if (5 <= fieldSizeInput && fieldSizeInput <= 15)
+                {
+                    var gameWindow = new GameWindow(fieldSizeInput, this.isPressed);
+                    this.Close();
+                    gameWindow.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Field size has to be (5-15)");
+                }
             }
             else
             {
-                MessageBox.Show("Field size has to be (5-15)");
+                MessageBox.Show("Invalid entry, please use int values!");
             }
         }
 

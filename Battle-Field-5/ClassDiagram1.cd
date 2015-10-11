@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MineFieldApp.Cells.Cell" Collapsed="true">
+    <Position X="8.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAwAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Cells\Cell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.CellDecorator" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Cells\CellDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.DefaultDamageHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\DefaultDamageHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MineFieldApp.Cells.EmptyCell" Collapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Cells\EmptyCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.Mines.BigMine" Collapsed="true">
+    <Position X="2.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\Mines\BigMine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.Mines.GiantMine" Collapsed="true">
+    <Position X="7.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\Mines\GiantMine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.Mines.MediumMine" Collapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\Mines\MediumMine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.Mines.Mine" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Cells\Mines\Mine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.Mines.MineAssistant" Collapsed="true">
+    <Position X="21.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\Mines\MineAssistant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.Mines.SmallMine" Collapsed="true">
+    <Position X="11.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\Mines\SmallMine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.Mines.TinyMine" Collapsed="true">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\Mines\TinyMine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Cells.Mines.Factories.RandomMineFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\Mines\Factories\RandomMineFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MineFieldApp.Data.GameData" Collapsed="true">
+    <Position X="21.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAEAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Data\GameData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Data.GameDataCaretaker" Collapsed="true">
+    <Position X="16.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Memento\GameDataCaretaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Engines.Engine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAgBAAAAAAAAAAAAAAAQAAAAAAAAABAAACAABAgAA=</HashCode>
+      <FileName>Engines\Engine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MineFieldApp.ConsoleInputProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAQAQEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputProviders\ConsoleInputProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MineFieldApp.Score" Collapsed="true">
+    <Position X="16.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAACAAAAAgAAAAAEAAAAAAAAAAAABAAAAAQAAAAA=</HashCode>
+      <FileName>Score.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Position" Collapsed="true">
+    <Position X="16.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAQACAAEAAoAAAAAAAAAAAiA=</HashCode>
+      <FileName>Position.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.HighscoreLogger" Collapsed="true">
+    <Position X="20" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAECAAABAAAAAAAAQAAUAACAAAAAAA=</HashCode>
+      <FileName>HighscoreLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.GameField" Collapsed="true">
+    <Position X="18.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAAAAEAAAAAAAACAEAAkAAAAAAQAAAAAUIgCAQAAg=</HashCode>
+      <FileName>GameField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.Renderer.PositionEventArgs" Collapsed="true">
+    <Position X="18.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Renderer\PositionEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MineFieldApp.RNGs.RandomGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAQBAAAAAQAAAIAAAIAA=</HashCode>
+      <FileName>RNGs\RandomGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="MineFieldApp.Cells.ICellDamageHandler" Collapsed="true">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\ICellDamageHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MineFieldApp.Cells.Mines.Factories.IMineFactory" Collapsed="true">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cells\Mines\Factories\IMineFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MineFieldApp.Engines.IEngine" Collapsed="true">
+    <Position X="18.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAgAAAAAAAAAAAAAAAAQAAAAAAAAABAAACAABAAAA=</HashCode>
+      <FileName>Engines\IEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MineFieldApp.IInputProvider" Collapsed="true">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputProviders\IInputProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MineFieldApp.Renderer.IRenderer" Collapsed="true">
+    <Position X="18.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAQAAAAAAAACgAAAAIIACAAAAA=</HashCode>
+      <FileName>Renderer\IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MineFieldApp.RNGs.IRandomGenerator" Collapsed="true">
+    <Position X="16.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAIAAAIAA=</HashCode>
+      <FileName>RNGs\IRandomGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MineFieldApp.Cells.CellStatus" Collapsed="true">
+    <Position X="16.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAEAAAAAAIA=</HashCode>
+      <FileName>CellStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -62,11 +62,19 @@ namespace BattleFieldWpf
         /// <param name="args">Object containing arguments</param>
         private void OnSaveButtonClick(object sender, RoutedEventArgs args)
         {
-            HighscoreLogger.Instance.AddHighscore(UserNameTextBox.Text, this.data.MovesCount);
-            this.Hide();
+            var isValidInput = 3 <= this.UserNameTextBox.Text.Length && this.UserNameTextBox.Text.Length <= 8;
+            if (isValidInput)
+            {
+                HighscoreLogger.Instance.AddHighscore(this.UserNameTextBox.Text, this.data.MovesCount);
+                this.Hide();
 
-            var highscoreWindow = new HighscoreWindow();
-            highscoreWindow.Show();
+                var highscoreWindow = new HighscoreWindow();
+                highscoreWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Name must be betwen 3 and 8 chars long!");
+            }
         }
 
         /// <summary>
