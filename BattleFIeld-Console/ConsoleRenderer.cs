@@ -207,6 +207,9 @@ namespace MineFieldApp.Renderer
             }
 
             Console.Write(builder);
+
+            Console.SetCursorPosition(0, 0);
+
             Console.ReadKey(true);
         }
 
