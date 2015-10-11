@@ -180,3 +180,77 @@ Refactoring Documentation for Project "BattleField-5"
 		- made improvments on buttons and text field sizes and positions
 		
 47.	Add InputPosition event
+
+48.	Quick fix for window + added last background image
+
+49.	Removed ChainDamageHandler and field prop from Cell
+	-	Small change in gameField reactToExplosion method to decrease
+	minesCounter
+	
+50.	Implemented decorator pattern
+	-	Added enum CellStatus
+	-	Added CellDecorator.cs
+	-	IMineFactory.cs changed 
+		-	Before: Mine Create(Position position, GameField field);
+		-	After: Mine Create(Cell cell);
+	-	All implementations of IMineFactory also changed
+	
+51.	Removed cellStatus dependency from the main project
+
+52.	Removed faked one
+	-	CellType.cs
+	
+53.	Updating Refactoring Documentation.md
+
+54.	Added GameFieldTests. Tested methods IsInRange and HasMinesLeft.
+
+55.	Merge remote-tracking branch 'refs/remotes/origin/master' into cell-and-explosion-refactoring
+
+56.	Merge pull request #26 from Ivorankov/cell-and-explosion-refactoring
+	-	Cell and explosion refactoring
+	
+57.	Merge pull request #27 from Ivorankov/temp
+
+58.	Updated Readme with design patterns
+
+59.	Improved High Qality Code
+
+60.	Merge remote-tracking branch 'refs/remotes/origin/master' into Addint-Flyweight-in-wpfrenderer-
+	-	Conflicts: BattleField-WPF/WpfRenderer.cs
+	
+61.	Merge conflict resoved
+	-	TODO: improve CellBrush
+	
+62.	Merge pull request #28 from Ivorankov/Addint-Flyweight-in-wpfrenderer-
+	-	Added flyweight in wpfrenderer
+	
+63.	Fixed StyleCop warnings
+	-	TODO: Documentation
+	
+64.	Added documentation
+
+65.	Merge remote-tracking branch 'origin/master'
+	-	Conflicts:
+			-	Battle-Field-5/Cells/Cell.cs
+			-	Battle-Field-5/Cells/CellDecorator.cs
+			-	Battle-Field-5/Cells/Mines/MineDestroyedException.cs
+			-	Battle-Field-5/Engines/Engine.cs
+			-	Battle-Field-5/Engines/IEngine.cs
+			-	Battle-Field-5/Engines/ProxyEngine.cs
+			-	Battle-Field-5/GameField.cs
+			-	Battle-Field-5/Position.cs
+			-	Battle-Field-5/RNGs/RandomGenerator.cs
+			
+66.	Update README.md
+
+67.	Refactoring in FlyWeight pattern
+
+68.	Finished documentation
+
+69.	Added tests for GetPlayerName method
+
+70.	Merge remote-tracking branch 'origin/master'
+	-	Conflicts: BattleField-WPF/WpfRenderer.cs
+	
+71.	Merge remote-tracking branch 'origin/master'
+	-	Conflicts: BattleFIeld-Console/ConsoleRenderer.cs
