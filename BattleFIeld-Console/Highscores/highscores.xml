@@ -36,14 +36,19 @@
     <Date>2015-10-11T17:08:26.1475413+03:00</Date>
   </Score>
   <Score>
+    <PlayerName>JOas</PlayerName>
+    <Points>7</Points>
+    <Date>2015-10-11T19:02:25.0245772+03:00</Date>
+  </Score>
+  <Score>
     <PlayerName>ghj</PlayerName>
     <Points>7</Points>
     <Date>2015-10-11T17:11:34.9826413+03:00</Date>
   </Score>
   <Score>
-    <PlayerName>dasd</PlayerName>
-    <Points>8</Points>
-    <Date>2015-10-11T18:08:47.5034615+03:00</Date>
+    <PlayerName>asd</PlayerName>
+    <Points>7</Points>
+    <Date>2015-10-11T18:19:15.2843491+03:00</Date>
   </Score>
   <Score>
     <PlayerName>czx</PlayerName>
@@ -51,14 +56,19 @@
     <Date>2015-10-11T17:22:41.0078003+03:00</Date>
   </Score>
   <Score>
+    <PlayerName>dasd</PlayerName>
+    <Points>8</Points>
+    <Date>2015-10-11T18:08:47.5034615+03:00</Date>
+  </Score>
+  <Score>
     <PlayerName>Wit</PlayerName>
     <Points>8</Points>
     <Date>2015-10-11T14:22:17.6275572+03:00</Date>
   </Score>
   <Score>
-    <PlayerName>dfg</PlayerName>
+    <PlayerName>asdasd</PlayerName>
     <Points>8</Points>
-    <Date>2015-10-11T16:50:25.9260387+03:00</Date>
+    <Date>2015-10-11T18:12:42.1572384+03:00</Date>
   </Score>
   <Score>
     <PlayerName>asdasd</PlayerName>
@@ -66,9 +76,9 @@
     <Date>2015-10-11T18:01:22.6933129+03:00</Date>
   </Score>
   <Score>
-    <PlayerName>asdasd</PlayerName>
+    <PlayerName>dfg</PlayerName>
     <Points>8</Points>
-    <Date>2015-10-11T18:12:42.1572384+03:00</Date>
+    <Date>2015-10-11T16:50:25.9260387+03:00</Date>
   </Score>
   <Score>
     <PlayerName>asdasd</PlayerName>
@@ -81,11 +91,6 @@
     <Date>2015-10-11T17:39:46.4080767+03:00</Date>
   </Score>
   <Score>
-    <PlayerName>as</PlayerName>
-    <Points>9</Points>
-    <Date>2015-10-11T17:51:19.8138772+03:00</Date>
-  </Score>
-  <Score>
     <PlayerName>fghjk</PlayerName>
     <Points>9</Points>
     <Date>2015-10-11T18:05:40.7394642+03:00</Date>
@@ -96,9 +101,34 @@
     <Date>2015-10-11T18:08:06.850045+03:00</Date>
   </Score>
   <Score>
+    <PlayerName>as</PlayerName>
+    <Points>9</Points>
+    <Date>2015-10-11T17:51:19.8138772+03:00</Date>
+  </Score>
+  <Score>
     <PlayerName>1231231</PlayerName>
     <Points>10</Points>
     <Date>2015-10-11T15:53:57.596885+03:00</Date>
+  </Score>
+  <Score>
+    <PlayerName>gu</PlayerName>
+    <Points>10</Points>
+    <Date>2015-10-11T18:37:36.8261243+03:00</Date>
+  </Score>
+  <Score>
+    <PlayerName>op</PlayerName>
+    <Points>10</Points>
+    <Date>2015-10-11T18:58:15.3288969+03:00</Date>
+  </Score>
+  <Score>
+    <PlayerName>Zoro</PlayerName>
+    <Points>11</Points>
+    <Date>2015-10-11T19:00:50.1150032+03:00</Date>
+  </Score>
+  <Score>
+    <PlayerName>dadas</PlayerName>
+    <Points>11</Points>
+    <Date>2015-10-11T16:18:40.7160358+03:00</Date>
   </Score>
   <Score>
     <PlayerName>asdds</PlayerName>
@@ -109,10 +139,5 @@
     <PlayerName>asdasd</PlayerName>
     <Points>11</Points>
     <Date>2015-10-11T17:10:28.9377622+03:00</Date>
-  </Score>
-  <Score>
-    <PlayerName>dadas</PlayerName>
-    <Points>11</Points>
-    <Date>2015-10-11T16:18:40.7160358+03:00</Date>
   </Score>
 </ArrayOfScore>

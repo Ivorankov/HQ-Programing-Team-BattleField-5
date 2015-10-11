@@ -9,9 +9,10 @@
 namespace MineFieldApp.Renderer
 {
     using System;
-    using System.Linq;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
+
     using Cells;
     using Cells.Mines;
     using Data;
@@ -31,6 +32,8 @@ namespace MineFieldApp.Renderer
 
         private const string AnyKeyMessage = "Press any key to continuue...";
 
+        private const ConsoleColor DefaultColor = ConsoleColor.Gray;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleRenderer" /> class.
         /// </summary>
@@ -42,8 +45,13 @@ namespace MineFieldApp.Renderer
             this.IsGameOver = false;
 
             Console.Title = ConsoleRenderer.GameName;
+
             Console.CursorSize = 100;
+            Console.CursorVisible = false;
+
             Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleRenderer.DefaultColor;
+
             this.SetUpDefaultWindow();
         }
 
@@ -59,11 +67,39 @@ namespace MineFieldApp.Renderer
         private bool IsGameOver { get; set; }
 
         /// <summary>
+        /// Shows welcome screen.
+        /// </summary>
+        public void ShowWelcome()
+        {
+            Console.CursorVisible = false;
+
+            this.SetUpDefaultWindow();
+
+            this.PrintCenteredMessages(true, ConsoleRenderer.GameName, ConsoleRenderer.AnyKeyMessage);
+
+            Console.ReadKey(true);
+        }
+
+        /// <summary>
+        /// Shows the user a prompt for field size.
+        /// </summary>
+        public void ShowFieldSizePrompt()
+        {
+            Console.CursorVisible = true;
+
+            this.SetUpDefaultWindow();
+
+            this.PrintCenteredMessages(false, "Enter field size: ");
+        }
+
+        /// <summary>
         /// Show game field.
         /// </summary>
         /// <param name="field">The game field.</param>
         public void ShowGameField(GameField field)
         {
+            Console.CursorVisible = false;
+
             this.SetUpInGameWindow(field);
 
             int horizontalWallSize = Console.WindowWidth - ConsoleRenderer.WallsCount;
@@ -81,9 +117,12 @@ namespace MineFieldApp.Renderer
 
             builder.Append(lowerWall);
 
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.Write(builder);
-            //// Console.ReadLine();
+            Console.ForegroundColor = ConsoleRenderer.DefaultColor;
+
             this.RefreshGameField(field);
+
             this.SelectPosition();
         }
 
@@ -93,6 +132,8 @@ namespace MineFieldApp.Renderer
         /// <param name="field">The game field.</param>
         public void RefreshGameField(GameField field)
         {
+            Console.CursorVisible = false;
+
             for (int row = 0; row < field.RowsCount; row++)
             {
                 for (int col = 0; col < field.ColumnsCount; col++)
@@ -110,6 +151,26 @@ namespace MineFieldApp.Renderer
 
             Console.SetCursorPosition(this.LastCursorLeft, this.LastCursorTop);
 
+            Console.ForegroundColor = ConsoleRenderer.DefaultColor;
+        }
+
+        /// <summary>
+        /// Shows game over screen.
+        /// </summary>
+        /// <param name="data">Current game data.</param>
+        public void ShowGameOver(GameData data)
+        {
+            Console.CursorVisible = false;
+
+            this.SetUpDefaultWindow();
+
+            string movesMessage = string.Format("Moves: {0}", data.MovesCount);
+
+            this.PrintCenteredMessages(true, "Game Over", movesMessage, ConsoleRenderer.AnyKeyMessage);
+
+            Console.ReadKey(true);
+
+            this.IsGameOver = true;
         }
 
         /// <summary>
@@ -117,13 +178,16 @@ namespace MineFieldApp.Renderer
         /// </summary>
         public void ShowHighscores()
         {
+            Console.CursorVisible = false;
+
             this.SetUpDefaultWindow();
             List<Score> highscores = HighscoreLogger.Instance.Highscores;
 
             if (highscores.Count > Console.BufferHeight)
             {
-                Console.BufferHeight = highscores.Count + 3;
+                Console.BufferHeight = highscores.Count + 4;
             }
+
             const string ScoreFormat = "{0}-{1}";
 
             const int PaddingCount = 10;
@@ -147,24 +211,15 @@ namespace MineFieldApp.Renderer
         }
 
         /// <summary>
-        /// Shows game over screen.
+        /// Shows the user a prompt for name.
         /// </summary>
-        /// <param name="data">Current game data.</param>
-        public void ShowGameOver(GameData data)
+        public void ShowNamePrompt()
         {
+            Console.CursorVisible = true;
+
             this.SetUpDefaultWindow();
 
-            bool holdCV = Console.CursorVisible;
-            Console.CursorVisible = false;
-
-            string movesMessage = string.Format("Moves: {0}", data.MovesCount);
-
-            this.PrintCenteredMessages(true, "Game Over", movesMessage, ConsoleRenderer.AnyKeyMessage);
-
-            Console.ReadKey(true);
-
-            this.IsGameOver = true;
-            Console.CursorVisible = holdCV;
+            this.PrintCenteredMessages(false, "Enter Name: ");
         }
 
         /// <summary>
@@ -173,41 +228,7 @@ namespace MineFieldApp.Renderer
         /// <param name="message">The message.</param>
         public void ShowErrorMessage(string message)
         {
-            //Console.WriteLine(message);
             Console.Beep();
-        }
-
-        /// <summary>
-        /// Shows welcome screen.
-        /// </summary>
-        public void ShowWelcome()
-        {
-            this.SetUpDefaultWindow();
-
-            bool holdCV = Console.CursorVisible;
-            Console.CursorVisible = false;
-
-            this.PrintCenteredMessages(true, ConsoleRenderer.GameName, ConsoleRenderer.AnyKeyMessage);
-
-            Console.ReadKey(true);
-
-            Console.CursorVisible = holdCV;
-        }
-
-        public void ShowFieldSizePrompt()
-        {
-            this.SetUpDefaultWindow();
-            Console.CursorVisible = true;
-
-            this.PrintCenteredMessages(false, "Enter field size: ");
-        }
-
-        public void ShowNamePrompt()
-        {
-            this.SetUpDefaultWindow();
-            Console.CursorVisible = true;
-
-            this.PrintCenteredMessages(false, "Enter Name: ");
         }
 
         /// <summary>
@@ -222,25 +243,11 @@ namespace MineFieldApp.Renderer
             }
         }
 
-        private void PrintCenteredMessages(bool onNewLines, params string[] messages)
+        private void SetUpDefaultWindow()
         {
-            StringBuilder builder = new StringBuilder();
-            foreach (var message in messages)
-            {
-                string paddedMessage = message.PadLeft((Console.WindowWidth / 2) + (message.Length / 2), ' ');
-
-                if (onNewLines)
-                {
-                    builder.AppendLine(paddedMessage);
-                }
-                else
-                {
-                    builder.Append(paddedMessage);
-                }
-            }
-
-            Console.SetCursorPosition(0, ((Console.WindowHeight / 2) - 1) - messages.Length);
-            Console.Write(builder);
+            Console.Clear();
+            Console.SetWindowSize(34, 10);
+            Console.SetBufferSize(34, 10);
         }
 
         private void SetUpInGameWindow(GameField field)
@@ -255,11 +262,57 @@ namespace MineFieldApp.Renderer
             Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
         }
 
-        private void SetUpDefaultWindow()
+        private void SelectPosition()
         {
-            Console.Clear();
-            Console.SetWindowSize(34, 10);
-            Console.SetBufferSize(34, 10);
+            while (true)
+            {
+                if (this.IsGameOver == true)
+                {
+                    return;
+                }
+
+                Console.CursorVisible = true;
+
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                if ((key.Key == ConsoleKey.UpArrow) || (key.Key == ConsoleKey.DownArrow))
+                {
+                    int modifier = 1;
+                    if (key.Key == ConsoleKey.UpArrow)
+                    {
+                        modifier *= -1;
+                    }
+
+                    int newTop = Console.CursorTop + modifier;
+
+                    if ((0 < newTop) && (newTop < Console.WindowHeight - 1))
+                    {
+                        Console.CursorTop = newTop;
+                    }
+                }
+                else if ((key.Key == ConsoleKey.LeftArrow) || (key.Key == ConsoleKey.RightArrow))
+                {
+                    int modifier = 2;
+                    if (key.Key == ConsoleKey.LeftArrow)
+                    {
+                        modifier *= -1;
+                    }
+
+                    int newLeft = Console.CursorLeft + modifier;
+                    if ((0 < newLeft) && (newLeft < Console.WindowWidth - 1))
+                    {
+                        Console.CursorLeft = newLeft;
+                    }
+                }
+                else if (key.Key == ConsoleKey.Enter)
+                {
+                    this.LastCursorLeft = Console.CursorLeft;
+                    this.LastCursorTop = Console.CursorTop;
+
+                    Position pos = this.GetFieldPosition();
+                    this.OnInputPosition(new PositionEventArgs(pos));
+                }
+            }
         }
 
         private void SetWindowPosition(Position fieldPosition)
@@ -340,55 +393,25 @@ namespace MineFieldApp.Renderer
             throw new NotImplementedException("Unknown Cell Type.");
         }
 
-        private void SelectPosition()
+        private void PrintCenteredMessages(bool onNewLines, params string[] messages)
         {
-            while (true)
+            StringBuilder builder = new StringBuilder();
+            foreach (var message in messages)
             {
-                if (this.IsGameOver == true)
+                string paddedMessage = message.PadLeft((Console.WindowWidth / 2) + (message.Length / 2), ' ');
+
+                if (onNewLines)
                 {
-                    return;
+                    builder.AppendLine(paddedMessage);
                 }
-
-                ConsoleKeyInfo key = Console.ReadKey(true);
-
-                if ((key.Key == ConsoleKey.UpArrow) || (key.Key == ConsoleKey.DownArrow))
+                else
                 {
-                    int modifier = 1;
-                    if (key.Key == ConsoleKey.UpArrow)
-                    {
-                        modifier *= -1;
-                    }
-
-                    int newTop = Console.CursorTop + modifier;
-
-                    if ((0 < newTop) && (newTop < Console.WindowHeight - 1))
-                    {
-                        Console.CursorTop = newTop;
-                    }
-                }
-                else if ((key.Key == ConsoleKey.LeftArrow) || (key.Key == ConsoleKey.RightArrow))
-                {
-                    int modifier = 2;
-                    if (key.Key == ConsoleKey.LeftArrow)
-                    {
-                        modifier *= -1;
-                    }
-
-                    int newLeft = Console.CursorLeft + modifier;
-                    if ((0 < newLeft) && (newLeft < Console.WindowWidth - 1))
-                    {
-                        Console.CursorLeft = newLeft;
-                    }
-                }
-                else if (key.Key == ConsoleKey.Enter)
-                {
-                    this.LastCursorLeft = Console.CursorLeft;
-                    this.LastCursorTop = Console.CursorTop;
-
-                    Position pos = this.GetFieldPosition();
-                    this.OnInputPosition(new PositionEventArgs(pos));
+                    builder.Append(paddedMessage);
                 }
             }
+
+            Console.SetCursorPosition(0, ((Console.WindowHeight / 2) - 1) - messages.Length);
+            Console.Write(builder);
         }
     }
 }

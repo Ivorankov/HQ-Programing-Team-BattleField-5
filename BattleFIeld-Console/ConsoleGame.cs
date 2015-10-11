@@ -43,13 +43,18 @@ namespace BattleField_Console
         public void Start()
         {
             this.renderer.ShowWelcome();
+
             this.renderer.ShowFieldSizePrompt();
             int fieldSize = this.inputProvider.GetFieldSize();
             GameField field = new GameField(fieldSize);
+
             this.engine.Init(field);
+
             this.renderer.ShowNamePrompt();
+
             string playerName = this.inputProvider.GetPlayerName();
             HighscoreLogger.Instance.AddHighscore(playerName, this.engine.MovesCount);
+
             this.renderer.ShowHighscores();
         }
     }
