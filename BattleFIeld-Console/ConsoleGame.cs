@@ -20,7 +20,7 @@ namespace BattleField_Console
     {
         private IEngine engine;
         private IInputProvider inputProvider;
-        private IRenderer renderer;
+        private ConsoleRenderer renderer;
         private ICellDamageHandler damageHandler;
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace BattleField_Console
         /// <param name="inputProvider">The input provider.</param>
         /// <param name="renderer">The renderer.</param>
         /// <param name="damageHandler">The damage handler.</param>
-        public ConsoleGame(IInputProvider inputProvider, IRenderer renderer, ICellDamageHandler damageHandler)
+        public ConsoleGame(IInputProvider inputProvider, ConsoleRenderer renderer, ICellDamageHandler damageHandler)
         {
             this.engine = new Engine(renderer, damageHandler);
             this.inputProvider = inputProvider;
@@ -43,17 +43,19 @@ namespace BattleField_Console
         public void Start()
         {
             this.renderer.ShowWelcome();
+
+            this.renderer.ShowFieldSizePrompt();
             int fieldSize = this.inputProvider.GetFieldSize();
             GameField field = new GameField(fieldSize);
-            this.engine.Init(field);
-            this.PersistResult();
-            this.renderer.ShowHighscores();
-        }
 
-        private void PersistResult()
-        {
+            this.engine.Init(field);
+
+            this.renderer.ShowNamePrompt();
+
             string playerName = this.inputProvider.GetPlayerName();
             HighscoreLogger.Instance.AddHighscore(playerName, this.engine.MovesCount);
+
+            this.renderer.ShowHighscores();
         }
     }
 }

@@ -55,7 +55,7 @@ namespace MineFieldApp
             string input = null;
             do
             {
-                Console.WriteLine(prompt);
+                //Console.WriteLine(prompt);
                 input = this.GetUserInput();
             }
             while (!validator.Invoke(input));

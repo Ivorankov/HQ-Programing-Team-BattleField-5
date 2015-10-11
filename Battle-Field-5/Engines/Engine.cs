@@ -60,29 +60,28 @@ namespace MineFieldApp.Engines
         /// <summary>
         /// Updates the game field.
         /// </summary>
-        /// <param name="pos">Position chosen by the player.</param>
-        public void UpdateField(Position pos)
+        /// <param name="position">Position chosen by the player.</param>
+        public void UpdateField(Position position)
         {
-            Position position = pos;
-
-            if (this.field.IsInRange(position) && (this.field[position.Row, position.Col] is Mine))
+            Cell cell = this.field[position.Row, position.Col];
+            if (this.field.IsInRange(position) && (cell is Mine) && !cell.IsDestroyed)
             {
                 this.MovesCount++;
-                Mine mine = this.field[position.Row, position.Col] as Mine;
+                Mine mine = cell as Mine;
                 this.field.ReactToExplosion(mine.GetExplodingPattern(), this.damageHandler);
+
+                if (this.field.HasMinesLeft())
+                {
+                    this.renderer.RefreshGameField(this.field);
+                }
+                else
+                {
+                    this.GameOver();
+                }
             }
             else
             {
                 this.renderer.ShowErrorMessage("Invalid coordinates or the selected cell is not a mine.");
-            }
-
-            if (this.field.HasMinesLeft())
-            {
-                this.renderer.RefreshGameField(this.field);
-            }
-            else
-            {
-                this.GameOver();
             }
         }
 
