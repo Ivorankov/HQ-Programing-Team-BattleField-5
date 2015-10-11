@@ -23,7 +23,6 @@ namespace BattleField_Console
         /// </summary>
         public static void Main()
         {
-            GameField field = new GameField(10);
             IInputProvider inputProvider = new ConsoleInputProvider();
             IRenderer renderer = new ConsoleRenderer();
             ICellDamageHandler damageHandler = new DefaultDamageHandler();

@@ -26,6 +26,8 @@ namespace MineFieldApp.Renderer
 
         private const char VerticalWallSymbol = '|';
 
+        private const string AnyKeyMessage = "Press any key to continuue...";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleRenderer" /> class.
         /// </summary>
@@ -33,6 +35,13 @@ namespace MineFieldApp.Renderer
         {
             this.LastCursorLeft = 1;
             this.LastCursorTop = 1;
+
+            this.IsGameOver = false;
+
+            Console.Title = "MineField";
+            Console.CursorSize = 100;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            this.SetUpDefaultWindow();
         }
 
         /// <summary>
@@ -44,13 +53,20 @@ namespace MineFieldApp.Renderer
 
         private int LastCursorTop { get; set; }
 
+        private ConsoleWindowStatus WindowStatus { get; set; }
+
+        private bool IsGameOver { get; set; }
+
         /// <summary>
         /// Show game field.
         /// </summary>
         /// <param name="field">The game field.</param>
         public void ShowGameField(GameField field)
         {
-            this.SetUpWindow(field);
+            if (this.WindowStatus != ConsoleWindowStatus.InGame)
+            {
+                this.SetUpInGameWindow(field);
+            }
 
             int horizontalWallSize = Console.WindowWidth - ConsoleRenderer.WallsCount;
             string horizontalWall = new string(ConsoleRenderer.HorizontalWallSymbol, horizontalWallSize);
@@ -70,6 +86,7 @@ namespace MineFieldApp.Renderer
             Console.Write(builder);
             //// Console.ReadLine();
             this.RefreshGameField(field);
+            this.SelectPosition();
         }
 
         /// <summary>
@@ -78,22 +95,23 @@ namespace MineFieldApp.Renderer
         /// <param name="field">The game field.</param>
         public void RefreshGameField(GameField field)
         {
-            Console.Clear();
             for (int row = 0; row < field.RowsCount; row++)
             {
                 for (int col = 0; col < field.ColumnsCount; col++)
                 {
-                    string cellSymbol = this.GetCellSymbol(field[row, col]);
+                    ConsoleColor cellColor = this.GetCellColor(field[row, col]);
+
+                    char cellSymbol = this.GetCellSymbol(field[row, col]);
 
                     this.SetWindowPosition(new Position(row, col));
 
+                    Console.ForegroundColor = cellColor;
                     Console.Write(cellSymbol);
                 }
             }
 
             Console.SetCursorPosition(this.LastCursorLeft, this.LastCursorTop);
 
-            this.SelectPosition();
         }
 
         /// <summary>
@@ -144,6 +162,8 @@ namespace MineFieldApp.Renderer
                 key = Console.ReadKey(true);
             }
             while (key.Key != ConsoleKey.Enter);
+
+            this.IsGameOver = true;
         }
 
         /// <summary>
@@ -152,7 +172,8 @@ namespace MineFieldApp.Renderer
         /// <param name="message">The message.</param>
         public void ShowErrorMessage(string message)
         {
-            Console.WriteLine(message);
+            //Console.WriteLine(message);
+            Console.Beep();
         }
 
         /// <summary>
@@ -160,6 +181,7 @@ namespace MineFieldApp.Renderer
         /// </summary>
         public void ShowWelcome()
         {
+            const string title = "MineField";
             Console.WriteLine(@"Welcome to 'Battle filed' game!");
         }
 
@@ -175,17 +197,27 @@ namespace MineFieldApp.Renderer
             }
         }
 
-        private void SetUpWindow(GameField field)
+        private void SetUpInGameWindow(GameField field)
         {
-            Console.Title = "MineField";
-
+            Console.Clear();
             int whiteSpaceCount = field.ColumnsCount - 1;
 
             int consoleRowsCount = field.RowsCount + ConsoleRenderer.WallsCount;
             int consoleColumnsCount = field.ColumnsCount + whiteSpaceCount + ConsoleRenderer.WallsCount;
 
-            // Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
-            // Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
+            Console.SetWindowSize(consoleColumnsCount, consoleRowsCount);
+            Console.SetBufferSize(consoleColumnsCount, consoleRowsCount);
+
+            this.WindowStatus = ConsoleWindowStatus.InGame;
+        }
+
+        private void SetUpDefaultWindow()
+        {
+            Console.Clear();
+            Console.SetWindowSize(35, 10);
+            Console.SetBufferSize(35, 10);
+
+            this.WindowStatus = ConsoleWindowStatus.Default;
         }
 
         private void SetWindowPosition(Position fieldPosition)
@@ -198,35 +230,69 @@ namespace MineFieldApp.Renderer
             return new Position(Console.CursorTop - 1, (Console.CursorLeft - 1) / 2);
         }
 
-        private string GetCellSymbol(Cell cell)
+        private char GetCellSymbol(Cell cell)
         {
             if (cell.IsDestroyed)
             {
-                return "X";
+                return 'X';
             }
             else if (cell is TinyMine)
             {
-                return "1";
+                return '1';
             }
             else if (cell is SmallMine)
             {
-                return "2";
+                return '2';
             }
             else if (cell is MediumMine)
             {
-                return "3";
+                return '3';
             }
             else if (cell is BigMine)
             {
-                return "4";
+                return '4';
             }
             else if (cell is GiantMine)
             {
-                return "5";
+                return '5';
             }
             else if (cell is EmptyCell)
             {
-                return "-";
+                return '-';
+            }
+
+            throw new NotImplementedException("Unknown Cell Type.");
+        }
+
+        private ConsoleColor GetCellColor(Cell cell)
+        {
+            if (cell.IsDestroyed)
+            {
+                return ConsoleColor.Gray;
+            }
+            else if (cell is TinyMine)
+            {
+                return ConsoleColor.Cyan;
+            }
+            else if (cell is SmallMine)
+            {
+                return ConsoleColor.Blue;
+            }
+            else if (cell is MediumMine)
+            {
+                return ConsoleColor.Yellow;
+            }
+            else if (cell is BigMine)
+            {
+                return ConsoleColor.Magenta;
+            }
+            else if (cell is GiantMine)
+            {
+                return ConsoleColor.Red;
+            }
+            else if (cell is EmptyCell)
+            {
+                return ConsoleColor.Black;
             }
 
             throw new NotImplementedException("Unknown Cell Type.");
@@ -236,6 +302,11 @@ namespace MineFieldApp.Renderer
         {
             while (true)
             {
+                if (this.IsGameOver == true)
+                {
+                    return;
+                }
+
                 ConsoleKeyInfo key = Console.ReadKey(true);
 
                 if ((key.Key == ConsoleKey.UpArrow) || (key.Key == ConsoleKey.DownArrow))
@@ -274,7 +345,6 @@ namespace MineFieldApp.Renderer
 
                     Position pos = this.GetFieldPosition();
                     this.OnInputPosition(new PositionEventArgs(pos));
-                    return;
                 }
             }
         }
