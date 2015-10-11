@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Documentation.shfbproj" started="10/11/2015 8:53:50 PM">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+Searching for HTML Help 1 compiler...
+Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
+Locating components in the following folder(s):
+   C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
+Loading and initializing plug-ins...
+Lightweight Website Style Version 2015.1.12.0
+Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\Team Battle-Field-5 Project.sln
+    Found project &#39;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\MineFieldApp.csproj&#39;
+    Found project &#39;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\..\MineFieldAppTests\MineFieldAppTests.csproj&#39;
+    Found project &#39;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\..\BattleField-WPF\BattleField-WPF.csproj&#39;
+    Found project &#39;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\..\BattleFIeld-Console\BattleField-Console.csproj&#39;
+
+Parsing project files
+    Found assembly &#39;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Battle-Field-5\bin\Debug\BattleField.dll&#39;
+    Found assembly &#39;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\MineFieldAppTests\bin\Debug\MineFieldAppTests.dll&#39;
+    Found assembly &#39;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\BattleField-WPF\bin\Debug\BattleField-WPF.exe&#39;
+    Found assembly &#39;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\BattleFIeld-Console\bin\Debug\BattleFIeld-Console.exe&#39;
+
+References to include (excluding framework assemblies):
+    Microsoft.VisualStudio.QualityTools.UnitTestFramework
+    Moq, Version=4.2.1507.118, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL
+    nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL
+    nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL
+    nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL
+    nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL
+    NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL
+SHFB: Warning BE0062: No XML comments files found.  The help file will not contain any member comments.
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, English (United States))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00.0962
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00.0050
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Build started 10/11/2015 8:53:51 PM.
+Project &quot;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;obj\Debug\&quot;.
+GenerateRefInfo:
+  MRefBuilder (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loaded 4 assemblies for reflection and 8 dependency assemblies.
+  Wrote information on 11 namespaces, 48 types, and 206 members
+  Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
+Done Building Project &quot;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\GenerateRefInfo.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.47
+    Last step completed in 00:00:01.6748
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Build started 10/11/2015 8:53:52 PM.
+Project &quot;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
+TransformManifest:
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Copying file from &quot;reflection.xml&quot; to &quot;reflection.nofilenames&quot;.
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Done Building Project &quot;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\TransformManifest.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.55
+    Last step completed in 00:00:02.8082
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00.0961
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+No additional content to copy
+    Last step completed in 00:00:00.0110
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Build started 10/11/2015 8:53:55 PM.
+Project &quot;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
+GenerateIntermediateTOC:
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Done Building Project &quot;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\GenerateIntermediateTOC.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.23
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00.3783
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00.4494
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\sandcastle.config
+    Last step completed in 00:00:00.0550
+</buildStep>
+<buildStep step="BuildReferenceTopics">
+Building reference help topics...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Build started 10/11/2015 8:53:56 PM.
+Project &quot;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
+BuildReferenceTopics:
+  BuildAssembler (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ShowMissingComponent: [N:BattleField_Console] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleField_Console.ConsoleGame] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField_Console.ConsoleGame.#ctor(MineFieldApp.IInputProvider,MineFieldApp.Renderer.ConsoleRenderer,MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;inputProvider&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField_Console.ConsoleGame.#ctor(MineFieldApp.IInputProvider,MineFieldApp.Renderer.ConsoleRenderer,MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;renderer&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField_Console.ConsoleGame.#ctor(MineFieldApp.IInputProvider,MineFieldApp.Renderer.ConsoleRenderer,MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;damageHandler&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleField_Console.ConsoleGame.Start] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:BattleFieldWpf] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.App] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.App.InitializeComponent] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.App.Main] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.CellBrush] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.CellBrush.GetBrush(System.String)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.CellBrush.GetBrush(System.String)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.CellBrush.GetBrush(System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.CellButton] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.CellButton.#ctor(System.Int32,System.Int32,MineFieldApp.Cells.CellStatus)] Missing &lt;param name=&quot;row&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.CellButton.#ctor(System.Int32,System.Int32,MineFieldApp.Cells.CellStatus)] Missing &lt;param name=&quot;col&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.CellButton.#ctor(System.Int32,System.Int32,MineFieldApp.Cells.CellStatus)] Missing &lt;param name=&quot;status&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:BattleFieldWpf.CellButton.Position] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:BattleFieldWpf.CellButton.Status] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.EndScreenWindow] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.EndScreenWindow.#ctor(MineFieldApp.Data.GameData)] Missing &lt;param name=&quot;data&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.EndScreenWindow.InitializeComponent] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.GameInitWindow] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.GameInitWindow.InitializeComponent] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.GameWindow] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.GameWindow.#ctor(System.Int32,System.Boolean)] Missing &lt;param name=&quot;fieldSize&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.GameWindow.#ctor(System.Int32,System.Boolean)] Missing &lt;param name=&quot;isExplosionChained&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.GameWindow.InitializeComponent] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.HighscoreWindow] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.HighscoreWindow.InitializeComponent] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.MainWindow] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.MainWindow.InitializeComponent] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:BattleFieldWpf.WpfRenderer] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.#ctor(System.Windows.Window)] Missing &lt;param name=&quot;win&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [E:BattleFieldWpf.WpfRenderer.InputPosition] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.OnInputPosition(MineFieldApp.Renderer.PositionEventArgs)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.OnInputPosition(MineFieldApp.Renderer.PositionEventArgs)] Missing &lt;param name=&quot;args&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.RefreshGameField(MineFieldApp.GameField)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.RefreshGameField(MineFieldApp.GameField)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.ShowErrorMessage(System.String)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.ShowErrorMessage(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.ShowGameField(MineFieldApp.GameField)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.ShowGameField(MineFieldApp.GameField)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.ShowGameOver(MineFieldApp.Data.GameData)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.ShowGameOver(MineFieldApp.Data.GameData)] Missing &lt;param name=&quot;data&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.ShowHighscores] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:BattleFieldWpf.WpfRenderer.ShowWelcome] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldApp] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.ConsoleInputProvider] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.ConsoleInputProvider.GetFieldSize] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.ConsoleInputProvider.GetFieldSize] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.ConsoleInputProvider.GetPlayerName] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.ConsoleInputProvider.GetPlayerName] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.ConsoleInputProvider.GetUserInput] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.ConsoleInputProvider.GetUserInput] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.GameField] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(MineFieldApp.Cells.Mines.Factories.IMineFactory,System.Int32)] Missing &lt;param name=&quot;mineFactory&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(MineFieldApp.Cells.Mines.Factories.IMineFactory,System.Int32)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(MineFieldApp.RNGs.IRandomGenerator,MineFieldApp.Cells.Mines.Factories.IMineFactory,System.Int32,System.Boolean)] Missing &lt;param name=&quot;random&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(MineFieldApp.RNGs.IRandomGenerator,MineFieldApp.Cells.Mines.Factories.IMineFactory,System.Int32,System.Boolean)] Missing &lt;param name=&quot;mineFactory&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(MineFieldApp.RNGs.IRandomGenerator,MineFieldApp.Cells.Mines.Factories.IMineFactory,System.Int32,System.Boolean)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(MineFieldApp.RNGs.IRandomGenerator,MineFieldApp.Cells.Mines.Factories.IMineFactory,System.Int32,System.Boolean)] Missing &lt;param name=&quot;isExplosionChained&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(MineFieldApp.RNGs.IRandomGenerator,System.Int32)] Missing &lt;param name=&quot;random&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(MineFieldApp.RNGs.IRandomGenerator,System.Int32)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(System.Int32)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(System.Int32,System.Boolean)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.#ctor(System.Int32,System.Boolean)] Missing &lt;param name=&quot;isExplosionChained&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.GameField.ColumnsCount] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.HasMinesLeft] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.HasMinesLeft] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.IsInRange(MineFieldApp.Position)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.IsInRange(MineFieldApp.Position)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.IsInRange(MineFieldApp.Position)] Missing &lt;param name=&quot;position&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.GameField.Item(System.Int32,System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.GameField.MinesCount] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.ReactToExplosion(System.Collections.Generic.IList{MineFieldApp.Position},MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.ReactToExplosion(System.Collections.Generic.IList{MineFieldApp.Position},MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;positions&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.GameField.ReactToExplosion(System.Collections.Generic.IList{MineFieldApp.Position},MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;damageHandler&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.GameField.RowsCount] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.HighscoreLogger] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.HighscoreLogger.AddHighscore(System.String,System.Double)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.HighscoreLogger.AddHighscore(System.String,System.Double)] Missing &lt;param name=&quot;playerName&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.HighscoreLogger.AddHighscore(System.String,System.Double)] Missing &lt;param name=&quot;points&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.HighscoreLogger.ClearHighscores] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.HighscoreLogger.Highscores] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.HighscoreLogger.Instance] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.HighscoreLogger.LoadHighscores] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.IInputProvider] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.IInputProvider.GetFieldSize] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.IInputProvider.GetFieldSize] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.IInputProvider.GetPlayerName] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.IInputProvider.GetPlayerName] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Position] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.#ctor(System.Int32,System.Int32)] Missing &lt;param name=&quot;row&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.#ctor(System.Int32,System.Int32)] Missing &lt;param name=&quot;col&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Position.Col] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.Equals(MineFieldApp.Position)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.Equals(MineFieldApp.Position)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.Equals(MineFieldApp.Position)] Missing &lt;param name=&quot;other&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.Equals(System.Object)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.Equals(System.Object)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.Equals(System.Object)] Missing &lt;param name=&quot;obj&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.GetHashCode] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.GetHashCode] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.op_Equality(MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.op_Equality(MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.op_Equality(MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;first&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.op_Equality(MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;second&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.op_Inequality(MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.op_Inequality(MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.op_Inequality(MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;first&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.op_Inequality(MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;second&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Position.Row] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.ToString] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Position.ToString] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Score] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Score.#ctor(System.String,System.Double)] Missing &lt;param name=&quot;playerName&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Score.#ctor(System.String,System.Double)] Missing &lt;param name=&quot;points&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Score.Date] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Score.PlayerName] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Score.Points] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldApp.Cells] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Cell] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Cell.#ctor(MineFieldApp.Position)] Missing &lt;param name=&quot;position&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Cells.Cell.IsDestroyed] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Cells.Cell.Position] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Cell.TakeDamage(MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Cell.TakeDamage(MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;damageHandler&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.CellDecorator] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.CellDecorator.#ctor(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Cells.CellDecorator.Cell] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.CellDecorator.TakeDamage(MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.CellDecorator.TakeDamage(MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;damageHandler&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.CellStatus] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.DefaultDamageHandler] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.DefaultDamageHandler.Damage(MineFieldApp.Cells.EmptyCell)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.DefaultDamageHandler.Damage(MineFieldApp.Cells.EmptyCell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.DefaultDamageHandler.Damage(MineFieldApp.Cells.Mines.Mine)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.DefaultDamageHandler.Damage(MineFieldApp.Cells.Mines.Mine)] Missing &lt;param name=&quot;mine&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.EmptyCell] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.EmptyCell.#ctor(MineFieldApp.Position)] Missing &lt;param name=&quot;position&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.EmptyCell.TakeDamage(MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.EmptyCell.TakeDamage(MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;damageHandler&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.ICellDamageHandler] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.ICellDamageHandler.Damage(MineFieldApp.Cells.EmptyCell)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.ICellDamageHandler.Damage(MineFieldApp.Cells.EmptyCell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.ICellDamageHandler.Damage(MineFieldApp.Cells.Mines.Mine)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.ICellDamageHandler.Damage(MineFieldApp.Cells.Mines.Mine)] Missing &lt;param name=&quot;mine&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldApp.Cells.Mines] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.BigMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.BigMine.#ctor(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.BigMine.GetExplodingPattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.BigMine.GetExplodingPattern] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.GiantMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.GiantMine.#ctor(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.GiantMine.GetExplodingPattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.GiantMine.GetExplodingPattern] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.MediumMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.MediumMine.#ctor(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.MediumMine.GetExplodingPattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.MediumMine.GetExplodingPattern] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.Mine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Mine.#ctor(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Mine.GetExplodingPattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Mine.GetExplodingPattern] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Mine.TakeDamage(MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Mine.TakeDamage(MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;damageHandler&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.MineAssistant] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.MineAssistant.GetNormalExplosion(MineFieldApp.Position,System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.MineAssistant.GetNormalExplosion(MineFieldApp.Position,System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.MineAssistant.GetNormalExplosion(MineFieldApp.Position,System.Int32)] Missing &lt;param name=&quot;center&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.MineAssistant.GetNormalExplosion(MineFieldApp.Position,System.Int32)] Missing &lt;param name=&quot;radius&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.SmallMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.SmallMine.#ctor(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.SmallMine.GetExplodingPattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.SmallMine.GetExplodingPattern] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.TinyMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.TinyMine.#ctor(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.TinyMine.GetExplodingPattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.TinyMine.GetExplodingPattern] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldApp.Cells.Mines.Factories] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.Factories.IMineFactory] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Factories.IMineFactory.Create(MineFieldApp.Cells.Cell)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Factories.IMineFactory.Create(MineFieldApp.Cells.Cell)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Factories.IMineFactory.Create(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Cells.Mines.Factories.RandomMineFactory] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Factories.RandomMineFactory.#ctor(MineFieldApp.RNGs.IRandomGenerator)] Missing &lt;param name=&quot;random&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Factories.RandomMineFactory.Create(MineFieldApp.Cells.Cell)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Factories.RandomMineFactory.Create(MineFieldApp.Cells.Cell)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Cells.Mines.Factories.RandomMineFactory.Create(MineFieldApp.Cells.Cell)] Missing &lt;param name=&quot;cell&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldApp.Data] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Data.GameData] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Data.GameData.#ctor(MineFieldApp.GameField,System.Int32,MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;gameField&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Data.GameData.#ctor(MineFieldApp.GameField,System.Int32,MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;movesCount&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Data.GameData.#ctor(MineFieldApp.GameField,System.Int32,MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;damageHandler&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Data.GameData.DamageHandler] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Data.GameData.GameField] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Data.GameData.MovesCount] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Data.GameDataCaretaker] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Data.GameDataCaretaker.GameData] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldApp.Engines] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Engines.Engine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.#ctor(MineFieldApp.Renderer.IRenderer,MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;renderer&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.#ctor(MineFieldApp.Renderer.IRenderer,MineFieldApp.Cells.ICellDamageHandler)] Missing &lt;param name=&quot;damageHandler&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.CreateMemento] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.CreateMemento] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.GameOver] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.Init(MineFieldApp.GameField)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.Init(MineFieldApp.GameField)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Engines.Engine.MovesCount] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.SetMemento(MineFieldApp.Data.GameData)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.SetMemento(MineFieldApp.Data.GameData)] Missing &lt;param name=&quot;memento&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.UpdateField(MineFieldApp.Position)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.Engine.UpdateField(MineFieldApp.Position)] Missing &lt;param name=&quot;position&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Engines.IEngine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.CreateMemento] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.CreateMemento] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.GameOver] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.Init(MineFieldApp.GameField)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.Init(MineFieldApp.GameField)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Engines.IEngine.MovesCount] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.SetMemento(MineFieldApp.Data.GameData)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.SetMemento(MineFieldApp.Data.GameData)] Missing &lt;param name=&quot;memento&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.UpdateField(MineFieldApp.Position)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Engines.IEngine.UpdateField(MineFieldApp.Position)] Missing &lt;param name=&quot;position&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldApp.Renderer] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Renderer.ConsoleRenderer] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [E:MineFieldApp.Renderer.ConsoleRenderer.InputPosition] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.OnInputPosition(MineFieldApp.Renderer.PositionEventArgs)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.OnInputPosition(MineFieldApp.Renderer.PositionEventArgs)] Missing &lt;param name=&quot;args&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.RefreshGameField(MineFieldApp.GameField)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.RefreshGameField(MineFieldApp.GameField)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowErrorMessage(System.String)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowErrorMessage(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowFieldSizePrompt] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowGameField(MineFieldApp.GameField)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowGameField(MineFieldApp.GameField)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowGameOver(MineFieldApp.Data.GameData)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowGameOver(MineFieldApp.Data.GameData)] Missing &lt;param name=&quot;data&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowHighscores] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowNamePrompt] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.ConsoleRenderer.ShowWelcome] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Renderer.IRenderer] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [E:MineFieldApp.Renderer.IRenderer.InputPosition] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.RefreshGameField(MineFieldApp.GameField)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.RefreshGameField(MineFieldApp.GameField)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.ShowErrorMessage(System.String)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.ShowErrorMessage(System.String)] Missing &lt;param name=&quot;message&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.ShowGameField(MineFieldApp.GameField)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.ShowGameField(MineFieldApp.GameField)] Missing &lt;param name=&quot;field&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.ShowGameOver(MineFieldApp.Data.GameData)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.ShowGameOver(MineFieldApp.Data.GameData)] Missing &lt;param name=&quot;data&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.ShowHighscores] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.IRenderer.ShowWelcome] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.Renderer.PositionEventArgs] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.Renderer.PositionEventArgs.#ctor(MineFieldApp.Position)] Missing &lt;param name=&quot;position&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.Renderer.PositionEventArgs.Position] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldApp.RNGs] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.RNGs.IRandomGenerator] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetRandomBetween(System.Int32,System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetRandomBetween(System.Int32,System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetRandomBetween(System.Int32,System.Int32)] Missing &lt;param name=&quot;minValue&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetRandomBetween(System.Int32,System.Int32)] Missing &lt;param name=&quot;maxValue&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetRandomIndex(System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetRandomIndex(System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetRandomIndex(System.Int32)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;count&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;first&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.IRandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;second&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldApp.RNGs.RandomGenerator] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetRandomBetween(System.Int32,System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetRandomBetween(System.Int32,System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetRandomBetween(System.Int32,System.Int32)] Missing &lt;param name=&quot;minValue&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetRandomBetween(System.Int32,System.Int32)] Missing &lt;param name=&quot;maxValue&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetRandomIndex(System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetRandomIndex(System.Int32)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetRandomIndex(System.Int32)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;count&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;first&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldApp.RNGs.RandomGenerator.GetUniquePointsBetween(System.Int32,MineFieldApp.Position,MineFieldApp.Position)] Missing &lt;param name=&quot;second&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:MineFieldApp.RNGs.RandomGenerator.Instance] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:MineFieldAppTests] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldAppTests.ConsoleInputProviderMock] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderMock.#ctor(System.Collections.Generic.IEnumerable{System.String})] Missing &lt;param name=&quot;input&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderMock.GetUserInput] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderMock.GetUserInput] Missing &lt;returns&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldAppTests.ConsoleInputProviderTests] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithInvalidValue_ABC] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithInvalidValue_BiggerThanDouble] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithInvalidValue_Double] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithInvalidValue_Eleven] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithInvalidValue_EmptyString] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithInvalidValue_Zero] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithValidValue_Five] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithValidValue_HigherBoundry_Ten] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetFieldSize_WithValidValue_LowerBoundry_One] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetPlayerName_WithInvalidValue_EmptyString] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetPlayerName_WithInvalidValue_NotWordCharacterAtTheBegining] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetPlayerName_WithInvalidValue_NotWordCharacterAtTheEnd] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetPlayerName_WithInvalidValue_NotWordCharacterInMixedPlaces] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetPlayerName_WithInvalidValue_NotWordCharacterInTheMiddle] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetPlayerName_WithInvalidValue_OnlySpecialSymbols] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.ConsoleInputProviderTests.Test_GetPlayerName_WithValidValue] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldAppTests.DamageHandlerTests] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.DamageHandlerTests.Test_CheckIfDamageHandlerDamagesEmptyCell] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.DamageHandlerTests.Test_CheckIfDamageHandlerDamagesMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.DamageHandlerTests.Test_CheckIfDamageHandlerDestroysCell] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.DamageHandlerTests.Test_CheckIfDamageHandlerDestroysMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldAppTests.GameEngineTests] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameEngineTests.Test_EngineRestoresGameDataFromMemento] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameEngineTests.Test_EngineReturnsCorrectGameDataObjectToBeStoredInCaretaker] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldAppTests.GameFieldTests] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_GameFieldShouldReturnCellWithValidCoordinates(System.Int32,System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_GameFieldShouldReturnCellWithValidCoordinates(System.Int32,System.Int32)] Missing &lt;param name=&quot;X&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_GameFieldShouldReturnCellWithValidCoordinates(System.Int32,System.Int32)] Missing &lt;param name=&quot;Y&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_GameFieldShouldThrowWithInvalidCoordinates(System.Int32,System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_GameFieldShouldThrowWithInvalidCoordinates(System.Int32,System.Int32)] Missing &lt;param name=&quot;X&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_GameFieldShouldThrowWithInvalidCoordinates(System.Int32,System.Int32)] Missing &lt;param name=&quot;Y&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_HasMinesLeftShouldReturnFalseWhenMinesCountEqualToZero] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_HasMinesLeftShouldReturnFalseWhenMinesCountLessThanZero] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_HasMinesLeftShouldReturnTrueWhenMinesCountGreaterThanZero] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_IsInRangeShouldReturnFalseWithInvalidPositionNegativeRowCol] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_IsInRangeShouldReturnFalseWithInvalidPositionPositiveRowCol] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.GameFieldTests.Test_IsInRangeShouldReturnTrueWithValidPosition] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldAppTests.HighscoreTests] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.HighscoreTests.CheckIfHighscorerAddsScoreToFile] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.HighscoreTests.CheckIfHighscorerAddsScoreToList] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.HighscoreTests.CheckIfHighscorerIsSingleton] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.HighscoreTests.CheckIfHighscorerReadEmptyFileCorrectly] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.HighscoreTests.CheckIfHighscorerReadNonEmptyFile] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.HighscoreTests.CheckIfHighscorerSortsScoresByScore] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.HighscoreTests.TestCleanup] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldAppTests.MineFactoryTests] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MineFactoryTests.Test_MineFactoryShouldReturnBigMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MineFactoryTests.Test_MineFactoryShouldReturnGiantMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MineFactoryTests.Test_MineFactoryShouldReturnMediumMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MineFactoryTests.Test_MineFactoryShouldReturnSmallMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MineFactoryTests.Test_MineFactoryShouldReturnTinyMine] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MineFactoryTests.Test_MineFactoryShouldThrowIndexOutOfRangeExceptionWithInvalidMineIndex] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:MineFieldAppTests.MinePatternsTests] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MinePatternsTests.Test_BigMinePattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MinePatternsTests.Test_GiantMinePattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MinePatternsTests.Test_MediumMinePattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MinePatternsTests.Test_MineAssistantShouldReturnValidPattern(System.Int32)] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MinePatternsTests.Test_MineAssistantShouldReturnValidPattern(System.Int32)] Missing &lt;param name=&quot;radius&quot;/&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MinePatternsTests.Test_SmallMinePattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:MineFieldAppTests.MinePatternsTests.Test_TinyMinePattern] Missing &lt;summary&gt; documentation [C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj]
+  Processed 352 topic(s)
+  352 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 6 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 6 of 30.
+  ResolveReferenceLinksComponent: New MSDN content ID cache size: 687 entries
+Done Building Project &quot;C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\BuildReferenceTopics.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:06:45.51
+    Last step completed in 00:06:45.7173
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00.0040
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Sandcastle Help File Builder, version 2015.1.12.0
+Copyright c 2006-2015, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing Help 1 files in C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1
+Processed 352 HTML files
+Sorting keywords and generating See Also indices
+Saving HTML Help 1 keyword index to C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Documentation.hhk
+Saving HTML Help 1 table of contents to C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Documentation.hhc
+    Last step completed in 00:00:00.9117
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\AlertCaution.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\AlertNote.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\AlertSecurity.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\SectionExpanded.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\icons\xna.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help2.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-Help2.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-Website.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\styles\branding.css
+    Last step completed in 00:00:00.2742
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating HTML Help 1 table of contents file...
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="GenerateHelpFileIndex">
+Generating HTML Help 1 index file...
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00.0130
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling c:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\Documentation.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 2 seconds
+  
+  354	Topics
+  
+  3,706	Local links
+  
+  16,190	Internet links
+  
+  0	Graphics
+  
+  
+  
+  
+  
+  Created c:\Users\kjkjh\Documents\GitHub\HQ-Programing-Team-BattleField-5\Help\Working\Output\HtmlHelp1\Documentation.chm, 783,821 bytes
+  
+  Compression decreased file by 5,119,354 bytes.
+  
+    Last step completed in 00:00:03.3558
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00.1121
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 10/11/2015 9:00:46 PM.  Total time: 00:06:56.7288
+
+</buildStep>
+</shfbBuild>
