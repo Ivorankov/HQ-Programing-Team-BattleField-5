@@ -30,13 +30,16 @@ namespace MineFieldApp
 
         private Cell[,] field;
 
+        private bool isExplosionChained;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GameField" /> class.
         /// </summary>
         /// <param name="random">Random generator.</param>
         /// <param name="mineFactory">Mine factory.</param>
         /// <param name="size">Size of the game field.</param>
-        public GameField(IRandomGenerator random, IMineFactory mineFactory, int size)
+        /// <param name="isExplosionChained">True if there is explosions chaining.</param>
+        public GameField(IRandomGenerator random, IMineFactory mineFactory, int size, bool isExplosionChained = false)
         {
             this.random = random;
             this.mineFactory = mineFactory;
@@ -44,6 +47,7 @@ namespace MineFieldApp
             this.MinesCount = this.CalculateInitialMineCount();
             this.FillFieldWithEmptyCells();
             this.FillFieldMines();
+            this.isExplosionChained = isExplosionChained;
         }
 
         /// <summary>
@@ -72,6 +76,16 @@ namespace MineFieldApp
         /// <param name="size">Size of the game field.</param>
         public GameField(int size)
             : this(RandomGenerator.Instance, new RandomMineFactory(), size)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameField" /> class.
+        /// </summary>
+        /// <param name="size">Size of the game field.</param>
+        /// <param name="isExplosionChained">True if there is explosions chaining.</param>
+        public GameField(int size, bool isExplosionChained)
+            : this(RandomGenerator.Instance, new RandomMineFactory(), size, isExplosionChained)
         {
         }
 
@@ -158,12 +172,18 @@ namespace MineFieldApp
 
                     if (!currentCell.IsDestroyed)
                     {
+                        this.field[position.Row, position.Col].TakeDamage(damageHandler);
+
                         if (currentCell is Mine)
                         {
                             --this.MinesCount;
-                        }
 
-                        this.field[position.Row, position.Col].TakeDamage(damageHandler);
+                            if (this.isExplosionChained == true)
+                            {
+                                var mine = currentCell as Mine;
+                                this.ReactToExplosion(mine.GetExplodingPattern(), damageHandler);
+                            }
+                        }
                     }
                 }
             }

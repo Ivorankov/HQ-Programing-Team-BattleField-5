@@ -24,22 +24,12 @@
 
         public void StartTheEngine(int fieldSize, bool isExplosionChained)
         {
-            ICellDamageHandler damageHandler;
-
-            // TODO
-            if (isExplosionChained)
-            {
-                damageHandler = new DefaultDamageHandler();
-            }
-            else
-            {
-                damageHandler = new DefaultDamageHandler();
-            }
+            ICellDamageHandler damageHandler = new DefaultDamageHandler();
 
             var renderer = new WpfRenderer(this);
             var engine = new ProxyEngine(renderer, damageHandler);
             this.engine = engine;
-            var field = new GameField(fieldSize);
+            var field = new GameField(fieldSize, isExplosionChained);
             this.engine.Init(field);
         }
     }
