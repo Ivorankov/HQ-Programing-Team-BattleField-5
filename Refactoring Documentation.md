@@ -254,3 +254,31 @@ Refactoring Documentation for Project "BattleField-5"
 	
 71.	Merge remote-tracking branch 'origin/master'
 	-	Conflicts: BattleFIeld-Console/ConsoleRenderer.cs
+	
+72.	Updating Refactoring Documentation.md
+
+73.	Added unit tests
+	-	Coverage = 90%
+	
+74.	Added chaining
+	-	Not the best place for it, but there is no time for improvements
+		-	In constructor GameField added parameter: bool isExplosionChained = false
+
+75.	Recursion solve, Add console colors
+		
+76.	Merge branch 'master' into ConsoleRenderer-improvements
+
+77.	Added missing documentation/ removed proxy
+	-	Removed	ProxyEngine.cs
+	
+78.	ConsoleRenderer mostly finished.
+
+79.	Engine big fix
+	
+80.	Merge pull request #30 from Ivorankov/ConsoleRenderer-improvements
+	-	Console renderer improvements
+	
+81.	Added proper user input validations + cool diagrams
+
+82.	Added sandcastle doc
+
